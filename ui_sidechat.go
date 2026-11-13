@@ -135,16 +135,8 @@ func (s *appState) connectSideTab(tab *sideTab) {
 		}
 	}
 	tab.openPath = openPath
-	opts := agent.Options{
-		NodePath:    s.nodePath,
-		RpcBundle:   s.bundle,
-		Cwd:         cwd,
-		AgentDir:    s.agentDir,
-		SessionPath: openPath,
-		LogPath:     filepath.Join(s.agentDir, "pigo", "agent.log"),
-		NoMCP:       s.noMCP.GetUntracked(),
-		Tools:       sessions.SideTools,
-	}
+	opts := s.agentOptions(cwd, openPath)
+	opts.Tools = sessions.SideTools
 	key := s.sessionKey(openPath) + "|side"
 	tab.poolKey = key
 

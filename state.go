@@ -182,11 +182,21 @@ type appState struct {
 
 	agentDir, cwd, nodePath, bundle string
 	nodeBundled                     bool
-	store                           *sessions.Store
-	cfg                             *config.Store
-	pool                            *agent.Pool
-	redux                           *reducer.Store
-	terms                           *term.Manager
+	// piPath is the user's own pi when it can be driven, piVersion its
+	// version string. When piPath is set the bundled bundle and node are not
+	// used at all.
+	piPath, piVersion string
+	// useBundled marks the user's choice from the setup screen: run the
+	// bundled RPC bundle instead of their pi.
+	useBundled bool
+	// piSetup is "" when a runtime is usable, else which setup screen to
+	// show ("missing", "old", "new", "unreadable").
+	piSetup *core.Signal[string]
+	store   *sessions.Store
+	cfg     *config.Store
+	pool    *agent.Pool
+	redux   *reducer.Store
+	terms   *term.Manager
 
 	rows         *core.Signal[[]sessionRow]
 	sessionItems *core.Signal[[]sessionItem]
@@ -650,6 +660,7 @@ func newState(cx *core.Scope) *appState {
 	s.debugOpen = core.NewSignal(cx, false)
 	s.settingsQuery = core.NewSignal(cx, "")
 	s.settingsInfo = core.NewSignalFunc(cx, map[string]string{}, nil)
+	s.piSetup = core.NewSignal(cx, "")
 	s.nodeStatus = core.NewSignal(cx, "正在检测 Node…")
 	s.nodeReady = core.NewSignal(cx, false)
 	s.copied = core.NewSignal(cx, "")
@@ -1393,20 +1404,11 @@ func (s *appState) connectWith(sessionPath, keySuffix, tools string, noTools ...
 			s.status.Set("正在启动 pi 子进程…")
 		}
 	})
-	opts := agent.Options{
-		NodePath:    s.nodePath,
-		RpcBundle:   s.bundle,
-		Cwd:         cwd,
-		AgentDir:    s.agentDir,
-		SessionPath: openPath,
-		LogPath:     filepath.Join(s.agentDir, "pigo", "agent.log"),
-		NoMCP:       s.noMCP.GetUntracked(),
-		ExtraArgs:   nil,
-		Tools:       tools,
-		NoTools:     len(noTools) > 0 && noTools[0],
-	}
-	if s.bundle == "" || s.nodePath == "" {
-		s.cx.Post(func() { s.status.Set("未找到 node 或 rpc-entry.js，请在设置中检查") })
+	opts := s.agentOptions(cwd, openPath)
+	opts.Tools = tools
+	opts.NoTools = len(noTools) > 0 && noTools[0]
+	if !s.runtimeReady() {
+		s.cx.Post(func() { s.status.Set("还没有可用的 pi，先按提示安装或改用内置版本") })
 		return
 	}
 	key := s.sessionKey(openPath) + keySuffix
@@ -1427,6 +1429,25 @@ func (s *appState) connectWith(sessionPath, keySuffix, tools string, noTools ...
 		s.cx.Post(func() { s.status.Set("正在启动侧聊…") })
 	}
 	go func() {
+		// Ask for the project folder before spawning: on macOS a guarded folder
+		// (Desktop, Documents, Downloads) turns every open() into a hang until
+		// the consent dialog is answered, and a hung pi is indistinguishable
+		// from a dead one. Reporting it here is the difference between "装个
+		// node" and "勾一下这个复选框".
+		if insideProtectedFolder(cwd) {
+			if allowed, pending := folderAccess(cwd, 3*time.Second); !allowed {
+				hint := permissionHint(cwd)
+				s.logAgent("folder access denied cwd=%s pending=%v", cwd, pending)
+				s.cx.Post(func() {
+					s.connected.Set(false)
+					s.connecting = false
+					s.transcriptLoading.Set(false)
+					s.lastDisconnect = hint
+					s.status.Set("等待文件夹授权")
+				})
+				return
+			}
+		}
 		// Frames are bound to the handle that produced them: a warm idle
 		// session in the pool must not write into another session's
 		// transcript, and its idle eviction must not mark this one
@@ -1828,17 +1849,181 @@ func (s *appState) phaseLabel() string {
 	return snap.Phase
 }
 
-// bootstrapNode picks the runtime the RPC child needs (PLAN §11 B′): a
-// bundled node when the build carries one, else a system Node ≥ 22, else the
-// official tarball downloaded on first launch into the agent directory.
+// The setup screen's states, empty meaning "a runtime is usable".
+const (
+	piSetupMissing    = "missing"
+	piSetupOld        = "old"
+	piSetupNew        = "new"
+	piSetupUnreadable = "unreadable"
+)
 
+// protectedFolders are the directories macOS guards behind a one-time consent
+// (TCC). An app without that consent does not get an error it can report: the
+// open() call simply never returns, which is why pi could be running, idle and
+// silent while the window showed 未连接.
+var protectedFolders = []string{"Desktop", "Documents", "Downloads"}
+
+// folderAccess reports whether this app may read dir, and whether the answer is
+// still pending (macOS is showing its consent dialog, or waiting to). It never
+// blocks for longer than wait.
+func folderAccess(dir string, wait time.Duration) (allowed, pending bool) {
+	if dir == "" {
+		return true, false
+	}
+	done := make(chan error, 1)
+	go func() {
+		_, err := os.ReadDir(dir)
+		done <- err
+	}()
+	select {
+	case err := <-done:
+		if err == nil {
+			return true, false
+		}
+		return false, false
+	case <-time.After(wait):
+		return false, true
+	}
+}
+
+// insideProtectedFolder reports whether dir sits in one of the guarded folders,
+// so a hang can be explained instead of merely reported.
+func insideProtectedFolder(dir string) bool {
+	home, err := os.UserHomeDir()
+	if err != nil {
+		return false
+	}
+	rel, err := filepath.Rel(home, dir)
+	if err != nil || strings.HasPrefix(rel, "..") {
+		return false
+	}
+	first := strings.Split(rel, string(filepath.Separator))[0]
+	for _, name := range protectedFolders {
+		if first == name {
+			return true
+		}
+	}
+	return false
+}
+
+// permissionHint is the sentence for a folder macOS will not open yet.
+func permissionHint(dir string) string {
+	return "macOS 还没允许 pigo 访问 " + dir + "：打开「系统设置 → 隐私与安全性 → 文件与文件夹」，" +
+		"勾选 pigo 的「桌面文件夹」（或把项目放到 ~/code 之类不受保护的目录），然后点「重连」。"
+}
+
+// runtimeReady reports whether a child can be started at all.
+func (s *appState) runtimeReady() bool {
+	if s.piPath != "" {
+		return true
+	}
+	return s.nodePath != "" && s.bundle != ""
+}
+
+// agentOptions is the one place that decides how the child is started: the
+// user's pi when we have one, else node plus the bundled RPC bundle.
+func (s *appState) agentOptions(cwd, sessionPath string) agent.Options {
+	opts := agent.Options{
+		Cwd:         cwd,
+		AgentDir:    s.agentDir,
+		SessionPath: sessionPath,
+		LogPath:     filepath.Join(s.agentDir, "pigo", "agent.log"),
+		NoMCP:       s.noMCP.GetUntracked(),
+	}
+	if s.piPath != "" {
+		opts.PiPath = s.piPath
+		return opts
+	}
+	opts.NodePath = s.nodePath
+	opts.RpcBundle = s.bundle
+	return opts
+}
+
+// useBundledRuntime is the setup screen's escape hatch: the user has no usable
+// pi, but the app can still run the bundled RPC bundle on Node.
+func (s *appState) useBundledRuntime() {
+	s.cx.Post(func() {
+		s.useBundled = true
+		s.piSetup.Set("")
+		s.status.Set("改用内置 pi，正在检测 Node…")
+	})
+	go s.bootstrapBundled()
+}
+
+// recheckRuntime is the setup screen's "重新检测" button: pi may have been
+// installed in another window since the app started.
+func (s *appState) recheckRuntime() {
+	s.cx.Post(func() {
+		s.useBundled = false
+		s.piSetup.Set("")
+		s.status.Set("正在重新检测 pi…")
+	})
+	go s.bootstrapNode()
+}
+
+// bootstrapNode picks how to reach pi's RPC. The user's own pi comes first —
+// it carries this machine's models, extensions, skills and trust — and the
+// bundled RPC bundle with a Node runtime is the fallback. When neither is
+// available the window shows the setup screen instead of a dead chat.
 func (s *appState) bootstrapNode() {
+	if s.useBundled {
+		s.bootstrapBundled()
+		return
+	}
+	pi := agent.DiscoverPi()
+	if pi == "" {
+		s.piSetup.Set(piSetupMissing)
+		s.cx.Post(func() {
+			s.nodeStatus.Set("未找到 pi")
+			s.nodeReady.Set(false)
+		})
+		return
+	}
+	version, err := agent.ReadPiVersion(pi)
+	if err != nil {
+		s.logAgent("pi version unreadable pi=%s err=%v", pi, err)
+		s.piSetup.Set(piSetupUnreadable)
+		s.cx.Post(func() {
+			s.nodeStatus.Set("无法读取 pi 版本")
+			s.nodeReady.Set(false)
+		})
+		return
+	}
+	if !version.Supported() {
+		s.logAgent("pi unsupported pi=%s version=%s", pi, version)
+		if version.Major > agent.MinPiMajor {
+			s.piSetup.Set(piSetupNew)
+		} else {
+			s.piSetup.Set(piSetupOld)
+		}
+		s.cx.Post(func() {
+			s.nodeStatus.Set("pi " + version.String() + " 不兼容")
+			s.nodeReady.Set(false)
+		})
+		return
+	}
+	s.piPath = pi
+	s.piVersion = version.String()
+	s.piSetup.Set("")
+	s.cx.Post(func() {
+		s.nodeStatus.Set("pi " + version.String())
+		s.nodeReady.Set(true)
+		s.lastDisconnect = ""
+	})
+	s.logAgent("runtime pi=%s version=%s", pi, version)
+	s.connect("")
+}
+
+// bootstrapBundled starts the bundled RPC bundle: a system Node ≥ 22, else the
+// official tarball downloaded into the agent directory.
+func (s *appState) bootstrapBundled() {
 	set := func(status string, ready bool) {
 		s.cx.Post(func() {
 			s.nodeStatus.Set(status)
 			s.nodeReady.Set(ready)
 		})
 	}
+	s.piPath, s.piVersion = "", ""
 	if s.nodeBundled && s.nodePath != "" {
 		set("内置 Node · "+filepath.Base(filepath.Dir(s.nodePath)), true)
 		s.connect("")
@@ -2590,7 +2775,7 @@ func (s *appState) reconnect() {
 	// First launch with no usable Node: there is no child to restart, so 重连
 	// has to mean "try the runtime again" — otherwise a download that failed
 	// once (offline airport wifi) leaves the window dead to every press.
-	if s.nodePath == "" {
+	if s.nodePath == "" && s.piPath == "" {
 		go s.bootstrapNode()
 		return
 	}

@@ -3,9 +3,12 @@
 把 [pi](https://github.com/earendil-works/pi) 这个命令行编码 agent 装进一个真正的桌面窗口：
 会话、对话流、文件树、Git 审阅、终端、子代理、MCP 全在一处，不用开浏览器，也不用记 CLI 参数。
 
-Go + [NSGo](https://github.com/oneo-me/nsgo) 写成，单进程壳子 + 一个 `node` RPC 子进程（pi 本体），
-两者用 JSONL 走 stdin/stdout 通信。**安装包里不带 node**：优先用系统 Node ≥ 22，没有就在首次启动时
-自动下载官方 tarball 并校验 SHA-256。
+Go + [NSGo](https://github.com/oneo-me/nsgo) 写成，单进程壳子 + 一个 `pi --mode rpc` 子进程，
+两者用 JSONL 走 stdin/stdout 通信。
+
+**优先用你自己装的 pi**（`PI_EXECUTABLE` → `PATH` → 登录 shell），跑的就是终端里那套模型、扩展、
+技能、会话和信任记录。没装 pi 时窗口给一张安装卡片（命令可复制、「重新检测」），也可以改用随包
+内置的 pi RPC bundle：那一路才需要 Node ≥ 22，没有就在首次启动时自动下载官方 tarball。
 
 ---
 
@@ -40,8 +43,9 @@ Go + [NSGo](https://github.com/oneo-me/nsgo) 写成，单进程壳子 + 一个 `
 
 | | 要求 |
 |---|---|
-| 运行 | 系统 Node ≥ 22（没有则首次启动自动下载到 `~/.pi/agent/pigo/node/`） |
-| 运行 | pi 的 RPC bundle（构建时由 `scripts/bundle-rpc.sh` 从已安装的 pi 拷贝进包内） |
+| 运行（首选） | 已安装 **pi 1.4+**（`npm i -g @earendil-works/pi-coding-agent`）；版本读不出来或主版本不符会在窗口里说明 |
+| 运行（备选） | 不装 pi 时用内置 RPC bundle：需要系统 Node ≥ 22，没有则自动下载到 `~/.pi/agent/pigo/node/` |
+| macOS 权限 | 项目放在「桌面 / 文稿 / 下载」时，系统会要求授权（TCC）。没授权时子进程会**卡住**而不是报错，窗口会直接告诉你点哪里 |
 | 构建 | Go 1.27+、NSGo（作为 Go tool 引入，见 `go.mod` 的 `tool` 指令） |
 | 打包 Windows 安装器 | `makensis`（`brew install makensis`；没有时只产出免安装 exe） |
 
@@ -92,6 +96,12 @@ locales/                       中英文文案（en 为源语言）
 
 ## 实现要点
 
+- **先找用户的 pi**：`internal/agent/pi.go` 按 `PI_EXECUTABLE` → `PATH` → 登录 shell 的顺序找 `pi`，
+  读 `pi --version` 判断能不能驱动（1.4+ 同主版本），并把 pi 所在目录放到子进程 PATH 首位
+  （pi 是 `#!/usr/bin/env node` 脚本，nvm / `~/.local` 都靠这个）。
+- **macOS 文件夹授权**：桌面/文稿/下载受 TCC 保护，未授权时 `open()` 不返回 —— pi 起来但一句话不说，
+  看起来就是断连。`connectWith` 先探一次目录，3 秒没回就给出「打开隐私设置」和具体勾选项，
+  而不是干等 24 秒后报超时。
 - **JSONL 边界**：只有 stdout 被切帧解析，stderr 只进日志不参与协议，异常时日志里有退出原因。
 - **子进程即会话**：切会话、换模型、改工具集合都换一个进程，避免半截状态。
 - **EPIPE 保护**：父进程关闭管道时 pi 仍有帧在飞，Node 会因未处理的 `error` 事件崩溃。

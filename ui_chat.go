@@ -59,7 +59,17 @@ func (s *appState) chatView() core.Node {
 					core.Show{When: func() bool { return len(turns()) == 0 && s.transcriptLoading.Get() }, Then: func(*core.Scope) core.Node {
 						return ui.Skeleton{Lines: 6, TestID: "transcript-loading", Style: core.Style{Padding: core.All(12), MaxWidth: core.Pt(chat.ContentWidth)}}
 					}},
-					core.Show{When: func() bool { return len(turns()) == 0 && !s.transcriptLoading.Get() }, Then: s.emptyConversation},
+					core.Dynamic(func(*core.Scope) core.Node {
+						// A window with no usable pi says what to install
+						// instead of offering a composer that cannot send.
+						if setup := s.piSetup.Get(); setup != "" {
+							return s.piSetupCard()
+						}
+						if len(turns()) == 0 && !s.transcriptLoading.Get() {
+							return s.emptyConversation(nil)
+						}
+						return nil
+					}),
 					s.autoLoadEarlier(),
 					s.loadEarlier(),
 				},
@@ -630,7 +640,7 @@ func (s *appState) emptyConversation(*core.Scope) core.Node {
 		Style: core.Style{AlignItems: core.AlignCenter, Gap: 10},
 		Children: []core.Node{
 			ui.Icon(lucide.Sparkles, 28, s.colors.Accent),
-			core.Text{Content: "PI WEB NATIVE", Style: core.Style{FontSize: fontMeta, FontWeight: core.FontWeightSemibold, LetterSpacing: 0.8, Color: s.colors.Muted()}},
+			core.Text{Content: "PIGO", Style: core.Style{FontSize: fontMeta, FontWeight: core.FontWeightSemibold, LetterSpacing: 0.8, Color: s.colors.Muted()}},
 			core.Text{Content: emptyChatHint, Style: core.Style{FontSize: fontLabel, LineHeight: 21, TextAlign: core.TextAlignCenter, Color: s.colors.Muted()}},
 		},
 	}

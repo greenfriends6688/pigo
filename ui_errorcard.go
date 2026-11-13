@@ -80,6 +80,14 @@ func (s *appState) disconnectCard() core.Node {
 					}, MaxLines: 2,
 						Style: core.Style{FontSize: 10.5, Color: colors.Muted()}},
 				}},
+				// A folder macOS will not open is fixed in System Settings, not in
+				// this window: put the pane one press away.
+				core.Show{When: func() bool { return strings.Contains(s.lastDisconnect, "隐私与安全性") }, Then: func(*core.Scope) core.Node {
+					return ui.Button{Text: "打开隐私设置", Variant: ui.ButtonSecondary, Size: ui.SizeSmall, TestID: "disconnect-privacy",
+						OnPress: func() {
+							s.cx.OpenURL("x-apple.systempreferences:com.apple.preference.security?Privacy_FilesAndFolders", func(bool) {})
+						}}
+				}},
 				ui.Button{Text: "查看日志", Variant: ui.ButtonGhost, Size: ui.SizeSmall, TestID: "disconnect-log",
 					OnPress: func() { s.openExternal(s.agentLogPath(), "text/plain") }},
 				ui.Button{Text: "重连", Variant: ui.ButtonSecondary, Size: ui.SizeSmall, TestID: "disconnect-reconnect",

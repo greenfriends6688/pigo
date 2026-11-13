@@ -16,6 +16,10 @@ import (
 // Options configures the RPC child process. NodePath/RpcBundle are resolved
 // when empty. stderr is written only to LogPath and is never parsed.
 type Options struct {
+	// PiPath is the user's own pi executable. When set the child is
+	// `pi --mode rpc ...` — the pi with this machine's models, extensions and
+	// sessions — and NodePath/RpcBundle are not used.
+	PiPath                             string
 	NodePath, RpcBundle, Cwd, AgentDir string
 	SessionPath, SessionID, ForkID     string
 	Tools, ExcludeTools                string
@@ -102,7 +106,14 @@ func NewStdioTransport(opts Options) (Transport, error) {
 	if bundle == "" {
 		bundle = ResolveBundle("")
 	}
-	if bundle == "" {
+	// Two ways to reach pi's RPC: the user's own pi, or the bundled copy of
+	// its RPC entry that we ship for machines without one.
+	pi, usePi := opts.PiPath, opts.PiPath != ""
+	if usePi {
+		if st, err := os.Stat(pi); err != nil || st.IsDir() {
+			return nil, fmt.Errorf("agent: pi not runnable at %s", pi)
+		}
+	} else if bundle == "" {
 		return nil, errors.New("agent: rpc bundle not found")
 	}
 	agentDir := opts.AgentDir
@@ -117,14 +128,25 @@ func NewStdioTransport(opts Options) (Transport, error) {
 
 	// The EPIPE guard must be registered before the bundle is evaluated, and it
 	// has to cover the npm fallback bundle too, which we never patch.
-	args := guardArgs(bundle)
-	args = append(args, bundle)
-	args = append(args, buildArgs(opts)...)
-	cmd := exec.Command(node, args...)
+	var args []string
+	var cmd *exec.Cmd
+	if usePi {
+		args = buildArgs(opts)
+		cmd = exec.Command(pi, args...)
+		// pi is a `#!/usr/bin/env node` script: the ::env lookup needs the
+		// directory holding pi (where nvm and ~/.local keep node) on PATH.
+		cmd.Env = PathWithDir(pi)
+	} else {
+		args = guardArgs(bundle)
+		args = append(args, bundle)
+		args = append(args, buildArgs(opts)...)
+		cmd = exec.Command(node, args...)
+		cmd.Env = os.Environ()
+	}
 	if opts.Cwd != "" {
 		cmd.Dir = opts.Cwd
 	}
-	cmd.Env = append(os.Environ(), "PI_CODING_AGENT_DIR="+agentDir)
+	cmd.Env = append(cmd.Env, "PI_CODING_AGENT_DIR="+agentDir)
 	setProcessGroup(cmd)
 
 	var logFile *os.File
@@ -182,7 +204,11 @@ func NewStdioTransport(opts Options) (Transport, error) {
 		stopping: make(chan struct{}),
 		stderr:   tail,
 	}
-	t.logf("spawn pid=%d cwd=%s node=%s args=%v", t.pid, opts.Cwd, node, args)
+	if usePi {
+		t.logf("spawn pid=%d cwd=%s pi=%s args=%v PATH=%q", t.pid, opts.Cwd, pi, args, os.Getenv("PATH"))
+	} else {
+		t.logf("spawn pid=%d cwd=%s node=%s args=%v", t.pid, opts.Cwd, node, args)
+	}
 	go t.readPump()
 	return t, nil
 }
