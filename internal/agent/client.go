@@ -92,6 +92,9 @@ func (c *Client) Send(cmd Command) error {
 	return c.t.Send(cloneCommand(cmd))
 }
 
+// StderrTail is what the child last wrote to stderr.
+func (c *Client) StderrTail() string { return c.t.StderrTail() }
+
 // Done is closed when the client disconnects or is closed.
 func (c *Client) Done() <-chan struct{} { return c.disconnected }
 

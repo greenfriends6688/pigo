@@ -511,6 +511,10 @@ type appState struct {
 	// a single window-wide value painted the previous session's duration
 	// onto whichever session was opened next.
 	lastElapsedBySession map[string]time.Duration
+	// connecting is true from the moment a spawn is attempted until the child
+	// answers get_state. Without it the window showed 未连接 for the whole
+	// start-up, which is indistinguishable from a broken link.
+	connecting bool
 	// lastDisconnect is what the child said just before it went away. The
 	// card shows it instead of pointing at a log file: a pi that dies on a
 	// broken extension writes the reason to stderr and nowhere else.
@@ -896,6 +900,12 @@ func newState(cx *core.Scope) *appState {
 	s.bootstrapNode()
 	return s
 }
+
+// readyWait bounds how long a freshly spawned pi gets to answer get_state.
+// It needs about a second and a half on an idle machine, and up to several
+// while MCP servers start, but a child that passed this without a word is not
+// going to answer at all.
+const readyWait = 12 * time.Second
 
 const emptyChatHint = "选择项目，输入消息开始。@ 引用文件，/ 打开命令，⌘K 打开命令面板。"
 
@@ -1440,8 +1450,35 @@ func (s *appState) connectWith(sessionPath, keySuffix, tools string, noTools ...
 				s.handleDisconnect(h, err)
 			}
 		}
-		h, err := s.pool.Acquire(key, opts, onEvent, onDisconnect)
+		s.logAgent("connect start key=%s cwd=%s node=%s", key, cwd, s.nodePath)
+		s.cx.Post(func() { s.connecting = true })
+		// A child that starts but never answers is what "未连接" usually was: pi
+		// came up, a start-up step (an MCP server, an extension) never settled,
+		// and nothing was ever written back. Probing with get_state turns that
+		// into a timed failure we can retry instead of a window that sits dead.
+		probe := func() (*agent.SessionHandle, *agent.Frame, error) {
+			h, err := s.pool.Acquire(key, opts, onEvent, onDisconnect)
+			if err != nil {
+				return nil, nil, err
+			}
+			ctx, cancel := context.WithTimeout(context.Background(), readyWait)
+			defer cancel()
+			resp, err := h.Client.Call(ctx, agent.Command{"type": agent.CmdGetState})
+			return h, resp, err
+		}
+		h, resp, err := probe()
 		if err != nil {
+			s.logAgent("ready failed key=%s err=%v; respawning once", key, err)
+			s.pool.Drop(key)
+			// Frames from the abandoned child must not land in the new one's
+			// transcript.
+			pendingMu.Lock()
+			pendingFrames = nil
+			pendingMu.Unlock()
+			h, resp, err = probe()
+		}
+		if err != nil {
+			s.logAgent("connect failed key=%s err=%v", key, err)
 			s.cx.Post(func() {
 				if s.selected.GetUntracked() != sessionPath {
 					return
@@ -1449,6 +1486,8 @@ func (s *appState) connectWith(sessionPath, keySuffix, tools string, noTools ...
 				s.connected.Set(false)
 				s.reconnecting.Set(false)
 				s.transcriptLoading.Set(false)
+				s.connecting = false
+				s.lastDisconnect = err.Error()
 				s.status.Set("启动失败：" + err.Error())
 			})
 			return
@@ -1477,6 +1516,7 @@ func (s *appState) connectWith(sessionPath, keySuffix, tools string, noTools ...
 			s.connected.Set(true)
 			s.reconnecting.Set(false)
 			s.transcriptLoading.Set(false)
+			s.connecting = false
 			s.lastDisconnect = ""
 			s.status.Set("已连接")
 			s.selected.Set(sessionPath)
@@ -1491,13 +1531,7 @@ func (s *appState) connectWith(sessionPath, keySuffix, tools string, noTools ...
 		for _, f := range buffered {
 			s.handleFrame(h, f)
 		}
-		ctx, cancel := context.WithTimeout(context.Background(), 25*time.Second)
-		defer cancel()
-		resp, err := h.Client.Call(ctx, agent.Command{"type": agent.CmdGetState})
-		if err != nil {
-			s.cx.Post(func() { s.status.Set("get_state 失败：" + err.Error()) })
-			return
-		}
+		s.logAgent("get_state ok key=%s", key)
 		if !s.isCurrent(h) {
 			return
 		}
@@ -1525,7 +1559,9 @@ func (s *appState) connectWith(sessionPath, keySuffix, tools string, noTools ...
 		// round trips and the catalog can follow behind it. They used to run
 		// ahead of get_messages, which is why the row went blue and the chat
 		// stayed empty for a while.
-		messages, err := h.Client.Call(ctx, agent.Command{"type": agent.CmdGetMessages})
+		msgCtx, msgCancel := context.WithTimeout(context.Background(), 25*time.Second)
+		messages, err := h.Client.Call(msgCtx, agent.Command{"type": agent.CmdGetMessages})
+		msgCancel()
 		if err == nil && messages != nil && len(messages.Data) > 0 {
 			var payload struct {
 				Messages []json.RawMessage `json:"messages"`
@@ -1628,6 +1664,7 @@ func (s *appState) handleDisconnect(h *agent.SessionHandle, err error) {
 		if deliberate {
 			return
 		}
+		s.logAgent("disconnected deliberate=%v err=%v", deliberate, err)
 		detail := "正在自动重连…"
 		if err != nil && !strings.Contains(err.Error(), "EOF") {
 			detail = err.Error() + " · 正在自动重连…"

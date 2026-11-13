@@ -1,8 +1,11 @@
 package main
 
 import (
+	"fmt"
+	"os"
 	"path/filepath"
 	"strings"
+	"time"
 
 	"github.com/oneo-me/nsgo/core"
 	"github.com/oneo-me/nsgo/icons/lucide"
@@ -19,6 +22,24 @@ import (
 // disconnect card can hand it to the system viewer.
 func (s *appState) agentLogPath() string {
 	return filepath.Join(s.agentDir, "pigo", "agent.log")
+}
+
+// logAgent appends one line to the same file the transports write. A window
+// that says 未连接 has to leave a trace: without this the log held the child's
+// spawn and exit but not whether the app ever got a reply, so every report of
+// "it is not connected" ended in guesswork.
+func (s *appState) logAgent(format string, args ...any) {
+	path := s.agentLogPath()
+	if err := os.MkdirAll(filepath.Dir(path), 0o755); err != nil {
+		return
+	}
+	f, err := os.OpenFile(path, os.O_CREATE|os.O_WRONLY|os.O_APPEND, 0o644)
+	if err != nil {
+		return
+	}
+	defer f.Close()
+	line := fmt.Sprintf("[%s] %s\n", time.Now().Format(time.RFC3339), fmt.Sprintf(format, args...))
+	_, _ = f.WriteString(line)
 }
 
 // disconnectCard sits above the composer while the agent link is down: a

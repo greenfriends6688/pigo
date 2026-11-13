@@ -182,7 +182,7 @@ func NewStdioTransport(opts Options) (Transport, error) {
 		stopping: make(chan struct{}),
 		stderr:   tail,
 	}
-	t.logf("spawn pid=%d cwd=%s node=%s bundle=%s", t.pid, opts.Cwd, node, bundle)
+	t.logf("spawn pid=%d cwd=%s node=%s args=%v", t.pid, opts.Cwd, node, args)
 	go t.readPump()
 	return t, nil
 }
@@ -262,6 +262,13 @@ func (t *stdioTransport) readPump() {
 	}
 	t.errMu.Unlock()
 	t.logf("exit pid=%d wait=%v read=%v", t.pid, werr, rerr)
+
+	// pi starts MCP servers and tool shells in its own process group. A pi that
+	// exits without stopping them leaves orphans behind, and the next spawn
+	// hangs while it waits for a server whose port, database or lock an orphan
+	// still holds — which the window showed as 未连接 with pi running and idle.
+	// Sweeping the group costs one signal when there is nothing left.
+	terminateGroup(t.pid)
 
 	close(t.frames)
 	close(t.done)

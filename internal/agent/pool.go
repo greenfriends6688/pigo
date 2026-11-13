@@ -171,6 +171,19 @@ func (p *Pool) Release(key string) {
 	p.mu.Unlock()
 }
 
+// Drop closes key's session and forgets it. A child that came up but never
+// answered has to go: keeping it warm would hand the same dead process to the
+// next switch.
+func (p *Pool) Drop(key string) {
+	p.mu.Lock()
+	e := p.entries[key]
+	delete(p.entries, key)
+	p.mu.Unlock()
+	if e != nil {
+		p.closeEntry(e)
+	}
+}
+
 // Touch refreshes key's LRU rank and, when idle, its idle deadline.
 func (p *Pool) Touch(key string) {
 	p.mu.Lock()

@@ -188,7 +188,16 @@ func (s *appState) capsulePills(cx *core.Scope) []core.Node {
 	// the automatic restart is in flight the pill says so instead of throwing
 	// the same red 未连接 at a child that is already on its way back.
 	if !s.connected.Get() {
-		if !s.nodeReady.Get() {
+		if s.connecting {
+			// A spawn is in flight: the window is starting pi, not sitting
+			// dead, and showing 未连接 here is what made a normal start-up look
+			// like a broken link.
+			pills = append(pills, core.View{TestID: "capsule-connecting", Style: capsuleStyle(colors),
+				Children: []core.Node{
+					ui.Icon(lucide.LoaderCircle, 11, colors.Accent),
+					core.Text{Content: "连接中", MaxLines: 1, Style: capsuleText(colors)},
+				}})
+		} else if !s.nodeReady.Get() {
 			// No runtime yet: the first launch is downloading Node, which looks
 			// exactly like a dropped link. Say what it is doing and keep the
 			// retry next to it.
