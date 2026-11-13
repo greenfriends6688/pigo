@@ -12,9 +12,9 @@ import (
 	"github.com/oneo-me/nsgo/ui/commitgraph"
 	uidiff "github.com/oneo-me/nsgo/ui/diff"
 
-	"piwebnative/internal/files"
-	"piwebnative/internal/reducer"
-	"piwebnative/internal/textdiff"
+	"pigo/internal/files"
+	"pigo/internal/reducer"
+	"pigo/internal/textdiff"
 )
 
 // reviewItem is a flat row of the review tab: a section heading or one

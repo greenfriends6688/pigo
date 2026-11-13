@@ -64,7 +64,7 @@ func platformNotify(title, body string) {
 	content.Send(sel("setBody:"), nsString(body))
 	content.Send(sel("setSound:"), objc.ID(objc.GetClass("UNNotificationSound")).Send(sel("defaultSound")))
 	request := objc.ID(objc.GetClass("UNNotificationRequest")).Send(sel("requestWithIdentifier:content:trigger:"),
-		nsString("pi-web-native"), content, objc.ID(0))
+		nsString("pigo"), content, objc.ID(0))
 	notifyCenter.Send(sel("addNotificationRequest:withCompletionHandler:"), request, objc.ID(0))
 }
 

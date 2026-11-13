@@ -10,7 +10,7 @@ import (
 	"github.com/oneo-me/nsgo/core"
 	"github.com/oneo-me/nsgo/nsgotest"
 
-	"piwebnative/internal/reducer"
+	"pigo/internal/reducer"
 )
 
 // loadHistory reads testdata/get_messages.json, which is a real session's

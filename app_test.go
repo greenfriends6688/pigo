@@ -13,7 +13,7 @@ import (
 	"github.com/oneo-me/nsgo/core"
 	"github.com/oneo-me/nsgo/nsgotest"
 
-	"piwebnative/internal/resources"
+	"pigo/internal/resources"
 )
 
 func TestMain(m *testing.M) { nsgotest.Main(m) }
@@ -30,7 +30,7 @@ func isolatedApp(t *testing.T) *nsgotest.App {
 // test can put sessions in it before the window scans.
 func isolatedAppAt(t *testing.T, agentDir string) *nsgotest.App {
 	t.Helper()
-	t.Setenv("PIWEB_NATIVE_NO_AGENT", "1")
+	t.Setenv("PIGO_NO_AGENT", "1")
 	t.Setenv("PI_CODING_AGENT_DIR", agentDir)
 	return nsgotest.Start(t, Root, nsgotest.Size(1200, 800))
 }
@@ -799,7 +799,7 @@ func TestTrustGateForProjectConfig(t *testing.T) {
 		t.Fatal(err)
 	}
 	t.Chdir(dir)
-	t.Setenv("PIWEB_NATIVE_TRUST_GATE", "1")
+	t.Setenv("PIGO_TRUST_GATE", "1")
 	agentDir := t.TempDir()
 	app := isolatedAppAt(t, agentDir)
 	app.Press("id:new-session")

@@ -12,7 +12,7 @@ import (
 // file) and runs off the UI thread; a build without the widget extension just
 // reports ErrNoWidgets, which is not an error worth showing.
 func (s *appState) updateWidgets() {
-	title, project := "Pi Web Native", "选择项目"
+	title, project := "pigo", "选择项目"
 	if sel := s.selected.GetUntracked(); sel != "" {
 		for _, r := range s.rows.GetUntracked() {
 			if r.ID == sel {

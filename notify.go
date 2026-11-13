@@ -8,12 +8,12 @@ import (
 
 	"github.com/oneo-me/nsgo/ui"
 
-	"piwebnative/internal/reducer"
+	"pigo/internal/reducer"
 )
 
 // notifyDesktop shows the platform's own notification when a turn finishes.
 func notifyDesktop(title, body string) {
-	if os.Getenv("PIWEB_NATIVE_NO_AGENT") == "1" {
+	if os.Getenv("PIGO_NO_AGENT") == "1" {
 		return
 	}
 	platformNotify(title, body)
@@ -22,7 +22,7 @@ func notifyDesktop(title, body string) {
 // notifySound plays the system alert tone. Start returns at once, so the UI
 // thread never waits for afplay; other targets and test mode stay silent.
 func notifySound() {
-	if runtime.GOOS != "darwin" || os.Getenv("PIWEB_NATIVE_NO_AGENT") == "1" {
+	if runtime.GOOS != "darwin" || os.Getenv("PIGO_NO_AGENT") == "1" {
 		return
 	}
 	_ = exec.Command("afplay", "/System/Library/Sounds/Glass.aiff").Start()
@@ -37,7 +37,7 @@ func (s *appState) notifyTurnDone(snap reducer.Snapshot) {
 		return
 	}
 	if s.notifyDone.GetUntracked() {
-		notifyDesktop("Pi Web · 回答完成", prompt)
+		notifyDesktop("pigo · 回答完成", prompt)
 	}
 	if s.notifySound.GetUntracked() {
 		notifySound()

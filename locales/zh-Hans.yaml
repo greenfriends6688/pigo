@@ -11,7 +11,7 @@ commonPlugins: "插件"
 commonSettings: "设置"
 settingsTitle: "设置"
 settingsGeneral: "常规"
-settingsGeneralDescription: "选择 Pi Web 的显示方式和界面语言。"
+settingsGeneralDescription: "选择 pigo 的显示方式和界面语言。"
 settingsAppearance: "外观"
 settingsAppearanceDescription: "选择浅色或深色主题，也可以跟随系统设置。"
 settingsChatContentWidth: "聊天内容宽度"
@@ -143,8 +143,8 @@ configExamples: "示例"
 configName: "名称"
 configSaveTo: "保存到"
 agentsClose: "关闭"
-agentsBuiltInTitle: "启用 Pi Web 内置子代理"
-agentsBuiltInDescription: "提供 Pi Web 集成的 Agent 工具，并停用发生冲突的 pi-subagents 扩展。"
+agentsBuiltInTitle: "启用 pigo 内置子代理"
+agentsBuiltInDescription: "提供 pigo 集成的 Agent 工具，并停用发生冲突的 pi-subagents 扩展。"
 agentsReloadRequired: "重新加载当前会话后生效。"
 agentsReloadSession: "重新加载会话"
 agentsMaxConcurrent: "并发子代理数"
@@ -290,7 +290,7 @@ agentswitcherStatusFailed: "失败"
 agentswitcherStatusAborted: "已中止"
 agentswitcherStatusInterrupted: "已中断"
 appupdateReleaseNotes:
-  message: "Pi Web v{version} 可用，查看更新说明"
+  message: "pigo v{version} 可用，查看更新说明"
   placeholders:
     version: {type: String}
 sidebarHide: "隐藏侧边栏"
@@ -855,7 +855,7 @@ sidebarShowIgnoredFiles: "显示被忽略的文件"
 sidebarOpenInExplorer: "在资源管理器中打开"
 sidebarOpenInFinder: "在访达中打开"
 sidebarOpenInFileManager: "在文件管理器中打开"
-sidebarOpenInExplorerRemoteOnly: "仅在 Pi Web 运行在本机时可用"
+sidebarOpenInExplorerRemoteOnly: "仅在 pigo 运行在本机时可用"
 sidebarOpenInExplorerUnsupported: "当前平台不支持"
 sidebarSearchFiles: "搜索文件"
 sidebarSearchFilesPlaceholder: "搜索文件…"
@@ -905,7 +905,7 @@ sidebarRemoveWorktreeHeading:
   placeholders:
     name: {type: String}
 sidebarBrandLabel:
-  message: "Pi Web，版本：web {app}，pi {pi}"
+  message: "pigo，版本：web {app}，pi {pi}"
   placeholders:
     app: {type: String}
     pi: {type: String}
@@ -1086,11 +1086,11 @@ filesOutsideLink:
 filesOutsideLinkEncloses: "该文件夹包含当前项目或你的主目录。"
 filesAllowOutsideLink: "允许浏览"
 filesAllowOutsideLinkTitle:
-  message: "在 Pi Web 重启前允许浏览 {target}，与将其选为项目目录相同"
+  message: "在 pigo 重启前允许浏览 {target}，与将其选为项目目录相同"
   placeholders:
     target: {type: String}
 filesAllowEnclosingLinkConfirm:
-  message: "{target} 包含当前项目或你的主目录。允许后，在 Pi Web 重启前可浏览其下的所有内容。是否继续？"
+  message: "{target} 包含当前项目或你的主目录。允许后，在 pigo 重启前可浏览其下的所有内容。是否继续？"
   placeholders:
     target: {type: String}
 filesDismissError: "关闭错误"
@@ -1543,12 +1543,12 @@ trustSkillsNotLoaded: "此项目尚未受信任，项目技能未加载。"
 trustPluginsNotLoaded: "此项目尚未受信任，项目插件未加载。"
 trustProjectScopeUnavailable: "项目资源未加载时，无法安装到项目范围。"
 trustMcpTitle: ".pi/mcp.json 中的 MCP 服务器"
-trustMcpIntro: "信任此项目后，这些服务器即可在 Pi Web 和 pi CLI 中连接，两者共用这一信任决定。stdio 服务器会在运行 Pi Web 的计算机上执行其命令。"
+trustMcpIntro: "信任此项目后，这些服务器即可在 pigo 和 pi CLI 中连接，两者共用这一信任决定。stdio 服务器会在运行 pigo 的计算机上执行其命令。"
 trustMcpLoading: "正在读取 .pi/mcp.json…"
 trustMcpLoadFailed: "无法列出此项目的 MCP 服务器。"
 trustMcpTimedOut: "列出此项目的 MCP 服务器耗时过长。"
 trustMcpNone: "该文件未声明任何服务器。"
-trustMcpUnchecked: "Pi Web 无法加载 SDK 的 MCP 校验，以下条目未经校验。"
+trustMcpUnchecked: "pigo 无法加载 SDK 的 MCP 校验，以下条目未经校验。"
 trustMcpCwd:
   message: "工作目录：{path}"
   placeholders:
@@ -1568,7 +1568,7 @@ mcpFieldHeader:
     name: {type: String}
 mcpFieldOauthClientSecret: "oauth.clientSecret"
 mcpServerInvalid: "Pi 拒绝加载此条目，它不会连接："
-mcpServerWebPassword: "引用了 PI_WEB_PASSWORD。Pi Web 会拒绝连接它，但 pi CLI 也会读取此文件；如果 CLI 的运行环境中设置了该变量，它就会把密码传出去："
+mcpServerWebPassword: "引用了 PI_WEB_PASSWORD。pigo 会拒绝连接它，但 pi CLI 也会读取此文件；如果 CLI 的运行环境中设置了该变量，它就会把密码传出去："
 mcpServerDisabled: "已在文件中关闭，不会连接。"
 mcpServerCommandFields: "每次连接都会执行 shell 命令："
 mcpServerReplacesGlobal: "此项目受信任时，它会替换你的同名全局服务器。"
@@ -1579,8 +1579,8 @@ mcpServerOverridesGlobal:
 mcpServerOverridesGlobalNothing: "指向你的同名全局服务器，但没有更改 enabled、exposure 或 toolExposure。"
 mcpServerMasked: "疑似密钥的部分已隐藏。"
 mcpServerHiddenCharacters: "包含不可见字符或控制字符，这里以 \\u'{'…'}' 代码显示。"
-mcpServerSendsVariables: "每次连接都会把运行 Pi Web 的计算机上的环境变量发送给此服务器："
-mcpServerPassesVariables: "会把运行 Pi Web 的计算机上的环境变量传给它启动的命令："
+mcpServerSendsVariables: "每次连接都会把运行 pigo 的计算机上的环境变量发送给此服务器："
+mcpServerPassesVariables: "会把运行 pigo 的计算机上的环境变量传给它启动的命令："
 mcpServerVariableIn:
   message: "{field} 中的 {variable}"
   placeholders:
@@ -1590,39 +1590,39 @@ mcpFileProblemUnparsable: "该文件不是有效的 JSON，其中的服务器都
 mcpFileProblemInvalidShape: "该文件不是包含 \"mcpServers\" 对象的对象，其中的服务器都不会加载。"
 mcpFileProblemAutoEnableCodemodeInvalid: "\"autoEnableCodemode\" 必须是 true 或 false；服务器仍会加载。"
 mcpFileProblemLinkDangling: "该文件是指向不存在目标的符号链接，不会从中加载任何服务器。"
-mcpFileProblemLinkOutside: "该文件是指向 Pi Web 可读取文件夹之外的符号链接，因此这里不列出其中的服务器。项目受信任后，Pi 仍会加载它们。"
-mcpFileProblemNotAFile: "该路径不是普通文件，Pi Web 不会读取。"
+mcpFileProblemLinkOutside: "该文件是指向 pigo 可读取文件夹之外的符号链接，因此这里不列出其中的服务器。项目受信任后，Pi 仍会加载它们。"
+mcpFileProblemNotAFile: "该路径不是普通文件，pigo 不会读取。"
 mcpFileProblemTooLarge: "该文件超过 1 MiB，因此这里不列出其中的服务器。项目受信任后，Pi 仍会加载它们。"
 mcpFileProblemTooManyServers: "该文件声明了超过 200 个服务器，因此这里不列出它们。项目受信任后，Pi 仍会加载它们。"
-mcpFileProblemUnreadable: "Pi Web 无法读取该文件。"
+mcpFileProblemUnreadable: "pigo 无法读取该文件。"
 mcpReasonCwdInvalid: "未提供项目文件夹，或它不是绝对路径。"
-mcpReasonCwdDenied: "Pi Web 无权读取此文件夹。"
+mcpReasonCwdDenied: "pigo 无权读取此文件夹。"
 mcpReasonCwdNotDirectory: "项目文件夹已不存在或不是文件夹。"
-mcpReasonRequestDenied: "该请求并非来自此页面，Pi Web 已拒绝。"
-mcpReasonContentType: "该请求不是以 JSON 发送的，Pi Web 已拒绝。"
-mcpReasonTrustUnreadable: "Pi Web 无法读取信任记录（trust.json），或它正被其他程序锁定。"
+mcpReasonRequestDenied: "该请求并非来自此页面，pigo 已拒绝。"
+mcpReasonContentType: "该请求不是以 JSON 发送的，pigo 已拒绝。"
+mcpReasonTrustUnreadable: "pigo 无法读取信任记录（trust.json），或它正被其他程序锁定。"
 mcpReasonTrustNotRequired: "此项目已没有需要信任的资源。"
 mcpReasonSessionBusy: "请等此文件夹中正在运行的会话结束后，再信任此项目。"
-mcpReasonInvalidRequest: "该请求没有要求 Pi Web 能够进行的更改，Pi Web 已拒绝。"
-mcpReasonMcpOff: "此 Pi Web 服务器上的 MCP 已关闭，因此不会更改任何服务器。"
-mcpReasonProjectUntrusted: "此项目未受信任，Pi Web 不会更改它的 .pi/mcp.json。"
-mcpReasonUnparsable: "该文件不是有效的 JSON，Pi Web 没有改动它。"
-mcpReasonInvalidShape: "该文件不是包含 \"mcpServers\" 对象的对象，Pi Web 没有改动它。"
+mcpReasonInvalidRequest: "该请求没有要求 pigo 能够进行的更改，pigo 已拒绝。"
+mcpReasonMcpOff: "此 pigo 服务器上的 MCP 已关闭，因此不会更改任何服务器。"
+mcpReasonProjectUntrusted: "此项目未受信任，pigo 不会更改它的 .pi/mcp.json。"
+mcpReasonUnparsable: "该文件不是有效的 JSON，pigo 没有改动它。"
+mcpReasonInvalidShape: "该文件不是包含 \"mcpServers\" 对象的对象，pigo 没有改动它。"
 mcpReasonServerMissing: "该文件已不再定义此服务器。"
 mcpReasonEntryNotObject: "此条目不是对象，因此无法开启或关闭。请将其移除，或在文件中修正。"
-mcpReasonWebPassword: "它引用了 PI_WEB_PASSWORD，因此 Pi Web 不会开启它。"
+mcpReasonWebPassword: "它引用了 PI_WEB_PASSWORD，因此 pigo 不会开启它。"
 mcpReasonUndoUnavailable: "这次移除已无法撤销。"
 mcpReasonUndoNameTaken: "该文件又定义了同名的服务器，因此没有撤销这次移除。"
 mcpReasonNameTaken: "该文件已定义了同名的服务器。"
-mcpReasonLinkDangling: "该文件是指向不存在目标的符号链接，Pi Web 不会写入它。"
-mcpReasonLinkOutside: "该文件是指向 Pi Web 可读取的文件夹之外的符号链接，Pi Web 不会写入它。"
-mcpReasonNotAFile: "该路径不是普通文件，Pi Web 不会写入它。"
-mcpReasonTooLarge: "该文件超过 1 MiB，Pi Web 不会写入它。"
-mcpReasonTooManyServers: "该文件声明了超过 200 个服务器，Pi Web 不会对其中的条目执行操作。"
+mcpReasonLinkDangling: "该文件是指向不存在目标的符号链接，pigo 不会写入它。"
+mcpReasonLinkOutside: "该文件是指向 pigo 可读取的文件夹之外的符号链接，pigo 不会写入它。"
+mcpReasonNotAFile: "该路径不是普通文件，pigo 不会写入它。"
+mcpReasonTooLarge: "该文件超过 1 MiB，pigo 不会写入它。"
+mcpReasonTooManyServers: "该文件声明了超过 200 个服务器，pigo 不会对其中的条目执行操作。"
 mcpReasonLocked: "另一个程序正在写入该文件，请稍后再试。"
-mcpReasonServerInvalid: "Pi 拒绝此条目，因此 Pi Web 不会连接它。"
+mcpReasonServerInvalid: "Pi 拒绝此条目，因此 pigo 不会连接它。"
 mcpReasonSignInNotOauth: "此服务器不通过 OAuth 登录：只有没有 Authorization 请求头的 HTTP 服务器才会这样登录。"
-mcpReasonSignInUnknown: "Pi Web 已不再记得这次登录：它已结束一段时间，或者 Pi Web 已重启。"
+mcpReasonSignInUnknown: "pigo 已不再记得这次登录：它已结束一段时间，或者 pigo 已重启。"
 mcpReasonSignInNotWaiting: "这次登录现在没有在等待地址。"
 mcpReasonRedirectInvalid: "这不是一个网址。请从浏览器地址栏复制完整的地址。"
 mcpReasonRedirectStateMismatch: "该地址属于另一次登录。请粘贴这次登录后浏览器最终打开的地址。"
@@ -1632,11 +1632,11 @@ mcpReasonImportFailed: "无法从粘贴的内容中读取服务器。"
 mcpReasonFieldsIncomplete: "有些需要填写的值缺失或无效。"
 mcpReasonNameInvalid: "服务器名称只能使用字母、数字、_ 和 -。"
 mcpReasonSecretGlobalOnly: "该服务器以明文保存了一个机密，因此只会保存在全局 mcp.json 中。"
-mcpReasonHostEnvConfirm: "该服务器会收到运行 Pi Web 的计算机上的变量，请先确认。"
-mcpReasonFolderNotFresh: "此文件夹已经变了：它现在有信任决定，或有需要信任的资源，因此 Pi Web 没有信任它，也没有添加任何内容。"
-mcpReasonTrustTooBroad: "信任此文件夹也会信任其中的各个文件夹，因此 Pi Web 不会自行这样做。"
+mcpReasonHostEnvConfirm: "该服务器会收到运行 pigo 的计算机上的变量，请先确认。"
+mcpReasonFolderNotFresh: "此文件夹已经变了：它现在有信任决定，或有需要信任的资源，因此 pigo 没有信任它，也没有添加任何内容。"
+mcpReasonTrustTooBroad: "信任此文件夹也会信任其中的各个文件夹，因此 pigo 不会自行这样做。"
 mcpLoadFailed: "无法读取 MCP 设置。"
-mcpLoadTimedOut: "Pi Web 没有及时响应。请点“刷新”重试。"
+mcpLoadTimedOut: "pigo 没有及时响应。请点“刷新”重试。"
 mcpProjectNotListed:
   message: "未列出此项目的服务器：{reason}"
   placeholders:
@@ -1670,7 +1670,7 @@ mcpStateShortReplaced: "已替换"
 mcpStateShortOverridden: "已覆盖"
 mcpServerShadowedByProject: "此项目受信任时，项目中的同名服务器会替换这个服务器。"
 mcpServerOverriddenByProject: "此项目受信任时，项目的 .pi/mcp.json 会更改这个服务器的设置。"
-mcpServerUnchecked: "未经校验：Pi Web 无法加载 SDK 的 MCP 校验。"
+mcpServerUnchecked: "未经校验：pigo 无法加载 SDK 的 MCP 校验。"
 mcpDetailDescription: "简介"
 mcpDetailTransport: "传输方式"
 mcpDetailCommand: "命令"
@@ -1707,7 +1707,7 @@ mcpExposureCodemode: "只列出服务器名称和简介，代码模式脚本按�
 mcpExposureDeferred: "工具搜索加载后才声明，不需要代码模式。"
 mcpExposureDirect: "每次请求都带全部工具的完整声明，最占 token。"
 mcpExposureHidden: "已注册但无法调用。"
-mcpExposureSandboxUnavailable: "代码模式无法在此 Pi Web 服务器上运行，因此这些工具改为通过工具搜索调用。"
+mcpExposureSandboxUnavailable: "代码模式无法在此 pigo 服务器上运行，因此这些工具改为通过工具搜索调用。"
 mcpExposureBuiltinDisabled: "-builtin:codemode 关闭了代码模式，因此只有在工具搜索开启时才能调用这些工具。"
 mcpExposureAutoEnableOff:
   message: "{path} 中的 autoEnableCodemode 为 false，因此会话不会为这些工具开启代码模式：只有代码模式设为“始终开启”或工具搜索开启时才能调用它们。"
@@ -1736,8 +1736,8 @@ mcpEmpty:
     globalPath: {type: String}
 mcpEmptyFileProblem: "无法列出任何服务器：请看下方的文件问题。"
 mcpSelectItem: "选择一个服务器或代码模式。"
-mcpUnavailableOperatorDisabled: "MCP 已关闭：运行 Pi Web 的环境设置了 PI_WEB_DISABLE_MCP。服务器会列出，但没有会话会连接它们。"
-mcpUnavailableInternalsUnavailable: "MCP 已关闭：Pi Web 无法加载 SDK 的 MCP 模块。服务器未经校验地列出，没有会话会连接它们。"
+mcpUnavailableOperatorDisabled: "MCP 已关闭：运行 pigo 的环境设置了 PI_WEB_DISABLE_MCP。服务器会列出，但没有会话会连接它们。"
+mcpUnavailableInternalsUnavailable: "MCP 已关闭：pigo 无法加载 SDK 的 MCP 模块。服务器未经校验地列出，没有会话会连接它们。"
 mcpUnavailableBuiltinDisabled:
   message: "MCP 已关闭：{path} 中的 extensions 设置关闭了 builtin:mcp，没有会话会连接这些服务器。"
   placeholders:
@@ -1752,7 +1752,7 @@ mcpTrustTrustedThrough:
   message: "通过 {path} 受信任：此项目 .pi/mcp.json 中的服务器会连接，它下面的每个文件夹都是如此。"
   placeholders:
     path: {type: String}
-mcpTrustUnreadable: "Pi Web 无法读取信任记录（trust.json），因此暂时把此项目的服务器视为未受信任。"
+mcpTrustUnreadable: "pigo 无法读取信任记录（trust.json），因此暂时把此项目的服务器视为未受信任。"
 mcpTrustTrustButton: "信任项目…"
 mcpFooterFileProblem: "1 个文件问题"
 mcpFooterFileProblems:
@@ -1774,8 +1774,8 @@ mcpCodemodeAlwaysDescription: "会话启动时即开启代码模式。"
 mcpCodemodePreferenceError: "无法读取全局设置文件："
 mcpCodemodeSandbox: "沙箱"
 mcpCodemodeSandboxAvailable: "可用。"
-mcpCodemodeSandboxUnavailable: "无法在此 Pi Web 服务器上运行，因此没有会话提供代码模式："
-mcpCodemodeSandboxNotChecked: "尚未检查：Pi Web 启动后的第一个会话开始时才会运行自检。"
+mcpCodemodeSandboxUnavailable: "无法在此 pigo 服务器上运行，因此没有会话提供代码模式："
+mcpCodemodeSandboxNotChecked: "尚未检查：pigo 启动后的第一个会话开始时才会运行自检。"
 mcpCodemodeBuiltin: "扩展"
 mcpCodemodeBuiltinDisabled:
   message: "已被 {path} 中的 -builtin:codemode 关闭。"
@@ -1791,8 +1791,8 @@ mcpCodemodeAutoEnableOff:
   placeholders:
     path: {type: String}
 mcpCodemodeSaveFailed: "无法保存此选择："
-mcpCodemodeSaveTimedOut: "Pi Web 没有及时响应，此选择可能未保存。"
-mcpCodemodeAlwaysUnavailableSandbox: "“始终开启”不可用：代码模式的沙箱无法在此 Pi Web 服务器上运行。"
+mcpCodemodeSaveTimedOut: "pigo 没有及时响应，此选择可能未保存。"
+mcpCodemodeAlwaysUnavailableSandbox: "“始终开启”不可用：代码模式的沙箱无法在此 pigo 服务器上运行。"
 mcpCodemodeAlwaysUnavailableBuiltin:
   message: "“始终开启”不可用：{path} 中的 -builtin:codemode 关闭了代码模式。"
   placeholders:
@@ -1854,8 +1854,8 @@ mcpCodemodeInlineBudgetProjectOverrideDefault:
     default: {type: String}
 mcpCodemodeInlineBudgetSaveFailed: "无法保存此预算："
 mcpReadOnlyMcpOff: "MCP 关闭期间，无法在此更改服务器。"
-mcpReadOnlyProjectUntrusted: "在此项目受信任之前，Pi Web 不会更改它们。"
-mcpReadOnlyTrustUnreadable: "在能够读取信任记录之前，Pi Web 不会更改它们。"
+mcpReadOnlyProjectUntrusted: "在此项目受信任之前，pigo 不会更改它们。"
+mcpReadOnlyTrustUnreadable: "在能够读取信任记录之前，pigo 不会更改它们。"
 mcpWriteSavedWhileOff: "更改会保存到文件中，但在 builtin:mcp 关闭期间，没有会话会连接这些服务器。"
 mcpServerSwitchOn:
   message: "开启 {name}"
@@ -1883,7 +1883,7 @@ mcpBulkFailed:
     count: {type: int}
     total: {type: int}
 mcpActionFailed: "无法更改该服务器："
-mcpActionTimedOut: "Pi Web 没有及时响应，更改可能未生效。"
+mcpActionTimedOut: "pigo 没有及时响应，更改可能未生效。"
 mcpRemoved:
   message: "已从 {path} 移除 {name}。"
   placeholders:
@@ -1905,20 +1905,20 @@ mcpTestButton: "测试连接"
 mcpTestTesting: "正在测试…"
 mcpTestNever: "尚未测试。"
 mcpTestSerial: "它会执行 shell 命令，因此测试要等其他此类测试结束。"
-mcpTestBlockedMcpOff: "此 Pi Web 服务器上的 MCP 已关闭，因此不会测试任何服务器。"
-mcpTestBlockedProjectUntrusted: "此项目未受信任，因此 Pi Web 不会启动它的服务器。"
-mcpTestBlockedTrustUnreadable: "Pi Web 无法读取信任记录（trust.json），因此不会启动此项目的服务器。"
+mcpTestBlockedMcpOff: "此 pigo 服务器上的 MCP 已关闭，因此不会测试任何服务器。"
+mcpTestBlockedProjectUntrusted: "此项目未受信任，因此 pigo 不会启动它的服务器。"
+mcpTestBlockedTrustUnreadable: "pigo 无法读取信任记录（trust.json），因此不会启动此项目的服务器。"
 mcpTestBlockedInvalid: "Pi 拒绝此条目，因此没有可测试的内容。"
-mcpTestBlockedWebPassword: "它引用了 PI_WEB_PASSWORD，因此 Pi Web 不会连接它。"
+mcpTestBlockedWebPassword: "它引用了 PI_WEB_PASSWORD，因此 pigo 不会连接它。"
 mcpTestRefusedEntryNotObject: "此条目不是对象，因此没有可测试的内容。请在文件中修正。"
-mcpTestRefusedInvalidRequest: "该请求没有指明 Pi Web 能够测试的服务器，Pi Web 已拒绝。"
-mcpTestRefusedUnparsable: "该文件不是有效的 JSON，Pi Web 无法读取此条目进行测试。"
-mcpTestRefusedInvalidShape: "该文件不是包含 \"mcpServers\" 对象的对象，Pi Web 无法读取此条目进行测试。"
-mcpTestRefusedLinkDangling: "该文件是指向不存在目标的符号链接，Pi Web 无法读取此条目进行测试。"
-mcpTestRefusedLinkOutside: "该文件是指向 Pi Web 可读取的文件夹之外的符号链接，Pi Web 不会测试其中的服务器。"
-mcpTestRefusedNotAFile: "该路径不是普通文件，Pi Web 不会读取它来测试此条目。"
-mcpTestRefusedTooLarge: "该文件超过 1 MiB，Pi Web 不会读取它来测试此条目。"
-mcpTestRefusedTooManyServers: "该文件声明了超过 200 个服务器，Pi Web 不会读取它来测试此条目。"
+mcpTestRefusedInvalidRequest: "该请求没有指明 pigo 能够测试的服务器，pigo 已拒绝。"
+mcpTestRefusedUnparsable: "该文件不是有效的 JSON，pigo 无法读取此条目进行测试。"
+mcpTestRefusedInvalidShape: "该文件不是包含 \"mcpServers\" 对象的对象，pigo 无法读取此条目进行测试。"
+mcpTestRefusedLinkDangling: "该文件是指向不存在目标的符号链接，pigo 无法读取此条目进行测试。"
+mcpTestRefusedLinkOutside: "该文件是指向 pigo 可读取的文件夹之外的符号链接，pigo 不会测试其中的服务器。"
+mcpTestRefusedNotAFile: "该路径不是普通文件，pigo 不会读取它来测试此条目。"
+mcpTestRefusedTooLarge: "该文件超过 1 MiB，pigo 不会读取它来测试此条目。"
+mcpTestRefusedTooManyServers: "该文件声明了超过 200 个服务器，pigo 不会读取它来测试此条目。"
 mcpTestStateConnected: "已连接"
 mcpTestStateNeedsAuth: "需要登录"
 mcpTestStateFailed: "未能连接"
@@ -1939,7 +1939,7 @@ mcpTestSummaryFailed:
     seconds: {type: int}
     time: {type: String}
 mcpTestSummaryTimedOut:
-  message: "它在 {seconds} 秒内没有响应，因此 Pi Web 已停止测试。测试于 {time}。"
+  message: "它在 {seconds} 秒内没有响应，因此 pigo 已停止测试。测试于 {time}。"
   placeholders:
     seconds: {type: int}
     time: {type: String}
@@ -1966,7 +1966,7 @@ mcpTestMoreTools:
     count: {type: int}
 mcpTestQueueTimedOut: "另一个会执行 shell 命令的服务器的测试没有及时完成，因此此测试没有开始。请重试。"
 mcpTestRequestFailed: "无法测试该服务器："
-mcpTestRequestTimedOut: "Pi Web 没有及时响应。测试可能仍会完成，按“刷新”查看结果。"
+mcpTestRequestTimedOut: "pigo 没有及时响应。测试可能仍会完成，按“刷新”查看结果。"
 mcpStateConnecting: "正在会话中连接"
 mcpStateDisconnected: "会话中的连接已断开"
 mcpStateConflict: "名称已被其他扩展占用"
@@ -2028,7 +2028,7 @@ mcpSessionSummaryClosed:
     closedTime: {type: String}
 mcpSessionConflictOwner: "先注册该名称的扩展："
 mcpHostInactive:
-  message: "{path} 中的一个会话不会通过 Pi Web 连接这些服务器：它的 /mcp 命令来自 {owner}，而不是 Pi 内置的 MCP 扩展。那个扩展可能会读取 mcp.json，并以自己的方式连接它们。"
+  message: "{path} 中的一个会话不会通过 pigo 连接这些服务器：它的 /mcp 命令来自 {owner}，而不是 Pi 内置的 MCP 扩展。那个扩展可能会读取 mcp.json，并以自己的方式连接它们。"
   placeholders:
     path: {type: String}
     owner: {type: String}
@@ -2037,7 +2037,7 @@ mcpSignInStarting: "正在开始…"
 mcpSignInCancel: "取消登录"
 mcpSignInCancelling: "正在取消…"
 mcpSignInCancelFailed: "无法取消登录："
-mcpSignInCancelTimedOut: "Pi Web 没有及时响应。登录可能仍在进行；一旦有进展，这里会显示。"
+mcpSignInCancelTimedOut: "pigo 没有及时响应。登录可能仍在进行；一旦有进展，这里会显示。"
 mcpSignInSignOut: "退出登录"
 mcpSignInSigningOut: "正在退出登录…"
 mcpSignInReplaces: "登录可能会替换此服务器已保存的令牌和注册信息。"
@@ -2062,44 +2062,44 @@ mcpSignInPhaseConnecting: "正在检查服务器是否要求登录…"
 mcpSignInPhaseStarting: "正在通过服务器的授权服务器准备登录…"
 mcpSignInPhaseFinishing: "正在完成登录…"
 mcpSignInPhaseNoCancel: "授权服务器已经回应，因此这一步无法再取消。"
-mcpSignInAuthorizeMessage: "打开登录页并批准访问。浏览器回到运行 Pi Web 的计算机后，登录会自动完成。如果浏览器在另一台设备上，或者它最终打开的页面无法加载，请复制该页面的地址并粘贴到这里。"
+mcpSignInAuthorizeMessage: "打开登录页并批准访问。浏览器回到运行 pigo 的计算机后，登录会自动完成。如果浏览器在另一台设备上，或者它最终打开的页面无法加载，请复制该页面的地址并粘贴到这里。"
 mcpSignInAuthorizeLink: "登录页："
 mcpSignInAuthorizeNotALink: "服务器给出的登录页不是网址，因此只以文本显示："
 mcpSignInAuthorizeRedirect:
-  message: "批准后，浏览器会被发送到 {url}，只有运行 Pi Web 的计算机才能打开它。"
+  message: "批准后，浏览器会被发送到 {url}，只有运行 pigo 的计算机才能打开它。"
   placeholders:
     url: {type: String}
-mcpSignInAuthorizeWait: "Pi Web 从登录开始起最多等待 5 分钟。"
+mcpSignInAuthorizeWait: "pigo 从登录开始起最多等待 5 分钟。"
 mcpSignInPasteLabel: "浏览器最终打开的地址"
 mcpSignInPastePlaceholder: "http://127.0.0.1:…/callback?code=…"
 mcpSignInPasteSubmit: "继续"
 mcpSignInPasteChecking: "正在检查…"
 mcpSignInPasteRefused: "该地址无法完成这次登录："
-mcpSignInPasteTimedOut: "Pi Web 没有及时响应。如果它已接收该地址，这里会显示登录的进展。"
+mcpSignInPasteTimedOut: "pigo 没有及时响应。如果它已接收该地址，这里会显示登录的进展。"
 mcpSignInDoneAlready: "已经登录：服务器无需重新登录就连接上了。"
 mcpSignInDoneSignedIn: "已登录。上方的“状态”显示服务器提供的内容。"
 mcpSignInDoneRefreshed: "已使用保存的刷新令牌重新登录，无需浏览器。上方的“状态”显示服务器提供的内容。"
 mcpSignInDoneFailedAfter: "已登录，但之后服务器没有连接成功。上方的“状态”说明了原因。"
-mcpSignInDoneNeedsAuthAfter: "已登录，但 Pi Web 再次连接时，服务器仍要求登录。"
+mcpSignInDoneNeedsAuthAfter: "已登录，但 pigo 再次连接时，服务器仍要求登录。"
 mcpSignInDoneNotConnected: "已登录。按“测试连接”查看服务器提供的内容。"
 mcpSignInCancelled: "已取消登录。"
-mcpSignInExpired: "登录没有在 5 分钟内完成，因此 Pi Web 停止了等待。"
+mcpSignInExpired: "登录没有在 5 分钟内完成，因此 pigo 停止了等待。"
 mcpSignInFailedConnectFailed: "服务器没有连接成功，也没有要求登录，因此没有可登录的内容。上方的“状态”说明了原因。"
 mcpSignInFailedQueueTimedOut: "另一个会执行 shell 命令的服务器的测试没有及时完成，因此登录没有开始。请重试。"
 mcpSignInFailedSignInFailed: "登录失败。"
 mcpSignInFailedInternal: "登录意外失败。"
-mcpSignInGone: "Pi Web 已不再记得这次登录：它已结束一段时间，或者 Pi Web 已重启。按“登录”重新开始。"
+mcpSignInGone: "pigo 已不再记得这次登录：它已结束一段时间，或者 pigo 已重启。按“登录”重新开始。"
 mcpSignInRequestFailed: "无法登录："
-mcpSignInRequestTimedOut: "Pi Web 没有及时响应。再按一次“登录”可查看正在进行的登录。"
+mcpSignInRequestTimedOut: "pigo 没有及时响应。再按一次“登录”可查看正在进行的登录。"
 mcpSignInSignOutFailed: "无法退出登录："
 mcpSignInSignedOutDone: "已退出登录：为该服务器保存的令牌已删除。"
 mcpSignInSignedOutNothing: "该服务器没有保存任何内容，因此无需退出登录。"
-mcpSignInBlockedMcpOff: "此 Pi Web 服务器上的 MCP 已关闭，因此不会登录任何服务器。"
-mcpSignInBlockedProjectUntrusted: "此项目未受信任，因此 Pi Web 不会登录或退出它的服务器。"
-mcpSignInBlockedTrustUnreadable: "Pi Web 无法读取信任存储（trust.json），因此不会登录或退出此项目的服务器。"
+mcpSignInBlockedMcpOff: "此 pigo 服务器上的 MCP 已关闭，因此不会登录任何服务器。"
+mcpSignInBlockedProjectUntrusted: "此项目未受信任，因此 pigo 不会登录或退出它的服务器。"
+mcpSignInBlockedTrustUnreadable: "pigo 无法读取信任存储（trust.json），因此不会登录或退出此项目的服务器。"
 mcpSignInBlockedInvalid: "Pi 拒绝此条目，因此没有可登录的内容。"
-mcpSignInRefusedFile: "Pi Web 已无法从文件中读取此条目。请按“刷新”。"
-mcpSignInRefusedInvalidRequest: "Pi Web 拒绝了该请求，因为它没有指明一个可以登录的服务器。"
+mcpSignInRefusedFile: "pigo 已无法从文件中读取此条目。请按“刷新”。"
+mcpSignInRefusedInvalidRequest: "pigo 拒绝了该请求，因为它没有指明一个可以登录的服务器。"
 mcpSignInSummaryConnected:
   message: "已登录，随后列出了 {count} 个工具，用时 {seconds} 秒，时间 {time}。"
   placeholders:
@@ -2126,7 +2126,7 @@ mcpAddInputLabel: "要添加的服务器"
 mcpAddPlaceholder: "https://mcp.example.com/mcp\nnpx -y @scope/server\nclaude mcp add …\n'{' \"mcpServers\": '{' … '}' '}'"
 mcpAddExamples: "支持的格式（点击填入示例）"
 mcpAddRawPi: "启用 pi mcp 语法，支持 $NAME 和 !command"
-mcpAddRawPiOn: "环境变量和请求头里的 $NAME 会读取运行 Pi Web 的计算机上的变量，以 ! 开头的值每次连接都会作为命令执行。"
+mcpAddRawPiOn: "环境变量和请求头里的 $NAME 会读取运行 pigo 的计算机上的变量，以 ! 开头的值每次连接都会作为命令执行。"
 mcpAddServerLabel: "服务器"
 mcpAddServerCount:
   message: "这段内容包含 {count} 个服务器，请逐个添加。"
@@ -2150,7 +2150,7 @@ mcpAddFieldStoredAsVariable:
   message: "保存为 {value}：pi 每次连接时读取该变量，值本身不会写入 mcp.json。"
   placeholders:
     value: {type: String}
-mcpAddFieldUseVariable: "从运行 Pi Web 的计算机上的变量读取"
+mcpAddFieldUseVariable: "从运行 pigo 的计算机上的变量读取"
 mcpAddFieldVariableName:
   message: "{field} 的变量"
   placeholders:
@@ -2184,11 +2184,11 @@ mcpAddTrustExplain:
 mcpAddAfterAdd: "添加后会测试一次连接。"
 mcpAddFailed: "未添加："
 mcpAddTrustKept:
-  message: "Pi Web 为这一步信任了 {folder}，但无法撤销，因此该文件夹仍受信任。"
+  message: "pigo 为这一步信任了 {folder}，但无法撤销，因此该文件夹仍受信任。"
   placeholders:
     folder: {type: String}
 mcpAddHostEnvBody:
-  message: "它的请求头或 OAuth 客户端密钥读取了 {names}，这些变量已在运行 Pi Web 的计算机上设置，pi 每次连接都会把它们的值发送给服务器。只有当此服务器应当获得这些值时才添加它。"
+  message: "它的请求头或 OAuth 客户端密钥读取了 {names}，这些变量已在运行 pigo 的计算机上设置，pi 每次连接都会把它们的值发送给服务器。只有当此服务器应当获得这些值时才添加它。"
   placeholders:
     names: {type: String}
 mcpAddHostEnvConfirm: "添加并发送这些值"
@@ -2201,49 +2201,49 @@ mcpAddBlockedFieldsInvalid:
   message: "请先更正 {fields}。"
   placeholders:
     fields: {type: String}
-mcpAddBlockedWebPassword: "它引用了 PI_WEB_PASSWORD，因此 Pi Web 不会添加它。"
+mcpAddBlockedWebPassword: "它引用了 PI_WEB_PASSWORD，因此 pigo 不会添加它。"
 mcpAddRefusedServerInvalid:
   message: "按所填的值，pi 会拒绝它：{error}"
   placeholders:
     error: {type: String}
 mcpAddProjectBlockedNoProject: "打开一个项目后，才能把服务器添加到它的 .pi/mcp.json。"
 mcpAddProjectBlockedProjectNotListed: "未列出项目文件夹，因此不会写入它的 .pi/mcp.json。"
-mcpAddProjectBlockedTrustUnreadable: "Pi Web 无法读取信任记录（trust.json），因此不会写入此项目的 .pi/mcp.json。"
-mcpAddProjectBlockedProjectUntrusted: "此项目未受信任，因此 Pi Web 不会写入它的 .pi/mcp.json。请先信任它。"
+mcpAddProjectBlockedTrustUnreadable: "pigo 无法读取信任记录（trust.json），因此不会写入此项目的 .pi/mcp.json。"
+mcpAddProjectBlockedProjectUntrusted: "此项目未受信任，因此 pigo 不会写入它的 .pi/mcp.json。请先信任它。"
 mcpAddProjectBlockedUntrustedDecision: "此文件夹被标记为不受信任，因此其 .pi/mcp.json 中的服务器永远不会连接。"
 mcpAddProjectBlockedSecret:
-  message: "{fields} 以明文保存了一个机密，因此该服务器只能保存在全局。要保存在项目中，请为它选择“从运行 Pi Web 的计算机上的变量读取”。"
+  message: "{fields} 以明文保存了一个机密，因此该服务器只能保存在全局。要保存在项目中，请为它选择“从运行 pigo 的计算机上的变量读取”。"
   placeholders:
     fields: {type: String}
 mcpAddProjectBlockedSecretFixed:
   message: "{fields} 在 pi 不读取变量的位置（URL、命令或其参数）以明文保存了一个机密，因此该服务器只能保存在全局。"
   placeholders:
     fields: {type: String}
-mcpAddProjectBlockedFolderNotFresh: "此文件夹的 .pi 下，或其上层某个 .agents/skills 文件夹中，有一个指向不存在目标的链接。目标出现后它就需要信任，因此 Pi Web 不会自行信任此文件夹。请删除或修复该链接，然后点击“刷新”。"
+mcpAddProjectBlockedFolderNotFresh: "此文件夹的 .pi 下，或其上层某个 .agents/skills 文件夹中，有一个指向不存在目标的链接。目标出现后它就需要信任，因此 pigo 不会自行信任此文件夹。请删除或修复该链接，然后点击“刷新”。"
 mcpAddProjectBlockedFileProblem:
   message: "无法写入 {path}：{reason}"
   placeholders:
     path: {type: String}
     reason: {type: String}
-mcpAddProjectBlockedTrustTooBroadHome: "这是你的主目录。Pi Web 不会自行信任它，因为其中的每个文件夹都会一并受信任；请把服务器添加到全局。"
-mcpAddProjectBlockedTrustTooBroadRoot: "这是文件系统的根目录。Pi Web 不会自行信任它，因为其中的每个文件夹都会一并受信任；请把服务器添加到全局。"
+mcpAddProjectBlockedTrustTooBroadHome: "这是你的主目录。pigo 不会自行信任它，因为其中的每个文件夹都会一并受信任；请把服务器添加到全局。"
+mcpAddProjectBlockedTrustTooBroadRoot: "这是文件系统的根目录。pigo 不会自行信任它，因为其中的每个文件夹都会一并受信任；请把服务器添加到全局。"
 mcpAddProjectBlockedTrustTooBroadContainsHome:
-  message: "此文件夹包含你的主目录（{path}）。Pi Web 不会自行信任它，因为其中的每个文件夹都会一并受信任；请把服务器添加到全局。"
+  message: "此文件夹包含你的主目录（{path}）。pigo 不会自行信任它，因为其中的每个文件夹都会一并受信任；请把服务器添加到全局。"
   placeholders:
     path: {type: String}
 mcpAddProjectBlockedTrustTooBroadContainsAgentDir:
-  message: "此文件夹包含 Pi 的 agent 文件夹（{path}）。Pi Web 不会自行信任它，因为其中的每个文件夹都会一并受信任；请把服务器添加到全局。"
+  message: "此文件夹包含 Pi 的 agent 文件夹（{path}）。pigo 不会自行信任它，因为其中的每个文件夹都会一并受信任；请把服务器添加到全局。"
   placeholders:
     path: {type: String}
 mcpAddProjectBlockedTrustTooBroadContainsFolder:
-  message: "此文件夹包含 Pi Web 已知的另一个文件夹 {path}，信任它也会信任那个文件夹。Pi Web 不会自行这样做；请把服务器添加到全局。"
+  message: "此文件夹包含 pigo 已知的另一个文件夹 {path}，信任它也会信任那个文件夹。pigo 不会自行这样做；请把服务器添加到全局。"
   placeholders:
     path: {type: String}
 mcpAddProjectBlockedTrustTooBroadContainsProject:
-  message: "此文件夹包含 {path}，这是一个带有需要信任的资源、且自身尚无信任决定的项目，信任此文件夹也会信任它。Pi Web 不会自行这样做；请把服务器添加到全局，或打开那个项目单独信任它。"
+  message: "此文件夹包含 {path}，这是一个带有需要信任的资源、且自身尚无信任决定的项目，信任此文件夹也会信任它。pigo 不会自行这样做；请把服务器添加到全局，或打开那个项目单独信任它。"
   placeholders:
     path: {type: String}
-mcpAddProjectBlockedTrustTooBroadTooManyFolders: "此文件夹包含的文件夹太多，Pi Web 无法确认信任它不会同时信任其中的项目。Pi Web 不会自行信任它；请把服务器添加到全局。"
+mcpAddProjectBlockedTrustTooBroadTooManyFolders: "此文件夹包含的文件夹太多，pigo 无法确认信任它不会同时信任其中的项目。pigo 不会自行信任它；请把服务器添加到全局。"
 mcpAddAdded:
   message: "已把 {name} 添加到 {path}。"
   placeholders:
@@ -2287,7 +2287,7 @@ mcpImportNoteForServer:
     server: {type: String}
     note: {type: String}
 mcpImportNoteEmptyInput: "还没有可读取的内容：请粘贴 URL、命令行或配置。"
-mcpImportNoteUnrecognizedInput: "Pi Web 无法识别这段内容。请粘贴服务器的 URL、启动它的命令、mcp add 命令、JSON 配置或安装链接。"
+mcpImportNoteUnrecognizedInput: "pigo 无法识别这段内容。请粘贴服务器的 URL、启动它的命令、mcp add 命令、JSON 配置或安装链接。"
 mcpImportNoteInvalidJson:
   message: "这看起来像 JSON，但无法解析：{detail}"
   placeholders:
@@ -2307,7 +2307,7 @@ mcpImportNoteShellUnterminatedQuote:
   placeholders:
     quote: {type: String}
 mcpImportNoteShellParameter:
-  message: "命令行用到了 shell 参数 {parameter}，Pi Web 无法填入它。"
+  message: "命令行用到了 shell 参数 {parameter}，pigo 无法填入它。"
   placeholders:
     parameter: {type: String}
 mcpImportNoteShellExpansion:
@@ -2328,7 +2328,7 @@ mcpImportNoteGithubMcpPage:
     name: {type: String}
 mcpImportNoteGithubPage: "这个 GitHub 页面不是服务器。请从服务器的 README 复制安装命令、URL 或配置。"
 mcpImportNoteByNameLink:
-  message: "这个链接只是在注册表中指明了 {name}，不含任何设置，因此 Pi Web 暂时无法添加它。请改为从服务器的 README 复制 Cursor 或 VS Code 安装徽章的链接。"
+  message: "这个链接只是在注册表中指明了 {name}，不含任何设置，因此 pigo 暂时无法添加它。请改为从服务器的 README 复制 Cursor 或 VS Code 安装徽章的链接。"
   placeholders:
     name: {type: String}
 mcpImportNoteBadgeImage: "这是徽章的图片。请改为复制徽章所打开的链接。"
@@ -2338,7 +2338,7 @@ mcpImportNoteInstallLinkInvalid:
     detail: {type: String}
 mcpImportNoteClaudeDesktopImport: "claude mcp add-from-claude-desktop 会复制 Claude Desktop 自己的服务器。请改为粘贴 claude_desktop_config.json 中的 mcpServers 部分。"
 mcpImportNoteCliUnsupported:
-  message: "Pi Web 不读取 {cli} 的 mcp add。请改为粘贴服务器自己的命令行、URL 或 JSON 配置。"
+  message: "pigo 不读取 {cli} 的 mcp add。请改为粘贴服务器自己的命令行、URL 或 JSON 配置。"
   placeholders:
     cli: {type: String}
 mcpImportNoteCliUsage:
@@ -2431,20 +2431,20 @@ mcpImportNoteBareDollarLiteral:
   placeholders:
     field: {type: String}
 mcpImportNoteHeaderEnvReference:
-  message: "请求头 {header} 会把运行 Pi Web 的计算机上 {names} 的值发送给此服务器。"
+  message: "请求头 {header} 会把运行 pigo 的计算机上 {names} 的值发送给此服务器。"
   placeholders:
     header: {type: String}
     names: {type: String}
 mcpImportNoteClientSecretEnvReference:
-  message: "OAuth 客户端密钥取自运行 Pi Web 的计算机上的 {names}，并会发送给授权服务器。"
+  message: "OAuth 客户端密钥取自运行 pigo 的计算机上的 {names}，并会发送给授权服务器。"
   placeholders:
     names: {type: String}
 mcpImportNoteShellCommandValue:
-  message: "{field} 每次连接都会在运行 Pi Web 的计算机上执行 shell 命令。"
+  message: "{field} 每次连接都会在运行 pigo 的计算机上执行 shell 命令。"
   placeholders:
     field: {type: String}
 mcpImportNoteShellVariable:
-  message: "{field}：$'{'name'}' 本应由你的 shell 填入。pi 会从运行 Pi Web 的计算机的环境中读取它，否则需要在下方填写其值。"
+  message: "{field}：$'{'name'}' 本应由你的 shell 填入。pi 会从运行 pigo 的计算机的环境中读取它，否则需要在下方填写其值。"
   placeholders:
     field: {type: String}
 mcpImportNoteUnsupportedVariable:
@@ -2457,7 +2457,7 @@ mcpImportNoteInputUndefined:
   placeholders:
     id: {type: String}
 mcpImportNoteInputCommandUnsupported:
-  message: "输入项 {id} 会执行 VS Code 命令，Pi Web 无法执行，因此需要在下方填写其值。"
+  message: "输入项 {id} 会执行 VS Code 命令，pigo 无法执行，因此需要在下方填写其值。"
   placeholders:
     id: {type: String}
 mcpImportNoteTimeoutClamped:
@@ -2506,7 +2506,7 @@ mcpImportNoteToolFilterImportedExclude:
   message: "这些工具被隐藏：{tools}。"
   placeholders:
     tools: {type: String}
-mcpImportNoteTransportGuessed: "配置没有指明传输方式，Pi Web 根据现有的键推断出了它。"
+mcpImportNoteTransportGuessed: "配置没有指明传输方式，pigo 根据现有的键推断出了它。"
 mcpImportNoteInsecureHttp:
   message: "{host} 通过未加密的 http 访问，因此发送的所有内容（包括令牌）都以明文传输。"
   placeholders:

@@ -12,8 +12,8 @@ import (
 	"github.com/oneo-me/nsgo/ui"
 	"github.com/oneo-me/nsgo/ui/filepicker"
 
-	"piwebnative/internal/agent"
-	"piwebnative/internal/reducer"
+	"pigo/internal/agent"
+	"pigo/internal/reducer"
 )
 
 // palette is the ⌘K command surface. The app binds the shortcuts; NSGo's

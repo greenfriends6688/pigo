@@ -11,9 +11,9 @@ import (
 func crashLogPath() string {
 	cache, err := os.UserCacheDir()
 	if err != nil {
-		return filepath.Join(os.TempDir(), "pi-web-native.log")
+		return filepath.Join(os.TempDir(), "pigo.log")
 	}
-	return filepath.Join(cache, "PiWebNative.log")
+	return filepath.Join(cache, "pigo.log")
 }
 
 // redirectStderr is a no-op outside macOS: there is no portable fd-2 dup here

@@ -30,7 +30,7 @@ func TestResolveProjectDir(t *testing.T) {
 		t.Fatalf("a missing saved project leaves no project: got %q", got)
 	}
 
-	t.Setenv("PIWEB_NATIVE_PROJECT", saved)
+	t.Setenv("PIGO_PROJECT", saved)
 	if got := resolveProjectDir(home, home, ""); got != saved {
 		t.Fatalf("the environment overrides the fallback: got %q", got)
 	}

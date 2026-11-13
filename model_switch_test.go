@@ -29,7 +29,7 @@ func TestModelSwitchWhileSessionOpen(t *testing.T) {
 	if err := os.WriteFile(filepath.Join(sessDir, "2026-09-22T07-50-04-747Z_probe.jsonl"), []byte(line+"\n"+msg+"\n"), 0o644); err != nil {
 		t.Fatal(err)
 	}
-	t.Setenv("PIWEB_NATIVE_NO_AGENT", "")
+	t.Setenv("PIGO_NO_AGENT", "")
 	t.Setenv("PI_CODING_AGENT_DIR", agentDir)
 	app := nsgotest.Start(t, Root, nsgotest.Size(1200, 800))
 	app.Advance(3 * time.Second)

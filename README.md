@@ -1,6 +1,6 @@
-# pigo · Pi Web Native
+# pigo
 
-把 [pi](https://github.com/badlogic/pi-mono) 这个命令行编码 agent 装进一个真正的桌面窗口：
+把 [pi](https://github.com/earendil-works/pi) 这个命令行编码 agent 装进一个真正的桌面窗口：
 会话、对话流、文件树、Git 审阅、终端、子代理、MCP 全在一处，不用开浏览器，也不用记 CLI 参数。
 
 Go + [NSGo](https://github.com/oneo-me/nsgo) 写成，单进程壳子 + 一个 `node` RPC 子进程（pi 本体），
@@ -40,7 +40,7 @@ Go + [NSGo](https://github.com/oneo-me/nsgo) 写成，单进程壳子 + 一个 `
 
 | | 要求 |
 |---|---|
-| 运行 | 系统 Node ≥ 22（没有则首次启动自动下载到 `~/.pi/agent/pi-web-native/node/`） |
+| 运行 | 系统 Node ≥ 22（没有则首次启动自动下载到 `~/.pi/agent/pigo/node/`） |
 | 运行 | pi 的 RPC bundle（构建时由 `scripts/bundle-rpc.sh` 从已安装的 pi 拷贝进包内） |
 | 构建 | Go 1.27+、NSGo（作为 Go tool 引入，见 `go.mod` 的 `tool` 指令） |
 | 打包 Windows 安装器 | `makensis`（`brew install makensis`；没有时只产出免安装 exe） |
@@ -115,6 +115,21 @@ locales/                       中英文文案（en 为源语言）
   所以 APK 目前只有界面；iOS 需要完整 Xcode（只装 Command Line Tools 时 `-target ios` 直接报
   `the iOS SDK needs Xcode`），且同样无法 fork/exec。
 
+## 致谢
+
+pigo 站着三个上游的肩膀：
+
+- **[NSGo](https://github.com/oneo-me/nsgo)** — 原生 UI 框架。窗口、控件、文本排版、
+  终端、i18n、打包（dmg / NSIS / deb / AppImage / APK）全部由它提供，本仓库只写应用层。
+- **[pi-web](https://github.com/agegr/pi-web)** — 原 Web 界面。交互流程、布局、状态模型和
+  几乎全部文案都来自它，`scripts/gen_locales.py` 至今仍从它的 message 文件生成
+  `locales/*.yaml`。
+- **[pi](https://github.com/earendil-works/pi)** — agent 本体。pigo 不实现 agent，
+  只把它的 RPC 模式装进一个窗口，RPC bundle 由 `scripts/bundle-rpc.sh` 从已安装的 pi 取。
+
 ## License
 
-未声明。使用前请先确认依赖项（pi、NSGo）各自的许可证。
+[MIT](LICENSE) © 2026 pigo contributors。
+
+随包分发的 pi RPC bundle（`resources/rpc/`，构建时从已安装的 pi 拷贝）、NSGo 以及
+其他依赖各自遵循上游许可证；发布二进制前请确认它们的条款。

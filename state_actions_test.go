@@ -5,7 +5,7 @@ import (
 	"strings"
 	"testing"
 
-	"piwebnative/internal/reducer"
+	"pigo/internal/reducer"
 )
 
 func TestSessionFileFromState(t *testing.T) {

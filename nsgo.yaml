@@ -1,5 +1,5 @@
-name: Pi Web Native
-id: dev.piweb.native
+name: pigo
+id: dev.pigo
 version: 0.1.0
 dev:
   target: native

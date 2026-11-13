@@ -14,7 +14,7 @@ import (
 	"github.com/oneo-me/nsgo/icons/lucide"
 	"github.com/oneo-me/nsgo/ui"
 
-	"piwebnative/internal/files"
+	"pigo/internal/files"
 )
 
 // extraFileState holds the signals and bookkeeping this file's features need

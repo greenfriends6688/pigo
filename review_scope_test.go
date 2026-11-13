@@ -7,7 +7,7 @@ import (
 	"testing"
 	"time"
 
-	"piwebnative/internal/reducer"
+	"pigo/internal/reducer"
 )
 
 // TestSessionReviewFilesOnlyListsThisSessionsWrites pins the review scope:

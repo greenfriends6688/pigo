@@ -14,9 +14,9 @@ import (
 	"github.com/oneo-me/nsgo/icons/lucide"
 	"github.com/oneo-me/nsgo/ui"
 
-	"piwebnative/internal/agent"
-	"piwebnative/internal/reducer"
-	"piwebnative/internal/sessions"
+	"pigo/internal/agent"
+	"pigo/internal/reducer"
+	"pigo/internal/sessions"
 )
 
 // sideTab is one side chat open in the right panel, as PI NEXT opens it: a
@@ -113,7 +113,7 @@ func (s *appState) openSideTab(path, parent string) *sideTab {
 func (s *appState) connectSideTab(tab *sideTab) {
 	// Test mode starts no child at all, for the app tests that only need the
 	// panel's layout.
-	if os.Getenv("PIWEB_NATIVE_NO_AGENT") == "1" {
+	if os.Getenv("PIGO_NO_AGENT") == "1" {
 		s.cx.Post(func() {
 			tab.Err = "测试模式：未启动侧聊子进程"
 			s.bumpSide()
@@ -130,7 +130,7 @@ func (s *appState) connectSideTab(tab *sideTab) {
 	cwd, missing := s.sessionCwd(tab.ID)
 	openPath := tab.ID
 	if missing != "" {
-		if repaired, err := sessions.RepairCwd(tab.ID, cwd, filepath.Join(s.agentDir, "pi-web-native", "repaired")); err == nil {
+		if repaired, err := sessions.RepairCwd(tab.ID, cwd, filepath.Join(s.agentDir, "pigo", "repaired")); err == nil {
 			openPath = repaired
 		}
 	}
@@ -141,7 +141,7 @@ func (s *appState) connectSideTab(tab *sideTab) {
 		Cwd:         cwd,
 		AgentDir:    s.agentDir,
 		SessionPath: openPath,
-		LogPath:     filepath.Join(s.agentDir, "pi-web-native", "agent.log"),
+		LogPath:     filepath.Join(s.agentDir, "pigo", "agent.log"),
 		NoMCP:       s.noMCP.GetUntracked(),
 		Tools:       sessions.SideTools,
 	}

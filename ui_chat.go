@@ -19,7 +19,7 @@ import (
 	"github.com/oneo-me/nsgo/ui"
 	"github.com/oneo-me/nsgo/ui/chat"
 
-	"piwebnative/internal/agent"
+	"pigo/internal/agent"
 )
 
 // chatView is ui/chat's floating conversation over the reducer's turns: the

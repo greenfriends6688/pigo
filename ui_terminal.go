@@ -12,7 +12,7 @@ import (
 	"github.com/oneo-me/nsgo/icons/lucide"
 	"github.com/oneo-me/nsgo/ui"
 
-	"piwebnative/internal/term"
+	"pigo/internal/term"
 )
 
 // ensureTerminal opens a shell only when the dock first shows the terminal,

@@ -10,7 +10,7 @@ import (
 	"github.com/oneo-me/nsgo/ui/chat"
 	uidiff "github.com/oneo-me/nsgo/ui/diff"
 
-	"piwebnative/internal/toolfields"
+	"pigo/internal/toolfields"
 )
 
 // toolActivity is one tool card in the transcript's work step: a one-line

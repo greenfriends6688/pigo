@@ -3594,7 +3594,7 @@ var textsEn = i18n.NewTexts(""+
 	"Settings"+
 	"Settings"+
 	"General"+
-	"Choose how Pi Web looks and which language it uses."+
+	"Choose how pigo looks and which language it uses."+
 	"Appearance"+
 	"Select a theme or follow your system preference."+
 	"Chat content width"+
@@ -3684,8 +3684,8 @@ var textsEn = i18n.NewTexts(""+
 	"Name"+
 	"Save to"+
 	"Close"+
-	"Enable Pi Web built-in sub-agents"+
-	"Provides Pi Web's integrated Agent tools and disables a conflicting pi-subagents extension."+
+	"Enable pigo built-in sub-agents"+
+	"Provides pigo's integrated Agent tools and disables a conflicting pi-subagents extension."+
 	"Reload the current session to apply this change."+
 	"Reload session"+
 	"Concurrent sub-agents"+
@@ -4041,7 +4041,7 @@ var textsEn = i18n.NewTexts(""+
 	"Open in Explorer"+
 	"Open in Finder"+
 	"Open in file manager"+
-	"Only available when Pi Web runs on this computer"+
+	"Only available when pigo runs on this computer"+
 	"Not supported on this platform"+
 	"Search files"+
 	"Search files…"+
@@ -4359,12 +4359,12 @@ var textsEn = i18n.NewTexts(""+
 	"Project plugins are not loaded because this project is not trusted."+
 	"Project installs are unavailable while project resources are not loaded."+
 	"MCP servers in .pi/mcp.json"+
-	"Trusting this project lets these servers connect, in Pi Web and in the pi CLI, which share this decision. A stdio server runs its command on the computer running Pi Web."+
+	"Trusting this project lets these servers connect, in pigo and in the pi CLI, which share this decision. A stdio server runs its command on the computer running pigo."+
 	"Reading .pi/mcp.json…"+
 	"Could not list this project's MCP servers."+
 	"Listing this project's MCP servers took too long."+
 	"The file declares no servers."+
-	"Pi Web cannot load the SDK's MCP checks, so these entries are listed unchecked."+
+	"pigo cannot load the SDK's MCP checks, so these entries are listed unchecked."+
 	"Close"+
 	"This project is already trusted."+
 	"Could not trust this project."+
@@ -4372,52 +4372,52 @@ var textsEn = i18n.NewTexts(""+
 	"HTTP"+
 	"oauth.clientSecret"+
 	"Pi refuses this entry, so it never connects:"+
-	"References PI_WEB_PASSWORD. Pi Web refuses to connect it, but the pi CLI reads this file too and would send the password on if that variable is set where the CLI runs:"+
+	"References PI_WEB_PASSWORD. pigo refuses to connect it, but the pi CLI reads this file too and would send the password on if that variable is set where the CLI runs:"+
 	"Turned off in the file, so it does not connect."+
 	"Runs a shell command on every connection:"+
 	"Replaces your global server of the same name while this project is trusted."+
 	"Names your global server of the same name, but changes none of enabled, exposure and toolExposure."+
 	"Parts that look like secrets are hidden."+
 	"Holds invisible or control characters, shown here as \\u{…} codes."+
-	"Sends environment variables of the computer running Pi Web to this server on every connection:"+
-	"Passes environment variables of the computer running Pi Web to the command it starts:"+
+	"Sends environment variables of the computer running pigo to this server on every connection:"+
+	"Passes environment variables of the computer running pigo to the command it starts:"+
 	"The file is not valid JSON, so none of its servers load."+
 	"The file is not an object with an \"mcpServers\" object, so none of its servers load."+
 	"\"autoEnableCodemode\" must be true or false; the servers still load."+
 	"The file is a symbolic link to nothing, so no servers load from it."+
-	"The file is a symbolic link outside the folders Pi Web may read, so its servers are not listed here. Pi still loads them once the project is trusted."+
-	"The path is not a regular file, so Pi Web does not read it."+
+	"The file is a symbolic link outside the folders pigo may read, so its servers are not listed here. Pi still loads them once the project is trusted."+
+	"The path is not a regular file, so pigo does not read it."+
 	"The file is larger than 1 MiB, so its servers are not listed here. Pi still loads them once the project is trusted."+
 	"The file declares more than 200 servers, so they are not listed here. Pi still loads them once the project is trusted."+
-	"Pi Web cannot read the file."+
+	"pigo cannot read the file."+
 	"The project folder is missing or not an absolute path."+
-	"Pi Web may not read this folder."+
+	"pigo may not read this folder."+
 	"The project folder no longer exists or is not a folder."+
-	"Pi Web refused the request because it did not come from this page."+
-	"Pi Web refused the request because it was not sent as JSON."+
-	"Pi Web cannot read the trust store (trust.json), or another program has it locked."+
+	"pigo refused the request because it did not come from this page."+
+	"pigo refused the request because it was not sent as JSON."+
+	"pigo cannot read the trust store (trust.json), or another program has it locked."+
 	"This project has no resources that need trust anymore."+
 	"Wait for the running session in this folder to finish, then trust the project."+
-	"Pi Web refused the request because it does not ask for a change Pi Web can make."+
-	"MCP is off on this Pi Web server, so it changes no server."+
-	"This project is not trusted, so Pi Web does not change its .pi/mcp.json."+
-	"The file is not valid JSON, so Pi Web left it unchanged."+
-	"The file is not an object with an \"mcpServers\" object, so Pi Web left it unchanged."+
+	"pigo refused the request because it does not ask for a change pigo can make."+
+	"MCP is off on this pigo server, so it changes no server."+
+	"This project is not trusted, so pigo does not change its .pi/mcp.json."+
+	"The file is not valid JSON, so pigo left it unchanged."+
+	"The file is not an object with an \"mcpServers\" object, so pigo left it unchanged."+
 	"The file no longer defines this server."+
 	"This entry is not an object, so it cannot be turned on or off. Remove it, or fix it in the file."+
-	"It references PI_WEB_PASSWORD, so Pi Web does not turn it on."+
+	"It references PI_WEB_PASSWORD, so pigo does not turn it on."+
 	"The removal can no longer be undone."+
 	"The file defines a server of the same name again, so the removal was not undone."+
 	"The file already defines a server of that name."+
-	"The file is a symbolic link to nothing, so Pi Web does not write it."+
-	"The file is a symbolic link outside the folders Pi Web may read, so Pi Web does not write it."+
-	"The path is not a regular file, so Pi Web does not write it."+
-	"The file is larger than 1 MiB, so Pi Web does not write it."+
-	"The file declares more than 200 servers, so Pi Web does not act on its entries."+
+	"The file is a symbolic link to nothing, so pigo does not write it."+
+	"The file is a symbolic link outside the folders pigo may read, so pigo does not write it."+
+	"The path is not a regular file, so pigo does not write it."+
+	"The file is larger than 1 MiB, so pigo does not write it."+
+	"The file declares more than 200 servers, so pigo does not act on its entries."+
 	"Another program is writing the file. Try again in a moment."+
-	"Pi refuses this entry, so Pi Web does not connect it."+
+	"Pi refuses this entry, so pigo does not connect it."+
 	"This server does not sign in with OAuth: only an HTTP server without an Authorization header does."+
-	"Pi Web no longer knows this sign-in: it ended a while ago, or Pi Web restarted."+
+	"pigo no longer knows this sign-in: it ended a while ago, or pigo restarted."+
 	"The sign-in is not waiting for an address right now."+
 	"That is not a web address. Copy the whole address from the browser's address bar."+
 	"That address belongs to another sign-in. Paste the address the browser landed on after this one."+
@@ -4427,11 +4427,11 @@ var textsEn = i18n.NewTexts(""+
 	"Some values to fill in are missing or not valid."+
 	"A server name uses letters, digits, _ and - only."+
 	"The server holds a secret as plain text, so it is saved only in the global mcp.json."+
-	"The server would be sent variables of the computer running Pi Web; confirm that first."+
-	"The folder changed since: it has a trust decision now, or resources that need one, so Pi Web did not trust it and added nothing."+
-	"Trusting this folder would trust the folders inside it too, so Pi Web does not do it by itself."+
+	"The server would be sent variables of the computer running pigo; confirm that first."+
+	"The folder changed since: it has a trust decision now, or resources that need one, so pigo did not trust it and added nothing."+
+	"Trusting this folder would trust the folders inside it too, so pigo does not do it by itself."+
 	"Could not read the MCP settings."+
-	"Pi Web did not answer in time. Press Refresh to try again."+
+	"pigo did not answer in time. Press Refresh to try again."+
 	"No servers"+
 	"Not listed: see the file problem below"+
 	"Not listed"+
@@ -4451,7 +4451,7 @@ var textsEn = i18n.NewTexts(""+
 	"overridden"+
 	"The project's server of the same name replaces this one while the project is trusted."+
 	"The project's .pi/mcp.json changes this server while the project is trusted."+
-	"Listed unchecked: Pi Web cannot load the SDK's MCP checks."+
+	"Listed unchecked: pigo cannot load the SDK's MCP checks."+
 	"Description"+
 	"Transport"+
 	"Command"+
@@ -4480,16 +4480,16 @@ var textsEn = i18n.NewTexts(""+
 	"Declared once tool search loads them; needs no Code mode."+
 	"Every tool's full declaration goes with every request: the most tokens."+
 	"Registered but unreachable."+
-	"Code mode cannot run on this Pi Web server, so these tools are reached through tool search instead."+
+	"Code mode cannot run on this pigo server, so these tools are reached through tool search instead."+
 	"-builtin:codemode turns Code mode off, so these tools can be called only while tool search is active."+
 	"-builtin:tool-search turns tool search off, so these tools can be called only from Code mode scripts while Code mode is on."+
 	"No servers could be listed: see the file problems below."+
 	"Select a server or Code mode."+
-	"MCP is off: PI_WEB_DISABLE_MCP is set where Pi Web runs. The servers are listed, but no session connects them."+
-	"MCP is off: Pi Web cannot load the SDK's MCP modules. The servers are listed unchecked, and no session connects them."+
+	"MCP is off: PI_WEB_DISABLE_MCP is set where pigo runs. The servers are listed, but no session connects them."+
+	"MCP is off: pigo cannot load the SDK's MCP modules. The servers are listed unchecked, and no session connects them."+
 	"MCP is off: an extensions setting turns off builtin:mcp, so no session connects these servers."+
 	"This project is not trusted, so the servers in its .pi/mcp.json do not connect."+
-	"Pi Web cannot read the trust store (trust.json), so this project's servers count as untrusted for now."+
+	"pigo cannot read the trust store (trust.json), so this project's servers count as untrusted for now."+
 	"Trust project…"+
 	"1 file problem"+
 	"Code mode"+
@@ -4503,13 +4503,13 @@ var textsEn = i18n.NewTexts(""+
 	"Cannot read the global settings file:"+
 	"Sandbox"+
 	"Available."+
-	"Cannot run on this Pi Web server, so no session offers Code mode:"+
-	"Not checked yet: the self-test runs when the first session starts after Pi Web does."+
+	"Cannot run on this pigo server, so no session offers Code mode:"+
+	"Not checked yet: the self-test runs when the first session starts after pigo does."+
 	"Extension"+
 	"Turned off by -builtin:codemode in an extensions setting."+
 	"Could not save the choice:"+
-	"Pi Web did not answer in time, so the choice may not have been saved."+
-	"Always on is unavailable: Code mode's sandbox cannot run on this Pi Web server."+
+	"pigo did not answer in time, so the choice may not have been saved."+
+	"Always on is unavailable: Code mode's sandbox cannot run on this pigo server."+
 	"Built-in tools"+
 	"Direct"+
 	"In scripts"+
@@ -4522,11 +4522,11 @@ var textsEn = i18n.NewTexts(""+
 	"Save"+
 	"Could not save the budget:"+
 	"Servers cannot be changed here while MCP is off."+
-	"Pi Web does not change them until the project is trusted."+
-	"Pi Web does not change them until it can read the trust store."+
+	"pigo does not change them until the project is trusted."+
+	"pigo does not change them until it can read the trust store."+
 	"Changes are saved to the file, but no session connects these servers while builtin:mcp is off."+
 	"Could not change the server:"+
-	"Pi Web did not answer in time, so the change may not have been made."+
+	"pigo did not answer in time, so the change may not have been made."+
 	"Undo"+
 	"Undoing…"+
 	"Could not undo:"+
@@ -4543,20 +4543,20 @@ var textsEn = i18n.NewTexts(""+
 	"Testing…"+
 	"Not tested yet."+
 	"It runs a shell command, so its test waits for other such tests."+
-	"MCP is off on this Pi Web server, so it tests no server."+
-	"This project is not trusted, so Pi Web does not start its servers."+
-	"Pi Web cannot read the trust store (trust.json), so it does not start this project's servers."+
+	"MCP is off on this pigo server, so it tests no server."+
+	"This project is not trusted, so pigo does not start its servers."+
+	"pigo cannot read the trust store (trust.json), so it does not start this project's servers."+
 	"Pi refuses this entry, so there is nothing to test."+
-	"It references PI_WEB_PASSWORD, so Pi Web does not connect it."+
+	"It references PI_WEB_PASSWORD, so pigo does not connect it."+
 	"This entry is not an object, so there is nothing to test. Fix it in the file."+
-	"Pi Web refused the request because it does not name a server it can test."+
-	"The file is not valid JSON, so Pi Web cannot read this entry to test it."+
-	"The file is not an object with an \"mcpServers\" object, so Pi Web cannot read this entry to test it."+
-	"The file is a symbolic link to nothing, so Pi Web cannot read this entry to test it."+
-	"The file is a symbolic link outside the folders Pi Web may read, so Pi Web does not test its servers."+
-	"The path is not a regular file, so Pi Web does not read it to test this entry."+
-	"The file is larger than 1 MiB, so Pi Web does not read it to test this entry."+
-	"The file declares more than 200 servers, so Pi Web does not read it to test this entry."+
+	"pigo refused the request because it does not name a server it can test."+
+	"The file is not valid JSON, so pigo cannot read this entry to test it."+
+	"The file is not an object with an \"mcpServers\" object, so pigo cannot read this entry to test it."+
+	"The file is a symbolic link to nothing, so pigo cannot read this entry to test it."+
+	"The file is a symbolic link outside the folders pigo may read, so pigo does not test its servers."+
+	"The path is not a regular file, so pigo does not read it to test this entry."+
+	"The file is larger than 1 MiB, so pigo does not read it to test this entry."+
+	"The file declares more than 200 servers, so pigo does not read it to test this entry."+
 	"Connected"+
 	"Needs sign-in"+
 	"Did not connect"+
@@ -4567,7 +4567,7 @@ var textsEn = i18n.NewTexts(""+
 	"read-only"+
 	"Another test of a server that runs a shell command did not finish in time, so this one did not start. Try again."+
 	"Could not test the server:"+
-	"Pi Web did not answer in time. The test may still finish; press Refresh to see its result."+
+	"pigo did not answer in time. The test may still finish; press Refresh to see its result."+
 	"Connecting in a session"+
 	"Connection dropped in a session"+
 	"Name taken by another extension"+
@@ -4592,7 +4592,7 @@ var textsEn = i18n.NewTexts(""+
 	"Cancel sign-in"+
 	"Cancelling…"+
 	"Could not cancel the sign-in:"+
-	"Pi Web did not answer in time. The sign-in may still be under way; this line shows it once it moves on."+
+	"pigo did not answer in time. The sign-in may still be under way; this line shows it once it moves on."+
 	"Sign out"+
 	"Signing out…"+
 	"Signing in may replace what is stored for this server."+
@@ -4601,47 +4601,47 @@ var textsEn = i18n.NewTexts(""+
 	"Preparing the sign-in with the server's authorization server…"+
 	"Finishing the sign-in…"+
 	"The authorization server has answered, so this step can no longer be cancelled."+
-	"Open the sign-in page and approve access. When the browser comes back to the computer running Pi Web, the sign-in finishes by itself. If the browser runs on another device, or the page it lands on does not load, copy that page's address and paste it here."+
+	"Open the sign-in page and approve access. When the browser comes back to the computer running pigo, the sign-in finishes by itself. If the browser runs on another device, or the page it lands on does not load, copy that page's address and paste it here."+
 	"Sign-in page:"+
 	"The server's sign-in page is not a web address, so it is shown as text only:"+
-	"Pi Web waits up to 5 minutes from the start of the sign-in."+
+	"pigo waits up to 5 minutes from the start of the sign-in."+
 	"Address the browser landed on"+
 	"http://127.0.0.1:…/callback?code=…"+
 	"Continue"+
 	"Checking…"+
 	"That address does not finish this sign-in:"+
-	"Pi Web did not answer in time. If it took the address, this line shows the sign-in moving on."+
+	"pigo did not answer in time. If it took the address, this line shows the sign-in moving on."+
 	"Already signed in: the server connected without a new sign-in."+
 	"Signed in. Status above shows what the server offers."+
 	"Signed in again with the stored refresh token, without the browser. Status above shows what the server offers."+
 	"Signed in, but the server did not connect afterwards. Status above says why."+
-	"Signed in, but the server still asked for a sign-in when Pi Web connected again."+
+	"Signed in, but the server still asked for a sign-in when pigo connected again."+
 	"Signed in. Press Test connection to see what the server offers."+
 	"Sign-in cancelled."+
-	"The sign-in was not finished within 5 minutes, so Pi Web stopped waiting."+
+	"The sign-in was not finished within 5 minutes, so pigo stopped waiting."+
 	"The server did not connect, and did not ask for a sign-in, so there was nothing to sign in to. Status above says why."+
 	"Another test of a server that runs a shell command did not finish in time, so the sign-in did not start. Try again."+
 	"The sign-in failed."+
 	"The sign-in failed unexpectedly."+
-	"Pi Web no longer knows this sign-in: it ended a while ago, or Pi Web restarted. Press Sign in to start again."+
+	"pigo no longer knows this sign-in: it ended a while ago, or pigo restarted. Press Sign in to start again."+
 	"Could not sign in:"+
-	"Pi Web did not answer in time. Press Sign in again to see the sign-in under way."+
+	"pigo did not answer in time. Press Sign in again to see the sign-in under way."+
 	"Could not sign out:"+
 	"Signed out: the tokens stored for this server were deleted."+
 	"Nothing was stored for this server, so there was nothing to sign out of."+
-	"MCP is off on this Pi Web server, so it signs in to no server."+
-	"This project is not trusted, so Pi Web does not sign in to or out of its servers."+
-	"Pi Web cannot read the trust store (trust.json), so it does not sign in to or out of this project's servers."+
+	"MCP is off on this pigo server, so it signs in to no server."+
+	"This project is not trusted, so pigo does not sign in to or out of its servers."+
+	"pigo cannot read the trust store (trust.json), so it does not sign in to or out of this project's servers."+
 	"Pi refuses this entry, so there is nothing to sign in to."+
-	"Pi Web cannot read this entry from its file anymore. Press Refresh."+
-	"Pi Web refused the request because it does not name a server it can sign in to."+
+	"pigo cannot read this entry from its file anymore. Press Refresh."+
+	"pigo refused the request because it does not name a server it can sign in to."+
 	"Add MCP"+
 	"Add MCP"+
 	"Server to add"+
 	"https://mcp.example.com/mcp\nnpx -y @scope/server\nclaude mcp add …\n{ \"mcpServers\": { … } }"+
 	"Supported formats (click one to fill in an example)"+
 	"Enable pi mcp syntax ($NAME, !command)"+
-	"In env and header values, $NAME reads a variable on the computer running Pi Web, and a value starting with ! runs as a command at every connection."+
+	"In env and header values, $NAME reads a variable on the computer running pigo, and a value starting with ! runs as a command at every connection."+
 	"Server"+
 	"Preview"+
 	"Read as"+
@@ -4649,7 +4649,7 @@ var textsEn = i18n.NewTexts(""+
 	"Values to fill in"+
 	"Optional: left blank, the value it belongs to is left out."+
 	"your value"+
-	"Read it from a variable of the computer running Pi Web"+
+	"Read it from a variable of the computer running pigo"+
 	"Stored as ${…}: pi reads the variable each time it connects, and the value stays out of mcp.json."+
 	"Choose…"+
 	"Secrets in the paste"+
@@ -4663,16 +4663,16 @@ var textsEn = i18n.NewTexts(""+
 	"Not added:"+
 	"Add and send these values"+
 	"Nothing to add yet: the paste holds no server pi can use."+
-	"It references PI_WEB_PASSWORD, so Pi Web does not add it."+
+	"It references PI_WEB_PASSWORD, so pigo does not add it."+
 	"Open a project to add a server to its .pi/mcp.json."+
 	"The project folder is not listed, so its .pi/mcp.json is not written."+
-	"Pi Web cannot read the trust store (trust.json), so it does not write this project's .pi/mcp.json."+
-	"This project is not trusted, so Pi Web does not write its .pi/mcp.json. Trust it first."+
+	"pigo cannot read the trust store (trust.json), so it does not write this project's .pi/mcp.json."+
+	"This project is not trusted, so pigo does not write its .pi/mcp.json. Trust it first."+
 	"This folder is marked as not trusted, so a server in its .pi/mcp.json would never connect."+
-	"Something under this folder's .pi, or an .agents/skills folder above it, is a link to nothing. It would need trust once its target appears, so Pi Web does not trust the folder by itself. Remove or fix the link, then press Refresh."+
-	"This is your home folder. Pi Web does not trust it by itself, since every folder in it would be trusted too; add the server globally."+
-	"This is a filesystem root. Pi Web does not trust it by itself, since every folder on it would be trusted too; add the server globally."+
-	"This folder holds too many folders for Pi Web to check that trusting it would trust no project inside them. Pi Web does not trust it by itself; add the server globally."+
+	"Something under this folder's .pi, or an .agents/skills folder above it, is a link to nothing. It would need trust once its target appears, so pigo does not trust the folder by itself. Remove or fix the link, then press Refresh."+
+	"This is your home folder. pigo does not trust it by itself, since every folder in it would be trusted too; add the server globally."+
+	"This is a filesystem root. pigo does not trust it by itself, since every folder on it would be trusted too; add the server globally."+
+	"This folder holds too many folders for pigo to check that trusting it would trust no project inside them. pigo does not trust it by itself; add the server globally."+
 	"Testing its connection…"+
 	"It asks for a sign-in."+
 	"a URL"+
@@ -4695,7 +4695,7 @@ var textsEn = i18n.NewTexts(""+
 	"a Visual Studio install link"+
 	"a GitHub Copilot app link"+
 	"Nothing to read yet: paste a URL, a command line or a config."+
-	"Pi Web does not recognize this. Paste a server's URL, the command that starts it, an mcp add command, a JSON config or an install link."+
+	"pigo does not recognize this. Paste a server's URL, the command that starts it, an mcp add command, a JSON config or an install link."+
 	"No MCP server was found in this config."+
 	"This holds more than one command. Paste only the one that starts the server."+
 	"This GitHub page is not a server. Copy the install command, URL or config from the server's README."+
@@ -4709,7 +4709,7 @@ var textsEn = i18n.NewTexts(""+
 	"It comes from a Zed extension, which only Zed can start."+
 	"It is published only as packages to install, while pi needs a command or a URL. Paste its install command instead."+
 	"The config turns OAuth off, which pi cannot: pi signs in with OAuth whenever the server asks."+
-	"The config names no transport, so Pi Web read it from the keys present."+
+	"The config names no transport, so pigo read it from the keys present."+
 	"This looks like pi's own mcp.json. If you copied it from there, turn on “Enable pi mcp syntax ($NAME, !command)”."+
 	"An empty Authorization header was left out, so pi signs in with OAuth if the server asks."+
 	"The config has it turned off, so it is added switched off."+
@@ -4965,7 +4965,7 @@ var textsEn = i18n.NewTexts(""+
 		8,
 		8,
 		7,
-		51,
+		49,
 		10,
 		48,
 		18,
@@ -5055,8 +5055,8 @@ var textsEn = i18n.NewTexts(""+
 		4,
 		7,
 		5,
-		33,
-		91,
+		31,
+		89,
 		48,
 		14,
 		21,
@@ -5412,7 +5412,7 @@ var textsEn = i18n.NewTexts(""+
 		16,
 		14,
 		20,
-		48,
+		46,
 		30,
 		12,
 		15,
@@ -5730,12 +5730,12 @@ var textsEn = i18n.NewTexts(""+
 		67,
 		72,
 		27,
-		169,
+		165,
 		23,
 		42,
 		49,
 		29,
-		79,
+		77,
 		5,
 		32,
 		29,
@@ -5743,52 +5743,52 @@ var textsEn = i18n.NewTexts(""+
 		4,
 		18,
 		44,
-		167,
+		165,
 		47,
 		41,
 		75,
 		98,
 		40,
 		67,
-		94,
-		85,
+		92,
+		83,
 		56,
 		83,
 		67,
 		67,
-		149,
-		59,
+		147,
+		57,
 		115,
 		118,
-		28,
+		26,
 		54,
-		32,
+		30,
 		55,
-		66,
-		59,
-		82,
+		64,
+		57,
+		80,
 		54,
 		78,
-		80,
-		58,
-		72,
+		76,
 		56,
-		83,
+		70,
+		54,
+		81,
 		39,
 		96,
-		61,
+		59,
 		36,
 		80,
 		47,
-		68,
-		93,
-		60,
+		66,
+		89,
+		58,
+		57,
+		77,
 		59,
-		79,
-		59,
-		53,
+		51,
 		98,
-		79,
+		75,
 		52,
 		81,
 		96,
@@ -5798,11 +5798,11 @@ var textsEn = i18n.NewTexts(""+
 		48,
 		49,
 		84,
-		86,
-		128,
-		95,
+		84,
+		126,
+		93,
 		32,
-		58,
+		56,
 		10,
 		38,
 		10,
@@ -5822,7 +5822,7 @@ var textsEn = i18n.NewTexts(""+
 		10,
 		85,
 		76,
-		58,
+		56,
 		11,
 		9,
 		7,
@@ -5851,16 +5851,16 @@ var textsEn = i18n.NewTexts(""+
 		57,
 		71,
 		27,
-		99,
+		97,
 		101,
 		123,
 		56,
 		29,
-		110,
-		117,
+		108,
+		115,
 		94,
 		79,
-		102,
+		100,
 		16,
 		14,
 		9,
@@ -5874,13 +5874,13 @@ var textsEn = i18n.NewTexts(""+
 		37,
 		7,
 		10,
-		65,
-		84,
+		63,
+		82,
 		9,
 		57,
 		26,
-		69,
-		79,
+		67,
+		77,
 		14,
 		6,
 		10,
@@ -5893,11 +5893,11 @@ var textsEn = i18n.NewTexts(""+
 		4,
 		26,
 		48,
-		57,
-		62,
+		55,
+		60,
 		94,
 		28,
-		68,
+		66,
 		4,
 		10,
 		15,
@@ -5914,20 +5914,20 @@ var textsEn = i18n.NewTexts(""+
 		10,
 		15,
 		64,
-		56,
-		66,
-		93,
+		54,
+		64,
+		91,
 		51,
-		61,
+		59,
 		77,
-		73,
-		72,
-		99,
-		84,
-		101,
-		78,
-		77,
-		87,
+		71,
+		70,
+		97,
+		82,
+		97,
+		76,
+		75,
+		85,
 		9,
 		13,
 		15,
@@ -5938,7 +5938,7 @@ var textsEn = i18n.NewTexts(""+
 		9,
 		112,
 		26,
-		90,
+		88,
 		23,
 		31,
 		31,
@@ -5963,7 +5963,7 @@ var textsEn = i18n.NewTexts(""+
 		14,
 		13,
 		29,
-		103,
+		101,
 		8,
 		14,
 		54,
@@ -5972,47 +5972,47 @@ var textsEn = i18n.NewTexts(""+
 		63,
 		24,
 		79,
-		255,
+		253,
 		13,
 		76,
-		59,
+		57,
 		29,
 		38,
 		8,
 		11,
 		42,
-		93,
+		91,
 		62,
 		53,
 		110,
 		76,
-		80,
+		78,
 		63,
 		18,
-		73,
+		71,
 		117,
 		115,
 		19,
 		32,
-		109,
+		105,
 		18,
-		80,
+		78,
 		19,
 		59,
 		72,
-		62,
-		81,
-		108,
-		57,
-		67,
+		60,
 		79,
+		106,
+		57,
+		65,
+		77,
 		7,
 		7,
 		13,
 		93,
 		51,
 		38,
-		147,
+		145,
 		6,
 		7,
 		7,
@@ -6020,7 +6020,7 @@ var textsEn = i18n.NewTexts(""+
 		17,
 		58,
 		10,
-		54,
+		52,
 		99,
 		9,
 		20,
@@ -6034,16 +6034,16 @@ var textsEn = i18n.NewTexts(""+
 		10,
 		25,
 		57,
-		57,
+		55,
 		51,
 		69,
-		98,
-		87,
+		96,
+		85,
 		90,
-		230,
-		133,
-		134,
-		168,
+		228,
+		131,
+		132,
+		164,
 		25,
 		22,
 		5,
@@ -6066,7 +6066,7 @@ var textsEn = i18n.NewTexts(""+
 		28,
 		25,
 		61,
-		135,
+		133,
 		39,
 		76,
 		99,
@@ -6080,7 +6080,7 @@ var textsEn = i18n.NewTexts(""+
 		56,
 		114,
 		93,
-		71,
+		69,
 		117,
 		89,
 		58,
@@ -6339,7 +6339,7 @@ var textsZhHans = i18n.NewTexts(""+
 	"设置"+
 	"设置"+
 	"常规"+
-	"选择 Pi Web 的显示方式和界面语言。"+
+	"选择 pigo 的显示方式和界面语言。"+
 	"外观"+
 	"选择浅色或深色主题，也可以跟随系统设置。"+
 	"聊天内容宽度"+
@@ -6429,8 +6429,8 @@ var textsZhHans = i18n.NewTexts(""+
 	"名称"+
 	"保存到"+
 	"关闭"+
-	"启用 Pi Web 内置子代理"+
-	"提供 Pi Web 集成的 Agent 工具，并停用发生冲突的 pi-subagents 扩展。"+
+	"启用 pigo 内置子代理"+
+	"提供 pigo 集成的 Agent 工具，并停用发生冲突的 pi-subagents 扩展。"+
 	"重新加载当前会话后生效。"+
 	"重新加载会话"+
 	"并发子代理数"+
@@ -6786,7 +6786,7 @@ var textsZhHans = i18n.NewTexts(""+
 	"在资源管理器中打开"+
 	"在访达中打开"+
 	"在文件管理器中打开"+
-	"仅在 Pi Web 运行在本机时可用"+
+	"仅在 pigo 运行在本机时可用"+
 	"当前平台不支持"+
 	"搜索文件"+
 	"搜索文件…"+
@@ -7104,12 +7104,12 @@ var textsZhHans = i18n.NewTexts(""+
 	"此项目尚未受信任，项目插件未加载。"+
 	"项目资源未加载时，无法安装到项目范围。"+
 	".pi/mcp.json 中的 MCP 服务器"+
-	"信任此项目后，这些服务器即可在 Pi Web 和 pi CLI 中连接，两者共用这一信任决定。stdio 服务器会在运行 Pi Web 的计算机上执行其命令。"+
+	"信任此项目后，这些服务器即可在 pigo 和 pi CLI 中连接，两者共用这一信任决定。stdio 服务器会在运行 pigo 的计算机上执行其命令。"+
 	"正在读取 .pi/mcp.json…"+
 	"无法列出此项目的 MCP 服务器。"+
 	"列出此项目的 MCP 服务器耗时过长。"+
 	"该文件未声明任何服务器。"+
-	"Pi Web 无法加载 SDK 的 MCP 校验，以下条目未经校验。"+
+	"pigo 无法加载 SDK 的 MCP 校验，以下条目未经校验。"+
 	"关闭"+
 	"此项目已受信任。"+
 	"无法信任此项目。"+
@@ -7117,52 +7117,52 @@ var textsZhHans = i18n.NewTexts(""+
 	"HTTP"+
 	"oauth.clientSecret"+
 	"Pi 拒绝加载此条目，它不会连接："+
-	"引用了 PI_WEB_PASSWORD。Pi Web 会拒绝连接它，但 pi CLI 也会读取此文件；如果 CLI 的运行环境中设置了该变量，它就会把密码传出去："+
+	"引用了 PI_WEB_PASSWORD。pigo 会拒绝连接它，但 pi CLI 也会读取此文件；如果 CLI 的运行环境中设置了该变量，它就会把密码传出去："+
 	"已在文件中关闭，不会连接。"+
 	"每次连接都会执行 shell 命令："+
 	"此项目受信任时，它会替换你的同名全局服务器。"+
 	"指向你的同名全局服务器，但没有更改 enabled、exposure 或 toolExposure。"+
 	"疑似密钥的部分已隐藏。"+
 	"包含不可见字符或控制字符，这里以 \\u{…} 代码显示。"+
-	"每次连接都会把运行 Pi Web 的计算机上的环境变量发送给此服务器："+
-	"会把运行 Pi Web 的计算机上的环境变量传给它启动的命令："+
+	"每次连接都会把运行 pigo 的计算机上的环境变量发送给此服务器："+
+	"会把运行 pigo 的计算机上的环境变量传给它启动的命令："+
 	"该文件不是有效的 JSON，其中的服务器都不会加载。"+
 	"该文件不是包含 \"mcpServers\" 对象的对象，其中的服务器都不会加载。"+
 	"\"autoEnableCodemode\" 必须是 true 或 false；服务器仍会加载。"+
 	"该文件是指向不存在目标的符号链接，不会从中加载任何服务器。"+
-	"该文件是指向 Pi Web 可读取文件夹之外的符号链接，因此这里不列出其中的服务器。项目受信任后，Pi 仍会加载它们。"+
-	"该路径不是普通文件，Pi Web 不会读取。"+
+	"该文件是指向 pigo 可读取文件夹之外的符号链接，因此这里不列出其中的服务器。项目受信任后，Pi 仍会加载它们。"+
+	"该路径不是普通文件，pigo 不会读取。"+
 	"该文件超过 1 MiB，因此这里不列出其中的服务器。项目受信任后，Pi 仍会加载它们。"+
 	"该文件声明了超过 200 个服务器，因此这里不列出它们。项目受信任后，Pi 仍会加载它们。"+
-	"Pi Web 无法读取该文件。"+
+	"pigo 无法读取该文件。"+
 	"未提供项目文件夹，或它不是绝对路径。"+
-	"Pi Web 无权读取此文件夹。"+
+	"pigo 无权读取此文件夹。"+
 	"项目文件夹已不存在或不是文件夹。"+
-	"该请求并非来自此页面，Pi Web 已拒绝。"+
-	"该请求不是以 JSON 发送的，Pi Web 已拒绝。"+
-	"Pi Web 无法读取信任记录（trust.json），或它正被其他程序锁定。"+
+	"该请求并非来自此页面，pigo 已拒绝。"+
+	"该请求不是以 JSON 发送的，pigo 已拒绝。"+
+	"pigo 无法读取信任记录（trust.json），或它正被其他程序锁定。"+
 	"此项目已没有需要信任的资源。"+
 	"请等此文件夹中正在运行的会话结束后，再信任此项目。"+
-	"该请求没有要求 Pi Web 能够进行的更改，Pi Web 已拒绝。"+
-	"此 Pi Web 服务器上的 MCP 已关闭，因此不会更改任何服务器。"+
-	"此项目未受信任，Pi Web 不会更改它的 .pi/mcp.json。"+
-	"该文件不是有效的 JSON，Pi Web 没有改动它。"+
-	"该文件不是包含 \"mcpServers\" 对象的对象，Pi Web 没有改动它。"+
+	"该请求没有要求 pigo 能够进行的更改，pigo 已拒绝。"+
+	"此 pigo 服务器上的 MCP 已关闭，因此不会更改任何服务器。"+
+	"此项目未受信任，pigo 不会更改它的 .pi/mcp.json。"+
+	"该文件不是有效的 JSON，pigo 没有改动它。"+
+	"该文件不是包含 \"mcpServers\" 对象的对象，pigo 没有改动它。"+
 	"该文件已不再定义此服务器。"+
 	"此条目不是对象，因此无法开启或关闭。请将其移除，或在文件中修正。"+
-	"它引用了 PI_WEB_PASSWORD，因此 Pi Web 不会开启它。"+
+	"它引用了 PI_WEB_PASSWORD，因此 pigo 不会开启它。"+
 	"这次移除已无法撤销。"+
 	"该文件又定义了同名的服务器，因此没有撤销这次移除。"+
 	"该文件已定义了同名的服务器。"+
-	"该文件是指向不存在目标的符号链接，Pi Web 不会写入它。"+
-	"该文件是指向 Pi Web 可读取的文件夹之外的符号链接，Pi Web 不会写入它。"+
-	"该路径不是普通文件，Pi Web 不会写入它。"+
-	"该文件超过 1 MiB，Pi Web 不会写入它。"+
-	"该文件声明了超过 200 个服务器，Pi Web 不会对其中的条目执行操作。"+
+	"该文件是指向不存在目标的符号链接，pigo 不会写入它。"+
+	"该文件是指向 pigo 可读取的文件夹之外的符号链接，pigo 不会写入它。"+
+	"该路径不是普通文件，pigo 不会写入它。"+
+	"该文件超过 1 MiB，pigo 不会写入它。"+
+	"该文件声明了超过 200 个服务器，pigo 不会对其中的条目执行操作。"+
 	"另一个程序正在写入该文件，请稍后再试。"+
-	"Pi 拒绝此条目，因此 Pi Web 不会连接它。"+
+	"Pi 拒绝此条目，因此 pigo 不会连接它。"+
 	"此服务器不通过 OAuth 登录：只有没有 Authorization 请求头的 HTTP 服务器才会这样登录。"+
-	"Pi Web 已不再记得这次登录：它已结束一段时间，或者 Pi Web 已重启。"+
+	"pigo 已不再记得这次登录：它已结束一段时间，或者 pigo 已重启。"+
 	"这次登录现在没有在等待地址。"+
 	"这不是一个网址。请从浏览器地址栏复制完整的地址。"+
 	"该地址属于另一次登录。请粘贴这次登录后浏览器最终打开的地址。"+
@@ -7172,11 +7172,11 @@ var textsZhHans = i18n.NewTexts(""+
 	"有些需要填写的值缺失或无效。"+
 	"服务器名称只能使用字母、数字、_ 和 -。"+
 	"该服务器以明文保存了一个机密，因此只会保存在全局 mcp.json 中。"+
-	"该服务器会收到运行 Pi Web 的计算机上的变量，请先确认。"+
-	"此文件夹已经变了：它现在有信任决定，或有需要信任的资源，因此 Pi Web 没有信任它，也没有添加任何内容。"+
-	"信任此文件夹也会信任其中的各个文件夹，因此 Pi Web 不会自行这样做。"+
+	"该服务器会收到运行 pigo 的计算机上的变量，请先确认。"+
+	"此文件夹已经变了：它现在有信任决定，或有需要信任的资源，因此 pigo 没有信任它，也没有添加任何内容。"+
+	"信任此文件夹也会信任其中的各个文件夹，因此 pigo 不会自行这样做。"+
 	"无法读取 MCP 设置。"+
-	"Pi Web 没有及时响应。请点“刷新”重试。"+
+	"pigo 没有及时响应。请点“刷新”重试。"+
 	"没有服务器"+
 	"未列出：请看下方的文件问题"+
 	"未列出"+
@@ -7196,7 +7196,7 @@ var textsZhHans = i18n.NewTexts(""+
 	"已覆盖"+
 	"此项目受信任时，项目中的同名服务器会替换这个服务器。"+
 	"此项目受信任时，项目的 .pi/mcp.json 会更改这个服务器的设置。"+
-	"未经校验：Pi Web 无法加载 SDK 的 MCP 校验。"+
+	"未经校验：pigo 无法加载 SDK 的 MCP 校验。"+
 	"简介"+
 	"传输方式"+
 	"命令"+
@@ -7225,16 +7225,16 @@ var textsZhHans = i18n.NewTexts(""+
 	"工具搜索加载后才声明，不需要代码模式。"+
 	"每次请求都带全部工具的完整声明，最占 token。"+
 	"已注册但无法调用。"+
-	"代码模式无法在此 Pi Web 服务器上运行，因此这些工具改为通过工具搜索调用。"+
+	"代码模式无法在此 pigo 服务器上运行，因此这些工具改为通过工具搜索调用。"+
 	"-builtin:codemode 关闭了代码模式，因此只有在工具搜索开启时才能调用这些工具。"+
 	"-builtin:tool-search 关闭了工具搜索，因此这些工具只能在代码模式开启时由代码模式脚本调用。"+
 	"无法列出任何服务器：请看下方的文件问题。"+
 	"选择一个服务器或代码模式。"+
-	"MCP 已关闭：运行 Pi Web 的环境设置了 PI_WEB_DISABLE_MCP。服务器会列出，但没有会话会连接它们。"+
-	"MCP 已关闭：Pi Web 无法加载 SDK 的 MCP 模块。服务器未经校验地列出，没有会话会连接它们。"+
+	"MCP 已关闭：运行 pigo 的环境设置了 PI_WEB_DISABLE_MCP。服务器会列出，但没有会话会连接它们。"+
+	"MCP 已关闭：pigo 无法加载 SDK 的 MCP 模块。服务器未经校验地列出，没有会话会连接它们。"+
 	"MCP 已关闭：某个 extensions 设置关闭了 builtin:mcp，没有会话会连接这些服务器。"+
 	"此项目未受信任，其 .pi/mcp.json 中的服务器不会连接。"+
-	"Pi Web 无法读取信任记录（trust.json），因此暂时把此项目的服务器视为未受信任。"+
+	"pigo 无法读取信任记录（trust.json），因此暂时把此项目的服务器视为未受信任。"+
 	"信任项目…"+
 	"1 个文件问题"+
 	"代码模式"+
@@ -7248,13 +7248,13 @@ var textsZhHans = i18n.NewTexts(""+
 	"无法读取全局设置文件："+
 	"沙箱"+
 	"可用。"+
-	"无法在此 Pi Web 服务器上运行，因此没有会话提供代码模式："+
-	"尚未检查：Pi Web 启动后的第一个会话开始时才会运行自检。"+
+	"无法在此 pigo 服务器上运行，因此没有会话提供代码模式："+
+	"尚未检查：pigo 启动后的第一个会话开始时才会运行自检。"+
 	"扩展"+
 	"已被某个 extensions 设置中的 -builtin:codemode 关闭。"+
 	"无法保存此选择："+
-	"Pi Web 没有及时响应，此选择可能未保存。"+
-	"“始终开启”不可用：代码模式的沙箱无法在此 Pi Web 服务器上运行。"+
+	"pigo 没有及时响应，此选择可能未保存。"+
+	"“始终开启”不可用：代码模式的沙箱无法在此 pigo 服务器上运行。"+
 	"内置工具"+
 	"直接调用"+
 	"脚本调用"+
@@ -7267,11 +7267,11 @@ var textsZhHans = i18n.NewTexts(""+
 	"保存"+
 	"无法保存此预算："+
 	"MCP 关闭期间，无法在此更改服务器。"+
-	"在此项目受信任之前，Pi Web 不会更改它们。"+
-	"在能够读取信任记录之前，Pi Web 不会更改它们。"+
+	"在此项目受信任之前，pigo 不会更改它们。"+
+	"在能够读取信任记录之前，pigo 不会更改它们。"+
 	"更改会保存到文件中，但在 builtin:mcp 关闭期间，没有会话会连接这些服务器。"+
 	"无法更改该服务器："+
-	"Pi Web 没有及时响应，更改可能未生效。"+
+	"pigo 没有及时响应，更改可能未生效。"+
 	"撤销"+
 	"正在撤销…"+
 	"无法撤销："+
@@ -7288,20 +7288,20 @@ var textsZhHans = i18n.NewTexts(""+
 	"正在测试…"+
 	"尚未测试。"+
 	"它会执行 shell 命令，因此测试要等其他此类测试结束。"+
-	"此 Pi Web 服务器上的 MCP 已关闭，因此不会测试任何服务器。"+
-	"此项目未受信任，因此 Pi Web 不会启动它的服务器。"+
-	"Pi Web 无法读取信任记录（trust.json），因此不会启动此项目的服务器。"+
+	"此 pigo 服务器上的 MCP 已关闭，因此不会测试任何服务器。"+
+	"此项目未受信任，因此 pigo 不会启动它的服务器。"+
+	"pigo 无法读取信任记录（trust.json），因此不会启动此项目的服务器。"+
 	"Pi 拒绝此条目，因此没有可测试的内容。"+
-	"它引用了 PI_WEB_PASSWORD，因此 Pi Web 不会连接它。"+
+	"它引用了 PI_WEB_PASSWORD，因此 pigo 不会连接它。"+
 	"此条目不是对象，因此没有可测试的内容。请在文件中修正。"+
-	"该请求没有指明 Pi Web 能够测试的服务器，Pi Web 已拒绝。"+
-	"该文件不是有效的 JSON，Pi Web 无法读取此条目进行测试。"+
-	"该文件不是包含 \"mcpServers\" 对象的对象，Pi Web 无法读取此条目进行测试。"+
-	"该文件是指向不存在目标的符号链接，Pi Web 无法读取此条目进行测试。"+
-	"该文件是指向 Pi Web 可读取的文件夹之外的符号链接，Pi Web 不会测试其中的服务器。"+
-	"该路径不是普通文件，Pi Web 不会读取它来测试此条目。"+
-	"该文件超过 1 MiB，Pi Web 不会读取它来测试此条目。"+
-	"该文件声明了超过 200 个服务器，Pi Web 不会读取它来测试此条目。"+
+	"该请求没有指明 pigo 能够测试的服务器，pigo 已拒绝。"+
+	"该文件不是有效的 JSON，pigo 无法读取此条目进行测试。"+
+	"该文件不是包含 \"mcpServers\" 对象的对象，pigo 无法读取此条目进行测试。"+
+	"该文件是指向不存在目标的符号链接，pigo 无法读取此条目进行测试。"+
+	"该文件是指向 pigo 可读取的文件夹之外的符号链接，pigo 不会测试其中的服务器。"+
+	"该路径不是普通文件，pigo 不会读取它来测试此条目。"+
+	"该文件超过 1 MiB，pigo 不会读取它来测试此条目。"+
+	"该文件声明了超过 200 个服务器，pigo 不会读取它来测试此条目。"+
 	"已连接"+
 	"需要登录"+
 	"未能连接"+
@@ -7312,7 +7312,7 @@ var textsZhHans = i18n.NewTexts(""+
 	"只读"+
 	"另一个会执行 shell 命令的服务器的测试没有及时完成，因此此测试没有开始。请重试。"+
 	"无法测试该服务器："+
-	"Pi Web 没有及时响应。测试可能仍会完成，按“刷新”查看结果。"+
+	"pigo 没有及时响应。测试可能仍会完成，按“刷新”查看结果。"+
 	"正在会话中连接"+
 	"会话中的连接已断开"+
 	"名称已被其他扩展占用"+
@@ -7337,7 +7337,7 @@ var textsZhHans = i18n.NewTexts(""+
 	"取消登录"+
 	"正在取消…"+
 	"无法取消登录："+
-	"Pi Web 没有及时响应。登录可能仍在进行；一旦有进展，这里会显示。"+
+	"pigo 没有及时响应。登录可能仍在进行；一旦有进展，这里会显示。"+
 	"退出登录"+
 	"正在退出登录…"+
 	"登录可能会替换此服务器已保存的令牌和注册信息。"+
@@ -7346,47 +7346,47 @@ var textsZhHans = i18n.NewTexts(""+
 	"正在通过服务器的授权服务器准备登录…"+
 	"正在完成登录…"+
 	"授权服务器已经回应，因此这一步无法再取消。"+
-	"打开登录页并批准访问。浏览器回到运行 Pi Web 的计算机后，登录会自动完成。如果浏览器在另一台设备上，或者它最终打开的页面无法加载，请复制该页面的地址并粘贴到这里。"+
+	"打开登录页并批准访问。浏览器回到运行 pigo 的计算机后，登录会自动完成。如果浏览器在另一台设备上，或者它最终打开的页面无法加载，请复制该页面的地址并粘贴到这里。"+
 	"登录页："+
 	"服务器给出的登录页不是网址，因此只以文本显示："+
-	"Pi Web 从登录开始起最多等待 5 分钟。"+
+	"pigo 从登录开始起最多等待 5 分钟。"+
 	"浏览器最终打开的地址"+
 	"http://127.0.0.1:…/callback?code=…"+
 	"继续"+
 	"正在检查…"+
 	"该地址无法完成这次登录："+
-	"Pi Web 没有及时响应。如果它已接收该地址，这里会显示登录的进展。"+
+	"pigo 没有及时响应。如果它已接收该地址，这里会显示登录的进展。"+
 	"已经登录：服务器无需重新登录就连接上了。"+
 	"已登录。上方的“状态”显示服务器提供的内容。"+
 	"已使用保存的刷新令牌重新登录，无需浏览器。上方的“状态”显示服务器提供的内容。"+
 	"已登录，但之后服务器没有连接成功。上方的“状态”说明了原因。"+
-	"已登录，但 Pi Web 再次连接时，服务器仍要求登录。"+
+	"已登录，但 pigo 再次连接时，服务器仍要求登录。"+
 	"已登录。按“测试连接”查看服务器提供的内容。"+
 	"已取消登录。"+
-	"登录没有在 5 分钟内完成，因此 Pi Web 停止了等待。"+
+	"登录没有在 5 分钟内完成，因此 pigo 停止了等待。"+
 	"服务器没有连接成功，也没有要求登录，因此没有可登录的内容。上方的“状态”说明了原因。"+
 	"另一个会执行 shell 命令的服务器的测试没有及时完成，因此登录没有开始。请重试。"+
 	"登录失败。"+
 	"登录意外失败。"+
-	"Pi Web 已不再记得这次登录：它已结束一段时间，或者 Pi Web 已重启。按“登录”重新开始。"+
+	"pigo 已不再记得这次登录：它已结束一段时间，或者 pigo 已重启。按“登录”重新开始。"+
 	"无法登录："+
-	"Pi Web 没有及时响应。再按一次“登录”可查看正在进行的登录。"+
+	"pigo 没有及时响应。再按一次“登录”可查看正在进行的登录。"+
 	"无法退出登录："+
 	"已退出登录：为该服务器保存的令牌已删除。"+
 	"该服务器没有保存任何内容，因此无需退出登录。"+
-	"此 Pi Web 服务器上的 MCP 已关闭，因此不会登录任何服务器。"+
-	"此项目未受信任，因此 Pi Web 不会登录或退出它的服务器。"+
-	"Pi Web 无法读取信任存储（trust.json），因此不会登录或退出此项目的服务器。"+
+	"此 pigo 服务器上的 MCP 已关闭，因此不会登录任何服务器。"+
+	"此项目未受信任，因此 pigo 不会登录或退出它的服务器。"+
+	"pigo 无法读取信任存储（trust.json），因此不会登录或退出此项目的服务器。"+
 	"Pi 拒绝此条目，因此没有可登录的内容。"+
-	"Pi Web 已无法从文件中读取此条目。请按“刷新”。"+
-	"Pi Web 拒绝了该请求，因为它没有指明一个可以登录的服务器。"+
+	"pigo 已无法从文件中读取此条目。请按“刷新”。"+
+	"pigo 拒绝了该请求，因为它没有指明一个可以登录的服务器。"+
 	"添加 MCP"+
 	"添加 MCP"+
 	"要添加的服务器"+
 	"https://mcp.example.com/mcp\nnpx -y @scope/server\nclaude mcp add …\n{ \"mcpServers\": { … } }"+
 	"支持的格式（点击填入示例）"+
 	"启用 pi mcp 语法，支持 $NAME 和 !command"+
-	"环境变量和请求头里的 $NAME 会读取运行 Pi Web 的计算机上的变量，以 ! 开头的值每次连接都会作为命令执行。"+
+	"环境变量和请求头里的 $NAME 会读取运行 pigo 的计算机上的变量，以 ! 开头的值每次连接都会作为命令执行。"+
 	"服务器"+
 	"预览"+
 	"识别为"+
@@ -7394,7 +7394,7 @@ var textsZhHans = i18n.NewTexts(""+
 	"需要填写的值"+
 	"可选：留空时，它所属的值会被省略。"+
 	"填写的值"+
-	"从运行 Pi Web 的计算机上的变量读取"+
+	"从运行 pigo 的计算机上的变量读取"+
 	"保存为 ${…}：pi 每次连接时读取该变量，值本身不会写入 mcp.json。"+
 	"请选择…"+
 	"粘贴内容中的机密"+
@@ -7408,16 +7408,16 @@ var textsZhHans = i18n.NewTexts(""+
 	"未添加："+
 	"添加并发送这些值"+
 	"还没有可添加的内容：粘贴的内容中没有 pi 能用的服务器。"+
-	"它引用了 PI_WEB_PASSWORD，因此 Pi Web 不会添加它。"+
+	"它引用了 PI_WEB_PASSWORD，因此 pigo 不会添加它。"+
 	"打开一个项目后，才能把服务器添加到它的 .pi/mcp.json。"+
 	"未列出项目文件夹，因此不会写入它的 .pi/mcp.json。"+
-	"Pi Web 无法读取信任记录（trust.json），因此不会写入此项目的 .pi/mcp.json。"+
-	"此项目未受信任，因此 Pi Web 不会写入它的 .pi/mcp.json。请先信任它。"+
+	"pigo 无法读取信任记录（trust.json），因此不会写入此项目的 .pi/mcp.json。"+
+	"此项目未受信任，因此 pigo 不会写入它的 .pi/mcp.json。请先信任它。"+
 	"此文件夹被标记为不受信任，因此其 .pi/mcp.json 中的服务器永远不会连接。"+
-	"此文件夹的 .pi 下，或其上层某个 .agents/skills 文件夹中，有一个指向不存在目标的链接。目标出现后它就需要信任，因此 Pi Web 不会自行信任此文件夹。请删除或修复该链接，然后点击“刷新”。"+
-	"这是你的主目录。Pi Web 不会自行信任它，因为其中的每个文件夹都会一并受信任；请把服务器添加到全局。"+
-	"这是文件系统的根目录。Pi Web 不会自行信任它，因为其中的每个文件夹都会一并受信任；请把服务器添加到全局。"+
-	"此文件夹包含的文件夹太多，Pi Web 无法确认信任它不会同时信任其中的项目。Pi Web 不会自行信任它；请把服务器添加到全局。"+
+	"此文件夹的 .pi 下，或其上层某个 .agents/skills 文件夹中，有一个指向不存在目标的链接。目标出现后它就需要信任，因此 pigo 不会自行信任此文件夹。请删除或修复该链接，然后点击“刷新”。"+
+	"这是你的主目录。pigo 不会自行信任它，因为其中的每个文件夹都会一并受信任；请把服务器添加到全局。"+
+	"这是文件系统的根目录。pigo 不会自行信任它，因为其中的每个文件夹都会一并受信任；请把服务器添加到全局。"+
+	"此文件夹包含的文件夹太多，pigo 无法确认信任它不会同时信任其中的项目。pigo 不会自行信任它；请把服务器添加到全局。"+
 	"正在测试连接…"+
 	"它要求登录。"+
 	"URL"+
@@ -7440,7 +7440,7 @@ var textsZhHans = i18n.NewTexts(""+
 	"Visual Studio 安装链接"+
 	"GitHub Copilot 应用链接"+
 	"还没有可读取的内容：请粘贴 URL、命令行或配置。"+
-	"Pi Web 无法识别这段内容。请粘贴服务器的 URL、启动它的命令、mcp add 命令、JSON 配置或安装链接。"+
+	"pigo 无法识别这段内容。请粘贴服务器的 URL、启动它的命令、mcp add 命令、JSON 配置或安装链接。"+
 	"此配置中没有找到 MCP 服务器。"+
 	"这里包含不止一条命令。请只粘贴启动服务器的那条。"+
 	"这个 GitHub 页面不是服务器。请从服务器的 README 复制安装命令、URL 或配置。"+
@@ -7454,7 +7454,7 @@ var textsZhHans = i18n.NewTexts(""+
 	"它来自 Zed 扩展，只有 Zed 才能启动它。"+
 	"它只以待安装的软件包形式发布，而 pi 需要命令或 URL。请改为粘贴它的安装命令。"+
 	"配置关闭了 OAuth，pi 无法这样做：只要服务器要求，pi 就会通过 OAuth 登录。"+
-	"配置没有指明传输方式，Pi Web 根据现有的键推断出了它。"+
+	"配置没有指明传输方式，pigo 根据现有的键推断出了它。"+
 	"这看起来像 pi 自己的 mcp.json。如果是从那里复制的，请打开“启用 pi mcp 语法，支持 $NAME 和 !command”。"+
 	"省略了空的 Authorization 请求头，因此服务器要求时 pi 会通过 OAuth 登录。"+
 	"配置中它处于关闭状态，因此添加后也是关闭的。"+
@@ -7710,7 +7710,7 @@ var textsZhHans = i18n.NewTexts(""+
 		6,
 		6,
 		6,
-		47,
+		45,
 		6,
 		60,
 		18,
@@ -7800,8 +7800,8 @@ var textsZhHans = i18n.NewTexts(""+
 		6,
 		9,
 		6,
-		29,
-		86,
+		27,
+		84,
 		36,
 		18,
 		18,
@@ -8157,7 +8157,7 @@ var textsZhHans = i18n.NewTexts(""+
 		27,
 		18,
 		27,
-		38,
+		36,
 		21,
 		12,
 		15,
@@ -8475,12 +8475,12 @@ var textsZhHans = i18n.NewTexts(""+
 		51,
 		57,
 		33,
-		177,
+		173,
 		28,
 		41,
 		47,
 		36,
-		68,
+		66,
 		6,
 		24,
 		24,
@@ -8488,52 +8488,52 @@ var textsZhHans = i18n.NewTexts(""+
 		4,
 		18,
 		45,
-		171,
+		169,
 		39,
 		40,
 		66,
 		90,
 		33,
 		72,
-		89,
-		77,
+		87,
+		75,
 		68,
 		89,
 		72,
 		87,
-		155,
-		52,
+		153,
+		50,
 		111,
 		119,
-		31,
+		29,
 		54,
-		34,
+		32,
 		48,
-		52,
-		55,
-		83,
+		50,
+		53,
+		81,
 		42,
 		75,
-		72,
-		79,
-		65,
-		57,
-		78,
+		68,
+		77,
+		63,
+		55,
+		76,
 		39,
 		96,
-		63,
+		61,
 		30,
 		75,
 		42,
-		76,
-		96,
-		55,
-		49,
-		90,
-		57,
+		74,
+		92,
 		53,
+		47,
+		88,
+		57,
+		51,
 		112,
-		90,
+		86,
 		42,
 		72,
 		90,
@@ -8543,11 +8543,11 @@ var textsZhHans = i18n.NewTexts(""+
 		42,
 		55,
 		88,
-		77,
-		146,
-		95,
+		75,
+		144,
+		93,
 		26,
-		55,
+		53,
 		15,
 		39,
 		9,
@@ -8567,7 +8567,7 @@ var textsZhHans = i18n.NewTexts(""+
 		9,
 		78,
 		83,
-		56,
+		54,
 		6,
 		12,
 		6,
@@ -8596,16 +8596,16 @@ var textsZhHans = i18n.NewTexts(""+
 		57,
 		63,
 		27,
-		104,
+		102,
 		105,
 		123,
 		60,
 		39,
-		124,
-		120,
+		122,
+		118,
 		103,
 		71,
-		107,
+		105,
 		15,
 		17,
 		12,
@@ -8619,13 +8619,13 @@ var textsZhHans = i18n.NewTexts(""+
 		33,
 		6,
 		9,
-		80,
-		79,
+		78,
+		77,
 		6,
 		64,
 		24,
-		55,
-		92,
+		53,
+		90,
 		12,
 		12,
 		12,
@@ -8638,11 +8638,11 @@ var textsZhHans = i18n.NewTexts(""+
 		6,
 		24,
 		49,
-		58,
-		64,
+		56,
+		62,
 		103,
 		27,
-		52,
+		50,
 		6,
 		15,
 		15,
@@ -8659,20 +8659,20 @@ var textsZhHans = i18n.NewTexts(""+
 		15,
 		15,
 		73,
-		79,
-		68,
-		92,
+		77,
+		66,
+		90,
 		54,
-		63,
+		61,
 		81,
-		75,
-		75,
-		96,
-		94,
-		111,
+		71,
 		73,
-		67,
-		87,
+		94,
+		92,
+		107,
+		71,
+		65,
+		85,
 		9,
 		12,
 		12,
@@ -8683,7 +8683,7 @@ var textsZhHans = i18n.NewTexts(""+
 		6,
 		115,
 		27,
-		85,
+		83,
 		21,
 		27,
 		30,
@@ -8708,7 +8708,7 @@ var textsZhHans = i18n.NewTexts(""+
 		12,
 		15,
 		21,
-		91,
+		89,
 		12,
 		21,
 		69,
@@ -8717,47 +8717,47 @@ var textsZhHans = i18n.NewTexts(""+
 		54,
 		21,
 		63,
-		236,
+		234,
 		12,
 		69,
-		49,
+		47,
 		30,
 		38,
 		6,
 		15,
 		36,
-		91,
+		89,
 		60,
 		66,
 		117,
 		90,
-		68,
+		66,
 		66,
 		18,
-		68,
+		66,
 		126,
 		112,
 		15,
 		21,
-		120,
+		116,
 		15,
-		85,
+		83,
 		21,
 		60,
 		66,
-		79,
 		77,
-		101,
+		75,
+		99,
 		54,
-		67,
-		82,
+		65,
+		80,
 		10,
 		10,
 		21,
 		93,
 		39,
 		48,
-		144,
+		142,
 		9,
 		6,
 		9,
@@ -8765,7 +8765,7 @@ var textsZhHans = i18n.NewTexts(""+
 		18,
 		51,
 		12,
-		47,
+		45,
 		88,
 		12,
 		24,
@@ -8779,16 +8779,16 @@ var textsZhHans = i18n.NewTexts(""+
 		12,
 		24,
 		79,
-		63,
+		61,
 		73,
 		67,
-		96,
-		90,
+		94,
+		88,
 		98,
-		257,
-		142,
-		151,
-		167,
+		255,
+		140,
+		149,
+		163,
 		21,
 		18,
 		3,
@@ -8811,7 +8811,7 @@ var textsZhHans = i18n.NewTexts(""+
 		26,
 		27,
 		67,
-		129,
+		127,
 		41,
 		72,
 		101,
@@ -8825,7 +8825,7 @@ var textsZhHans = i18n.NewTexts(""+
 		52,
 		110,
 		100,
-		76,
+		74,
 		136,
 		95,
 		66,
@@ -9084,7 +9084,7 @@ var textsZhHant = i18n.NewTexts(""+
 	"設定"+
 	"設定"+
 	"一般"+
-	"選擇 Pi Web 的外觀與介面語言。"+
+	"選擇 pigo 的外觀與介面語言。"+
 	"外觀"+
 	"選擇淺色或深色主題，也可以跟隨系統設定。"+
 	"聊天內容寬度"+
@@ -9174,8 +9174,8 @@ var textsZhHant = i18n.NewTexts(""+
 	"名稱"+
 	"儲存至"+
 	"關閉"+
-	"啟用 Pi Web 內建子代理"+
-	"提供 Pi Web 整合的 Agent 工具，並停用發生衝突的 pi-subagents 擴充功能。"+
+	"啟用 pigo 內建子代理"+
+	"提供 pigo 整合的 Agent 工具，並停用發生衝突的 pi-subagents 擴充功能。"+
 	"重新載入目前工作階段後生效。"+
 	"重新載入工作階段"+
 	"並行子代理數"+
@@ -9531,7 +9531,7 @@ var textsZhHant = i18n.NewTexts(""+
 	"在檔案總管中開啟"+
 	"在 Finder 中開啟"+
 	"在檔案管理員中開啟"+
-	"僅在 Pi Web 執行於本機時可用"+
+	"僅在 pigo 執行於本機時可用"+
 	"目前平台不支援"+
 	"搜尋檔案"+
 	"搜尋檔案…"+
@@ -9849,12 +9849,12 @@ var textsZhHant = i18n.NewTexts(""+
 	"此專案尚未受信任，專案外掛未載入。"+
 	"專案資源未載入時，無法安裝到專案範圍。"+
 	".pi/mcp.json 中的 MCP 伺服器"+
-	"信任此專案後，這些伺服器即可在 Pi Web 和 pi CLI 中連線，兩者共用這項信任決定。stdio 伺服器會在執行 Pi Web 的電腦上執行其命令。"+
+	"信任此專案後，這些伺服器即可在 pigo 和 pi CLI 中連線，兩者共用這項信任決定。stdio 伺服器會在執行 pigo 的電腦上執行其命令。"+
 	"正在讀取 .pi/mcp.json…"+
 	"無法列出此專案的 MCP 伺服器。"+
 	"列出此專案的 MCP 伺服器花費太久。"+
 	"此檔案未宣告任何伺服器。"+
-	"Pi Web 無法載入 SDK 的 MCP 檢查，以下項目未經檢查。"+
+	"pigo 無法載入 SDK 的 MCP 檢查，以下項目未經檢查。"+
 	"關閉"+
 	"此專案已受信任。"+
 	"無法信任此專案。"+
@@ -9862,52 +9862,52 @@ var textsZhHant = i18n.NewTexts(""+
 	"HTTP"+
 	"oauth.clientSecret"+
 	"Pi 拒絕載入此項目，它不會連線："+
-	"參照了 PI_WEB_PASSWORD。Pi Web 會拒絕連線到它，但 pi CLI 也會讀取此檔案；如果 CLI 的執行環境中設定了該變數，它就會把密碼傳出去："+
+	"參照了 PI_WEB_PASSWORD。pigo 會拒絕連線到它，但 pi CLI 也會讀取此檔案；如果 CLI 的執行環境中設定了該變數，它就會把密碼傳出去："+
 	"已在檔案中關閉，不會連線。"+
 	"每次連線都會執行 shell 命令："+
 	"此專案受信任時，它會取代你的同名全域伺服器。"+
 	"指向你的同名全域伺服器，但沒有變更 enabled、exposure 或 toolExposure。"+
 	"疑似機密的部分已隱藏。"+
 	"包含不可見字元或控制字元，這裡以 \\u{…} 代碼顯示。"+
-	"每次連線都會把執行 Pi Web 的電腦上的環境變數傳送給此伺服器："+
-	"會把執行 Pi Web 的電腦上的環境變數傳給它啟動的命令："+
+	"每次連線都會把執行 pigo 的電腦上的環境變數傳送給此伺服器："+
+	"會把執行 pigo 的電腦上的環境變數傳給它啟動的命令："+
 	"此檔案不是有效的 JSON，其中的伺服器都不會載入。"+
 	"此檔案不是包含 \"mcpServers\" 物件的物件，其中的伺服器都不會載入。"+
 	"\"autoEnableCodemode\" 必須是 true 或 false；伺服器仍會載入。"+
 	"此檔案是指向不存在目標的符號連結，不會從中載入任何伺服器。"+
-	"此檔案是指向 Pi Web 可讀取資料夾之外的符號連結，因此這裡不列出其中的伺服器。專案受信任後，Pi 仍會載入它們。"+
-	"此路徑不是一般檔案，Pi Web 不會讀取。"+
+	"此檔案是指向 pigo 可讀取資料夾之外的符號連結，因此這裡不列出其中的伺服器。專案受信任後，Pi 仍會載入它們。"+
+	"此路徑不是一般檔案，pigo 不會讀取。"+
 	"此檔案超過 1 MiB，因此這裡不列出其中的伺服器。專案受信任後，Pi 仍會載入它們。"+
 	"此檔案宣告了超過 200 個伺服器，因此這裡不列出它們。專案受信任後，Pi 仍會載入它們。"+
-	"Pi Web 無法讀取此檔案。"+
+	"pigo 無法讀取此檔案。"+
 	"未提供專案資料夾，或它不是絕對路徑。"+
-	"Pi Web 無權讀取此資料夾。"+
+	"pigo 無權讀取此資料夾。"+
 	"專案資料夾已不存在或不是資料夾。"+
-	"此要求並非來自這個頁面，Pi Web 已拒絕。"+
-	"此要求不是以 JSON 傳送的，Pi Web 已拒絕。"+
-	"Pi Web 無法讀取信任記錄（trust.json），或它正被其他程式鎖定。"+
+	"此要求並非來自這個頁面，pigo 已拒絕。"+
+	"此要求不是以 JSON 傳送的，pigo 已拒絕。"+
+	"pigo 無法讀取信任記錄（trust.json），或它正被其他程式鎖定。"+
 	"此專案已沒有需要信任的資源。"+
 	"請等此資料夾中正在執行的工作階段結束後，再信任此專案。"+
-	"此要求並未要求 Pi Web 能夠進行的變更，Pi Web 已拒絕。"+
-	"此 Pi Web 伺服器上的 MCP 已關閉，因此不會變更任何伺服器。"+
-	"此專案未受信任，Pi Web 不會變更它的 .pi/mcp.json。"+
-	"該檔案不是有效的 JSON，Pi Web 沒有更動它。"+
-	"該檔案不是包含 \"mcpServers\" 物件的物件，Pi Web 沒有更動它。"+
+	"此要求並未要求 pigo 能夠進行的變更，pigo 已拒絕。"+
+	"此 pigo 伺服器上的 MCP 已關閉，因此不會變更任何伺服器。"+
+	"此專案未受信任，pigo 不會變更它的 .pi/mcp.json。"+
+	"該檔案不是有效的 JSON，pigo 沒有更動它。"+
+	"該檔案不是包含 \"mcpServers\" 物件的物件，pigo 沒有更動它。"+
 	"該檔案已不再定義此伺服器。"+
 	"此項目不是物件，因此無法開啟或關閉。請將其移除，或在檔案中修正。"+
-	"它引用了 PI_WEB_PASSWORD，因此 Pi Web 不會開啟它。"+
+	"它引用了 PI_WEB_PASSWORD，因此 pigo 不會開啟它。"+
 	"這次移除已無法復原。"+
 	"該檔案又定義了同名的伺服器，因此沒有復原這次移除。"+
 	"該檔案已定義了同名的伺服器。"+
-	"該檔案是指向不存在目標的符號連結，Pi Web 不會寫入它。"+
-	"該檔案是指向 Pi Web 可讀取的資料夾之外的符號連結，Pi Web 不會寫入它。"+
-	"該路徑不是一般檔案，Pi Web 不會寫入它。"+
-	"該檔案超過 1 MiB，Pi Web 不會寫入它。"+
-	"該檔案宣告了超過 200 個伺服器，Pi Web 不會對其中的項目執行操作。"+
+	"該檔案是指向不存在目標的符號連結，pigo 不會寫入它。"+
+	"該檔案是指向 pigo 可讀取的資料夾之外的符號連結，pigo 不會寫入它。"+
+	"該路徑不是一般檔案，pigo 不會寫入它。"+
+	"該檔案超過 1 MiB，pigo 不會寫入它。"+
+	"該檔案宣告了超過 200 個伺服器，pigo 不會對其中的項目執行操作。"+
 	"另一個程式正在寫入該檔案，請稍後再試。"+
-	"Pi 拒絕此項目，因此 Pi Web 不會連線到它。"+
+	"Pi 拒絕此項目，因此 pigo 不會連線到它。"+
 	"此伺服器不透過 OAuth 登入：只有沒有 Authorization 標頭的 HTTP 伺服器才會這樣登入。"+
-	"Pi Web 已不再記得這次登入：它已結束一段時間，或者 Pi Web 已重新啟動。"+
+	"pigo 已不再記得這次登入：它已結束一段時間，或者 pigo 已重新啟動。"+
 	"這次登入現在沒有在等待網址。"+
 	"這不是網址。請從瀏覽器網址列複製完整的網址。"+
 	"這個網址屬於另一次登入。請貼上這次登入後瀏覽器最後開啟的網址。"+
@@ -9917,11 +9917,11 @@ var textsZhHant = i18n.NewTexts(""+
 	"有些需要填寫的值缺少或無效。"+
 	"伺服器名稱只能使用字母、數字、_ 和 -。"+
 	"此伺服器以明文保存了一項機密，因此只會儲存在全域 mcp.json 中。"+
-	"此伺服器會收到執行 Pi Web 的電腦上的變數，請先確認。"+
-	"此資料夾已經變了：它現在有信任決定，或有需要信任的資源，因此 Pi Web 沒有信任它，也沒有新增任何內容。"+
-	"信任此資料夾也會信任其中的各個資料夾，因此 Pi Web 不會自行這樣做。"+
+	"此伺服器會收到執行 pigo 的電腦上的變數，請先確認。"+
+	"此資料夾已經變了：它現在有信任決定，或有需要信任的資源，因此 pigo 沒有信任它，也沒有新增任何內容。"+
+	"信任此資料夾也會信任其中的各個資料夾，因此 pigo 不會自行這樣做。"+
 	"無法讀取 MCP 設定。"+
-	"Pi Web 沒有及時回應。請按「重新整理」再試一次。"+
+	"pigo 沒有及時回應。請按「重新整理」再試一次。"+
 	"沒有伺服器"+
 	"未列出：請看下方的檔案問題"+
 	"未列出"+
@@ -9941,7 +9941,7 @@ var textsZhHant = i18n.NewTexts(""+
 	"已覆寫"+
 	"此專案受信任時，專案中的同名伺服器會取代這個伺服器。"+
 	"此專案受信任時，專案的 .pi/mcp.json 會變更這個伺服器的設定。"+
-	"未經檢查：Pi Web 無法載入 SDK 的 MCP 檢查。"+
+	"未經檢查：pigo 無法載入 SDK 的 MCP 檢查。"+
 	"簡介"+
 	"傳輸方式"+
 	"命令"+
@@ -9970,16 +9970,16 @@ var textsZhHant = i18n.NewTexts(""+
 	"工具搜尋載入後才宣告，不需要程式碼模式。"+
 	"每次請求都帶全部工具的完整宣告，最占 token。"+
 	"已註冊但無法呼叫。"+
-	"程式碼模式無法在此 Pi Web 伺服器上執行，因此這些工具改為透過工具搜尋呼叫。"+
+	"程式碼模式無法在此 pigo 伺服器上執行，因此這些工具改為透過工具搜尋呼叫。"+
 	"-builtin:codemode 關閉了程式碼模式，因此只有在工具搜尋開啟時才能呼叫這些工具。"+
 	"-builtin:tool-search 關閉了工具搜尋，因此這些工具只能在程式碼模式開啟時由程式碼模式指令碼呼叫。"+
 	"無法列出任何伺服器：請看下方的檔案問題。"+
 	"選擇一個伺服器或程式碼模式。"+
-	"MCP 已關閉：執行 Pi Web 的環境設定了 PI_WEB_DISABLE_MCP。伺服器會列出，但沒有工作階段會連線到它們。"+
-	"MCP 已關閉：Pi Web 無法載入 SDK 的 MCP 模組。伺服器未經檢查地列出，沒有工作階段會連線到它們。"+
+	"MCP 已關閉：執行 pigo 的環境設定了 PI_WEB_DISABLE_MCP。伺服器會列出，但沒有工作階段會連線到它們。"+
+	"MCP 已關閉：pigo 無法載入 SDK 的 MCP 模組。伺服器未經檢查地列出，沒有工作階段會連線到它們。"+
 	"MCP 已關閉：某個 extensions 設定關閉了 builtin:mcp，沒有工作階段會連線到這些伺服器。"+
 	"此專案未受信任，其 .pi/mcp.json 中的伺服器不會連線。"+
-	"Pi Web 無法讀取信任記錄（trust.json），因此暫時把此專案的伺服器視為未受信任。"+
+	"pigo 無法讀取信任記錄（trust.json），因此暫時把此專案的伺服器視為未受信任。"+
 	"信任專案…"+
 	"1 個檔案問題"+
 	"程式碼模式"+
@@ -9993,13 +9993,13 @@ var textsZhHant = i18n.NewTexts(""+
 	"無法讀取全域設定檔："+
 	"沙箱"+
 	"可用。"+
-	"無法在此 Pi Web 伺服器上執行，因此沒有工作階段提供程式碼模式："+
-	"尚未檢查：Pi Web 啟動後的第一個工作階段開始時才會執行自我檢查。"+
+	"無法在此 pigo 伺服器上執行，因此沒有工作階段提供程式碼模式："+
+	"尚未檢查：pigo 啟動後的第一個工作階段開始時才會執行自我檢查。"+
 	"擴充功能"+
 	"已被某個 extensions 設定中的 -builtin:codemode 關閉。"+
 	"無法儲存此選擇："+
-	"Pi Web 沒有及時回應，此選擇可能未儲存。"+
-	"「一律開啟」無法使用：程式碼模式的沙箱無法在此 Pi Web 伺服器上執行。"+
+	"pigo 沒有及時回應，此選擇可能未儲存。"+
+	"「一律開啟」無法使用：程式碼模式的沙箱無法在此 pigo 伺服器上執行。"+
 	"內建工具"+
 	"直接呼叫"+
 	"經指令碼"+
@@ -10012,11 +10012,11 @@ var textsZhHant = i18n.NewTexts(""+
 	"儲存"+
 	"無法儲存此預算："+
 	"MCP 關閉期間，無法在此變更伺服器。"+
-	"在此專案受信任之前，Pi Web 不會變更它們。"+
-	"在能夠讀取信任記錄之前，Pi Web 不會變更它們。"+
+	"在此專案受信任之前，pigo 不會變更它們。"+
+	"在能夠讀取信任記錄之前，pigo 不會變更它們。"+
 	"變更會儲存到檔案中，但在 builtin:mcp 關閉期間，沒有工作階段會連線到這些伺服器。"+
 	"無法變更該伺服器："+
-	"Pi Web 沒有及時回應，變更可能未生效。"+
+	"pigo 沒有及時回應，變更可能未生效。"+
 	"復原"+
 	"正在復原…"+
 	"無法復原："+
@@ -10033,20 +10033,20 @@ var textsZhHant = i18n.NewTexts(""+
 	"正在測試…"+
 	"尚未測試。"+
 	"它會執行 shell 命令，因此測試要等其他此類測試結束。"+
-	"此 Pi Web 伺服器上的 MCP 已關閉，因此不會測試任何伺服器。"+
-	"此專案未受信任，因此 Pi Web 不會啟動它的伺服器。"+
-	"Pi Web 無法讀取信任記錄（trust.json），因此不會啟動此專案的伺服器。"+
+	"此 pigo 伺服器上的 MCP 已關閉，因此不會測試任何伺服器。"+
+	"此專案未受信任，因此 pigo 不會啟動它的伺服器。"+
+	"pigo 無法讀取信任記錄（trust.json），因此不會啟動此專案的伺服器。"+
 	"Pi 拒絕此項目，因此沒有可測試的內容。"+
-	"它引用了 PI_WEB_PASSWORD，因此 Pi Web 不會連線到它。"+
+	"它引用了 PI_WEB_PASSWORD，因此 pigo 不會連線到它。"+
 	"此項目不是物件，因此沒有可測試的內容。請在檔案中修正。"+
-	"此要求並未指明 Pi Web 能夠測試的伺服器，Pi Web 已拒絕。"+
-	"該檔案不是有效的 JSON，Pi Web 無法讀取此項目進行測試。"+
-	"該檔案不是包含 \"mcpServers\" 物件的物件，Pi Web 無法讀取此項目進行測試。"+
-	"該檔案是指向不存在目標的符號連結，Pi Web 無法讀取此項目進行測試。"+
-	"該檔案是指向 Pi Web 可讀取的資料夾之外的符號連結，Pi Web 不會測試其中的伺服器。"+
-	"該路徑不是一般檔案，Pi Web 不會讀取它來測試此項目。"+
-	"該檔案超過 1 MiB，Pi Web 不會讀取它來測試此項目。"+
-	"該檔案宣告了超過 200 個伺服器，Pi Web 不會讀取它來測試此項目。"+
+	"此要求並未指明 pigo 能夠測試的伺服器，pigo 已拒絕。"+
+	"該檔案不是有效的 JSON，pigo 無法讀取此項目進行測試。"+
+	"該檔案不是包含 \"mcpServers\" 物件的物件，pigo 無法讀取此項目進行測試。"+
+	"該檔案是指向不存在目標的符號連結，pigo 無法讀取此項目進行測試。"+
+	"該檔案是指向 pigo 可讀取的資料夾之外的符號連結，pigo 不會測試其中的伺服器。"+
+	"該路徑不是一般檔案，pigo 不會讀取它來測試此項目。"+
+	"該檔案超過 1 MiB，pigo 不會讀取它來測試此項目。"+
+	"該檔案宣告了超過 200 個伺服器，pigo 不會讀取它來測試此項目。"+
 	"已連線"+
 	"需要登入"+
 	"未能連線"+
@@ -10057,7 +10057,7 @@ var textsZhHant = i18n.NewTexts(""+
 	"唯讀"+
 	"另一個會執行 shell 命令的伺服器的測試沒有及時完成，因此此測試沒有開始。請再試一次。"+
 	"無法測試該伺服器："+
-	"Pi Web 沒有及時回應。測試可能仍會完成，按「重新整理」查看結果。"+
+	"pigo 沒有及時回應。測試可能仍會完成，按「重新整理」查看結果。"+
 	"正在工作階段中連線"+
 	"工作階段中的連線已中斷"+
 	"名稱已被其他擴充功能佔用"+
@@ -10082,7 +10082,7 @@ var textsZhHant = i18n.NewTexts(""+
 	"取消登入"+
 	"正在取消…"+
 	"無法取消登入："+
-	"Pi Web 沒有及時回應。登入可能仍在進行；一有進展，這裡就會顯示。"+
+	"pigo 沒有及時回應。登入可能仍在進行；一有進展，這裡就會顯示。"+
 	"登出"+
 	"正在登出…"+
 	"登入可能會取代此伺服器已儲存的權杖和註冊資訊。"+
@@ -10091,47 +10091,47 @@ var textsZhHant = i18n.NewTexts(""+
 	"正在透過伺服器的授權伺服器準備登入…"+
 	"正在完成登入…"+
 	"授權伺服器已經回應，因此這個步驟無法再取消。"+
-	"開啟登入頁面並核准存取。瀏覽器回到執行 Pi Web 的電腦後，登入會自動完成。如果瀏覽器在另一台裝置上，或者它最後開啟的頁面無法載入，請複製該頁面的網址並貼到這裡。"+
+	"開啟登入頁面並核准存取。瀏覽器回到執行 pigo 的電腦後，登入會自動完成。如果瀏覽器在另一台裝置上，或者它最後開啟的頁面無法載入，請複製該頁面的網址並貼到這裡。"+
 	"登入頁面："+
 	"伺服器提供的登入頁面不是網址，因此只以文字顯示："+
-	"Pi Web 從登入開始起最多等待 5 分鐘。"+
+	"pigo 從登入開始起最多等待 5 分鐘。"+
 	"瀏覽器最後開啟的網址"+
 	"http://127.0.0.1:…/callback?code=…"+
 	"繼續"+
 	"正在檢查…"+
 	"這個網址無法完成這次登入："+
-	"Pi Web 沒有及時回應。如果它已收下這個網址，這裡會顯示登入的進展。"+
+	"pigo 沒有及時回應。如果它已收下這個網址，這裡會顯示登入的進展。"+
 	"已經登入：伺服器不需重新登入就連線成功。"+
 	"已登入。上方的「狀態」顯示伺服器提供的內容。"+
 	"已使用儲存的重新整理權杖再次登入，不需要瀏覽器。上方的「狀態」顯示伺服器提供的內容。"+
 	"已登入，但之後伺服器沒有連線成功。上方的「狀態」說明了原因。"+
-	"已登入，但 Pi Web 再次連線時，伺服器仍要求登入。"+
+	"已登入，但 pigo 再次連線時，伺服器仍要求登入。"+
 	"已登入。按「測試連線」查看伺服器提供的內容。"+
 	"已取消登入。"+
-	"登入沒有在 5 分鐘內完成，因此 Pi Web 停止了等待。"+
+	"登入沒有在 5 分鐘內完成，因此 pigo 停止了等待。"+
 	"伺服器沒有連線成功，也沒有要求登入，因此沒有可登入的對象。上方的「狀態」說明了原因。"+
 	"另一個會執行 shell 命令的伺服器的測試沒有及時完成，因此登入沒有開始。請再試一次。"+
 	"登入失敗。"+
 	"登入意外失敗。"+
-	"Pi Web 已不再記得這次登入：它已結束一段時間，或者 Pi Web 已重新啟動。按「登入」重新開始。"+
+	"pigo 已不再記得這次登入：它已結束一段時間，或者 pigo 已重新啟動。按「登入」重新開始。"+
 	"無法登入："+
-	"Pi Web 沒有及時回應。再按一次「登入」可查看正在進行的登入。"+
+	"pigo 沒有及時回應。再按一次「登入」可查看正在進行的登入。"+
 	"無法登出："+
 	"已登出：為此伺服器儲存的權杖已刪除。"+
 	"此伺服器沒有儲存任何內容，因此不需要登出。"+
-	"此 Pi Web 伺服器上的 MCP 已關閉，因此不會登入任何伺服器。"+
-	"此專案未受信任，因此 Pi Web 不會登入或登出它的伺服器。"+
-	"Pi Web 無法讀取信任儲存區（trust.json），因此不會登入或登出此專案的伺服器。"+
+	"此 pigo 伺服器上的 MCP 已關閉，因此不會登入任何伺服器。"+
+	"此專案未受信任，因此 pigo 不會登入或登出它的伺服器。"+
+	"pigo 無法讀取信任儲存區（trust.json），因此不會登入或登出此專案的伺服器。"+
 	"Pi 拒絕此項目，因此沒有可登入的對象。"+
-	"Pi Web 已無法從檔案中讀取此項目。請按「重新整理」。"+
-	"Pi Web 拒絕了這個請求，因為它沒有指明一個可以登入的伺服器。"+
+	"pigo 已無法從檔案中讀取此項目。請按「重新整理」。"+
+	"pigo 拒絕了這個請求，因為它沒有指明一個可以登入的伺服器。"+
 	"新增 MCP"+
 	"新增 MCP"+
 	"要新增的伺服器"+
 	"https://mcp.example.com/mcp\nnpx -y @scope/server\nclaude mcp add …\n{ \"mcpServers\": { … } }"+
 	"支援的格式（點擊填入範例）"+
 	"啟用 pi mcp 語法，支援 $NAME 和 !command"+
-	"環境變數和請求標頭中的 $NAME 會讀取執行 Pi Web 的電腦上的變數，以 ! 開頭的值每次連線都會當作命令執行。"+
+	"環境變數和請求標頭中的 $NAME 會讀取執行 pigo 的電腦上的變數，以 ! 開頭的值每次連線都會當作命令執行。"+
 	"伺服器"+
 	"預覽"+
 	"辨識為"+
@@ -10139,7 +10139,7 @@ var textsZhHant = i18n.NewTexts(""+
 	"需要填寫的值"+
 	"選填：留空時，它所屬的值會被省略。"+
 	"填寫的值"+
-	"從執行 Pi Web 的電腦上的變數讀取"+
+	"從執行 pigo 的電腦上的變數讀取"+
 	"儲存為 ${…}：pi 每次連線時讀取該變數，值本身不會寫入 mcp.json。"+
 	"請選擇…"+
 	"貼上內容中的機密"+
@@ -10153,16 +10153,16 @@ var textsZhHant = i18n.NewTexts(""+
 	"未新增："+
 	"新增並傳送這些值"+
 	"還沒有可新增的內容：貼上的內容中沒有 pi 能用的伺服器。"+
-	"它參照了 PI_WEB_PASSWORD，因此 Pi Web 不會新增它。"+
+	"它參照了 PI_WEB_PASSWORD，因此 pigo 不會新增它。"+
 	"開啟一個專案後，才能把伺服器新增到它的 .pi/mcp.json。"+
 	"未列出專案資料夾，因此不會寫入它的 .pi/mcp.json。"+
-	"Pi Web 無法讀取信任記錄（trust.json），因此不會寫入此專案的 .pi/mcp.json。"+
-	"此專案未受信任，因此 Pi Web 不會寫入它的 .pi/mcp.json。請先信任它。"+
+	"pigo 無法讀取信任記錄（trust.json），因此不會寫入此專案的 .pi/mcp.json。"+
+	"此專案未受信任，因此 pigo 不會寫入它的 .pi/mcp.json。請先信任它。"+
 	"此資料夾被標記為不受信任，因此其 .pi/mcp.json 中的伺服器永遠不會連線。"+
-	"此資料夾的 .pi 下，或其上層某個 .agents/skills 資料夾中，有一個指向不存在目標的連結。目標出現後它就需要信任，因此 Pi Web 不會自行信任此資料夾。請刪除或修正該連結，然後按「重新整理」。"+
-	"這是你的主資料夾。Pi Web 不會自行信任它，因為其中的每個資料夾都會一併受信任；請把伺服器新增到全域。"+
-	"這是檔案系統的根目錄。Pi Web 不會自行信任它，因為其中的每個資料夾都會一併受信任；請把伺服器新增到全域。"+
-	"此資料夾包含的資料夾太多，Pi Web 無法確認信任它不會同時信任其中的專案。Pi Web 不會自行信任它；請把伺服器新增到全域。"+
+	"此資料夾的 .pi 下，或其上層某個 .agents/skills 資料夾中，有一個指向不存在目標的連結。目標出現後它就需要信任，因此 pigo 不會自行信任此資料夾。請刪除或修正該連結，然後按「重新整理」。"+
+	"這是你的主資料夾。pigo 不會自行信任它，因為其中的每個資料夾都會一併受信任；請把伺服器新增到全域。"+
+	"這是檔案系統的根目錄。pigo 不會自行信任它，因為其中的每個資料夾都會一併受信任；請把伺服器新增到全域。"+
+	"此資料夾包含的資料夾太多，pigo 無法確認信任它不會同時信任其中的專案。pigo 不會自行信任它；請把伺服器新增到全域。"+
 	"正在測試連線…"+
 	"它要求登入。"+
 	"網址"+
@@ -10185,7 +10185,7 @@ var textsZhHant = i18n.NewTexts(""+
 	"Visual Studio 安裝連結"+
 	"GitHub Copilot 應用程式連結"+
 	"還沒有可讀取的內容：請貼上網址、命令列或設定。"+
-	"Pi Web 無法辨識這段內容。請貼上伺服器的網址、啟動它的命令、mcp add 命令、JSON 設定或安裝連結。"+
+	"pigo 無法辨識這段內容。請貼上伺服器的網址、啟動它的命令、mcp add 命令、JSON 設定或安裝連結。"+
 	"此設定中沒有找到 MCP 伺服器。"+
 	"這裡包含不只一條命令。請只貼上啟動伺服器的那條。"+
 	"這個 GitHub 頁面不是伺服器。請從伺服器的 README 複製安裝命令、網址或設定。"+
@@ -10199,7 +10199,7 @@ var textsZhHant = i18n.NewTexts(""+
 	"它來自 Zed 擴充功能，只有 Zed 才能啟動它。"+
 	"它只以待安裝的套件形式發布，而 pi 需要命令或網址。請改為貼上它的安裝命令。"+
 	"設定關閉了 OAuth，pi 無法這樣做：只要伺服器要求，pi 就會透過 OAuth 登入。"+
-	"設定沒有指明傳輸方式，Pi Web 根據現有的鍵推斷出了它。"+
+	"設定沒有指明傳輸方式，pigo 根據現有的鍵推斷出了它。"+
 	"這看起來像 pi 自己的 mcp.json。如果是從那裡複製的，請開啟「啟用 pi mcp 語法，支援 $NAME 和 !command」。"+
 	"省略了空的 Authorization 標頭，因此伺服器要求時 pi 會透過 OAuth 登入。"+
 	"設定中它處於關閉狀態，因此新增後也是關閉的。"+
@@ -10455,7 +10455,7 @@ var textsZhHant = i18n.NewTexts(""+
 		6,
 		6,
 		6,
-		41,
+		39,
 		6,
 		60,
 		18,
@@ -10545,8 +10545,8 @@ var textsZhHant = i18n.NewTexts(""+
 		6,
 		9,
 		6,
-		29,
-		92,
+		27,
+		90,
 		42,
 		24,
 		18,
@@ -10902,7 +10902,7 @@ var textsZhHant = i18n.NewTexts(""+
 		24,
 		20,
 		27,
-		38,
+		36,
 		21,
 		12,
 		15,
@@ -11220,12 +11220,12 @@ var textsZhHant = i18n.NewTexts(""+
 		51,
 		57,
 		33,
-		174,
+		170,
 		28,
 		41,
 		47,
 		36,
-		68,
+		66,
 		6,
 		24,
 		24,
@@ -11233,52 +11233,52 @@ var textsZhHant = i18n.NewTexts(""+
 		4,
 		18,
 		45,
-		174,
+		172,
 		39,
 		40,
 		66,
 		90,
 		33,
 		72,
-		86,
-		74,
+		84,
+		72,
 		68,
 		89,
 		72,
 		87,
-		155,
-		52,
+		153,
+		50,
 		111,
 		119,
-		31,
+		29,
 		54,
-		34,
+		32,
 		48,
-		55,
-		55,
-		83,
+		53,
+		53,
+		81,
 		42,
 		81,
-		72,
-		79,
-		65,
-		57,
-		78,
+		68,
+		77,
+		63,
+		55,
+		76,
 		39,
 		96,
-		63,
+		61,
 		30,
 		75,
 		42,
-		76,
-		96,
-		55,
-		49,
-		90,
+		74,
+		92,
+		53,
+		47,
+		88,
 		57,
-		56,
+		54,
 		109,
-		96,
+		92,
 		42,
 		66,
 		93,
@@ -11288,11 +11288,11 @@ var textsZhHant = i18n.NewTexts(""+
 		42,
 		55,
 		88,
-		74,
-		146,
-		95,
+		72,
+		144,
+		93,
 		26,
-		67,
+		65,
 		15,
 		39,
 		9,
@@ -11312,7 +11312,7 @@ var textsZhHant = i18n.NewTexts(""+
 		9,
 		78,
 		83,
-		56,
+		54,
 		6,
 		12,
 		6,
@@ -11341,16 +11341,16 @@ var textsZhHant = i18n.NewTexts(""+
 		60,
 		63,
 		27,
-		107,
+		105,
 		108,
 		132,
 		60,
 		42,
-		133,
-		129,
+		131,
+		127,
 		112,
 		71,
-		107,
+		105,
 		15,
 		17,
 		15,
@@ -11364,13 +11364,13 @@ var textsZhHant = i18n.NewTexts(""+
 		30,
 		6,
 		9,
+		87,
 		89,
-		91,
 		12,
 		64,
 		24,
-		55,
-		98,
+		53,
+		96,
 		12,
 		12,
 		12,
@@ -11383,11 +11383,11 @@ var textsZhHant = i18n.NewTexts(""+
 		6,
 		24,
 		49,
-		58,
-		64,
+		56,
+		62,
 		112,
 		27,
-		52,
+		50,
 		6,
 		15,
 		15,
@@ -11404,20 +11404,20 @@ var textsZhHant = i18n.NewTexts(""+
 		15,
 		15,
 		73,
-		79,
-		68,
-		92,
-		54,
+		77,
 		66,
+		90,
+		54,
+		64,
 		81,
-		75,
-		75,
-		96,
-		94,
-		111,
+		71,
 		73,
-		67,
-		87,
+		94,
+		92,
+		107,
+		71,
+		65,
+		85,
 		9,
 		12,
 		12,
@@ -11428,7 +11428,7 @@ var textsZhHant = i18n.NewTexts(""+
 		6,
 		121,
 		27,
-		91,
+		89,
 		27,
 		33,
 		36,
@@ -11453,7 +11453,7 @@ var textsZhHant = i18n.NewTexts(""+
 		12,
 		15,
 		21,
-		91,
+		89,
 		6,
 		15,
 		69,
@@ -11462,47 +11462,47 @@ var textsZhHant = i18n.NewTexts(""+
 		54,
 		21,
 		66,
-		233,
+		231,
 		15,
 		72,
-		49,
+		47,
 		30,
 		38,
 		6,
 		15,
 		39,
-		94,
+		92,
 		60,
 		66,
 		126,
 		90,
-		68,
+		66,
 		66,
 		18,
-		68,
+		66,
 		126,
 		118,
 		15,
 		21,
-		126,
+		122,
 		15,
-		85,
+		83,
 		15,
 		54,
 		63,
-		79,
 		77,
-		104,
+		75,
+		102,
 		54,
-		73,
-		85,
+		71,
+		83,
 		10,
 		10,
 		21,
 		93,
 		39,
 		48,
-		144,
+		142,
 		9,
 		6,
 		9,
@@ -11510,7 +11510,7 @@ var textsZhHant = i18n.NewTexts(""+
 		18,
 		51,
 		12,
-		44,
+		42,
 		88,
 		12,
 		24,
@@ -11524,16 +11524,16 @@ var textsZhHant = i18n.NewTexts(""+
 		12,
 		24,
 		79,
-		63,
+		61,
 		73,
 		67,
-		96,
-		90,
+		94,
+		88,
 		98,
-		260,
-		145,
-		151,
-		167,
+		258,
+		143,
+		149,
+		163,
 		21,
 		18,
 		6,
@@ -11556,7 +11556,7 @@ var textsZhHant = i18n.NewTexts(""+
 		26,
 		33,
 		69,
-		131,
+		129,
 		41,
 		72,
 		103,
@@ -11570,7 +11570,7 @@ var textsZhHant = i18n.NewTexts(""+
 		58,
 		109,
 		100,
-		76,
+		74,
 		136,
 		92,
 		66,
@@ -13126,7 +13126,7 @@ func SettingsGeneral(cx *core.Scope) string { return For(cx).SettingsGeneral() }
 // SettingsGeneral is the package's SettingsGeneral in the language of msgs.
 func (msgs Messages) SettingsGeneral() string { return msgs.text(textSettingsGeneral) }
 
-// SettingsGeneralDescription says "Choose how Pi Web looks and which language it uses."
+// SettingsGeneralDescription says "Choose how pigo looks and which language it uses."
 // in the language the app shows under cx.
 func SettingsGeneralDescription(cx *core.Scope) string { return For(cx).SettingsGeneralDescription() }
 
@@ -14088,14 +14088,14 @@ func AgentsClose(cx *core.Scope) string { return For(cx).AgentsClose() }
 // AgentsClose is the package's AgentsClose in the language of msgs.
 func (msgs Messages) AgentsClose() string { return msgs.text(textAgentsClose) }
 
-// AgentsBuiltInTitle says "Enable Pi Web built-in sub-agents"
+// AgentsBuiltInTitle says "Enable pigo built-in sub-agents"
 // in the language the app shows under cx.
 func AgentsBuiltInTitle(cx *core.Scope) string { return For(cx).AgentsBuiltInTitle() }
 
 // AgentsBuiltInTitle is the package's AgentsBuiltInTitle in the language of msgs.
 func (msgs Messages) AgentsBuiltInTitle() string { return msgs.text(textAgentsBuiltInTitle) }
 
-// AgentsBuiltInDescription says "Provides Pi Web's integrated Agent tools and disables a conflicting pi-subagents extension."
+// AgentsBuiltInDescription says "Provides pigo's integrated Agent tools and disables a conflicting pi-subagents extension."
 // in the language the app shows under cx.
 func AgentsBuiltInDescription(cx *core.Scope) string { return For(cx).AgentsBuiltInDescription() }
 
@@ -15092,7 +15092,7 @@ func (msgs Messages) AgentswitcherStatusInterrupted() string {
 	return msgs.text(textAgentswitcherStatusInterrupted)
 }
 
-// AppupdateReleaseNotes says "Pi Web v{version} is available. View release notes"
+// AppupdateReleaseNotes says "pigo v{version} is available. View release notes"
 // in the language the app shows under cx.
 func AppupdateReleaseNotes(cx *core.Scope, version string) string {
 	return For(cx).AppupdateReleaseNotes(version)
@@ -15109,11 +15109,11 @@ func (msgs Messages) AppupdateReleaseNotes(version string) string {
 		}
 		switch lang {
 		case "", "en":
-			return "Pi Web v" + msgs.arg(version) + " is available. View release notes"
+			return "pigo v" + msgs.arg(version) + " is available. View release notes"
 		case "zh-Hans":
-			return "Pi Web v" + version + " 可用，查看更新说明"
+			return "pigo v" + version + " 可用，查看更新说明"
 		case "zh-Hant":
-			return "Pi Web v" + version + " 已推出，查看版本資訊"
+			return "pigo v" + version + " 已推出，查看版本資訊"
 		}
 	}
 }
@@ -18865,7 +18865,7 @@ func (msgs Messages) SidebarOpenInFileManager() string {
 	return msgs.text(textSidebarOpenInFileManager)
 }
 
-// SidebarOpenInExplorerRemoteOnly says "Only available when Pi Web runs on this computer"
+// SidebarOpenInExplorerRemoteOnly says "Only available when pigo runs on this computer"
 // in the language the app shows under cx.
 func SidebarOpenInExplorerRemoteOnly(cx *core.Scope) string {
 	return For(cx).SidebarOpenInExplorerRemoteOnly()
@@ -19216,7 +19216,7 @@ func (msgs Messages) SidebarRemoveWorktreeHeading(name string) string {
 	}
 }
 
-// SidebarBrandLabel says "Pi Web, versions: web {app}, pi {pi}"
+// SidebarBrandLabel says "pigo, versions: web {app}, pi {pi}"
 // in the language the app shows under cx.
 func SidebarBrandLabel(cx *core.Scope, app string, pi string) string {
 	return For(cx).SidebarBrandLabel(app, pi)
@@ -19233,11 +19233,11 @@ func (msgs Messages) SidebarBrandLabel(app string, pi string) string {
 		}
 		switch lang {
 		case "", "en":
-			return "Pi Web, versions: web " + msgs.arg(app) + ", pi " + msgs.arg(pi)
+			return "pigo, versions: web " + msgs.arg(app) + ", pi " + msgs.arg(pi)
 		case "zh-Hans":
-			return "Pi Web，版本：web " + app + "，pi " + pi
+			return "pigo，版本：web " + app + "，pi " + pi
 		case "zh-Hant":
-			return "Pi Web，版本：web " + app + "，pi " + pi
+			return "pigo，版本：web " + app + "，pi " + pi
 		}
 	}
 }
@@ -20446,7 +20446,7 @@ func FilesAllowOutsideLink(cx *core.Scope) string { return For(cx).FilesAllowOut
 // FilesAllowOutsideLink is the package's FilesAllowOutsideLink in the language of msgs.
 func (msgs Messages) FilesAllowOutsideLink() string { return msgs.text(textFilesAllowOutsideLink) }
 
-// FilesAllowOutsideLinkTitle says "Browse {target} until Pi Web restarts, the same as selecting it as a project directory"
+// FilesAllowOutsideLinkTitle says "Browse {target} until pigo restarts, the same as selecting it as a project directory"
 // in the language the app shows under cx.
 func FilesAllowOutsideLinkTitle(cx *core.Scope, target string) string {
 	return For(cx).FilesAllowOutsideLinkTitle(target)
@@ -20463,16 +20463,16 @@ func (msgs Messages) FilesAllowOutsideLinkTitle(target string) string {
 		}
 		switch lang {
 		case "", "en":
-			return "Browse " + msgs.arg(target) + " until Pi Web restarts, the same as selecting it as a project directory"
+			return "Browse " + msgs.arg(target) + " until pigo restarts, the same as selecting it as a project directory"
 		case "zh-Hans":
-			return "在 Pi Web 重启前允许浏览 " + target + "，与将其选为项目目录相同"
+			return "在 pigo 重启前允许浏览 " + target + "，与将其选为项目目录相同"
 		case "zh-Hant":
-			return "在 Pi Web 重新啟動前允許瀏覽 " + target + "，與將其選為專案目錄相同"
+			return "在 pigo 重新啟動前允許瀏覽 " + target + "，與將其選為專案目錄相同"
 		}
 	}
 }
 
-// FilesAllowEnclosingLinkConfirm says "{target} contains this project or your home folder. Allowing it lets Pi Web browse everything below it until it restarts. Continue?"
+// FilesAllowEnclosingLinkConfirm says "{target} contains this project or your home folder. Allowing it lets pigo browse everything below it until it restarts. Continue?"
 // in the language the app shows under cx.
 func FilesAllowEnclosingLinkConfirm(cx *core.Scope, target string) string {
 	return For(cx).FilesAllowEnclosingLinkConfirm(target)
@@ -20489,11 +20489,11 @@ func (msgs Messages) FilesAllowEnclosingLinkConfirm(target string) string {
 		}
 		switch lang {
 		case "", "en":
-			return msgs.arg(target) + " contains this project or your home folder. Allowing it lets Pi Web browse everything below it until it restarts. Continue?"
+			return msgs.arg(target) + " contains this project or your home folder. Allowing it lets pigo browse everything below it until it restarts. Continue?"
 		case "zh-Hans":
-			return target + " 包含当前项目或你的主目录。允许后，在 Pi Web 重启前可浏览其下的所有内容。是否继续？"
+			return target + " 包含当前项目或你的主目录。允许后，在 pigo 重启前可浏览其下的所有内容。是否继续？"
 		case "zh-Hant":
-			return target + " 包含目前的專案或你的主目錄。允許後，在 Pi Web 重新啟動前可瀏覽其下的所有內容。是否繼續？"
+			return target + " 包含目前的專案或你的主目錄。允許後，在 pigo 重新啟動前可瀏覽其下的所有內容。是否繼續？"
 		}
 	}
 }
@@ -23431,7 +23431,7 @@ func TrustMcpTitle(cx *core.Scope) string { return For(cx).TrustMcpTitle() }
 // TrustMcpTitle is the package's TrustMcpTitle in the language of msgs.
 func (msgs Messages) TrustMcpTitle() string { return msgs.text(textTrustMcpTitle) }
 
-// TrustMcpIntro says "Trusting this project lets these servers connect, in Pi Web and in the pi CLI, which share this decision. A stdio server runs its command on the computer running Pi Web."
+// TrustMcpIntro says "Trusting this project lets these servers connect, in pigo and in the pi CLI, which share this decision. A stdio server runs its command on the computer running pigo."
 // in the language the app shows under cx.
 func TrustMcpIntro(cx *core.Scope) string { return For(cx).TrustMcpIntro() }
 
@@ -23466,7 +23466,7 @@ func TrustMcpNone(cx *core.Scope) string { return For(cx).TrustMcpNone() }
 // TrustMcpNone is the package's TrustMcpNone in the language of msgs.
 func (msgs Messages) TrustMcpNone() string { return msgs.text(textTrustMcpNone) }
 
-// TrustMcpUnchecked says "Pi Web cannot load the SDK's MCP checks, so these entries are listed unchecked."
+// TrustMcpUnchecked says "pigo cannot load the SDK's MCP checks, so these entries are listed unchecked."
 // in the language the app shows under cx.
 func TrustMcpUnchecked(cx *core.Scope) string { return For(cx).TrustMcpUnchecked() }
 
@@ -23596,7 +23596,7 @@ func McpServerInvalid(cx *core.Scope) string { return For(cx).McpServerInvalid()
 // McpServerInvalid is the package's McpServerInvalid in the language of msgs.
 func (msgs Messages) McpServerInvalid() string { return msgs.text(textMcpServerInvalid) }
 
-// McpServerWebPassword says "References PI_WEB_PASSWORD. Pi Web refuses to connect it, but the pi CLI reads this file too and would send the password on if that variable is set where the CLI runs:"
+// McpServerWebPassword says "References PI_WEB_PASSWORD. pigo refuses to connect it, but the pi CLI reads this file too and would send the password on if that variable is set where the CLI runs:"
 // in the language the app shows under cx.
 func McpServerWebPassword(cx *core.Scope) string { return For(cx).McpServerWebPassword() }
 
@@ -23677,14 +23677,14 @@ func (msgs Messages) McpServerHiddenCharacters() string {
 	return msgs.text(textMcpServerHiddenCharacters)
 }
 
-// McpServerSendsVariables says "Sends environment variables of the computer running Pi Web to this server on every connection:"
+// McpServerSendsVariables says "Sends environment variables of the computer running pigo to this server on every connection:"
 // in the language the app shows under cx.
 func McpServerSendsVariables(cx *core.Scope) string { return For(cx).McpServerSendsVariables() }
 
 // McpServerSendsVariables is the package's McpServerSendsVariables in the language of msgs.
 func (msgs Messages) McpServerSendsVariables() string { return msgs.text(textMcpServerSendsVariables) }
 
-// McpServerPassesVariables says "Passes environment variables of the computer running Pi Web to the command it starts:"
+// McpServerPassesVariables says "Passes environment variables of the computer running pigo to the command it starts:"
 // in the language the app shows under cx.
 func McpServerPassesVariables(cx *core.Scope) string { return For(cx).McpServerPassesVariables() }
 
@@ -23757,7 +23757,7 @@ func (msgs Messages) McpFileProblemLinkDangling() string {
 	return msgs.text(textMcpFileProblemLinkDangling)
 }
 
-// McpFileProblemLinkOutside says "The file is a symbolic link outside the folders Pi Web may read, so its servers are not listed here. Pi still loads them once the project is trusted."
+// McpFileProblemLinkOutside says "The file is a symbolic link outside the folders pigo may read, so its servers are not listed here. Pi still loads them once the project is trusted."
 // in the language the app shows under cx.
 func McpFileProblemLinkOutside(cx *core.Scope) string { return For(cx).McpFileProblemLinkOutside() }
 
@@ -23766,7 +23766,7 @@ func (msgs Messages) McpFileProblemLinkOutside() string {
 	return msgs.text(textMcpFileProblemLinkOutside)
 }
 
-// McpFileProblemNotAFile says "The path is not a regular file, so Pi Web does not read it."
+// McpFileProblemNotAFile says "The path is not a regular file, so pigo does not read it."
 // in the language the app shows under cx.
 func McpFileProblemNotAFile(cx *core.Scope) string { return For(cx).McpFileProblemNotAFile() }
 
@@ -23791,7 +23791,7 @@ func (msgs Messages) McpFileProblemTooManyServers() string {
 	return msgs.text(textMcpFileProblemTooManyServers)
 }
 
-// McpFileProblemUnreadable says "Pi Web cannot read the file."
+// McpFileProblemUnreadable says "pigo cannot read the file."
 // in the language the app shows under cx.
 func McpFileProblemUnreadable(cx *core.Scope) string { return For(cx).McpFileProblemUnreadable() }
 
@@ -23807,7 +23807,7 @@ func McpReasonCwdInvalid(cx *core.Scope) string { return For(cx).McpReasonCwdInv
 // McpReasonCwdInvalid is the package's McpReasonCwdInvalid in the language of msgs.
 func (msgs Messages) McpReasonCwdInvalid() string { return msgs.text(textMcpReasonCwdInvalid) }
 
-// McpReasonCwdDenied says "Pi Web may not read this folder."
+// McpReasonCwdDenied says "pigo may not read this folder."
 // in the language the app shows under cx.
 func McpReasonCwdDenied(cx *core.Scope) string { return For(cx).McpReasonCwdDenied() }
 
@@ -23823,21 +23823,21 @@ func (msgs Messages) McpReasonCwdNotDirectory() string {
 	return msgs.text(textMcpReasonCwdNotDirectory)
 }
 
-// McpReasonRequestDenied says "Pi Web refused the request because it did not come from this page."
+// McpReasonRequestDenied says "pigo refused the request because it did not come from this page."
 // in the language the app shows under cx.
 func McpReasonRequestDenied(cx *core.Scope) string { return For(cx).McpReasonRequestDenied() }
 
 // McpReasonRequestDenied is the package's McpReasonRequestDenied in the language of msgs.
 func (msgs Messages) McpReasonRequestDenied() string { return msgs.text(textMcpReasonRequestDenied) }
 
-// McpReasonContentType says "Pi Web refused the request because it was not sent as JSON."
+// McpReasonContentType says "pigo refused the request because it was not sent as JSON."
 // in the language the app shows under cx.
 func McpReasonContentType(cx *core.Scope) string { return For(cx).McpReasonContentType() }
 
 // McpReasonContentType is the package's McpReasonContentType in the language of msgs.
 func (msgs Messages) McpReasonContentType() string { return msgs.text(textMcpReasonContentType) }
 
-// McpReasonTrustUnreadable says "Pi Web cannot read the trust store (trust.json), or another program has it locked."
+// McpReasonTrustUnreadable says "pigo cannot read the trust store (trust.json), or another program has it locked."
 // in the language the app shows under cx.
 func McpReasonTrustUnreadable(cx *core.Scope) string { return For(cx).McpReasonTrustUnreadable() }
 
@@ -23862,21 +23862,21 @@ func McpReasonSessionBusy(cx *core.Scope) string { return For(cx).McpReasonSessi
 // McpReasonSessionBusy is the package's McpReasonSessionBusy in the language of msgs.
 func (msgs Messages) McpReasonSessionBusy() string { return msgs.text(textMcpReasonSessionBusy) }
 
-// McpReasonInvalidRequest says "Pi Web refused the request because it does not ask for a change Pi Web can make."
+// McpReasonInvalidRequest says "pigo refused the request because it does not ask for a change pigo can make."
 // in the language the app shows under cx.
 func McpReasonInvalidRequest(cx *core.Scope) string { return For(cx).McpReasonInvalidRequest() }
 
 // McpReasonInvalidRequest is the package's McpReasonInvalidRequest in the language of msgs.
 func (msgs Messages) McpReasonInvalidRequest() string { return msgs.text(textMcpReasonInvalidRequest) }
 
-// McpReasonMcpOff says "MCP is off on this Pi Web server, so it changes no server."
+// McpReasonMcpOff says "MCP is off on this pigo server, so it changes no server."
 // in the language the app shows under cx.
 func McpReasonMcpOff(cx *core.Scope) string { return For(cx).McpReasonMcpOff() }
 
 // McpReasonMcpOff is the package's McpReasonMcpOff in the language of msgs.
 func (msgs Messages) McpReasonMcpOff() string { return msgs.text(textMcpReasonMcpOff) }
 
-// McpReasonProjectUntrusted says "This project is not trusted, so Pi Web does not change its .pi/mcp.json."
+// McpReasonProjectUntrusted says "This project is not trusted, so pigo does not change its .pi/mcp.json."
 // in the language the app shows under cx.
 func McpReasonProjectUntrusted(cx *core.Scope) string { return For(cx).McpReasonProjectUntrusted() }
 
@@ -23885,14 +23885,14 @@ func (msgs Messages) McpReasonProjectUntrusted() string {
 	return msgs.text(textMcpReasonProjectUntrusted)
 }
 
-// McpReasonUnparsable says "The file is not valid JSON, so Pi Web left it unchanged."
+// McpReasonUnparsable says "The file is not valid JSON, so pigo left it unchanged."
 // in the language the app shows under cx.
 func McpReasonUnparsable(cx *core.Scope) string { return For(cx).McpReasonUnparsable() }
 
 // McpReasonUnparsable is the package's McpReasonUnparsable in the language of msgs.
 func (msgs Messages) McpReasonUnparsable() string { return msgs.text(textMcpReasonUnparsable) }
 
-// McpReasonInvalidShape says "The file is not an object with an \"mcpServers\" object, so Pi Web left it unchanged."
+// McpReasonInvalidShape says "The file is not an object with an \"mcpServers\" object, so pigo left it unchanged."
 // in the language the app shows under cx.
 func McpReasonInvalidShape(cx *core.Scope) string { return For(cx).McpReasonInvalidShape() }
 
@@ -23913,7 +23913,7 @@ func McpReasonEntryNotObject(cx *core.Scope) string { return For(cx).McpReasonEn
 // McpReasonEntryNotObject is the package's McpReasonEntryNotObject in the language of msgs.
 func (msgs Messages) McpReasonEntryNotObject() string { return msgs.text(textMcpReasonEntryNotObject) }
 
-// McpReasonWebPassword says "It references PI_WEB_PASSWORD, so Pi Web does not turn it on."
+// McpReasonWebPassword says "It references PI_WEB_PASSWORD, so pigo does not turn it on."
 // in the language the app shows under cx.
 func McpReasonWebPassword(cx *core.Scope) string { return For(cx).McpReasonWebPassword() }
 
@@ -23943,35 +23943,35 @@ func McpReasonNameTaken(cx *core.Scope) string { return For(cx).McpReasonNameTak
 // McpReasonNameTaken is the package's McpReasonNameTaken in the language of msgs.
 func (msgs Messages) McpReasonNameTaken() string { return msgs.text(textMcpReasonNameTaken) }
 
-// McpReasonLinkDangling says "The file is a symbolic link to nothing, so Pi Web does not write it."
+// McpReasonLinkDangling says "The file is a symbolic link to nothing, so pigo does not write it."
 // in the language the app shows under cx.
 func McpReasonLinkDangling(cx *core.Scope) string { return For(cx).McpReasonLinkDangling() }
 
 // McpReasonLinkDangling is the package's McpReasonLinkDangling in the language of msgs.
 func (msgs Messages) McpReasonLinkDangling() string { return msgs.text(textMcpReasonLinkDangling) }
 
-// McpReasonLinkOutside says "The file is a symbolic link outside the folders Pi Web may read, so Pi Web does not write it."
+// McpReasonLinkOutside says "The file is a symbolic link outside the folders pigo may read, so pigo does not write it."
 // in the language the app shows under cx.
 func McpReasonLinkOutside(cx *core.Scope) string { return For(cx).McpReasonLinkOutside() }
 
 // McpReasonLinkOutside is the package's McpReasonLinkOutside in the language of msgs.
 func (msgs Messages) McpReasonLinkOutside() string { return msgs.text(textMcpReasonLinkOutside) }
 
-// McpReasonNotAFile says "The path is not a regular file, so Pi Web does not write it."
+// McpReasonNotAFile says "The path is not a regular file, so pigo does not write it."
 // in the language the app shows under cx.
 func McpReasonNotAFile(cx *core.Scope) string { return For(cx).McpReasonNotAFile() }
 
 // McpReasonNotAFile is the package's McpReasonNotAFile in the language of msgs.
 func (msgs Messages) McpReasonNotAFile() string { return msgs.text(textMcpReasonNotAFile) }
 
-// McpReasonTooLarge says "The file is larger than 1 MiB, so Pi Web does not write it."
+// McpReasonTooLarge says "The file is larger than 1 MiB, so pigo does not write it."
 // in the language the app shows under cx.
 func McpReasonTooLarge(cx *core.Scope) string { return For(cx).McpReasonTooLarge() }
 
 // McpReasonTooLarge is the package's McpReasonTooLarge in the language of msgs.
 func (msgs Messages) McpReasonTooLarge() string { return msgs.text(textMcpReasonTooLarge) }
 
-// McpReasonTooManyServers says "The file declares more than 200 servers, so Pi Web does not act on its entries."
+// McpReasonTooManyServers says "The file declares more than 200 servers, so pigo does not act on its entries."
 // in the language the app shows under cx.
 func McpReasonTooManyServers(cx *core.Scope) string { return For(cx).McpReasonTooManyServers() }
 
@@ -23985,7 +23985,7 @@ func McpReasonLocked(cx *core.Scope) string { return For(cx).McpReasonLocked() }
 // McpReasonLocked is the package's McpReasonLocked in the language of msgs.
 func (msgs Messages) McpReasonLocked() string { return msgs.text(textMcpReasonLocked) }
 
-// McpReasonServerInvalid says "Pi refuses this entry, so Pi Web does not connect it."
+// McpReasonServerInvalid says "Pi refuses this entry, so pigo does not connect it."
 // in the language the app shows under cx.
 func McpReasonServerInvalid(cx *core.Scope) string { return For(cx).McpReasonServerInvalid() }
 
@@ -23999,7 +23999,7 @@ func McpReasonSignInNotOauth(cx *core.Scope) string { return For(cx).McpReasonSi
 // McpReasonSignInNotOauth is the package's McpReasonSignInNotOauth in the language of msgs.
 func (msgs Messages) McpReasonSignInNotOauth() string { return msgs.text(textMcpReasonSignInNotOauth) }
 
-// McpReasonSignInUnknown says "Pi Web no longer knows this sign-in: it ended a while ago, or Pi Web restarted."
+// McpReasonSignInUnknown says "pigo no longer knows this sign-in: it ended a while ago, or pigo restarted."
 // in the language the app shows under cx.
 func McpReasonSignInUnknown(cx *core.Scope) string { return For(cx).McpReasonSignInUnknown() }
 
@@ -24081,21 +24081,21 @@ func (msgs Messages) McpReasonSecretGlobalOnly() string {
 	return msgs.text(textMcpReasonSecretGlobalOnly)
 }
 
-// McpReasonHostEnvConfirm says "The server would be sent variables of the computer running Pi Web; confirm that first."
+// McpReasonHostEnvConfirm says "The server would be sent variables of the computer running pigo; confirm that first."
 // in the language the app shows under cx.
 func McpReasonHostEnvConfirm(cx *core.Scope) string { return For(cx).McpReasonHostEnvConfirm() }
 
 // McpReasonHostEnvConfirm is the package's McpReasonHostEnvConfirm in the language of msgs.
 func (msgs Messages) McpReasonHostEnvConfirm() string { return msgs.text(textMcpReasonHostEnvConfirm) }
 
-// McpReasonFolderNotFresh says "The folder changed since: it has a trust decision now, or resources that need one, so Pi Web did not trust it and added nothing."
+// McpReasonFolderNotFresh says "The folder changed since: it has a trust decision now, or resources that need one, so pigo did not trust it and added nothing."
 // in the language the app shows under cx.
 func McpReasonFolderNotFresh(cx *core.Scope) string { return For(cx).McpReasonFolderNotFresh() }
 
 // McpReasonFolderNotFresh is the package's McpReasonFolderNotFresh in the language of msgs.
 func (msgs Messages) McpReasonFolderNotFresh() string { return msgs.text(textMcpReasonFolderNotFresh) }
 
-// McpReasonTrustTooBroad says "Trusting this folder would trust the folders inside it too, so Pi Web does not do it by itself."
+// McpReasonTrustTooBroad says "Trusting this folder would trust the folders inside it too, so pigo does not do it by itself."
 // in the language the app shows under cx.
 func McpReasonTrustTooBroad(cx *core.Scope) string { return For(cx).McpReasonTrustTooBroad() }
 
@@ -24109,7 +24109,7 @@ func McpLoadFailed(cx *core.Scope) string { return For(cx).McpLoadFailed() }
 // McpLoadFailed is the package's McpLoadFailed in the language of msgs.
 func (msgs Messages) McpLoadFailed() string { return msgs.text(textMcpLoadFailed) }
 
-// McpLoadTimedOut says "Pi Web did not answer in time. Press Refresh to try again."
+// McpLoadTimedOut says "pigo did not answer in time. Press Refresh to try again."
 // in the language the app shows under cx.
 func McpLoadTimedOut(cx *core.Scope) string { return For(cx).McpLoadTimedOut() }
 
@@ -24335,7 +24335,7 @@ func (msgs Messages) McpServerOverriddenByProject() string {
 	return msgs.text(textMcpServerOverriddenByProject)
 }
 
-// McpServerUnchecked says "Listed unchecked: Pi Web cannot load the SDK's MCP checks."
+// McpServerUnchecked says "Listed unchecked: pigo cannot load the SDK's MCP checks."
 // in the language the app shows under cx.
 func McpServerUnchecked(cx *core.Scope) string { return For(cx).McpServerUnchecked() }
 
@@ -24592,7 +24592,7 @@ func McpExposureHidden(cx *core.Scope) string { return For(cx).McpExposureHidden
 // McpExposureHidden is the package's McpExposureHidden in the language of msgs.
 func (msgs Messages) McpExposureHidden() string { return msgs.text(textMcpExposureHidden) }
 
-// McpExposureSandboxUnavailable says "Code mode cannot run on this Pi Web server, so these tools are reached through tool search instead."
+// McpExposureSandboxUnavailable says "Code mode cannot run on this pigo server, so these tools are reached through tool search instead."
 // in the language the app shows under cx.
 func McpExposureSandboxUnavailable(cx *core.Scope) string {
 	return For(cx).McpExposureSandboxUnavailable()
@@ -24789,7 +24789,7 @@ func McpSelectItem(cx *core.Scope) string { return For(cx).McpSelectItem() }
 // McpSelectItem is the package's McpSelectItem in the language of msgs.
 func (msgs Messages) McpSelectItem() string { return msgs.text(textMcpSelectItem) }
 
-// McpUnavailableOperatorDisabled says "MCP is off: PI_WEB_DISABLE_MCP is set where Pi Web runs. The servers are listed, but no session connects them."
+// McpUnavailableOperatorDisabled says "MCP is off: PI_WEB_DISABLE_MCP is set where pigo runs. The servers are listed, but no session connects them."
 // in the language the app shows under cx.
 func McpUnavailableOperatorDisabled(cx *core.Scope) string {
 	return For(cx).McpUnavailableOperatorDisabled()
@@ -24800,7 +24800,7 @@ func (msgs Messages) McpUnavailableOperatorDisabled() string {
 	return msgs.text(textMcpUnavailableOperatorDisabled)
 }
 
-// McpUnavailableInternalsUnavailable says "MCP is off: Pi Web cannot load the SDK's MCP modules. The servers are listed unchecked, and no session connects them."
+// McpUnavailableInternalsUnavailable says "MCP is off: pigo cannot load the SDK's MCP modules. The servers are listed unchecked, and no session connects them."
 // in the language the app shows under cx.
 func McpUnavailableInternalsUnavailable(cx *core.Scope) string {
 	return For(cx).McpUnavailableInternalsUnavailable()
@@ -24907,7 +24907,7 @@ func (msgs Messages) McpTrustTrustedThrough(path string) string {
 	}
 }
 
-// McpTrustUnreadable says "Pi Web cannot read the trust store (trust.json), so this project's servers count as untrusted for now."
+// McpTrustUnreadable says "pigo cannot read the trust store (trust.json), so this project's servers count as untrusted for now."
 // in the language the app shows under cx.
 func McpTrustUnreadable(cx *core.Scope) string { return For(cx).McpTrustUnreadable() }
 
@@ -25069,7 +25069,7 @@ func (msgs Messages) McpCodemodeSandboxAvailable() string {
 	return msgs.text(textMcpCodemodeSandboxAvailable)
 }
 
-// McpCodemodeSandboxUnavailable says "Cannot run on this Pi Web server, so no session offers Code mode:"
+// McpCodemodeSandboxUnavailable says "Cannot run on this pigo server, so no session offers Code mode:"
 // in the language the app shows under cx.
 func McpCodemodeSandboxUnavailable(cx *core.Scope) string {
 	return For(cx).McpCodemodeSandboxUnavailable()
@@ -25080,7 +25080,7 @@ func (msgs Messages) McpCodemodeSandboxUnavailable() string {
 	return msgs.text(textMcpCodemodeSandboxUnavailable)
 }
 
-// McpCodemodeSandboxNotChecked says "Not checked yet: the self-test runs when the first session starts after Pi Web does."
+// McpCodemodeSandboxNotChecked says "Not checked yet: the self-test runs when the first session starts after pigo does."
 // in the language the app shows under cx.
 func McpCodemodeSandboxNotChecked(cx *core.Scope) string {
 	return For(cx).McpCodemodeSandboxNotChecked()
@@ -25194,14 +25194,14 @@ func McpCodemodeSaveFailed(cx *core.Scope) string { return For(cx).McpCodemodeSa
 // McpCodemodeSaveFailed is the package's McpCodemodeSaveFailed in the language of msgs.
 func (msgs Messages) McpCodemodeSaveFailed() string { return msgs.text(textMcpCodemodeSaveFailed) }
 
-// McpCodemodeSaveTimedOut says "Pi Web did not answer in time, so the choice may not have been saved."
+// McpCodemodeSaveTimedOut says "pigo did not answer in time, so the choice may not have been saved."
 // in the language the app shows under cx.
 func McpCodemodeSaveTimedOut(cx *core.Scope) string { return For(cx).McpCodemodeSaveTimedOut() }
 
 // McpCodemodeSaveTimedOut is the package's McpCodemodeSaveTimedOut in the language of msgs.
 func (msgs Messages) McpCodemodeSaveTimedOut() string { return msgs.text(textMcpCodemodeSaveTimedOut) }
 
-// McpCodemodeAlwaysUnavailableSandbox says "Always on is unavailable: Code mode's sandbox cannot run on this Pi Web server."
+// McpCodemodeAlwaysUnavailableSandbox says "Always on is unavailable: Code mode's sandbox cannot run on this pigo server."
 // in the language the app shows under cx.
 func McpCodemodeAlwaysUnavailableSandbox(cx *core.Scope) string {
 	return For(cx).McpCodemodeAlwaysUnavailableSandbox()
@@ -25606,7 +25606,7 @@ func McpReadOnlyMcpOff(cx *core.Scope) string { return For(cx).McpReadOnlyMcpOff
 // McpReadOnlyMcpOff is the package's McpReadOnlyMcpOff in the language of msgs.
 func (msgs Messages) McpReadOnlyMcpOff() string { return msgs.text(textMcpReadOnlyMcpOff) }
 
-// McpReadOnlyProjectUntrusted says "Pi Web does not change them until the project is trusted."
+// McpReadOnlyProjectUntrusted says "pigo does not change them until the project is trusted."
 // in the language the app shows under cx.
 func McpReadOnlyProjectUntrusted(cx *core.Scope) string { return For(cx).McpReadOnlyProjectUntrusted() }
 
@@ -25615,7 +25615,7 @@ func (msgs Messages) McpReadOnlyProjectUntrusted() string {
 	return msgs.text(textMcpReadOnlyProjectUntrusted)
 }
 
-// McpReadOnlyTrustUnreadable says "Pi Web does not change them until it can read the trust store."
+// McpReadOnlyTrustUnreadable says "pigo does not change them until it can read the trust store."
 // in the language the app shows under cx.
 func McpReadOnlyTrustUnreadable(cx *core.Scope) string { return For(cx).McpReadOnlyTrustUnreadable() }
 
@@ -25784,7 +25784,7 @@ func McpActionFailed(cx *core.Scope) string { return For(cx).McpActionFailed() }
 // McpActionFailed is the package's McpActionFailed in the language of msgs.
 func (msgs Messages) McpActionFailed() string { return msgs.text(textMcpActionFailed) }
 
-// McpActionTimedOut says "Pi Web did not answer in time, so the change may not have been made."
+// McpActionTimedOut says "pigo did not answer in time, so the change may not have been made."
 // in the language the app shows under cx.
 func McpActionTimedOut(cx *core.Scope) string { return For(cx).McpActionTimedOut() }
 
@@ -25933,14 +25933,14 @@ func McpTestSerial(cx *core.Scope) string { return For(cx).McpTestSerial() }
 // McpTestSerial is the package's McpTestSerial in the language of msgs.
 func (msgs Messages) McpTestSerial() string { return msgs.text(textMcpTestSerial) }
 
-// McpTestBlockedMcpOff says "MCP is off on this Pi Web server, so it tests no server."
+// McpTestBlockedMcpOff says "MCP is off on this pigo server, so it tests no server."
 // in the language the app shows under cx.
 func McpTestBlockedMcpOff(cx *core.Scope) string { return For(cx).McpTestBlockedMcpOff() }
 
 // McpTestBlockedMcpOff is the package's McpTestBlockedMcpOff in the language of msgs.
 func (msgs Messages) McpTestBlockedMcpOff() string { return msgs.text(textMcpTestBlockedMcpOff) }
 
-// McpTestBlockedProjectUntrusted says "This project is not trusted, so Pi Web does not start its servers."
+// McpTestBlockedProjectUntrusted says "This project is not trusted, so pigo does not start its servers."
 // in the language the app shows under cx.
 func McpTestBlockedProjectUntrusted(cx *core.Scope) string {
 	return For(cx).McpTestBlockedProjectUntrusted()
@@ -25951,7 +25951,7 @@ func (msgs Messages) McpTestBlockedProjectUntrusted() string {
 	return msgs.text(textMcpTestBlockedProjectUntrusted)
 }
 
-// McpTestBlockedTrustUnreadable says "Pi Web cannot read the trust store (trust.json), so it does not start this project's servers."
+// McpTestBlockedTrustUnreadable says "pigo cannot read the trust store (trust.json), so it does not start this project's servers."
 // in the language the app shows under cx.
 func McpTestBlockedTrustUnreadable(cx *core.Scope) string {
 	return For(cx).McpTestBlockedTrustUnreadable()
@@ -25969,7 +25969,7 @@ func McpTestBlockedInvalid(cx *core.Scope) string { return For(cx).McpTestBlocke
 // McpTestBlockedInvalid is the package's McpTestBlockedInvalid in the language of msgs.
 func (msgs Messages) McpTestBlockedInvalid() string { return msgs.text(textMcpTestBlockedInvalid) }
 
-// McpTestBlockedWebPassword says "It references PI_WEB_PASSWORD, so Pi Web does not connect it."
+// McpTestBlockedWebPassword says "It references PI_WEB_PASSWORD, so pigo does not connect it."
 // in the language the app shows under cx.
 func McpTestBlockedWebPassword(cx *core.Scope) string { return For(cx).McpTestBlockedWebPassword() }
 
@@ -25989,7 +25989,7 @@ func (msgs Messages) McpTestRefusedEntryNotObject() string {
 	return msgs.text(textMcpTestRefusedEntryNotObject)
 }
 
-// McpTestRefusedInvalidRequest says "Pi Web refused the request because it does not name a server it can test."
+// McpTestRefusedInvalidRequest says "pigo refused the request because it does not name a server it can test."
 // in the language the app shows under cx.
 func McpTestRefusedInvalidRequest(cx *core.Scope) string {
 	return For(cx).McpTestRefusedInvalidRequest()
@@ -26000,7 +26000,7 @@ func (msgs Messages) McpTestRefusedInvalidRequest() string {
 	return msgs.text(textMcpTestRefusedInvalidRequest)
 }
 
-// McpTestRefusedUnparsable says "The file is not valid JSON, so Pi Web cannot read this entry to test it."
+// McpTestRefusedUnparsable says "The file is not valid JSON, so pigo cannot read this entry to test it."
 // in the language the app shows under cx.
 func McpTestRefusedUnparsable(cx *core.Scope) string { return For(cx).McpTestRefusedUnparsable() }
 
@@ -26009,7 +26009,7 @@ func (msgs Messages) McpTestRefusedUnparsable() string {
 	return msgs.text(textMcpTestRefusedUnparsable)
 }
 
-// McpTestRefusedInvalidShape says "The file is not an object with an \"mcpServers\" object, so Pi Web cannot read this entry to test it."
+// McpTestRefusedInvalidShape says "The file is not an object with an \"mcpServers\" object, so pigo cannot read this entry to test it."
 // in the language the app shows under cx.
 func McpTestRefusedInvalidShape(cx *core.Scope) string { return For(cx).McpTestRefusedInvalidShape() }
 
@@ -26018,7 +26018,7 @@ func (msgs Messages) McpTestRefusedInvalidShape() string {
 	return msgs.text(textMcpTestRefusedInvalidShape)
 }
 
-// McpTestRefusedLinkDangling says "The file is a symbolic link to nothing, so Pi Web cannot read this entry to test it."
+// McpTestRefusedLinkDangling says "The file is a symbolic link to nothing, so pigo cannot read this entry to test it."
 // in the language the app shows under cx.
 func McpTestRefusedLinkDangling(cx *core.Scope) string { return For(cx).McpTestRefusedLinkDangling() }
 
@@ -26027,7 +26027,7 @@ func (msgs Messages) McpTestRefusedLinkDangling() string {
 	return msgs.text(textMcpTestRefusedLinkDangling)
 }
 
-// McpTestRefusedLinkOutside says "The file is a symbolic link outside the folders Pi Web may read, so Pi Web does not test its servers."
+// McpTestRefusedLinkOutside says "The file is a symbolic link outside the folders pigo may read, so pigo does not test its servers."
 // in the language the app shows under cx.
 func McpTestRefusedLinkOutside(cx *core.Scope) string { return For(cx).McpTestRefusedLinkOutside() }
 
@@ -26036,21 +26036,21 @@ func (msgs Messages) McpTestRefusedLinkOutside() string {
 	return msgs.text(textMcpTestRefusedLinkOutside)
 }
 
-// McpTestRefusedNotAFile says "The path is not a regular file, so Pi Web does not read it to test this entry."
+// McpTestRefusedNotAFile says "The path is not a regular file, so pigo does not read it to test this entry."
 // in the language the app shows under cx.
 func McpTestRefusedNotAFile(cx *core.Scope) string { return For(cx).McpTestRefusedNotAFile() }
 
 // McpTestRefusedNotAFile is the package's McpTestRefusedNotAFile in the language of msgs.
 func (msgs Messages) McpTestRefusedNotAFile() string { return msgs.text(textMcpTestRefusedNotAFile) }
 
-// McpTestRefusedTooLarge says "The file is larger than 1 MiB, so Pi Web does not read it to test this entry."
+// McpTestRefusedTooLarge says "The file is larger than 1 MiB, so pigo does not read it to test this entry."
 // in the language the app shows under cx.
 func McpTestRefusedTooLarge(cx *core.Scope) string { return For(cx).McpTestRefusedTooLarge() }
 
 // McpTestRefusedTooLarge is the package's McpTestRefusedTooLarge in the language of msgs.
 func (msgs Messages) McpTestRefusedTooLarge() string { return msgs.text(textMcpTestRefusedTooLarge) }
 
-// McpTestRefusedTooManyServers says "The file declares more than 200 servers, so Pi Web does not read it to test this entry."
+// McpTestRefusedTooManyServers says "The file declares more than 200 servers, so pigo does not read it to test this entry."
 // in the language the app shows under cx.
 func McpTestRefusedTooManyServers(cx *core.Scope) string {
 	return For(cx).McpTestRefusedTooManyServers()
@@ -26167,7 +26167,7 @@ func (msgs Messages) McpTestSummaryFailed(seconds int, time_ string) string {
 	}
 }
 
-// McpTestSummaryTimedOut says "It did not answer within {seconds} s, so Pi Web stopped the test. Tested at {time}."
+// McpTestSummaryTimedOut says "It did not answer within {seconds} s, so pigo stopped the test. Tested at {time}."
 // in the language the app shows under cx.
 func McpTestSummaryTimedOut(cx *core.Scope, seconds int, time_ string) string {
 	return For(cx).McpTestSummaryTimedOut(seconds, time_)
@@ -26184,11 +26184,11 @@ func (msgs Messages) McpTestSummaryTimedOut(seconds int, time_ string) string {
 		}
 		switch lang {
 		case "", "en":
-			return "It did not answer within " + msgs.arg(i18n.FormatNumber("en", float64(seconds))) + " s, so Pi Web stopped the test. Tested at " + msgs.arg(time_) + "."
+			return "It did not answer within " + msgs.arg(i18n.FormatNumber("en", float64(seconds))) + " s, so pigo stopped the test. Tested at " + msgs.arg(time_) + "."
 		case "zh-Hans":
-			return "它在 " + i18n.FormatNumber("zh-Hans", float64(seconds)) + " 秒内没有响应，因此 Pi Web 已停止测试。测试于 " + time_ + "。"
+			return "它在 " + i18n.FormatNumber("zh-Hans", float64(seconds)) + " 秒内没有响应，因此 pigo 已停止测试。测试于 " + time_ + "。"
 		case "zh-Hant":
-			return "它在 " + i18n.FormatNumber("zh-Hant", float64(seconds)) + " 秒內沒有回應，因此 Pi Web 已停止測試。測試於 " + time_ + "。"
+			return "它在 " + i18n.FormatNumber("zh-Hant", float64(seconds)) + " 秒內沒有回應，因此 pigo 已停止測試。測試於 " + time_ + "。"
 		}
 	}
 }
@@ -26333,7 +26333,7 @@ func McpTestRequestFailed(cx *core.Scope) string { return For(cx).McpTestRequest
 // McpTestRequestFailed is the package's McpTestRequestFailed in the language of msgs.
 func (msgs Messages) McpTestRequestFailed() string { return msgs.text(textMcpTestRequestFailed) }
 
-// McpTestRequestTimedOut says "Pi Web did not answer in time. The test may still finish; press Refresh to see its result."
+// McpTestRequestTimedOut says "pigo did not answer in time. The test may still finish; press Refresh to see its result."
 // in the language the app shows under cx.
 func McpTestRequestTimedOut(cx *core.Scope) string { return For(cx).McpTestRequestTimedOut() }
 
@@ -26697,7 +26697,7 @@ func McpSessionConflictOwner(cx *core.Scope) string { return For(cx).McpSessionC
 // McpSessionConflictOwner is the package's McpSessionConflictOwner in the language of msgs.
 func (msgs Messages) McpSessionConflictOwner() string { return msgs.text(textMcpSessionConflictOwner) }
 
-// McpHostInactive says "A session in {path} connects none of these servers through Pi Web: its /mcp command comes from {owner}, not from Pi's built-in MCP extension. That extension may read mcp.json and connect them its own way."
+// McpHostInactive says "A session in {path} connects none of these servers through pigo: its /mcp command comes from {owner}, not from Pi's built-in MCP extension. That extension may read mcp.json and connect them its own way."
 // in the language the app shows under cx.
 func McpHostInactive(cx *core.Scope, path string, owner string) string {
 	return For(cx).McpHostInactive(path, owner)
@@ -26714,11 +26714,11 @@ func (msgs Messages) McpHostInactive(path string, owner string) string {
 		}
 		switch lang {
 		case "", "en":
-			return "A session in " + msgs.arg(path) + " connects none of these servers through Pi Web: its /mcp command comes from " + msgs.arg(owner) + ", not from Pi's built-in MCP extension. That extension may read mcp.json and connect them its own way."
+			return "A session in " + msgs.arg(path) + " connects none of these servers through pigo: its /mcp command comes from " + msgs.arg(owner) + ", not from Pi's built-in MCP extension. That extension may read mcp.json and connect them its own way."
 		case "zh-Hans":
-			return path + " 中的一个会话不会通过 Pi Web 连接这些服务器：它的 /mcp 命令来自 " + owner + "，而不是 Pi 内置的 MCP 扩展。那个扩展可能会读取 mcp.json，并以自己的方式连接它们。"
+			return path + " 中的一个会话不会通过 pigo 连接这些服务器：它的 /mcp 命令来自 " + owner + "，而不是 Pi 内置的 MCP 扩展。那个扩展可能会读取 mcp.json，并以自己的方式连接它们。"
 		case "zh-Hant":
-			return path + " 中的一個工作階段不會透過 Pi Web 連線到這些伺服器：它的 /mcp 命令來自 " + owner + "，而不是 Pi 內建的 MCP 擴充功能。那個擴充功能可能會讀取 mcp.json，並以自己的方式連線到它們。"
+			return path + " 中的一個工作階段不會透過 pigo 連線到這些伺服器：它的 /mcp 命令來自 " + owner + "，而不是 Pi 內建的 MCP 擴充功能。那個擴充功能可能會讀取 mcp.json，並以自己的方式連線到它們。"
 		}
 	}
 }
@@ -26758,7 +26758,7 @@ func McpSignInCancelFailed(cx *core.Scope) string { return For(cx).McpSignInCanc
 // McpSignInCancelFailed is the package's McpSignInCancelFailed in the language of msgs.
 func (msgs Messages) McpSignInCancelFailed() string { return msgs.text(textMcpSignInCancelFailed) }
 
-// McpSignInCancelTimedOut says "Pi Web did not answer in time. The sign-in may still be under way; this line shows it once it moves on."
+// McpSignInCancelTimedOut says "pigo did not answer in time. The sign-in may still be under way; this line shows it once it moves on."
 // in the language the app shows under cx.
 func McpSignInCancelTimedOut(cx *core.Scope) string { return For(cx).McpSignInCancelTimedOut() }
 
@@ -26925,7 +26925,7 @@ func McpSignInPhaseNoCancel(cx *core.Scope) string { return For(cx).McpSignInPha
 // McpSignInPhaseNoCancel is the package's McpSignInPhaseNoCancel in the language of msgs.
 func (msgs Messages) McpSignInPhaseNoCancel() string { return msgs.text(textMcpSignInPhaseNoCancel) }
 
-// McpSignInAuthorizeMessage says "Open the sign-in page and approve access. When the browser comes back to the computer running Pi Web, the sign-in finishes by itself. If the browser runs on another device, or the page it lands on does not load, copy that page's address and paste it here."
+// McpSignInAuthorizeMessage says "Open the sign-in page and approve access. When the browser comes back to the computer running pigo, the sign-in finishes by itself. If the browser runs on another device, or the page it lands on does not load, copy that page's address and paste it here."
 // in the language the app shows under cx.
 func McpSignInAuthorizeMessage(cx *core.Scope) string { return For(cx).McpSignInAuthorizeMessage() }
 
@@ -26950,7 +26950,7 @@ func (msgs Messages) McpSignInAuthorizeNotALink() string {
 	return msgs.text(textMcpSignInAuthorizeNotALink)
 }
 
-// McpSignInAuthorizeRedirect says "After you approve, the browser is sent to {url}, which only the computer running Pi Web can open."
+// McpSignInAuthorizeRedirect says "After you approve, the browser is sent to {url}, which only the computer running pigo can open."
 // in the language the app shows under cx.
 func McpSignInAuthorizeRedirect(cx *core.Scope, url string) string {
 	return For(cx).McpSignInAuthorizeRedirect(url)
@@ -26967,16 +26967,16 @@ func (msgs Messages) McpSignInAuthorizeRedirect(url string) string {
 		}
 		switch lang {
 		case "", "en":
-			return "After you approve, the browser is sent to " + msgs.arg(url) + ", which only the computer running Pi Web can open."
+			return "After you approve, the browser is sent to " + msgs.arg(url) + ", which only the computer running pigo can open."
 		case "zh-Hans":
-			return "批准后，浏览器会被发送到 " + url + "，只有运行 Pi Web 的计算机才能打开它。"
+			return "批准后，浏览器会被发送到 " + url + "，只有运行 pigo 的计算机才能打开它。"
 		case "zh-Hant":
-			return "核准後，瀏覽器會被導向 " + url + "，只有執行 Pi Web 的電腦才能開啟它。"
+			return "核准後，瀏覽器會被導向 " + url + "，只有執行 pigo 的電腦才能開啟它。"
 		}
 	}
 }
 
-// McpSignInAuthorizeWait says "Pi Web waits up to 5 minutes from the start of the sign-in."
+// McpSignInAuthorizeWait says "pigo waits up to 5 minutes from the start of the sign-in."
 // in the language the app shows under cx.
 func McpSignInAuthorizeWait(cx *core.Scope) string { return For(cx).McpSignInAuthorizeWait() }
 
@@ -27020,7 +27020,7 @@ func McpSignInPasteRefused(cx *core.Scope) string { return For(cx).McpSignInPast
 // McpSignInPasteRefused is the package's McpSignInPasteRefused in the language of msgs.
 func (msgs Messages) McpSignInPasteRefused() string { return msgs.text(textMcpSignInPasteRefused) }
 
-// McpSignInPasteTimedOut says "Pi Web did not answer in time. If it took the address, this line shows the sign-in moving on."
+// McpSignInPasteTimedOut says "pigo did not answer in time. If it took the address, this line shows the sign-in moving on."
 // in the language the app shows under cx.
 func McpSignInPasteTimedOut(cx *core.Scope) string { return For(cx).McpSignInPasteTimedOut() }
 
@@ -27057,7 +27057,7 @@ func (msgs Messages) McpSignInDoneFailedAfter() string {
 	return msgs.text(textMcpSignInDoneFailedAfter)
 }
 
-// McpSignInDoneNeedsAuthAfter says "Signed in, but the server still asked for a sign-in when Pi Web connected again."
+// McpSignInDoneNeedsAuthAfter says "Signed in, but the server still asked for a sign-in when pigo connected again."
 // in the language the app shows under cx.
 func McpSignInDoneNeedsAuthAfter(cx *core.Scope) string { return For(cx).McpSignInDoneNeedsAuthAfter() }
 
@@ -27082,7 +27082,7 @@ func McpSignInCancelled(cx *core.Scope) string { return For(cx).McpSignInCancell
 // McpSignInCancelled is the package's McpSignInCancelled in the language of msgs.
 func (msgs Messages) McpSignInCancelled() string { return msgs.text(textMcpSignInCancelled) }
 
-// McpSignInExpired says "The sign-in was not finished within 5 minutes, so Pi Web stopped waiting."
+// McpSignInExpired says "The sign-in was not finished within 5 minutes, so pigo stopped waiting."
 // in the language the app shows under cx.
 func McpSignInExpired(cx *core.Scope) string { return For(cx).McpSignInExpired() }
 
@@ -27127,7 +27127,7 @@ func McpSignInFailedInternal(cx *core.Scope) string { return For(cx).McpSignInFa
 // McpSignInFailedInternal is the package's McpSignInFailedInternal in the language of msgs.
 func (msgs Messages) McpSignInFailedInternal() string { return msgs.text(textMcpSignInFailedInternal) }
 
-// McpSignInGone says "Pi Web no longer knows this sign-in: it ended a while ago, or Pi Web restarted. Press Sign in to start again."
+// McpSignInGone says "pigo no longer knows this sign-in: it ended a while ago, or pigo restarted. Press Sign in to start again."
 // in the language the app shows under cx.
 func McpSignInGone(cx *core.Scope) string { return For(cx).McpSignInGone() }
 
@@ -27141,7 +27141,7 @@ func McpSignInRequestFailed(cx *core.Scope) string { return For(cx).McpSignInReq
 // McpSignInRequestFailed is the package's McpSignInRequestFailed in the language of msgs.
 func (msgs Messages) McpSignInRequestFailed() string { return msgs.text(textMcpSignInRequestFailed) }
 
-// McpSignInRequestTimedOut says "Pi Web did not answer in time. Press Sign in again to see the sign-in under way."
+// McpSignInRequestTimedOut says "pigo did not answer in time. Press Sign in again to see the sign-in under way."
 // in the language the app shows under cx.
 func McpSignInRequestTimedOut(cx *core.Scope) string { return For(cx).McpSignInRequestTimedOut() }
 
@@ -27173,14 +27173,14 @@ func (msgs Messages) McpSignInSignedOutNothing() string {
 	return msgs.text(textMcpSignInSignedOutNothing)
 }
 
-// McpSignInBlockedMcpOff says "MCP is off on this Pi Web server, so it signs in to no server."
+// McpSignInBlockedMcpOff says "MCP is off on this pigo server, so it signs in to no server."
 // in the language the app shows under cx.
 func McpSignInBlockedMcpOff(cx *core.Scope) string { return For(cx).McpSignInBlockedMcpOff() }
 
 // McpSignInBlockedMcpOff is the package's McpSignInBlockedMcpOff in the language of msgs.
 func (msgs Messages) McpSignInBlockedMcpOff() string { return msgs.text(textMcpSignInBlockedMcpOff) }
 
-// McpSignInBlockedProjectUntrusted says "This project is not trusted, so Pi Web does not sign in to or out of its servers."
+// McpSignInBlockedProjectUntrusted says "This project is not trusted, so pigo does not sign in to or out of its servers."
 // in the language the app shows under cx.
 func McpSignInBlockedProjectUntrusted(cx *core.Scope) string {
 	return For(cx).McpSignInBlockedProjectUntrusted()
@@ -27191,7 +27191,7 @@ func (msgs Messages) McpSignInBlockedProjectUntrusted() string {
 	return msgs.text(textMcpSignInBlockedProjectUntrusted)
 }
 
-// McpSignInBlockedTrustUnreadable says "Pi Web cannot read the trust store (trust.json), so it does not sign in to or out of this project's servers."
+// McpSignInBlockedTrustUnreadable says "pigo cannot read the trust store (trust.json), so it does not sign in to or out of this project's servers."
 // in the language the app shows under cx.
 func McpSignInBlockedTrustUnreadable(cx *core.Scope) string {
 	return For(cx).McpSignInBlockedTrustUnreadable()
@@ -27209,14 +27209,14 @@ func McpSignInBlockedInvalid(cx *core.Scope) string { return For(cx).McpSignInBl
 // McpSignInBlockedInvalid is the package's McpSignInBlockedInvalid in the language of msgs.
 func (msgs Messages) McpSignInBlockedInvalid() string { return msgs.text(textMcpSignInBlockedInvalid) }
 
-// McpSignInRefusedFile says "Pi Web cannot read this entry from its file anymore. Press Refresh."
+// McpSignInRefusedFile says "pigo cannot read this entry from its file anymore. Press Refresh."
 // in the language the app shows under cx.
 func McpSignInRefusedFile(cx *core.Scope) string { return For(cx).McpSignInRefusedFile() }
 
 // McpSignInRefusedFile is the package's McpSignInRefusedFile in the language of msgs.
 func (msgs Messages) McpSignInRefusedFile() string { return msgs.text(textMcpSignInRefusedFile) }
 
-// McpSignInRefusedInvalidRequest says "Pi Web refused the request because it does not name a server it can sign in to."
+// McpSignInRefusedInvalidRequest says "pigo refused the request because it does not name a server it can sign in to."
 // in the language the app shows under cx.
 func McpSignInRefusedInvalidRequest(cx *core.Scope) string {
 	return For(cx).McpSignInRefusedInvalidRequest()
@@ -27373,7 +27373,7 @@ func McpAddRawPi(cx *core.Scope) string { return For(cx).McpAddRawPi() }
 // McpAddRawPi is the package's McpAddRawPi in the language of msgs.
 func (msgs Messages) McpAddRawPi() string { return msgs.text(textMcpAddRawPi) }
 
-// McpAddRawPiOn says "In env and header values, $NAME reads a variable on the computer running Pi Web, and a value starting with ! runs as a command at every connection."
+// McpAddRawPiOn says "In env and header values, $NAME reads a variable on the computer running pigo, and a value starting with ! runs as a command at every connection."
 // in the language the app shows under cx.
 func McpAddRawPiOn(cx *core.Scope) string { return For(cx).McpAddRawPiOn() }
 
@@ -27531,7 +27531,7 @@ func (msgs Messages) McpAddFieldStoredAsVariable(value string) string {
 	}
 }
 
-// McpAddFieldUseVariable says "Read it from a variable of the computer running Pi Web"
+// McpAddFieldUseVariable says "Read it from a variable of the computer running pigo"
 // in the language the app shows under cx.
 func McpAddFieldUseVariable(cx *core.Scope) string { return For(cx).McpAddFieldUseVariable() }
 
@@ -27741,7 +27741,7 @@ func McpAddFailed(cx *core.Scope) string { return For(cx).McpAddFailed() }
 // McpAddFailed is the package's McpAddFailed in the language of msgs.
 func (msgs Messages) McpAddFailed() string { return msgs.text(textMcpAddFailed) }
 
-// McpAddTrustKept says "Pi Web trusted {folder} for this step and could not take that back, so the folder stays trusted."
+// McpAddTrustKept says "pigo trusted {folder} for this step and could not take that back, so the folder stays trusted."
 // in the language the app shows under cx.
 func McpAddTrustKept(cx *core.Scope, folder string) string { return For(cx).McpAddTrustKept(folder) }
 
@@ -27756,16 +27756,16 @@ func (msgs Messages) McpAddTrustKept(folder string) string {
 		}
 		switch lang {
 		case "", "en":
-			return "Pi Web trusted " + msgs.arg(folder) + " for this step and could not take that back, so the folder stays trusted."
+			return "pigo trusted " + msgs.arg(folder) + " for this step and could not take that back, so the folder stays trusted."
 		case "zh-Hans":
-			return "Pi Web 为这一步信任了 " + folder + "，但无法撤销，因此该文件夹仍受信任。"
+			return "pigo 为这一步信任了 " + folder + "，但无法撤销，因此该文件夹仍受信任。"
 		case "zh-Hant":
-			return "Pi Web 為這一步信任了 " + folder + "，但無法撤銷，因此該資料夾仍受信任。"
+			return "pigo 為這一步信任了 " + folder + "，但無法撤銷，因此該資料夾仍受信任。"
 		}
 	}
 }
 
-// McpAddHostEnvBody says "Its headers or OAuth client secret read {names}, which are set on the computer running Pi Web, and pi sends their values to the server at every connection. Add it only if this server should have them."
+// McpAddHostEnvBody says "Its headers or OAuth client secret read {names}, which are set on the computer running pigo, and pi sends their values to the server at every connection. Add it only if this server should have them."
 // in the language the app shows under cx.
 func McpAddHostEnvBody(cx *core.Scope, names string) string { return For(cx).McpAddHostEnvBody(names) }
 
@@ -27780,11 +27780,11 @@ func (msgs Messages) McpAddHostEnvBody(names string) string {
 		}
 		switch lang {
 		case "", "en":
-			return "Its headers or OAuth client secret read " + msgs.arg(names) + ", which are set on the computer running Pi Web, and pi sends their values to the server at every connection. Add it only if this server should have them."
+			return "Its headers or OAuth client secret read " + msgs.arg(names) + ", which are set on the computer running pigo, and pi sends their values to the server at every connection. Add it only if this server should have them."
 		case "zh-Hans":
-			return "它的请求头或 OAuth 客户端密钥读取了 " + names + "，这些变量已在运行 Pi Web 的计算机上设置，pi 每次连接都会把它们的值发送给服务器。只有当此服务器应当获得这些值时才添加它。"
+			return "它的请求头或 OAuth 客户端密钥读取了 " + names + "，这些变量已在运行 pigo 的计算机上设置，pi 每次连接都会把它们的值发送给服务器。只有当此服务器应当获得这些值时才添加它。"
 		case "zh-Hant":
-			return "它的標頭或 OAuth 用戶端密鑰讀取了 " + names + "，這些變數已在執行 Pi Web 的電腦上設定，pi 每次連線都會把它們的值傳送給伺服器。只有當此伺服器應當取得這些值時才新增它。"
+			return "它的標頭或 OAuth 用戶端密鑰讀取了 " + names + "，這些變數已在執行 pigo 的電腦上設定，pi 每次連線都會把它們的值傳送給伺服器。只有當此伺服器應當取得這些值時才新增它。"
 		}
 	}
 }
@@ -27855,7 +27855,7 @@ func (msgs Messages) McpAddBlockedFieldsInvalid(fields string) string {
 	}
 }
 
-// McpAddBlockedWebPassword says "It references PI_WEB_PASSWORD, so Pi Web does not add it."
+// McpAddBlockedWebPassword says "It references PI_WEB_PASSWORD, so pigo does not add it."
 // in the language the app shows under cx.
 func McpAddBlockedWebPassword(cx *core.Scope) string { return For(cx).McpAddBlockedWebPassword() }
 
@@ -27912,7 +27912,7 @@ func (msgs Messages) McpAddProjectBlockedProjectNotListed() string {
 	return msgs.text(textMcpAddProjectBlockedProjectNotListed)
 }
 
-// McpAddProjectBlockedTrustUnreadable says "Pi Web cannot read the trust store (trust.json), so it does not write this project's .pi/mcp.json."
+// McpAddProjectBlockedTrustUnreadable says "pigo cannot read the trust store (trust.json), so it does not write this project's .pi/mcp.json."
 // in the language the app shows under cx.
 func McpAddProjectBlockedTrustUnreadable(cx *core.Scope) string {
 	return For(cx).McpAddProjectBlockedTrustUnreadable()
@@ -27923,7 +27923,7 @@ func (msgs Messages) McpAddProjectBlockedTrustUnreadable() string {
 	return msgs.text(textMcpAddProjectBlockedTrustUnreadable)
 }
 
-// McpAddProjectBlockedProjectUntrusted says "This project is not trusted, so Pi Web does not write its .pi/mcp.json. Trust it first."
+// McpAddProjectBlockedProjectUntrusted says "This project is not trusted, so pigo does not write its .pi/mcp.json. Trust it first."
 // in the language the app shows under cx.
 func McpAddProjectBlockedProjectUntrusted(cx *core.Scope) string {
 	return For(cx).McpAddProjectBlockedProjectUntrusted()
@@ -27945,7 +27945,7 @@ func (msgs Messages) McpAddProjectBlockedUntrustedDecision() string {
 	return msgs.text(textMcpAddProjectBlockedUntrustedDecision)
 }
 
-// McpAddProjectBlockedSecret says "{fields} holds a secret as plain text, so this server can be saved only globally. To save it in the project, choose “Read it from a variable of the computer running Pi Web” for it."
+// McpAddProjectBlockedSecret says "{fields} holds a secret as plain text, so this server can be saved only globally. To save it in the project, choose “Read it from a variable of the computer running pigo” for it."
 // in the language the app shows under cx.
 func McpAddProjectBlockedSecret(cx *core.Scope, fields string) string {
 	return For(cx).McpAddProjectBlockedSecret(fields)
@@ -27962,11 +27962,11 @@ func (msgs Messages) McpAddProjectBlockedSecret(fields string) string {
 		}
 		switch lang {
 		case "", "en":
-			return msgs.arg(fields) + " holds a secret as plain text, so this server can be saved only globally. To save it in the project, choose “Read it from a variable of the computer running Pi Web” for it."
+			return msgs.arg(fields) + " holds a secret as plain text, so this server can be saved only globally. To save it in the project, choose “Read it from a variable of the computer running pigo” for it."
 		case "zh-Hans":
-			return fields + " 以明文保存了一个机密，因此该服务器只能保存在全局。要保存在项目中，请为它选择“从运行 Pi Web 的计算机上的变量读取”。"
+			return fields + " 以明文保存了一个机密，因此该服务器只能保存在全局。要保存在项目中，请为它选择“从运行 pigo 的计算机上的变量读取”。"
 		case "zh-Hant":
-			return fields + " 以明文保存了一項機密，因此此伺服器只能儲存在全域。要儲存在專案中，請為它選擇「從執行 Pi Web 的電腦上的變數讀取」。"
+			return fields + " 以明文保存了一項機密，因此此伺服器只能儲存在全域。要儲存在專案中，請為它選擇「從執行 pigo 的電腦上的變數讀取」。"
 		}
 	}
 }
@@ -27997,7 +27997,7 @@ func (msgs Messages) McpAddProjectBlockedSecretFixed(fields string) string {
 	}
 }
 
-// McpAddProjectBlockedFolderNotFresh says "Something under this folder's .pi, or an .agents/skills folder above it, is a link to nothing. It would need trust once its target appears, so Pi Web does not trust the folder by itself. Remove or fix the link, then press Refresh."
+// McpAddProjectBlockedFolderNotFresh says "Something under this folder's .pi, or an .agents/skills folder above it, is a link to nothing. It would need trust once its target appears, so pigo does not trust the folder by itself. Remove or fix the link, then press Refresh."
 // in the language the app shows under cx.
 func McpAddProjectBlockedFolderNotFresh(cx *core.Scope) string {
 	return For(cx).McpAddProjectBlockedFolderNotFresh()
@@ -28034,7 +28034,7 @@ func (msgs Messages) McpAddProjectBlockedFileProblem(path string, reason string)
 	}
 }
 
-// McpAddProjectBlockedTrustTooBroadHome says "This is your home folder. Pi Web does not trust it by itself, since every folder in it would be trusted too; add the server globally."
+// McpAddProjectBlockedTrustTooBroadHome says "This is your home folder. pigo does not trust it by itself, since every folder in it would be trusted too; add the server globally."
 // in the language the app shows under cx.
 func McpAddProjectBlockedTrustTooBroadHome(cx *core.Scope) string {
 	return For(cx).McpAddProjectBlockedTrustTooBroadHome()
@@ -28045,7 +28045,7 @@ func (msgs Messages) McpAddProjectBlockedTrustTooBroadHome() string {
 	return msgs.text(textMcpAddProjectBlockedTrustTooBroadHome)
 }
 
-// McpAddProjectBlockedTrustTooBroadRoot says "This is a filesystem root. Pi Web does not trust it by itself, since every folder on it would be trusted too; add the server globally."
+// McpAddProjectBlockedTrustTooBroadRoot says "This is a filesystem root. pigo does not trust it by itself, since every folder on it would be trusted too; add the server globally."
 // in the language the app shows under cx.
 func McpAddProjectBlockedTrustTooBroadRoot(cx *core.Scope) string {
 	return For(cx).McpAddProjectBlockedTrustTooBroadRoot()
@@ -28056,7 +28056,7 @@ func (msgs Messages) McpAddProjectBlockedTrustTooBroadRoot() string {
 	return msgs.text(textMcpAddProjectBlockedTrustTooBroadRoot)
 }
 
-// McpAddProjectBlockedTrustTooBroadContainsHome says "This folder holds your home folder ({path}). Pi Web does not trust it by itself, since every folder in it would be trusted too; add the server globally."
+// McpAddProjectBlockedTrustTooBroadContainsHome says "This folder holds your home folder ({path}). pigo does not trust it by itself, since every folder in it would be trusted too; add the server globally."
 // in the language the app shows under cx.
 func McpAddProjectBlockedTrustTooBroadContainsHome(cx *core.Scope, path string) string {
 	return For(cx).McpAddProjectBlockedTrustTooBroadContainsHome(path)
@@ -28073,16 +28073,16 @@ func (msgs Messages) McpAddProjectBlockedTrustTooBroadContainsHome(path string) 
 		}
 		switch lang {
 		case "", "en":
-			return "This folder holds your home folder (" + msgs.arg(path) + "). Pi Web does not trust it by itself, since every folder in it would be trusted too; add the server globally."
+			return "This folder holds your home folder (" + msgs.arg(path) + "). pigo does not trust it by itself, since every folder in it would be trusted too; add the server globally."
 		case "zh-Hans":
-			return "此文件夹包含你的主目录（" + path + "）。Pi Web 不会自行信任它，因为其中的每个文件夹都会一并受信任；请把服务器添加到全局。"
+			return "此文件夹包含你的主目录（" + path + "）。pigo 不会自行信任它，因为其中的每个文件夹都会一并受信任；请把服务器添加到全局。"
 		case "zh-Hant":
-			return "此資料夾包含你的主資料夾（" + path + "）。Pi Web 不會自行信任它，因為其中的每個資料夾都會一併受信任；請把伺服器新增到全域。"
+			return "此資料夾包含你的主資料夾（" + path + "）。pigo 不會自行信任它，因為其中的每個資料夾都會一併受信任；請把伺服器新增到全域。"
 		}
 	}
 }
 
-// McpAddProjectBlockedTrustTooBroadContainsAgentDir says "This folder holds Pi's agent folder ({path}). Pi Web does not trust it by itself, since every folder in it would be trusted too; add the server globally."
+// McpAddProjectBlockedTrustTooBroadContainsAgentDir says "This folder holds Pi's agent folder ({path}). pigo does not trust it by itself, since every folder in it would be trusted too; add the server globally."
 // in the language the app shows under cx.
 func McpAddProjectBlockedTrustTooBroadContainsAgentDir(cx *core.Scope, path string) string {
 	return For(cx).McpAddProjectBlockedTrustTooBroadContainsAgentDir(path)
@@ -28099,16 +28099,16 @@ func (msgs Messages) McpAddProjectBlockedTrustTooBroadContainsAgentDir(path stri
 		}
 		switch lang {
 		case "", "en":
-			return "This folder holds Pi's agent folder (" + msgs.arg(path) + "). Pi Web does not trust it by itself, since every folder in it would be trusted too; add the server globally."
+			return "This folder holds Pi's agent folder (" + msgs.arg(path) + "). pigo does not trust it by itself, since every folder in it would be trusted too; add the server globally."
 		case "zh-Hans":
-			return "此文件夹包含 Pi 的 agent 文件夹（" + path + "）。Pi Web 不会自行信任它，因为其中的每个文件夹都会一并受信任；请把服务器添加到全局。"
+			return "此文件夹包含 Pi 的 agent 文件夹（" + path + "）。pigo 不会自行信任它，因为其中的每个文件夹都会一并受信任；请把服务器添加到全局。"
 		case "zh-Hant":
-			return "此資料夾包含 Pi 的 agent 資料夾（" + path + "）。Pi Web 不會自行信任它，因為其中的每個資料夾都會一併受信任；請把伺服器新增到全域。"
+			return "此資料夾包含 Pi 的 agent 資料夾（" + path + "）。pigo 不會自行信任它，因為其中的每個資料夾都會一併受信任；請把伺服器新增到全域。"
 		}
 	}
 }
 
-// McpAddProjectBlockedTrustTooBroadContainsFolder says "This folder holds {path}, another folder Pi Web knows, which trusting it would trust too. Pi Web does not do that by itself; add the server globally."
+// McpAddProjectBlockedTrustTooBroadContainsFolder says "This folder holds {path}, another folder pigo knows, which trusting it would trust too. pigo does not do that by itself; add the server globally."
 // in the language the app shows under cx.
 func McpAddProjectBlockedTrustTooBroadContainsFolder(cx *core.Scope, path string) string {
 	return For(cx).McpAddProjectBlockedTrustTooBroadContainsFolder(path)
@@ -28125,16 +28125,16 @@ func (msgs Messages) McpAddProjectBlockedTrustTooBroadContainsFolder(path string
 		}
 		switch lang {
 		case "", "en":
-			return "This folder holds " + msgs.arg(path) + ", another folder Pi Web knows, which trusting it would trust too. Pi Web does not do that by itself; add the server globally."
+			return "This folder holds " + msgs.arg(path) + ", another folder pigo knows, which trusting it would trust too. pigo does not do that by itself; add the server globally."
 		case "zh-Hans":
-			return "此文件夹包含 Pi Web 已知的另一个文件夹 " + path + "，信任它也会信任那个文件夹。Pi Web 不会自行这样做；请把服务器添加到全局。"
+			return "此文件夹包含 pigo 已知的另一个文件夹 " + path + "，信任它也会信任那个文件夹。pigo 不会自行这样做；请把服务器添加到全局。"
 		case "zh-Hant":
-			return "此資料夾包含 Pi Web 已知的另一個資料夾 " + path + "，信任它也會信任那個資料夾。Pi Web 不會自行這樣做；請把伺服器新增到全域。"
+			return "此資料夾包含 pigo 已知的另一個資料夾 " + path + "，信任它也會信任那個資料夾。pigo 不會自行這樣做；請把伺服器新增到全域。"
 		}
 	}
 }
 
-// McpAddProjectBlockedTrustTooBroadContainsProject says "This folder holds {path}, a project with resources that need trust and no decision of its own, which trusting this folder would trust too. Pi Web does not do that by itself; add the server globally, or open that project and trust it on its own."
+// McpAddProjectBlockedTrustTooBroadContainsProject says "This folder holds {path}, a project with resources that need trust and no decision of its own, which trusting this folder would trust too. pigo does not do that by itself; add the server globally, or open that project and trust it on its own."
 // in the language the app shows under cx.
 func McpAddProjectBlockedTrustTooBroadContainsProject(cx *core.Scope, path string) string {
 	return For(cx).McpAddProjectBlockedTrustTooBroadContainsProject(path)
@@ -28151,16 +28151,16 @@ func (msgs Messages) McpAddProjectBlockedTrustTooBroadContainsProject(path strin
 		}
 		switch lang {
 		case "", "en":
-			return "This folder holds " + msgs.arg(path) + ", a project with resources that need trust and no decision of its own, which trusting this folder would trust too. Pi Web does not do that by itself; add the server globally, or open that project and trust it on its own."
+			return "This folder holds " + msgs.arg(path) + ", a project with resources that need trust and no decision of its own, which trusting this folder would trust too. pigo does not do that by itself; add the server globally, or open that project and trust it on its own."
 		case "zh-Hans":
-			return "此文件夹包含 " + path + "，这是一个带有需要信任的资源、且自身尚无信任决定的项目，信任此文件夹也会信任它。Pi Web 不会自行这样做；请把服务器添加到全局，或打开那个项目单独信任它。"
+			return "此文件夹包含 " + path + "，这是一个带有需要信任的资源、且自身尚无信任决定的项目，信任此文件夹也会信任它。pigo 不会自行这样做；请把服务器添加到全局，或打开那个项目单独信任它。"
 		case "zh-Hant":
-			return "此資料夾包含 " + path + "，這是一個帶有需要信任的資源、且本身尚無信任決定的專案，信任此資料夾也會信任它。Pi Web 不會自行這樣做；請把伺服器新增到全域，或開啟那個專案單獨信任它。"
+			return "此資料夾包含 " + path + "，這是一個帶有需要信任的資源、且本身尚無信任決定的專案，信任此資料夾也會信任它。pigo 不會自行這樣做；請把伺服器新增到全域，或開啟那個專案單獨信任它。"
 		}
 	}
 }
 
-// McpAddProjectBlockedTrustTooBroadTooManyFolders says "This folder holds too many folders for Pi Web to check that trusting it would trust no project inside them. Pi Web does not trust it by itself; add the server globally."
+// McpAddProjectBlockedTrustTooBroadTooManyFolders says "This folder holds too many folders for pigo to check that trusting it would trust no project inside them. pigo does not trust it by itself; add the server globally."
 // in the language the app shows under cx.
 func McpAddProjectBlockedTrustTooBroadTooManyFolders(cx *core.Scope) string {
 	return For(cx).McpAddProjectBlockedTrustTooBroadTooManyFolders()
@@ -28465,7 +28465,7 @@ func McpImportNoteEmptyInput(cx *core.Scope) string { return For(cx).McpImportNo
 // McpImportNoteEmptyInput is the package's McpImportNoteEmptyInput in the language of msgs.
 func (msgs Messages) McpImportNoteEmptyInput() string { return msgs.text(textMcpImportNoteEmptyInput) }
 
-// McpImportNoteUnrecognizedInput says "Pi Web does not recognize this. Paste a server's URL, the command that starts it, an mcp add command, a JSON config or an install link."
+// McpImportNoteUnrecognizedInput says "pigo does not recognize this. Paste a server's URL, the command that starts it, an mcp add command, a JSON config or an install link."
 // in the language the app shows under cx.
 func McpImportNoteUnrecognizedInput(cx *core.Scope) string {
 	return For(cx).McpImportNoteUnrecognizedInput()
@@ -28600,7 +28600,7 @@ func (msgs Messages) McpImportNoteShellUnterminatedQuote(quote string) string {
 	}
 }
 
-// McpImportNoteShellParameter says "The command line uses the shell parameter {parameter}, which Pi Web cannot fill in."
+// McpImportNoteShellParameter says "The command line uses the shell parameter {parameter}, which pigo cannot fill in."
 // in the language the app shows under cx.
 func McpImportNoteShellParameter(cx *core.Scope, parameter string) string {
 	return For(cx).McpImportNoteShellParameter(parameter)
@@ -28617,11 +28617,11 @@ func (msgs Messages) McpImportNoteShellParameter(parameter string) string {
 		}
 		switch lang {
 		case "", "en":
-			return "The command line uses the shell parameter " + msgs.arg(parameter) + ", which Pi Web cannot fill in."
+			return "The command line uses the shell parameter " + msgs.arg(parameter) + ", which pigo cannot fill in."
 		case "zh-Hans":
-			return "命令行用到了 shell 参数 " + parameter + "，Pi Web 无法填入它。"
+			return "命令行用到了 shell 参数 " + parameter + "，pigo 无法填入它。"
 		case "zh-Hant":
-			return "命令列用到了 shell 參數 " + parameter + "，Pi Web 無法填入它。"
+			return "命令列用到了 shell 參數 " + parameter + "，pigo 無法填入它。"
 		}
 	}
 }
@@ -28737,7 +28737,7 @@ func McpImportNoteGithubPage(cx *core.Scope) string { return For(cx).McpImportNo
 // McpImportNoteGithubPage is the package's McpImportNoteGithubPage in the language of msgs.
 func (msgs Messages) McpImportNoteGithubPage() string { return msgs.text(textMcpImportNoteGithubPage) }
 
-// McpImportNoteByNameLink says "This link only names {name} in a registry and holds no settings, so Pi Web cannot add it yet. Copy the Cursor or VS Code install badge from the server's README instead."
+// McpImportNoteByNameLink says "This link only names {name} in a registry and holds no settings, so pigo cannot add it yet. Copy the Cursor or VS Code install badge from the server's README instead."
 // in the language the app shows under cx.
 func McpImportNoteByNameLink(cx *core.Scope, name string) string {
 	return For(cx).McpImportNoteByNameLink(name)
@@ -28754,11 +28754,11 @@ func (msgs Messages) McpImportNoteByNameLink(name string) string {
 		}
 		switch lang {
 		case "", "en":
-			return "This link only names " + msgs.arg(name) + " in a registry and holds no settings, so Pi Web cannot add it yet. Copy the Cursor or VS Code install badge from the server's README instead."
+			return "This link only names " + msgs.arg(name) + " in a registry and holds no settings, so pigo cannot add it yet. Copy the Cursor or VS Code install badge from the server's README instead."
 		case "zh-Hans":
-			return "这个链接只是在注册表中指明了 " + name + "，不含任何设置，因此 Pi Web 暂时无法添加它。请改为从服务器的 README 复制 Cursor 或 VS Code 安装徽章的链接。"
+			return "这个链接只是在注册表中指明了 " + name + "，不含任何设置，因此 pigo 暂时无法添加它。请改为从服务器的 README 复制 Cursor 或 VS Code 安装徽章的链接。"
 		case "zh-Hant":
-			return "這個連結只是在登錄檔中指明了 " + name + "，不含任何設定，因此 Pi Web 暫時無法新增它。請改為從伺服器的 README 複製 Cursor 或 VS Code 安裝徽章的連結。"
+			return "這個連結只是在登錄檔中指明了 " + name + "，不含任何設定，因此 pigo 暫時無法新增它。請改為從伺服器的 README 複製 Cursor 或 VS Code 安裝徽章的連結。"
 		}
 	}
 }
@@ -28807,7 +28807,7 @@ func (msgs Messages) McpImportNoteClaudeDesktopImport() string {
 	return msgs.text(textMcpImportNoteClaudeDesktopImport)
 }
 
-// McpImportNoteCliUnsupported says "Pi Web does not read {cli}'s mcp add. Paste the server's own command line, URL or JSON config instead."
+// McpImportNoteCliUnsupported says "pigo does not read {cli}'s mcp add. Paste the server's own command line, URL or JSON config instead."
 // in the language the app shows under cx.
 func McpImportNoteCliUnsupported(cx *core.Scope, cli string) string {
 	return For(cx).McpImportNoteCliUnsupported(cli)
@@ -28824,11 +28824,11 @@ func (msgs Messages) McpImportNoteCliUnsupported(cli string) string {
 		}
 		switch lang {
 		case "", "en":
-			return "Pi Web does not read " + msgs.arg(cli) + "'s mcp add. Paste the server's own command line, URL or JSON config instead."
+			return "pigo does not read " + msgs.arg(cli) + "'s mcp add. Paste the server's own command line, URL or JSON config instead."
 		case "zh-Hans":
-			return "Pi Web 不读取 " + cli + " 的 mcp add。请改为粘贴服务器自己的命令行、URL 或 JSON 配置。"
+			return "pigo 不读取 " + cli + " 的 mcp add。请改为粘贴服务器自己的命令行、URL 或 JSON 配置。"
 		case "zh-Hant":
-			return "Pi Web 不讀取 " + cli + " 的 mcp add。請改為貼上伺服器自己的命令列、網址或 JSON 設定。"
+			return "pigo 不讀取 " + cli + " 的 mcp add。請改為貼上伺服器自己的命令列、網址或 JSON 設定。"
 		}
 	}
 }
@@ -29370,7 +29370,7 @@ func (msgs Messages) McpImportNoteBareDollarLiteral(field string) string {
 	}
 }
 
-// McpImportNoteHeaderEnvReference says "The header {header} sends the value of {names} from the computer running Pi Web to this server."
+// McpImportNoteHeaderEnvReference says "The header {header} sends the value of {names} from the computer running pigo to this server."
 // in the language the app shows under cx.
 func McpImportNoteHeaderEnvReference(cx *core.Scope, header string, names string) string {
 	return For(cx).McpImportNoteHeaderEnvReference(header, names)
@@ -29387,16 +29387,16 @@ func (msgs Messages) McpImportNoteHeaderEnvReference(header string, names string
 		}
 		switch lang {
 		case "", "en":
-			return "The header " + msgs.arg(header) + " sends the value of " + msgs.arg(names) + " from the computer running Pi Web to this server."
+			return "The header " + msgs.arg(header) + " sends the value of " + msgs.arg(names) + " from the computer running pigo to this server."
 		case "zh-Hans":
-			return "请求头 " + header + " 会把运行 Pi Web 的计算机上 " + names + " 的值发送给此服务器。"
+			return "请求头 " + header + " 会把运行 pigo 的计算机上 " + names + " 的值发送给此服务器。"
 		case "zh-Hant":
-			return "標頭 " + header + " 會把執行 Pi Web 的電腦上 " + names + " 的值傳送給此伺服器。"
+			return "標頭 " + header + " 會把執行 pigo 的電腦上 " + names + " 的值傳送給此伺服器。"
 		}
 	}
 }
 
-// McpImportNoteClientSecretEnvReference says "The OAuth client secret is read from {names} on the computer running Pi Web and sent to the authorization server."
+// McpImportNoteClientSecretEnvReference says "The OAuth client secret is read from {names} on the computer running pigo and sent to the authorization server."
 // in the language the app shows under cx.
 func McpImportNoteClientSecretEnvReference(cx *core.Scope, names string) string {
 	return For(cx).McpImportNoteClientSecretEnvReference(names)
@@ -29413,16 +29413,16 @@ func (msgs Messages) McpImportNoteClientSecretEnvReference(names string) string 
 		}
 		switch lang {
 		case "", "en":
-			return "The OAuth client secret is read from " + msgs.arg(names) + " on the computer running Pi Web and sent to the authorization server."
+			return "The OAuth client secret is read from " + msgs.arg(names) + " on the computer running pigo and sent to the authorization server."
 		case "zh-Hans":
-			return "OAuth 客户端密钥取自运行 Pi Web 的计算机上的 " + names + "，并会发送给授权服务器。"
+			return "OAuth 客户端密钥取自运行 pigo 的计算机上的 " + names + "，并会发送给授权服务器。"
 		case "zh-Hant":
-			return "OAuth 用戶端密鑰取自執行 Pi Web 的電腦上的 " + names + "，並會傳送給授權伺服器。"
+			return "OAuth 用戶端密鑰取自執行 pigo 的電腦上的 " + names + "，並會傳送給授權伺服器。"
 		}
 	}
 }
 
-// McpImportNoteShellCommandValue says "{field} runs a shell command on the computer running Pi Web at every connection."
+// McpImportNoteShellCommandValue says "{field} runs a shell command on the computer running pigo at every connection."
 // in the language the app shows under cx.
 func McpImportNoteShellCommandValue(cx *core.Scope, field string) string {
 	return For(cx).McpImportNoteShellCommandValue(field)
@@ -29439,16 +29439,16 @@ func (msgs Messages) McpImportNoteShellCommandValue(field string) string {
 		}
 		switch lang {
 		case "", "en":
-			return msgs.arg(field) + " runs a shell command on the computer running Pi Web at every connection."
+			return msgs.arg(field) + " runs a shell command on the computer running pigo at every connection."
 		case "zh-Hans":
-			return field + " 每次连接都会在运行 Pi Web 的计算机上执行 shell 命令。"
+			return field + " 每次连接都会在运行 pigo 的计算机上执行 shell 命令。"
 		case "zh-Hant":
-			return field + " 每次連線都會在執行 Pi Web 的電腦上執行 shell 命令。"
+			return field + " 每次連線都會在執行 pigo 的電腦上執行 shell 命令。"
 		}
 	}
 }
 
-// McpImportNoteShellVariable says "{field}: $'{'name'}' would be filled in by your shell. pi reads it from the environment of the computer running Pi Web, or its value is asked for below."
+// McpImportNoteShellVariable says "{field}: $'{'name'}' would be filled in by your shell. pi reads it from the environment of the computer running pigo, or its value is asked for below."
 // in the language the app shows under cx.
 func McpImportNoteShellVariable(cx *core.Scope, field string) string {
 	return For(cx).McpImportNoteShellVariable(field)
@@ -29465,11 +29465,11 @@ func (msgs Messages) McpImportNoteShellVariable(field string) string {
 		}
 		switch lang {
 		case "", "en":
-			return msgs.arg(field) + ": ${name} would be filled in by your shell. pi reads it from the environment of the computer running Pi Web, or its value is asked for below."
+			return msgs.arg(field) + ": ${name} would be filled in by your shell. pi reads it from the environment of the computer running pigo, or its value is asked for below."
 		case "zh-Hans":
-			return field + "：${name} 本应由你的 shell 填入。pi 会从运行 Pi Web 的计算机的环境中读取它，否则需要在下方填写其值。"
+			return field + "：${name} 本应由你的 shell 填入。pi 会从运行 pigo 的计算机的环境中读取它，否则需要在下方填写其值。"
 		case "zh-Hant":
-			return field + "：${name} 本應由你的 shell 填入。pi 會從執行 Pi Web 的電腦的環境中讀取它，否則需要在下方填寫其值。"
+			return field + "：${name} 本應由你的 shell 填入。pi 會從執行 pigo 的電腦的環境中讀取它，否則需要在下方填寫其值。"
 		}
 	}
 }
@@ -29526,7 +29526,7 @@ func (msgs Messages) McpImportNoteInputUndefined(id string) string {
 	}
 }
 
-// McpImportNoteInputCommandUnsupported says "The input {id} runs a VS Code command, which Pi Web cannot, so its value is asked for below."
+// McpImportNoteInputCommandUnsupported says "The input {id} runs a VS Code command, which pigo cannot, so its value is asked for below."
 // in the language the app shows under cx.
 func McpImportNoteInputCommandUnsupported(cx *core.Scope, id string) string {
 	return For(cx).McpImportNoteInputCommandUnsupported(id)
@@ -29543,11 +29543,11 @@ func (msgs Messages) McpImportNoteInputCommandUnsupported(id string) string {
 		}
 		switch lang {
 		case "", "en":
-			return "The input " + msgs.arg(id) + " runs a VS Code command, which Pi Web cannot, so its value is asked for below."
+			return "The input " + msgs.arg(id) + " runs a VS Code command, which pigo cannot, so its value is asked for below."
 		case "zh-Hans":
-			return "输入项 " + id + " 会执行 VS Code 命令，Pi Web 无法执行，因此需要在下方填写其值。"
+			return "输入项 " + id + " 会执行 VS Code 命令，pigo 无法执行，因此需要在下方填写其值。"
 		case "zh-Hant":
-			return "輸入項目 " + id + " 會執行 VS Code 命令，Pi Web 無法執行，因此需要在下方填寫其值。"
+			return "輸入項目 " + id + " 會執行 VS Code 命令，pigo 無法執行，因此需要在下方填寫其值。"
 		}
 	}
 }
@@ -29849,7 +29849,7 @@ func (msgs Messages) McpImportNoteToolFilterImportedExclude(tools string) string
 	}
 }
 
-// McpImportNoteTransportGuessed says "The config names no transport, so Pi Web read it from the keys present."
+// McpImportNoteTransportGuessed says "The config names no transport, so pigo read it from the keys present."
 // in the language the app shows under cx.
 func McpImportNoteTransportGuessed(cx *core.Scope) string {
 	return For(cx).McpImportNoteTransportGuessed()

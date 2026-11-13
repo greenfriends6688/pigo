@@ -15,7 +15,7 @@ import (
 	"strings"
 	"sync"
 
-	"piwebnative/internal/toolfields"
+	"pigo/internal/toolfields"
 )
 
 // Message is one chat bubble. Role is "user", "assistant" or "toolResult".

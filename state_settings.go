@@ -13,9 +13,9 @@ import (
 	"github.com/oneo-me/nsgo/core"
 	"github.com/oneo-me/nsgo/ui"
 
-	"piwebnative/internal/agent"
-	"piwebnative/internal/models"
-	"piwebnative/internal/resources"
+	"pigo/internal/agent"
+	"pigo/internal/models"
+	"pigo/internal/resources"
 )
 
 func boolSetting(m map[string]any, key string, fallback bool) bool {
@@ -74,7 +74,7 @@ func (s *appState) refreshSettings() {
 
 	// Headless tests (and offline machines) must not spawn the pi CLI just
 	// to paint the settings page.
-	if os.Getenv("PIWEB_NATIVE_NO_AGENT") == "1" {
+	if os.Getenv("PIGO_NO_AGENT") == "1" {
 		info["auth"] = "（跳过：测试模式）"
 		info["mcp"] = "（跳过：测试模式）"
 		s.cx.Post(func() { s.settingsInfo.Set(info) })
@@ -817,7 +817,7 @@ func (s *appState) trustCurrentProject() {
 func (s *appState) ensureTrust() bool {
 	// Headless tests run no project code; the gate can be forced on there to
 	// exercise the dialog.
-	if os.Getenv("PIWEB_NATIVE_NO_AGENT") == "1" && os.Getenv("PIWEB_NATIVE_TRUST_GATE") != "1" {
+	if os.Getenv("PIGO_NO_AGENT") == "1" && os.Getenv("PIGO_TRUST_GATE") != "1" {
 		return true
 	}
 	dir := s.projectRoot()

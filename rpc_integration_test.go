@@ -9,7 +9,7 @@ import (
 	"testing"
 	"time"
 
-	"piwebnative/internal/agent"
+	"pigo/internal/agent"
 )
 
 // TestAgentRPCIntegration is the PLAN §8 P1 acceptance check against the real

@@ -23,7 +23,7 @@ import (
 // parentSession (fork / sub-agent relation); ProjectKey is the normalized cwd;
 // Branch/IsWorktree come from <cwd>/.git/HEAD; Created/Modified are the header
 // timestamp and the file mtime; MessageCount counts message entries seen;
-// Pinned/Archived are pi-web-native-only metadata.
+// Pinned/Archived are pigo-only metadata.
 type Info struct {
 	ID, Path, Name, FirstMessage, Cwd, ParentSession, ProjectKey, Branch string
 	Created, Modified                                                    time.Time

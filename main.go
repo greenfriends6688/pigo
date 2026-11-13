@@ -7,7 +7,7 @@ import (
 	// Registering the generated catalog makes it the app's: NSGo's own
 	// packages (textview, terminal, desktop) then speak the language it
 	// chooses instead of falling back to English (PLAN §9.11).
-	_ "piwebnative/locales"
+	_ "pigo/locales"
 )
 
 func main() {

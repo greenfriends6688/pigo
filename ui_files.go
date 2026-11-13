@@ -19,7 +19,7 @@ import (
 	"github.com/oneo-me/nsgo/ui"
 	uidiff "github.com/oneo-me/nsgo/ui/diff"
 
-	"piwebnative/internal/files"
+	"pigo/internal/files"
 )
 
 // filesEntry is the row model of the native file tree.

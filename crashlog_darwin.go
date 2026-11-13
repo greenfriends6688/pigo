@@ -11,9 +11,9 @@ import (
 func crashLogPath() string {
 	home, err := os.UserHomeDir()
 	if err != nil {
-		return filepath.Join(os.TempDir(), "pi-web-native.log")
+		return filepath.Join(os.TempDir(), "pigo.log")
 	}
-	return filepath.Join(home, "Library", "Logs", "PiWebNative.log")
+	return filepath.Join(home, "Library", "Logs", "pigo.log")
 }
 
 // redirectStderr repoints fd 2, which is where the Go runtime writes a fatal

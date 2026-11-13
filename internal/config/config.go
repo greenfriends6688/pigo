@@ -126,7 +126,7 @@ func (s *Store) writeLocked(path string, v map[string]any, backup bool) error {
 	}
 	if backup {
 		if old, err := os.ReadFile(path); err == nil {
-			bak := fmt.Sprintf("%s.bak.pi-web-native-%d", path, time.Now().UnixNano())
+			bak := fmt.Sprintf("%s.bak.pigo-%d", path, time.Now().UnixNano())
 			_ = os.WriteFile(bak, old, 0o600)
 		}
 	}

@@ -11,7 +11,7 @@ import (
 	"github.com/oneo-me/nsgo/icons/lucide"
 	"github.com/oneo-me/nsgo/ui"
 
-	"piwebnative/internal/skills"
+	"pigo/internal/skills"
 )
 
 // skillsDialog searches skills.sh and installs a package with the skills

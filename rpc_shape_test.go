@@ -11,7 +11,7 @@ import (
 	"testing"
 	"time"
 
-	"piwebnative/internal/agent"
+	"pigo/internal/agent"
 )
 
 // TestRealSessionShape opens a real session file and prints what get_messages

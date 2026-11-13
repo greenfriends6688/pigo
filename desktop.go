@@ -9,7 +9,7 @@ import (
 // menu-bar tray (PLAN §8 P7). On non-desktop targets these calls are no-ops.
 func (s *appState) installDesktop() {
 	cx := s.cx
-	desktop.SetTitle(cx, "Pi Web Native")
+	desktop.SetTitle(cx, "pigo")
 	desktop.SetShutdownMode(cx, desktop.ShutdownOnLastWindowClose)
 	desktop.SetApplicationMenu(cx, s.applicationMenu())
 
@@ -23,7 +23,7 @@ func (s *appState) installDesktop() {
 
 	_ = desktop.NewTray(cx, desktop.TrayOptions{
 		Title:   "π",
-		Tooltip: "Pi Web Native",
+		Tooltip: "pigo",
 		Menu: func() []desktop.MenuItem {
 			return []desktop.MenuItem{
 				{Label: "打开命令面板", OnSelect: func() {
@@ -42,10 +42,12 @@ func (s *appState) installDesktop() {
 func (s *appState) applicationMenu() []core.MenuItem {
 	return []core.MenuItem{
 		{
-			Label: "Pi Web Native",
+			Label: "pigo",
 			Items: []core.MenuItem{
-				{Label: "关于 Pi Web Native", OnSelect: func() {
-					s.cx.Post(func() { s.status.Set("Pi Web Native · NSGo 原生版") })
+				{Label: "关于 pigo", OnSelect: func() {
+					s.cx.Post(func() {
+						s.status.Set("pigo · MIT · 上游 NSGo + pi-web + pi")
+					})
 				}},
 				{Separator: true},
 				// The menu item stays, its shortcut does not: keymap.go binds

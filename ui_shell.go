@@ -14,7 +14,7 @@ import (
 	"github.com/oneo-me/nsgo/icons/lucide"
 	"github.com/oneo-me/nsgo/ui"
 
-	"piwebnative/internal/sessions"
+	"pigo/internal/sessions"
 )
 
 // The right panel's bounds: it opens at defaultDockWidth (420), the header's
@@ -985,7 +985,7 @@ func (s *appState) openSession(id string) {
 	}
 	s.selected.Set(id)
 	s.sessionSel.Set(id)
-	if os.Getenv("PIWEB_NATIVE_DEBUG") == "1" {
+	if os.Getenv("PIGO_DEBUG") == "1" {
 		fmt.Fprintf(os.Stderr, "[debug] openSession %s cwd=%s\n", id, s.currentCwd())
 	}
 	s.connect(id)

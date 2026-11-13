@@ -18,7 +18,7 @@ import (
 // agentLogPath is the subprocess log the transport appends to, so the
 // disconnect card can hand it to the system viewer.
 func (s *appState) agentLogPath() string {
-	return filepath.Join(s.agentDir, "pi-web-native", "agent.log")
+	return filepath.Join(s.agentDir, "pigo", "agent.log")
 }
 
 // disconnectCard sits above the composer while the agent link is down: a

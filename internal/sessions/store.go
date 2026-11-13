@@ -18,7 +18,7 @@ import (
 )
 
 const (
-	nativeDirName   = "pi-web-native"
+	nativeDirName   = "pigo"
 	cacheFileName   = "sessions.json"
 	metaFileName    = "meta.json"
 	defaultPageSize = 200
@@ -42,7 +42,7 @@ type cacheFile struct {
 	Entries map[string]cacheEntry `json:"entries"`
 }
 
-// metaItem holds pi-web-native-only session metadata. It lives in our own
+// metaItem holds pigo-only session metadata. It lives in our own
 // meta.json and never touches pi's files.
 type metaItem struct {
 	Pinned   bool   `json:"pinned,omitempty"`
@@ -150,7 +150,7 @@ func (s *Store) infosFromCacheLocked(meta map[string]metaItem) []Info {
 	return out
 }
 
-// applyMeta overlays pi-web-native metadata onto a parsed session.
+// applyMeta overlays pigo metadata onto a parsed session.
 func applyMeta(info *Info, m metaItem) {
 	info.Pinned = m.Pinned
 	info.Archived = m.Archived
@@ -760,7 +760,7 @@ func newEntryID() string {
 	return fmt.Sprintf("%08x", uint32(time.Now().UnixNano()))
 }
 
-// SetPinned persists the pin flag in pi-web-native/meta.json and updates all
+// SetPinned persists the pin flag in pigo/meta.json and updates all
 // in-memory views. pi's own files are never modified.
 func (s *Store) SetPinned(path string, pinned bool) error {
 	return s.setMeta(path, func(m *metaItem) { m.Pinned = pinned })

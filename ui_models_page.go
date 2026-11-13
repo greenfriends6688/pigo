@@ -9,7 +9,7 @@ import (
 	"github.com/oneo-me/nsgo/icons/lucide"
 	"github.com/oneo-me/nsgo/ui"
 
-	"piwebnative/internal/models"
+	"pigo/internal/models"
 )
 
 // modelsMasterDetail is the models page's provider browser: the providers on

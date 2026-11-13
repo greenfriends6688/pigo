@@ -3,7 +3,7 @@ package toolfields
 import (
 	"strings"
 
-	"piwebnative/internal/textdiff"
+	"pigo/internal/textdiff"
 )
 
 // Patch builds the unified diff a tool card renders for the tools that

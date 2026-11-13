@@ -22,19 +22,19 @@ import (
 	"github.com/oneo-me/nsgo/ui/commitgraph"
 	"github.com/oneo-me/nsgo/ui/filepicker"
 
-	"piwebnative/internal/agent"
-	"piwebnative/internal/config"
-	"piwebnative/internal/files"
-	"piwebnative/internal/models"
-	"piwebnative/internal/nodeinstall"
-	"piwebnative/internal/reducer"
-	"piwebnative/internal/resources"
-	"piwebnative/internal/sessions"
-	"piwebnative/internal/skills"
-	"piwebnative/internal/term"
-	"piwebnative/internal/textdiff"
-	"piwebnative/internal/toolfields"
-	"piwebnative/internal/worktree"
+	"pigo/internal/agent"
+	"pigo/internal/config"
+	"pigo/internal/files"
+	"pigo/internal/models"
+	"pigo/internal/nodeinstall"
+	"pigo/internal/reducer"
+	"pigo/internal/resources"
+	"pigo/internal/sessions"
+	"pigo/internal/skills"
+	"pigo/internal/term"
+	"pigo/internal/textdiff"
+	"pigo/internal/toolfields"
+	"pigo/internal/worktree"
 )
 
 // sessionRow is one row of the native session sidebar.
@@ -540,7 +540,7 @@ func newState(cx *core.Scope) *appState {
 	if err != nil || cwd == "" || cwd == "/" {
 		cwd = home
 	}
-	nativeDir := filepath.Join(agentDir, "pi-web-native")
+	nativeDir := filepath.Join(agentDir, "pigo")
 	_ = os.MkdirAll(nativeDir, 0o700)
 	prefs := loadPrefs(agentDir)
 	project := resolveProjectDir(cwd, home, prefs.Project)
@@ -881,7 +881,7 @@ func newState(cx *core.Scope) *appState {
 	s.startWatcher()
 	s.loadMentions()
 	go s.refreshSettings()
-	if os.Getenv("PIWEB_NATIVE_NO_AGENT") == "1" {
+	if os.Getenv("PIGO_NO_AGENT") == "1" {
 		s.nodeStatus.Set("测试模式：不启动子进程")
 		// No child will ever start, so "no runtime yet" would pin the capsule
 		// to the download pill forever; the offline pill is the truth here.
@@ -1354,7 +1354,7 @@ func (s *appState) connect(sessionPath string) {
 // chat starts with the parent's read-mostly tools and a pool key apart from
 // the parent's, so both can stay warm.
 func (s *appState) connectWith(sessionPath, keySuffix, tools string, noTools ...bool) {
-	if os.Getenv("PIWEB_NATIVE_NO_AGENT") == "1" {
+	if os.Getenv("PIGO_NO_AGENT") == "1" {
 		s.cx.Post(func() {
 			s.connected.Set(false)
 			s.status.Set("测试模式：未启动 pi 子进程")
@@ -1367,7 +1367,7 @@ func (s *appState) connectWith(sessionPath, keySuffix, tools string, noTools ...
 	if missing != "" {
 		// pi refuses a session whose recorded directory is gone, so open a
 		// repaired copy that keeps the history but points at the fallback.
-		if repaired, err := sessions.RepairCwd(sessionPath, cwd, filepath.Join(s.agentDir, "pi-web-native", "repaired")); err == nil {
+		if repaired, err := sessions.RepairCwd(sessionPath, cwd, filepath.Join(s.agentDir, "pigo", "repaired")); err == nil {
 			openPath = repaired
 		}
 	}
@@ -1385,7 +1385,7 @@ func (s *appState) connectWith(sessionPath, keySuffix, tools string, noTools ...
 		Cwd:         cwd,
 		AgentDir:    s.agentDir,
 		SessionPath: openPath,
-		LogPath:     filepath.Join(s.agentDir, "pi-web-native", "agent.log"),
+		LogPath:     filepath.Join(s.agentDir, "pigo", "agent.log"),
 		NoMCP:       s.noMCP.GetUntracked(),
 		ExtraArgs:   nil,
 		Tools:       tools,
@@ -1810,7 +1810,7 @@ func (s *appState) bootstrapNode() {
 	}
 	set("未检测到 Node ≥ 22，正在下载…", false)
 	go func() {
-		dir := filepath.Join(s.agentDir, "pi-web-native", "node")
+		dir := filepath.Join(s.agentDir, "pigo", "node")
 		ctx, cancel := context.WithTimeout(context.Background(), 15*time.Minute)
 		defer cancel()
 		path, err := nodeinstall.Ensure(ctx, dir, s.onNodeProgress)

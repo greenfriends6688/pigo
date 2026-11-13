@@ -12,10 +12,10 @@ import (
 	"github.com/oneo-me/nsgo/ui/commitgraph"
 	"github.com/oneo-me/nsgo/ui/filepicker"
 
-	"piwebnative/internal/agent"
-	"piwebnative/internal/files"
-	"piwebnative/internal/sessions"
-	"piwebnative/internal/worktree"
+	"pigo/internal/agent"
+	"pigo/internal/files"
+	"pigo/internal/sessions"
+	"pigo/internal/worktree"
 )
 
 // notify shows a toast. It runs on the graph goroutine, as every caller posts

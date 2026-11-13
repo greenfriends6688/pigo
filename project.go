@@ -53,7 +53,7 @@ type nativePrefs struct {
 }
 
 func prefsPath(agentDir string) string {
-	return filepath.Join(agentDir, "pi-web-native", "prefs.json")
+	return filepath.Join(agentDir, "pigo", "prefs.json")
 }
 
 // The terminal's allowed looks. Anything else in prefs.json — an older
@@ -113,7 +113,7 @@ func savePrefs(agentDir string, p nativePrefs) error {
 // the home directory is not, so the tree asks for a project instead of
 // showing every file on the machine.
 func resolveProjectDir(cwd, home, saved string) string {
-	if v := strings.TrimSpace(os.Getenv("PIWEB_NATIVE_PROJECT")); v != "" {
+	if v := strings.TrimSpace(os.Getenv("PIGO_PROJECT")); v != "" {
 		if isDir(v) {
 			return filepath.Clean(v)
 		}

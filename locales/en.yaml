@@ -11,7 +11,7 @@ commonPlugins: "Plugins"
 commonSettings: "Settings"
 settingsTitle: "Settings"
 settingsGeneral: "General"
-settingsGeneralDescription: "Choose how Pi Web looks and which language it uses."
+settingsGeneralDescription: "Choose how pigo looks and which language it uses."
 settingsAppearance: "Appearance"
 settingsAppearanceDescription: "Select a theme or follow your system preference."
 settingsChatContentWidth: "Chat content width"
@@ -143,8 +143,8 @@ configExamples: "Examples"
 configName: "Name"
 configSaveTo: "Save to"
 agentsClose: "Close"
-agentsBuiltInTitle: "Enable Pi Web built-in sub-agents"
-agentsBuiltInDescription: "Provides Pi Web's integrated Agent tools and disables a conflicting pi-subagents extension."
+agentsBuiltInTitle: "Enable pigo built-in sub-agents"
+agentsBuiltInDescription: "Provides pigo's integrated Agent tools and disables a conflicting pi-subagents extension."
 agentsReloadRequired: "Reload the current session to apply this change."
 agentsReloadSession: "Reload session"
 agentsMaxConcurrent: "Concurrent sub-agents"
@@ -290,7 +290,7 @@ agentswitcherStatusFailed: "Failed"
 agentswitcherStatusAborted: "Aborted"
 agentswitcherStatusInterrupted: "Interrupted"
 appupdateReleaseNotes:
-  message: "Pi Web v{version} is available. View release notes"
+  message: "pigo v{version} is available. View release notes"
   placeholders:
     version: {type: String}
 sidebarHide: "Hide sidebar"
@@ -855,7 +855,7 @@ sidebarShowIgnoredFiles: "Show ignored files"
 sidebarOpenInExplorer: "Open in Explorer"
 sidebarOpenInFinder: "Open in Finder"
 sidebarOpenInFileManager: "Open in file manager"
-sidebarOpenInExplorerRemoteOnly: "Only available when Pi Web runs on this computer"
+sidebarOpenInExplorerRemoteOnly: "Only available when pigo runs on this computer"
 sidebarOpenInExplorerUnsupported: "Not supported on this platform"
 sidebarSearchFiles: "Search files"
 sidebarSearchFilesPlaceholder: "Search files…"
@@ -905,7 +905,7 @@ sidebarRemoveWorktreeHeading:
   placeholders:
     name: {type: String}
 sidebarBrandLabel:
-  message: "Pi Web, versions: web {app}, pi {pi}"
+  message: "pigo, versions: web {app}, pi {pi}"
   placeholders:
     app: {type: String}
     pi: {type: String}
@@ -1086,11 +1086,11 @@ filesOutsideLink:
 filesOutsideLinkEncloses: "That folder contains this project or your home folder."
 filesAllowOutsideLink: "Allow browsing"
 filesAllowOutsideLinkTitle:
-  message: "Browse {target} until Pi Web restarts, the same as selecting it as a project directory"
+  message: "Browse {target} until pigo restarts, the same as selecting it as a project directory"
   placeholders:
     target: {type: String}
 filesAllowEnclosingLinkConfirm:
-  message: "{target} contains this project or your home folder. Allowing it lets Pi Web browse everything below it until it restarts. Continue?"
+  message: "{target} contains this project or your home folder. Allowing it lets pigo browse everything below it until it restarts. Continue?"
   placeholders:
     target: {type: String}
 filesDismissError: "Dismiss error"
@@ -1543,12 +1543,12 @@ trustSkillsNotLoaded: "Project skills are not loaded because this project is not
 trustPluginsNotLoaded: "Project plugins are not loaded because this project is not trusted."
 trustProjectScopeUnavailable: "Project installs are unavailable while project resources are not loaded."
 trustMcpTitle: "MCP servers in .pi/mcp.json"
-trustMcpIntro: "Trusting this project lets these servers connect, in Pi Web and in the pi CLI, which share this decision. A stdio server runs its command on the computer running Pi Web."
+trustMcpIntro: "Trusting this project lets these servers connect, in pigo and in the pi CLI, which share this decision. A stdio server runs its command on the computer running pigo."
 trustMcpLoading: "Reading .pi/mcp.json…"
 trustMcpLoadFailed: "Could not list this project's MCP servers."
 trustMcpTimedOut: "Listing this project's MCP servers took too long."
 trustMcpNone: "The file declares no servers."
-trustMcpUnchecked: "Pi Web cannot load the SDK's MCP checks, so these entries are listed unchecked."
+trustMcpUnchecked: "pigo cannot load the SDK's MCP checks, so these entries are listed unchecked."
 trustMcpCwd:
   message: "Working directory: {path}"
   placeholders:
@@ -1568,7 +1568,7 @@ mcpFieldHeader:
     name: {type: String}
 mcpFieldOauthClientSecret: "oauth.clientSecret"
 mcpServerInvalid: "Pi refuses this entry, so it never connects:"
-mcpServerWebPassword: "References PI_WEB_PASSWORD. Pi Web refuses to connect it, but the pi CLI reads this file too and would send the password on if that variable is set where the CLI runs:"
+mcpServerWebPassword: "References PI_WEB_PASSWORD. pigo refuses to connect it, but the pi CLI reads this file too and would send the password on if that variable is set where the CLI runs:"
 mcpServerDisabled: "Turned off in the file, so it does not connect."
 mcpServerCommandFields: "Runs a shell command on every connection:"
 mcpServerReplacesGlobal: "Replaces your global server of the same name while this project is trusted."
@@ -1579,8 +1579,8 @@ mcpServerOverridesGlobal:
 mcpServerOverridesGlobalNothing: "Names your global server of the same name, but changes none of enabled, exposure and toolExposure."
 mcpServerMasked: "Parts that look like secrets are hidden."
 mcpServerHiddenCharacters: "Holds invisible or control characters, shown here as \\u'{'…'}' codes."
-mcpServerSendsVariables: "Sends environment variables of the computer running Pi Web to this server on every connection:"
-mcpServerPassesVariables: "Passes environment variables of the computer running Pi Web to the command it starts:"
+mcpServerSendsVariables: "Sends environment variables of the computer running pigo to this server on every connection:"
+mcpServerPassesVariables: "Passes environment variables of the computer running pigo to the command it starts:"
 mcpServerVariableIn:
   message: "{variable} in {field}"
   placeholders:
@@ -1590,39 +1590,39 @@ mcpFileProblemUnparsable: "The file is not valid JSON, so none of its servers lo
 mcpFileProblemInvalidShape: "The file is not an object with an \"mcpServers\" object, so none of its servers load."
 mcpFileProblemAutoEnableCodemodeInvalid: "\"autoEnableCodemode\" must be true or false; the servers still load."
 mcpFileProblemLinkDangling: "The file is a symbolic link to nothing, so no servers load from it."
-mcpFileProblemLinkOutside: "The file is a symbolic link outside the folders Pi Web may read, so its servers are not listed here. Pi still loads them once the project is trusted."
-mcpFileProblemNotAFile: "The path is not a regular file, so Pi Web does not read it."
+mcpFileProblemLinkOutside: "The file is a symbolic link outside the folders pigo may read, so its servers are not listed here. Pi still loads them once the project is trusted."
+mcpFileProblemNotAFile: "The path is not a regular file, so pigo does not read it."
 mcpFileProblemTooLarge: "The file is larger than 1 MiB, so its servers are not listed here. Pi still loads them once the project is trusted."
 mcpFileProblemTooManyServers: "The file declares more than 200 servers, so they are not listed here. Pi still loads them once the project is trusted."
-mcpFileProblemUnreadable: "Pi Web cannot read the file."
+mcpFileProblemUnreadable: "pigo cannot read the file."
 mcpReasonCwdInvalid: "The project folder is missing or not an absolute path."
-mcpReasonCwdDenied: "Pi Web may not read this folder."
+mcpReasonCwdDenied: "pigo may not read this folder."
 mcpReasonCwdNotDirectory: "The project folder no longer exists or is not a folder."
-mcpReasonRequestDenied: "Pi Web refused the request because it did not come from this page."
-mcpReasonContentType: "Pi Web refused the request because it was not sent as JSON."
-mcpReasonTrustUnreadable: "Pi Web cannot read the trust store (trust.json), or another program has it locked."
+mcpReasonRequestDenied: "pigo refused the request because it did not come from this page."
+mcpReasonContentType: "pigo refused the request because it was not sent as JSON."
+mcpReasonTrustUnreadable: "pigo cannot read the trust store (trust.json), or another program has it locked."
 mcpReasonTrustNotRequired: "This project has no resources that need trust anymore."
 mcpReasonSessionBusy: "Wait for the running session in this folder to finish, then trust the project."
-mcpReasonInvalidRequest: "Pi Web refused the request because it does not ask for a change Pi Web can make."
-mcpReasonMcpOff: "MCP is off on this Pi Web server, so it changes no server."
-mcpReasonProjectUntrusted: "This project is not trusted, so Pi Web does not change its .pi/mcp.json."
-mcpReasonUnparsable: "The file is not valid JSON, so Pi Web left it unchanged."
-mcpReasonInvalidShape: "The file is not an object with an \"mcpServers\" object, so Pi Web left it unchanged."
+mcpReasonInvalidRequest: "pigo refused the request because it does not ask for a change pigo can make."
+mcpReasonMcpOff: "MCP is off on this pigo server, so it changes no server."
+mcpReasonProjectUntrusted: "This project is not trusted, so pigo does not change its .pi/mcp.json."
+mcpReasonUnparsable: "The file is not valid JSON, so pigo left it unchanged."
+mcpReasonInvalidShape: "The file is not an object with an \"mcpServers\" object, so pigo left it unchanged."
 mcpReasonServerMissing: "The file no longer defines this server."
 mcpReasonEntryNotObject: "This entry is not an object, so it cannot be turned on or off. Remove it, or fix it in the file."
-mcpReasonWebPassword: "It references PI_WEB_PASSWORD, so Pi Web does not turn it on."
+mcpReasonWebPassword: "It references PI_WEB_PASSWORD, so pigo does not turn it on."
 mcpReasonUndoUnavailable: "The removal can no longer be undone."
 mcpReasonUndoNameTaken: "The file defines a server of the same name again, so the removal was not undone."
 mcpReasonNameTaken: "The file already defines a server of that name."
-mcpReasonLinkDangling: "The file is a symbolic link to nothing, so Pi Web does not write it."
-mcpReasonLinkOutside: "The file is a symbolic link outside the folders Pi Web may read, so Pi Web does not write it."
-mcpReasonNotAFile: "The path is not a regular file, so Pi Web does not write it."
-mcpReasonTooLarge: "The file is larger than 1 MiB, so Pi Web does not write it."
-mcpReasonTooManyServers: "The file declares more than 200 servers, so Pi Web does not act on its entries."
+mcpReasonLinkDangling: "The file is a symbolic link to nothing, so pigo does not write it."
+mcpReasonLinkOutside: "The file is a symbolic link outside the folders pigo may read, so pigo does not write it."
+mcpReasonNotAFile: "The path is not a regular file, so pigo does not write it."
+mcpReasonTooLarge: "The file is larger than 1 MiB, so pigo does not write it."
+mcpReasonTooManyServers: "The file declares more than 200 servers, so pigo does not act on its entries."
 mcpReasonLocked: "Another program is writing the file. Try again in a moment."
-mcpReasonServerInvalid: "Pi refuses this entry, so Pi Web does not connect it."
+mcpReasonServerInvalid: "Pi refuses this entry, so pigo does not connect it."
 mcpReasonSignInNotOauth: "This server does not sign in with OAuth: only an HTTP server without an Authorization header does."
-mcpReasonSignInUnknown: "Pi Web no longer knows this sign-in: it ended a while ago, or Pi Web restarted."
+mcpReasonSignInUnknown: "pigo no longer knows this sign-in: it ended a while ago, or pigo restarted."
 mcpReasonSignInNotWaiting: "The sign-in is not waiting for an address right now."
 mcpReasonRedirectInvalid: "That is not a web address. Copy the whole address from the browser's address bar."
 mcpReasonRedirectStateMismatch: "That address belongs to another sign-in. Paste the address the browser landed on after this one."
@@ -1632,11 +1632,11 @@ mcpReasonImportFailed: "No server could be read from the paste."
 mcpReasonFieldsIncomplete: "Some values to fill in are missing or not valid."
 mcpReasonNameInvalid: "A server name uses letters, digits, _ and - only."
 mcpReasonSecretGlobalOnly: "The server holds a secret as plain text, so it is saved only in the global mcp.json."
-mcpReasonHostEnvConfirm: "The server would be sent variables of the computer running Pi Web; confirm that first."
-mcpReasonFolderNotFresh: "The folder changed since: it has a trust decision now, or resources that need one, so Pi Web did not trust it and added nothing."
-mcpReasonTrustTooBroad: "Trusting this folder would trust the folders inside it too, so Pi Web does not do it by itself."
+mcpReasonHostEnvConfirm: "The server would be sent variables of the computer running pigo; confirm that first."
+mcpReasonFolderNotFresh: "The folder changed since: it has a trust decision now, or resources that need one, so pigo did not trust it and added nothing."
+mcpReasonTrustTooBroad: "Trusting this folder would trust the folders inside it too, so pigo does not do it by itself."
 mcpLoadFailed: "Could not read the MCP settings."
-mcpLoadTimedOut: "Pi Web did not answer in time. Press Refresh to try again."
+mcpLoadTimedOut: "pigo did not answer in time. Press Refresh to try again."
 mcpProjectNotListed:
   message: "This project's servers are not listed: {reason}"
   placeholders:
@@ -1670,7 +1670,7 @@ mcpStateShortReplaced: "replaced"
 mcpStateShortOverridden: "overridden"
 mcpServerShadowedByProject: "The project's server of the same name replaces this one while the project is trusted."
 mcpServerOverriddenByProject: "The project's .pi/mcp.json changes this server while the project is trusted."
-mcpServerUnchecked: "Listed unchecked: Pi Web cannot load the SDK's MCP checks."
+mcpServerUnchecked: "Listed unchecked: pigo cannot load the SDK's MCP checks."
 mcpDetailDescription: "Description"
 mcpDetailTransport: "Transport"
 mcpDetailCommand: "Command"
@@ -1707,7 +1707,7 @@ mcpExposureCodemode: "Only the server's name and summary are listed; Code mode s
 mcpExposureDeferred: "Declared once tool search loads them; needs no Code mode."
 mcpExposureDirect: "Every tool's full declaration goes with every request: the most tokens."
 mcpExposureHidden: "Registered but unreachable."
-mcpExposureSandboxUnavailable: "Code mode cannot run on this Pi Web server, so these tools are reached through tool search instead."
+mcpExposureSandboxUnavailable: "Code mode cannot run on this pigo server, so these tools are reached through tool search instead."
 mcpExposureBuiltinDisabled: "-builtin:codemode turns Code mode off, so these tools can be called only while tool search is active."
 mcpExposureAutoEnableOff:
   message: "autoEnableCodemode is false in {path}, so sessions do not turn Code mode on for these tools: they can be called only while Code mode is Always on or tool search is active."
@@ -1736,8 +1736,8 @@ mcpEmpty:
     globalPath: {type: String}
 mcpEmptyFileProblem: "No servers could be listed: see the file problems below."
 mcpSelectItem: "Select a server or Code mode."
-mcpUnavailableOperatorDisabled: "MCP is off: PI_WEB_DISABLE_MCP is set where Pi Web runs. The servers are listed, but no session connects them."
-mcpUnavailableInternalsUnavailable: "MCP is off: Pi Web cannot load the SDK's MCP modules. The servers are listed unchecked, and no session connects them."
+mcpUnavailableOperatorDisabled: "MCP is off: PI_WEB_DISABLE_MCP is set where pigo runs. The servers are listed, but no session connects them."
+mcpUnavailableInternalsUnavailable: "MCP is off: pigo cannot load the SDK's MCP modules. The servers are listed unchecked, and no session connects them."
 mcpUnavailableBuiltinDisabled:
   message: "MCP is off: the extensions setting in {path} turns off builtin:mcp, so no session connects these servers."
   placeholders:
@@ -1752,7 +1752,7 @@ mcpTrustTrustedThrough:
   message: "Trusted through {path}: the servers in this project's .pi/mcp.json connect, as in every folder under it."
   placeholders:
     path: {type: String}
-mcpTrustUnreadable: "Pi Web cannot read the trust store (trust.json), so this project's servers count as untrusted for now."
+mcpTrustUnreadable: "pigo cannot read the trust store (trust.json), so this project's servers count as untrusted for now."
 mcpTrustTrustButton: "Trust project…"
 mcpFooterFileProblem: "1 file problem"
 mcpFooterFileProblems:
@@ -1774,8 +1774,8 @@ mcpCodemodeAlwaysDescription: "Sessions start with Code mode on."
 mcpCodemodePreferenceError: "Cannot read the global settings file:"
 mcpCodemodeSandbox: "Sandbox"
 mcpCodemodeSandboxAvailable: "Available."
-mcpCodemodeSandboxUnavailable: "Cannot run on this Pi Web server, so no session offers Code mode:"
-mcpCodemodeSandboxNotChecked: "Not checked yet: the self-test runs when the first session starts after Pi Web does."
+mcpCodemodeSandboxUnavailable: "Cannot run on this pigo server, so no session offers Code mode:"
+mcpCodemodeSandboxNotChecked: "Not checked yet: the self-test runs when the first session starts after pigo does."
 mcpCodemodeBuiltin: "Extension"
 mcpCodemodeBuiltinDisabled:
   message: "Turned off by -builtin:codemode in {path}."
@@ -1791,8 +1791,8 @@ mcpCodemodeAutoEnableOff:
   placeholders:
     path: {type: String}
 mcpCodemodeSaveFailed: "Could not save the choice:"
-mcpCodemodeSaveTimedOut: "Pi Web did not answer in time, so the choice may not have been saved."
-mcpCodemodeAlwaysUnavailableSandbox: "Always on is unavailable: Code mode's sandbox cannot run on this Pi Web server."
+mcpCodemodeSaveTimedOut: "pigo did not answer in time, so the choice may not have been saved."
+mcpCodemodeAlwaysUnavailableSandbox: "Always on is unavailable: Code mode's sandbox cannot run on this pigo server."
 mcpCodemodeAlwaysUnavailableBuiltin:
   message: "Always on is unavailable: -builtin:codemode in {path} turns Code mode off."
   placeholders:
@@ -1854,8 +1854,8 @@ mcpCodemodeInlineBudgetProjectOverrideDefault:
     default: {type: String}
 mcpCodemodeInlineBudgetSaveFailed: "Could not save the budget:"
 mcpReadOnlyMcpOff: "Servers cannot be changed here while MCP is off."
-mcpReadOnlyProjectUntrusted: "Pi Web does not change them until the project is trusted."
-mcpReadOnlyTrustUnreadable: "Pi Web does not change them until it can read the trust store."
+mcpReadOnlyProjectUntrusted: "pigo does not change them until the project is trusted."
+mcpReadOnlyTrustUnreadable: "pigo does not change them until it can read the trust store."
 mcpWriteSavedWhileOff: "Changes are saved to the file, but no session connects these servers while builtin:mcp is off."
 mcpServerSwitchOn:
   message: "Turn {name} on"
@@ -1883,7 +1883,7 @@ mcpBulkFailed:
     count: {type: int}
     total: {type: int}
 mcpActionFailed: "Could not change the server:"
-mcpActionTimedOut: "Pi Web did not answer in time, so the change may not have been made."
+mcpActionTimedOut: "pigo did not answer in time, so the change may not have been made."
 mcpRemoved:
   message: "Removed {name} from {path}."
   placeholders:
@@ -1905,20 +1905,20 @@ mcpTestButton: "Test connection"
 mcpTestTesting: "Testing…"
 mcpTestNever: "Not tested yet."
 mcpTestSerial: "It runs a shell command, so its test waits for other such tests."
-mcpTestBlockedMcpOff: "MCP is off on this Pi Web server, so it tests no server."
-mcpTestBlockedProjectUntrusted: "This project is not trusted, so Pi Web does not start its servers."
-mcpTestBlockedTrustUnreadable: "Pi Web cannot read the trust store (trust.json), so it does not start this project's servers."
+mcpTestBlockedMcpOff: "MCP is off on this pigo server, so it tests no server."
+mcpTestBlockedProjectUntrusted: "This project is not trusted, so pigo does not start its servers."
+mcpTestBlockedTrustUnreadable: "pigo cannot read the trust store (trust.json), so it does not start this project's servers."
 mcpTestBlockedInvalid: "Pi refuses this entry, so there is nothing to test."
-mcpTestBlockedWebPassword: "It references PI_WEB_PASSWORD, so Pi Web does not connect it."
+mcpTestBlockedWebPassword: "It references PI_WEB_PASSWORD, so pigo does not connect it."
 mcpTestRefusedEntryNotObject: "This entry is not an object, so there is nothing to test. Fix it in the file."
-mcpTestRefusedInvalidRequest: "Pi Web refused the request because it does not name a server it can test."
-mcpTestRefusedUnparsable: "The file is not valid JSON, so Pi Web cannot read this entry to test it."
-mcpTestRefusedInvalidShape: "The file is not an object with an \"mcpServers\" object, so Pi Web cannot read this entry to test it."
-mcpTestRefusedLinkDangling: "The file is a symbolic link to nothing, so Pi Web cannot read this entry to test it."
-mcpTestRefusedLinkOutside: "The file is a symbolic link outside the folders Pi Web may read, so Pi Web does not test its servers."
-mcpTestRefusedNotAFile: "The path is not a regular file, so Pi Web does not read it to test this entry."
-mcpTestRefusedTooLarge: "The file is larger than 1 MiB, so Pi Web does not read it to test this entry."
-mcpTestRefusedTooManyServers: "The file declares more than 200 servers, so Pi Web does not read it to test this entry."
+mcpTestRefusedInvalidRequest: "pigo refused the request because it does not name a server it can test."
+mcpTestRefusedUnparsable: "The file is not valid JSON, so pigo cannot read this entry to test it."
+mcpTestRefusedInvalidShape: "The file is not an object with an \"mcpServers\" object, so pigo cannot read this entry to test it."
+mcpTestRefusedLinkDangling: "The file is a symbolic link to nothing, so pigo cannot read this entry to test it."
+mcpTestRefusedLinkOutside: "The file is a symbolic link outside the folders pigo may read, so pigo does not test its servers."
+mcpTestRefusedNotAFile: "The path is not a regular file, so pigo does not read it to test this entry."
+mcpTestRefusedTooLarge: "The file is larger than 1 MiB, so pigo does not read it to test this entry."
+mcpTestRefusedTooManyServers: "The file declares more than 200 servers, so pigo does not read it to test this entry."
 mcpTestStateConnected: "Connected"
 mcpTestStateNeedsAuth: "Needs sign-in"
 mcpTestStateFailed: "Did not connect"
@@ -1939,7 +1939,7 @@ mcpTestSummaryFailed:
     seconds: {type: int}
     time: {type: String}
 mcpTestSummaryTimedOut:
-  message: "It did not answer within {seconds} s, so Pi Web stopped the test. Tested at {time}."
+  message: "It did not answer within {seconds} s, so pigo stopped the test. Tested at {time}."
   placeholders:
     seconds: {type: int}
     time: {type: String}
@@ -1966,7 +1966,7 @@ mcpTestMoreTools:
     count: {type: int}
 mcpTestQueueTimedOut: "Another test of a server that runs a shell command did not finish in time, so this one did not start. Try again."
 mcpTestRequestFailed: "Could not test the server:"
-mcpTestRequestTimedOut: "Pi Web did not answer in time. The test may still finish; press Refresh to see its result."
+mcpTestRequestTimedOut: "pigo did not answer in time. The test may still finish; press Refresh to see its result."
 mcpStateConnecting: "Connecting in a session"
 mcpStateDisconnected: "Connection dropped in a session"
 mcpStateConflict: "Name taken by another extension"
@@ -2028,7 +2028,7 @@ mcpSessionSummaryClosed:
     closedTime: {type: String}
 mcpSessionConflictOwner: "Registered first by:"
 mcpHostInactive:
-  message: "A session in {path} connects none of these servers through Pi Web: its /mcp command comes from {owner}, not from Pi's built-in MCP extension. That extension may read mcp.json and connect them its own way."
+  message: "A session in {path} connects none of these servers through pigo: its /mcp command comes from {owner}, not from Pi's built-in MCP extension. That extension may read mcp.json and connect them its own way."
   placeholders:
     path: {type: String}
     owner: {type: String}
@@ -2037,7 +2037,7 @@ mcpSignInStarting: "Starting…"
 mcpSignInCancel: "Cancel sign-in"
 mcpSignInCancelling: "Cancelling…"
 mcpSignInCancelFailed: "Could not cancel the sign-in:"
-mcpSignInCancelTimedOut: "Pi Web did not answer in time. The sign-in may still be under way; this line shows it once it moves on."
+mcpSignInCancelTimedOut: "pigo did not answer in time. The sign-in may still be under way; this line shows it once it moves on."
 mcpSignInSignOut: "Sign out"
 mcpSignInSigningOut: "Signing out…"
 mcpSignInReplaces: "Signing in may replace what is stored for this server."
@@ -2062,44 +2062,44 @@ mcpSignInPhaseConnecting: "Checking whether the server asks for a sign-in…"
 mcpSignInPhaseStarting: "Preparing the sign-in with the server's authorization server…"
 mcpSignInPhaseFinishing: "Finishing the sign-in…"
 mcpSignInPhaseNoCancel: "The authorization server has answered, so this step can no longer be cancelled."
-mcpSignInAuthorizeMessage: "Open the sign-in page and approve access. When the browser comes back to the computer running Pi Web, the sign-in finishes by itself. If the browser runs on another device, or the page it lands on does not load, copy that page's address and paste it here."
+mcpSignInAuthorizeMessage: "Open the sign-in page and approve access. When the browser comes back to the computer running pigo, the sign-in finishes by itself. If the browser runs on another device, or the page it lands on does not load, copy that page's address and paste it here."
 mcpSignInAuthorizeLink: "Sign-in page:"
 mcpSignInAuthorizeNotALink: "The server's sign-in page is not a web address, so it is shown as text only:"
 mcpSignInAuthorizeRedirect:
-  message: "After you approve, the browser is sent to {url}, which only the computer running Pi Web can open."
+  message: "After you approve, the browser is sent to {url}, which only the computer running pigo can open."
   placeholders:
     url: {type: String}
-mcpSignInAuthorizeWait: "Pi Web waits up to 5 minutes from the start of the sign-in."
+mcpSignInAuthorizeWait: "pigo waits up to 5 minutes from the start of the sign-in."
 mcpSignInPasteLabel: "Address the browser landed on"
 mcpSignInPastePlaceholder: "http://127.0.0.1:…/callback?code=…"
 mcpSignInPasteSubmit: "Continue"
 mcpSignInPasteChecking: "Checking…"
 mcpSignInPasteRefused: "That address does not finish this sign-in:"
-mcpSignInPasteTimedOut: "Pi Web did not answer in time. If it took the address, this line shows the sign-in moving on."
+mcpSignInPasteTimedOut: "pigo did not answer in time. If it took the address, this line shows the sign-in moving on."
 mcpSignInDoneAlready: "Already signed in: the server connected without a new sign-in."
 mcpSignInDoneSignedIn: "Signed in. Status above shows what the server offers."
 mcpSignInDoneRefreshed: "Signed in again with the stored refresh token, without the browser. Status above shows what the server offers."
 mcpSignInDoneFailedAfter: "Signed in, but the server did not connect afterwards. Status above says why."
-mcpSignInDoneNeedsAuthAfter: "Signed in, but the server still asked for a sign-in when Pi Web connected again."
+mcpSignInDoneNeedsAuthAfter: "Signed in, but the server still asked for a sign-in when pigo connected again."
 mcpSignInDoneNotConnected: "Signed in. Press Test connection to see what the server offers."
 mcpSignInCancelled: "Sign-in cancelled."
-mcpSignInExpired: "The sign-in was not finished within 5 minutes, so Pi Web stopped waiting."
+mcpSignInExpired: "The sign-in was not finished within 5 minutes, so pigo stopped waiting."
 mcpSignInFailedConnectFailed: "The server did not connect, and did not ask for a sign-in, so there was nothing to sign in to. Status above says why."
 mcpSignInFailedQueueTimedOut: "Another test of a server that runs a shell command did not finish in time, so the sign-in did not start. Try again."
 mcpSignInFailedSignInFailed: "The sign-in failed."
 mcpSignInFailedInternal: "The sign-in failed unexpectedly."
-mcpSignInGone: "Pi Web no longer knows this sign-in: it ended a while ago, or Pi Web restarted. Press Sign in to start again."
+mcpSignInGone: "pigo no longer knows this sign-in: it ended a while ago, or pigo restarted. Press Sign in to start again."
 mcpSignInRequestFailed: "Could not sign in:"
-mcpSignInRequestTimedOut: "Pi Web did not answer in time. Press Sign in again to see the sign-in under way."
+mcpSignInRequestTimedOut: "pigo did not answer in time. Press Sign in again to see the sign-in under way."
 mcpSignInSignOutFailed: "Could not sign out:"
 mcpSignInSignedOutDone: "Signed out: the tokens stored for this server were deleted."
 mcpSignInSignedOutNothing: "Nothing was stored for this server, so there was nothing to sign out of."
-mcpSignInBlockedMcpOff: "MCP is off on this Pi Web server, so it signs in to no server."
-mcpSignInBlockedProjectUntrusted: "This project is not trusted, so Pi Web does not sign in to or out of its servers."
-mcpSignInBlockedTrustUnreadable: "Pi Web cannot read the trust store (trust.json), so it does not sign in to or out of this project's servers."
+mcpSignInBlockedMcpOff: "MCP is off on this pigo server, so it signs in to no server."
+mcpSignInBlockedProjectUntrusted: "This project is not trusted, so pigo does not sign in to or out of its servers."
+mcpSignInBlockedTrustUnreadable: "pigo cannot read the trust store (trust.json), so it does not sign in to or out of this project's servers."
 mcpSignInBlockedInvalid: "Pi refuses this entry, so there is nothing to sign in to."
-mcpSignInRefusedFile: "Pi Web cannot read this entry from its file anymore. Press Refresh."
-mcpSignInRefusedInvalidRequest: "Pi Web refused the request because it does not name a server it can sign in to."
+mcpSignInRefusedFile: "pigo cannot read this entry from its file anymore. Press Refresh."
+mcpSignInRefusedInvalidRequest: "pigo refused the request because it does not name a server it can sign in to."
 mcpSignInSummaryConnected:
   message: "Signed in, then {count} tool(s) listed in {seconds} s, at {time}."
   placeholders:
@@ -2126,7 +2126,7 @@ mcpAddInputLabel: "Server to add"
 mcpAddPlaceholder: "https://mcp.example.com/mcp\nnpx -y @scope/server\nclaude mcp add …\n'{' \"mcpServers\": '{' … '}' '}'"
 mcpAddExamples: "Supported formats (click one to fill in an example)"
 mcpAddRawPi: "Enable pi mcp syntax ($NAME, !command)"
-mcpAddRawPiOn: "In env and header values, $NAME reads a variable on the computer running Pi Web, and a value starting with ! runs as a command at every connection."
+mcpAddRawPiOn: "In env and header values, $NAME reads a variable on the computer running pigo, and a value starting with ! runs as a command at every connection."
 mcpAddServerLabel: "Server"
 mcpAddServerCount:
   message: "This paste holds {count} servers; add them one at a time."
@@ -2150,7 +2150,7 @@ mcpAddFieldStoredAsVariable:
   message: "Stored as {value}: pi reads the variable each time it connects, and the value stays out of mcp.json."
   placeholders:
     value: {type: String}
-mcpAddFieldUseVariable: "Read it from a variable of the computer running Pi Web"
+mcpAddFieldUseVariable: "Read it from a variable of the computer running pigo"
 mcpAddFieldVariableName:
   message: "Variable for {field}"
   placeholders:
@@ -2184,11 +2184,11 @@ mcpAddTrustExplain:
 mcpAddAfterAdd: "Adding tests the connection once."
 mcpAddFailed: "Not added:"
 mcpAddTrustKept:
-  message: "Pi Web trusted {folder} for this step and could not take that back, so the folder stays trusted."
+  message: "pigo trusted {folder} for this step and could not take that back, so the folder stays trusted."
   placeholders:
     folder: {type: String}
 mcpAddHostEnvBody:
-  message: "Its headers or OAuth client secret read {names}, which are set on the computer running Pi Web, and pi sends their values to the server at every connection. Add it only if this server should have them."
+  message: "Its headers or OAuth client secret read {names}, which are set on the computer running pigo, and pi sends their values to the server at every connection. Add it only if this server should have them."
   placeholders:
     names: {type: String}
 mcpAddHostEnvConfirm: "Add and send these values"
@@ -2201,49 +2201,49 @@ mcpAddBlockedFieldsInvalid:
   message: "Correct {fields} first."
   placeholders:
     fields: {type: String}
-mcpAddBlockedWebPassword: "It references PI_WEB_PASSWORD, so Pi Web does not add it."
+mcpAddBlockedWebPassword: "It references PI_WEB_PASSWORD, so pigo does not add it."
 mcpAddRefusedServerInvalid:
   message: "pi refuses it as filled in: {error}"
   placeholders:
     error: {type: String}
 mcpAddProjectBlockedNoProject: "Open a project to add a server to its .pi/mcp.json."
 mcpAddProjectBlockedProjectNotListed: "The project folder is not listed, so its .pi/mcp.json is not written."
-mcpAddProjectBlockedTrustUnreadable: "Pi Web cannot read the trust store (trust.json), so it does not write this project's .pi/mcp.json."
-mcpAddProjectBlockedProjectUntrusted: "This project is not trusted, so Pi Web does not write its .pi/mcp.json. Trust it first."
+mcpAddProjectBlockedTrustUnreadable: "pigo cannot read the trust store (trust.json), so it does not write this project's .pi/mcp.json."
+mcpAddProjectBlockedProjectUntrusted: "This project is not trusted, so pigo does not write its .pi/mcp.json. Trust it first."
 mcpAddProjectBlockedUntrustedDecision: "This folder is marked as not trusted, so a server in its .pi/mcp.json would never connect."
 mcpAddProjectBlockedSecret:
-  message: "{fields} holds a secret as plain text, so this server can be saved only globally. To save it in the project, choose “Read it from a variable of the computer running Pi Web” for it."
+  message: "{fields} holds a secret as plain text, so this server can be saved only globally. To save it in the project, choose “Read it from a variable of the computer running pigo” for it."
   placeholders:
     fields: {type: String}
 mcpAddProjectBlockedSecretFixed:
   message: "{fields} holds a secret as plain text where pi reads no variable (the URL, the command or its arguments), so this server can be saved only globally."
   placeholders:
     fields: {type: String}
-mcpAddProjectBlockedFolderNotFresh: "Something under this folder's .pi, or an .agents/skills folder above it, is a link to nothing. It would need trust once its target appears, so Pi Web does not trust the folder by itself. Remove or fix the link, then press Refresh."
+mcpAddProjectBlockedFolderNotFresh: "Something under this folder's .pi, or an .agents/skills folder above it, is a link to nothing. It would need trust once its target appears, so pigo does not trust the folder by itself. Remove or fix the link, then press Refresh."
 mcpAddProjectBlockedFileProblem:
   message: "{path} cannot be written: {reason}"
   placeholders:
     path: {type: String}
     reason: {type: String}
-mcpAddProjectBlockedTrustTooBroadHome: "This is your home folder. Pi Web does not trust it by itself, since every folder in it would be trusted too; add the server globally."
-mcpAddProjectBlockedTrustTooBroadRoot: "This is a filesystem root. Pi Web does not trust it by itself, since every folder on it would be trusted too; add the server globally."
+mcpAddProjectBlockedTrustTooBroadHome: "This is your home folder. pigo does not trust it by itself, since every folder in it would be trusted too; add the server globally."
+mcpAddProjectBlockedTrustTooBroadRoot: "This is a filesystem root. pigo does not trust it by itself, since every folder on it would be trusted too; add the server globally."
 mcpAddProjectBlockedTrustTooBroadContainsHome:
-  message: "This folder holds your home folder ({path}). Pi Web does not trust it by itself, since every folder in it would be trusted too; add the server globally."
+  message: "This folder holds your home folder ({path}). pigo does not trust it by itself, since every folder in it would be trusted too; add the server globally."
   placeholders:
     path: {type: String}
 mcpAddProjectBlockedTrustTooBroadContainsAgentDir:
-  message: "This folder holds Pi's agent folder ({path}). Pi Web does not trust it by itself, since every folder in it would be trusted too; add the server globally."
+  message: "This folder holds Pi's agent folder ({path}). pigo does not trust it by itself, since every folder in it would be trusted too; add the server globally."
   placeholders:
     path: {type: String}
 mcpAddProjectBlockedTrustTooBroadContainsFolder:
-  message: "This folder holds {path}, another folder Pi Web knows, which trusting it would trust too. Pi Web does not do that by itself; add the server globally."
+  message: "This folder holds {path}, another folder pigo knows, which trusting it would trust too. pigo does not do that by itself; add the server globally."
   placeholders:
     path: {type: String}
 mcpAddProjectBlockedTrustTooBroadContainsProject:
-  message: "This folder holds {path}, a project with resources that need trust and no decision of its own, which trusting this folder would trust too. Pi Web does not do that by itself; add the server globally, or open that project and trust it on its own."
+  message: "This folder holds {path}, a project with resources that need trust and no decision of its own, which trusting this folder would trust too. pigo does not do that by itself; add the server globally, or open that project and trust it on its own."
   placeholders:
     path: {type: String}
-mcpAddProjectBlockedTrustTooBroadTooManyFolders: "This folder holds too many folders for Pi Web to check that trusting it would trust no project inside them. Pi Web does not trust it by itself; add the server globally."
+mcpAddProjectBlockedTrustTooBroadTooManyFolders: "This folder holds too many folders for pigo to check that trusting it would trust no project inside them. pigo does not trust it by itself; add the server globally."
 mcpAddAdded:
   message: "Added {name} to {path}."
   placeholders:
@@ -2287,7 +2287,7 @@ mcpImportNoteForServer:
     server: {type: String}
     note: {type: String}
 mcpImportNoteEmptyInput: "Nothing to read yet: paste a URL, a command line or a config."
-mcpImportNoteUnrecognizedInput: "Pi Web does not recognize this. Paste a server's URL, the command that starts it, an mcp add command, a JSON config or an install link."
+mcpImportNoteUnrecognizedInput: "pigo does not recognize this. Paste a server's URL, the command that starts it, an mcp add command, a JSON config or an install link."
 mcpImportNoteInvalidJson:
   message: "This looks like JSON but does not parse: {detail}"
   placeholders:
@@ -2307,7 +2307,7 @@ mcpImportNoteShellUnterminatedQuote:
   placeholders:
     quote: {type: String}
 mcpImportNoteShellParameter:
-  message: "The command line uses the shell parameter {parameter}, which Pi Web cannot fill in."
+  message: "The command line uses the shell parameter {parameter}, which pigo cannot fill in."
   placeholders:
     parameter: {type: String}
 mcpImportNoteShellExpansion:
@@ -2328,7 +2328,7 @@ mcpImportNoteGithubMcpPage:
     name: {type: String}
 mcpImportNoteGithubPage: "This GitHub page is not a server. Copy the install command, URL or config from the server's README."
 mcpImportNoteByNameLink:
-  message: "This link only names {name} in a registry and holds no settings, so Pi Web cannot add it yet. Copy the Cursor or VS Code install badge from the server's README instead."
+  message: "This link only names {name} in a registry and holds no settings, so pigo cannot add it yet. Copy the Cursor or VS Code install badge from the server's README instead."
   placeholders:
     name: {type: String}
 mcpImportNoteBadgeImage: "This is a badge's image. Copy the link the badge opens instead."
@@ -2338,7 +2338,7 @@ mcpImportNoteInstallLinkInvalid:
     detail: {type: String}
 mcpImportNoteClaudeDesktopImport: "claude mcp add-from-claude-desktop copies Claude Desktop's own servers. Paste the mcpServers part of claude_desktop_config.json instead."
 mcpImportNoteCliUnsupported:
-  message: "Pi Web does not read {cli}'s mcp add. Paste the server's own command line, URL or JSON config instead."
+  message: "pigo does not read {cli}'s mcp add. Paste the server's own command line, URL or JSON config instead."
   placeholders:
     cli: {type: String}
 mcpImportNoteCliUsage:
@@ -2431,20 +2431,20 @@ mcpImportNoteBareDollarLiteral:
   placeholders:
     field: {type: String}
 mcpImportNoteHeaderEnvReference:
-  message: "The header {header} sends the value of {names} from the computer running Pi Web to this server."
+  message: "The header {header} sends the value of {names} from the computer running pigo to this server."
   placeholders:
     header: {type: String}
     names: {type: String}
 mcpImportNoteClientSecretEnvReference:
-  message: "The OAuth client secret is read from {names} on the computer running Pi Web and sent to the authorization server."
+  message: "The OAuth client secret is read from {names} on the computer running pigo and sent to the authorization server."
   placeholders:
     names: {type: String}
 mcpImportNoteShellCommandValue:
-  message: "{field} runs a shell command on the computer running Pi Web at every connection."
+  message: "{field} runs a shell command on the computer running pigo at every connection."
   placeholders:
     field: {type: String}
 mcpImportNoteShellVariable:
-  message: "{field}: $'{'name'}' would be filled in by your shell. pi reads it from the environment of the computer running Pi Web, or its value is asked for below."
+  message: "{field}: $'{'name'}' would be filled in by your shell. pi reads it from the environment of the computer running pigo, or its value is asked for below."
   placeholders:
     field: {type: String}
 mcpImportNoteUnsupportedVariable:
@@ -2457,7 +2457,7 @@ mcpImportNoteInputUndefined:
   placeholders:
     id: {type: String}
 mcpImportNoteInputCommandUnsupported:
-  message: "The input {id} runs a VS Code command, which Pi Web cannot, so its value is asked for below."
+  message: "The input {id} runs a VS Code command, which pigo cannot, so its value is asked for below."
   placeholders:
     id: {type: String}
 mcpImportNoteTimeoutClamped:
@@ -2506,7 +2506,7 @@ mcpImportNoteToolFilterImportedExclude:
   message: "These tools are hidden: {tools}."
   placeholders:
     tools: {type: String}
-mcpImportNoteTransportGuessed: "The config names no transport, so Pi Web read it from the keys present."
+mcpImportNoteTransportGuessed: "The config names no transport, so pigo read it from the keys present."
 mcpImportNoteInsecureHttp:
   message: "{host} is reached over plain http, so everything sent, tokens included, travels unencrypted."
   placeholders:

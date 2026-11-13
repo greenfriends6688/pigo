@@ -10,7 +10,7 @@ import (
 	"github.com/oneo-me/nsgo/icons/lucide"
 	"github.com/oneo-me/nsgo/ui"
 
-	"piwebnative/internal/models"
+	"pigo/internal/models"
 )
 
 // modelDialog manages one provider's models: the list pi-web's Models panel
