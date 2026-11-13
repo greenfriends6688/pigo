@@ -51,7 +51,12 @@ func (s *appState) disconnectCard() core.Node {
 				core.View{Style: core.Style{FlexGrow: 1, FlexShrink: 1, MinWidth: core.Pt(0)}, Children: []core.Node{
 					core.Text{Content: "与 agent 的连接已断开", MaxLines: 1,
 						Style: core.Style{FontSize: 12, FontWeight: core.FontWeightSemibold, Color: colors.Text()}},
-					core.Text{Content: "发送消息前请先重连；日志里有子进程退出的原因", MaxLines: 1,
+					core.Text{ContentFunc: func() string {
+						if s.lastDisconnect != "" {
+							return s.lastDisconnect
+						}
+						return "发送消息前请先重连；日志里有子进程退出的原因"
+					}, MaxLines: 2,
 						Style: core.Style{FontSize: 10.5, Color: colors.Muted()}},
 				}},
 				ui.Button{Text: "查看日志", Variant: ui.ButtonGhost, Size: ui.SizeSmall, TestID: "disconnect-log",

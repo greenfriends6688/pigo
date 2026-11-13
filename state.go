@@ -511,6 +511,10 @@ type appState struct {
 	// a single window-wide value painted the previous session's duration
 	// onto whichever session was opened next.
 	lastElapsedBySession map[string]time.Duration
+	// lastDisconnect is what the child said just before it went away. The
+	// card shows it instead of pointing at a log file: a pi that dies on a
+	// broken extension writes the reason to stderr and nowhere else.
+	lastDisconnect string
 	// autoRetrying is the automatic restart after an unexpected child exit;
 	// quitting stops it so the pool's teardown is not answered by a respawn.
 	autoRetrying bool
@@ -1473,6 +1477,7 @@ func (s *appState) connectWith(sessionPath, keySuffix, tools string, noTools ...
 			s.connected.Set(true)
 			s.reconnecting.Set(false)
 			s.transcriptLoading.Set(false)
+			s.lastDisconnect = ""
 			s.status.Set("已连接")
 			s.selected.Set(sessionPath)
 			s.followCwd(cwd)
@@ -1626,6 +1631,7 @@ func (s *appState) handleDisconnect(h *agent.SessionHandle, err error) {
 		detail := "正在自动重连…"
 		if err != nil && !strings.Contains(err.Error(), "EOF") {
 			detail = err.Error() + " · 正在自动重连…"
+			s.lastDisconnect = err.Error()
 		}
 		s.status.Set("会话已断开 · " + detail)
 		s.notify(ui.ToastWarning, "连接中断", detail)

@@ -39,12 +39,33 @@ type Transport interface {
 	Done() <-chan struct{}
 	// Err reports the reason the transport ended (nil for a clean EOF).
 	Err() error
-	// Close terminates the process group and releases all resources.
+	// StderrTail is what the child last wrote to stderr, for the window to
+	// show when it needs to explain a failure.
+	StderrTail() string
+	// Close stops the child: stdin EOF first, then the process group.
 	Close() error
 }
 
 // ErrClosed is returned by Send after the transport has been closed.
 var ErrClosed = errors.New("agent: transport closed")
+
+// How long a child gets to exit on its own before it is signalled. pi needs
+// about a second and a half to shut an rpc session down (flush the session
+// file, stop MCP servers), and a slow machine is slower than that.
+const (
+	shutdownGrace  = 8 * time.Second
+	terminateGrace = 3 * time.Second
+)
+
+// waitClosed reports whether done closed within d.
+func waitClosed(done <-chan struct{}, d time.Duration) bool {
+	select {
+	case <-done:
+		return true
+	case <-time.After(d):
+		return false
+	}
+}
 
 type stdioTransport struct {
 	cmd     *exec.Cmd
@@ -57,9 +78,10 @@ type stdioTransport struct {
 	done     chan struct{}
 	stopping chan struct{}
 
-	errMu sync.Mutex
-	err   error
-	logMu sync.Mutex
+	errMu  sync.Mutex
+	err    error
+	logMu  sync.Mutex
+	stderr *tailWriter
 
 	writeMu sync.Mutex
 	closed  bool
@@ -106,6 +128,10 @@ func NewStdioTransport(opts Options) (Transport, error) {
 	setProcessGroup(cmd)
 
 	var logFile *os.File
+	// The tail is kept whether or not a log file exists: it is what the
+	// disconnect card shows, and a user should not have to find a file to
+	// learn why pi died.
+	tail := newTailWriter(40)
 	if opts.LogPath != "" {
 		if err := os.MkdirAll(filepath.Dir(opts.LogPath), 0o755); err != nil {
 			return nil, err
@@ -115,9 +141,9 @@ func NewStdioTransport(opts Options) (Transport, error) {
 			return nil, err
 		}
 		logFile = f
-		cmd.Stderr = f
+		cmd.Stderr = io.MultiWriter(f, tail)
 	} else {
-		cmd.Stderr = io.Discard
+		cmd.Stderr = tail
 	}
 
 	stdin, err := cmd.StdinPipe()
@@ -154,6 +180,7 @@ func NewStdioTransport(opts Options) (Transport, error) {
 		frames:   make(chan []byte, 128),
 		done:     make(chan struct{}),
 		stopping: make(chan struct{}),
+		stderr:   tail,
 	}
 	t.logf("spawn pid=%d cwd=%s node=%s bundle=%s", t.pid, opts.Cwd, node, bundle)
 	go t.readPump()
@@ -279,6 +306,9 @@ func (t *stdioTransport) Err() error {
 	return t.err
 }
 
+// StderrTail returns the last stderr lines the child wrote.
+func (t *stdioTransport) StderrTail() string { return t.stderr.String() }
+
 // Close signals TERM to the process group, waits up to 5s, then SIGKILLs the
 // group. It is idempotent.
 func (t *stdioTransport) Close() error {
@@ -289,19 +319,23 @@ func (t *stdioTransport) Close() error {
 		// Tell readPump to drop frames but keep reading first, so it is never
 		// the reason the child has to be killed.
 		close(t.stopping)
-		// Closing stdin lets pi's rpc mode shut down gracefully on input EOF.
+		// Closing stdin is pi's own shutdown signal: its rpc mode finishes
+		// whatever it was writing and exits 0. Give it that chance before
+		// signalling, or every switch kills a child mid-write — which is how
+		// a session file ends up half a record long.
 		t.writeMu.Lock()
 		t.closed = true
 		t.writeMu.Unlock()
 		_ = t.stdin.Close()
-		terminateGroup(t.pid)
 
-		select {
-		case <-t.done:
-		case <-time.After(5 * time.Second):
-			t.logf("kill pid=%d: child did not exit within 5s", t.pid)
-			killGroup(t.pid)
-			<-t.done
+		if !waitClosed(t.done, shutdownGrace) {
+			t.logf("term pid=%d: still running after %s", t.pid, shutdownGrace)
+			terminateGroup(t.pid)
+			if !waitClosed(t.done, terminateGrace) {
+				t.logf("kill pid=%d: still running after SIGTERM", t.pid)
+				killGroup(t.pid)
+				<-t.done
+			}
 		}
 	})
 	return nil

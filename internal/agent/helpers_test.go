@@ -8,6 +8,7 @@ import (
 // fakeTransport is an in-memory Transport used by the client and pool tests.
 // Tests push raw lines onto frames and can simulate stdout EOF with eof().
 type fakeTransport struct {
+	tail       string
 	frames     chan []byte
 	done       chan struct{}
 	sentNotify chan struct{}
@@ -54,6 +55,8 @@ func (f *fakeTransport) Err() error {
 	defer f.mu.Unlock()
 	return f.err
 }
+
+func (f *fakeTransport) StderrTail() string { return f.tail }
 
 func (f *fakeTransport) Close() error {
 	f.mu.Lock()

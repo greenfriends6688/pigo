@@ -98,6 +98,12 @@ locales/                       中英文文案（en 为源语言）
   `scripts/epipe-guard.cjs` 用 `node --require` 预加载，对这一个预期条件安静退出，其余照旧致命。
 - **信任库自愈**：启动子进程前修掉 `~/.pi/agent/trust.json` 里的历史格式（`trustedDirs`），
   否则 pi 会直接拒绝启动，看起来就像「又断连了」。
+- **先礼后兵地停子进程**：关会话只关 stdin（这是 pi 自己的退出信号），等 8 秒让它写完
+  会话文件和 MCP 收尾；超时才 SIGTERM，再超时 SIGKILL。以前是关掉 stdin 立刻 SIGTERM，
+  日志里每次都是 `wait=signal: terminated`，等于每切一次会话就可能写坏半个会话文件。
+- **断连时把子进程说的最后一句抓出来**：stderr 除了进日志，还留最后 40 行在内存里，
+  错误提示和断连卡片直接显示那一行（`env: node: No such file or directory`、
+  `Cannot find module 'jiti'` 这类），不用去翻日志。
 - **打包不带 node**：`.app` 里没有 node 可执行文件；没有系统 Node 时由 `internal/nodeinstall`
   下载 `v22.x` 官方 tarball（校验 SHA-256 后解包，缓存复用）。
 
@@ -126,6 +132,8 @@ pigo 站着三个上游的肩膀：
   `locales/*.yaml`。
 - **[pi](https://github.com/earendil-works/pi)** — agent 本体。pigo 不实现 agent，
   只把它的 RPC 模式装进一个窗口，RPC bundle 由 `scripts/bundle-rpc.sh` 从已安装的 pi 取。
+- **[pi-gpui](https://github.com/bytesbay/pi-gpui)** — Rust/GPUI 的同门实现。子进程的
+  优雅关闭 + watchdog、把 stderr 尾巴显示给用户、按 pi 版本做能力判断，这几处借鉴自它。
 
 ## License
 

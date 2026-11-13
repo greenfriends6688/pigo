@@ -3,7 +3,9 @@ package agent
 import (
 	"context"
 	"errors"
+	"fmt"
 	"strconv"
+	"strings"
 	"sync"
 )
 
@@ -115,7 +117,7 @@ func (c *Client) dispatch() {
 		select {
 		case line, ok := <-frames:
 			if !ok {
-				c.finishDisconnect(c.t.Err())
+				c.finishDisconnect(exitError(c.t))
 				return
 			}
 			c.handleLine(line)
@@ -161,6 +163,25 @@ func (c *Client) finishDisconnect(err error) {
 			c.onDisconnect(err)
 		}
 	})
+}
+
+// exitError explains why the child is gone. A pi that dies at startup says so
+// on stderr and nowhere else, and "signal: terminated" on its own tells nobody
+// anything, so the child's last words ride along with the error.
+func exitError(t Transport) error {
+	err := t.Err()
+	tail := strings.TrimSpace(t.StderrTail())
+	if tail == "" {
+		return err
+	}
+	last := tail
+	if i := strings.LastIndexByte(tail, '\n'); i >= 0 {
+		last = tail[i+1:]
+	}
+	if err == nil {
+		return errors.New(last)
+	}
+	return fmt.Errorf("%w: %s", err, last)
 }
 
 func (c *Client) disconnectError() error {
