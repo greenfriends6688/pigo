@@ -108,6 +108,12 @@ locales/                       中英文文案（en 为源语言）
 - 非 macOS 平台不重定向文件描述符 2，Go 运行时自己的 fatal 报告不会进日志文件
   （`internal/agent/agent.log` 与通过 `os.Stderr` 的输出不受影响）。
 - Windows 上停止子进程用 `taskkill /T`，没有 POSIX 的 SIGTERM 语义。
+- **Windows arm64 没有自动下载 node 路径**：nodejs.org 不发布 win-arm64 官方包，
+  `nodeinstall` 会明确报错，需要用户自己装 Node ≥ 22；x64 走官方 `.zip`，正常自动安装。
+- **移动端只有 Android arm64 能出包**（`go tool nsgo build -target android_arm64`），
+  但本应用的核心是拉起 `node` 子进程跑 pi 的 RPC，Android 里没有可执行的 node，
+  所以 APK 目前只有界面；iOS 需要完整 Xcode（只装 Command Line Tools 时 `-target ios` 直接报
+  `the iOS SDK needs Xcode`），且同样无法 fork/exec。
 
 ## License
 
