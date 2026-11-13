@@ -127,3 +127,23 @@ func TestGuardArgsAbsent(t *testing.T) {
 		t.Fatalf("guardArgs = %v, want nil", got)
 	}
 }
+
+func TestBundleCandidatesFlatLayout(t *testing.T) {
+	// Windows and Linux packages put rpc/ beside the binary; a .app keeps it
+	// under Contents/Resources. Both must be searched, in that order after the
+	// caller's own resource dir.
+	got := bundleCandidates("/opt/app", "/opt/app/../Resources")
+	want := []string{
+		filepath.Join("/opt/app", "..", "Resources", "rpc", "rpc-entry.js"),
+		filepath.Join("/opt/app", "rpc", "rpc-entry.js"),
+		filepath.Join("/opt/app", "resources", "rpc", "rpc-entry.js"),
+	}
+	if len(got) < len(want) {
+		t.Fatalf("bundleCandidates = %v, want at least %v", got, want)
+	}
+	for i, w := range want {
+		if got[i] != w {
+			t.Fatalf("bundleCandidates[%d] = %q, want %q", i, got[i], w)
+		}
+	}
+}

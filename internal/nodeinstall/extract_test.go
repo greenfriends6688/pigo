@@ -2,6 +2,7 @@ package nodeinstall
 
 import (
 	"archive/tar"
+	"archive/zip"
 	"bytes"
 	"compress/gzip"
 	"io"
@@ -136,5 +137,61 @@ func TestSafeJoin(t *testing.T) {
 		if _, err := safeJoin(root, bad); err == nil {
 			t.Errorf("safeJoin(%q) = nil error, want rejection", bad)
 		}
+	}
+}
+
+func zipOf(t *testing.T, files map[string]string) []byte {
+	t.Helper()
+	var buf bytes.Buffer
+	zw := zip.NewWriter(&buf)
+	for name, body := range files {
+		w, err := zw.Create(name)
+		if err != nil {
+			t.Fatalf("create %q: %v", name, err)
+		}
+		if _, err := w.Write([]byte(body)); err != nil {
+			t.Fatalf("write %q: %v", name, err)
+		}
+	}
+	if err := zw.Close(); err != nil {
+		t.Fatalf("close zip: %v", err)
+	}
+	return buf.Bytes()
+}
+
+func TestExtractZip(t *testing.T) {
+	dst := t.TempDir()
+	data := zipOf(t, map[string]string{
+		"node-v22.0.0-win-x64/node.exe": "MZ",
+		"node-v22.0.0-win-x64/LICENSE":  "mit",
+	})
+	if err := extractZip(dst, bytes.NewReader(data), int64(len(data))); err != nil {
+		t.Fatalf("extractZip: %v", err)
+	}
+	exe := filepath.Join(dst, "node-v22.0.0-win-x64", "node.exe")
+	if st, err := os.Stat(exe); err != nil || st.Size() != 2 {
+		t.Fatalf("node.exe missing or wrong: %v", err)
+	}
+}
+
+func TestExtractZipRejectsEscape(t *testing.T) {
+	for _, name := range []string{"../evil", "/abs/evil"} {
+		data := zipOf(t, map[string]string{name: "x"})
+		if err := extractZip(t.TempDir(), bytes.NewReader(data), int64(len(data))); err == nil {
+			t.Fatalf("extractZip(%q) = nil error, want rejection", name)
+		}
+	}
+}
+
+func TestInstallArchiveZipLayout(t *testing.T) {
+	data := zipOf(t, map[string]string{"node-v22.0.0-win-x64/node.exe": "MZ"})
+	dir := t.TempDir()
+	got, err := installArchive(dir, "node-v22.0.0-win-x64.zip", data)
+	if err != nil {
+		t.Fatalf("installArchive: %v", err)
+	}
+	want := filepath.Join(dir, "node-v22.0.0-win-x64", "node.exe")
+	if got != want {
+		t.Fatalf("installArchive = %q, want %q", got, want)
 	}
 }

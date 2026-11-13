@@ -325,28 +325,43 @@ func ResolveNode() string {
 	return "node"
 }
 
-// ResolveBundle locates rpc-entry.js. Search order: resourceDir/rpc, the
-// executable's resources/rpc directory, then the npm-global install. Returns an
+// ResolveBundle locates rpc-entry.js. Search order: resourceDir/rpc, then the
+// directories beside the executable, then the npm-global install. Returns an
 // empty string when none exists.
+//
+// The Windows and Linux packages flatten the app's resources next to the
+// binary (rpc/), while a macOS .app keeps them under Contents/Resources; both
+// layouts have to be searched or those builds start with no bundle at all.
 func ResolveBundle(resourceDir string) string {
+	exeDir := ""
+	if exe, err := os.Executable(); err == nil {
+		exeDir = filepath.Dir(exe)
+	}
+	for _, c := range bundleCandidates(exeDir, resourceDir) {
+		if st, err := os.Stat(c); err == nil && !st.IsDir() {
+			return c
+		}
+	}
+	return ""
+}
+
+// bundleCandidates is ResolveBundle's search order, in one testable slice.
+func bundleCandidates(exeDir, resourceDir string) []string {
 	var candidates []string
 	if resourceDir != "" {
 		candidates = append(candidates, filepath.Join(resourceDir, "rpc", "rpc-entry.js"))
 	}
-	if exe, err := os.Executable(); err == nil {
-		candidates = append(candidates, filepath.Join(filepath.Dir(exe), "resources", "rpc", "rpc-entry.js"))
+	if exeDir != "" {
+		candidates = append(candidates,
+			filepath.Join(exeDir, "rpc", "rpc-entry.js"),
+			filepath.Join(exeDir, "resources", "rpc", "rpc-entry.js"))
 	}
 	if home, err := os.UserHomeDir(); err == nil {
 		candidates = append(candidates, filepath.Join(home,
 			".npm-global", "lib", "node_modules", "@earendil-works",
 			"pi-coding-agent", "dist", "bundle", "rpc-entry.js"))
 	}
-	for _, c := range candidates {
-		if st, err := os.Stat(c); err == nil && !st.IsDir() {
-			return c
-		}
-	}
-	return ""
+	return candidates
 }
 
 // ResolveAgentDir returns $PI_CODING_AGENT_DIR or ~/.pi/agent.

@@ -2,6 +2,7 @@ package nodeinstall
 
 import (
 	"archive/tar"
+	"archive/zip"
 	"compress/gzip"
 	"fmt"
 	"io"
@@ -111,4 +112,69 @@ func safeJoin(root, name string) (string, error) {
 		return "", unsafe("path escapes destination")
 	}
 	return target, nil
+}
+
+// extractZip unpacks the zip archive in r into dst, for platforms whose Node.js
+// release ships .zip instead of .tar.gz (Windows).
+//
+// Same rules as extractTarGz: only files and directories are written, entry
+// names are validated against dst, and node/node.exe is made executable.
+func extractZip(dst string, r io.ReaderAt, size int64) error {
+	if err := os.MkdirAll(dst, 0o755); err != nil {
+		return fmt.Errorf("nodeinstall: create extraction dir: %w", err)
+	}
+	root, err := filepath.Abs(dst)
+	if err != nil {
+		return fmt.Errorf("nodeinstall: resolve extraction dir: %w", err)
+	}
+	zr, err := zip.NewReader(r, size)
+	if err != nil {
+		return fmt.Errorf("nodeinstall: open zip archive: %w", err)
+	}
+	for _, f := range zr.File {
+		target, err := safeJoin(root, f.Name)
+		if err != nil {
+			return err
+		}
+		if f.FileInfo().IsDir() {
+			if err := os.MkdirAll(target, 0o755); err != nil {
+				return fmt.Errorf("nodeinstall: create dir %q: %w", f.Name, err)
+			}
+			continue
+		}
+		if !f.Mode().IsRegular() {
+			continue
+		}
+		if err := os.MkdirAll(filepath.Dir(target), 0o755); err != nil {
+			return fmt.Errorf("nodeinstall: create dir for %q: %w", f.Name, err)
+		}
+		perm := os.FileMode(0o644)
+		if f.Mode()&0o111 != 0 {
+			perm = 0o755
+		}
+		src, err := f.Open()
+		if err != nil {
+			return fmt.Errorf("nodeinstall: open %q: %w", f.Name, err)
+		}
+		out, err := os.OpenFile(target, os.O_CREATE|os.O_TRUNC|os.O_WRONLY, perm)
+		if err != nil {
+			src.Close()
+			return fmt.Errorf("nodeinstall: create file %q: %w", f.Name, err)
+		}
+		if _, err := io.Copy(out, src); err != nil {
+			out.Close()
+			src.Close()
+			return fmt.Errorf("nodeinstall: write file %q: %w", f.Name, err)
+		}
+		_ = src.Close()
+		if err := out.Close(); err != nil {
+			return fmt.Errorf("nodeinstall: close file %q: %w", f.Name, err)
+		}
+		if base := filepath.Base(target); base == "node" || base == "node.exe" {
+			if err := os.Chmod(target, 0o755); err != nil {
+				return fmt.Errorf("nodeinstall: chmod %q: %w", f.Name, err)
+			}
+		}
+	}
+	return nil
 }

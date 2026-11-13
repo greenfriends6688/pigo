@@ -149,8 +149,8 @@ func Ensure(ctx context.Context, dir string, onProgress func(Progress)) (string,
 	if err != nil {
 		return failed(err)
 	}
-	if ext != ".tar.gz" {
-		return failed(fmt.Errorf("nodeinstall: automatic install on %s/%s requires .zip archives, which are not supported", runtime.GOOS, runtime.GOARCH))
+	if ext != ".tar.gz" && ext != ".zip" {
+		return failed(fmt.Errorf("nodeinstall: unsupported archive %q for %s/%s", ext, runtime.GOOS, runtime.GOARCH))
 	}
 
 	send(stageChecking, 2, "downloading release index")
@@ -182,7 +182,7 @@ func Ensure(ctx context.Context, dir string, onProgress func(Progress)) (string,
 	}
 
 	send(stageExtracting, 88, "extracting "+filename)
-	nodePath, err := installTarball(dir, filename, tarball)
+	nodePath, err := installArchive(dir, filename, tarball)
 	if err != nil {
 		return failed(err)
 	}
@@ -381,7 +381,10 @@ func reuseInstalled(dir string) (path, version string, ok bool) {
 		bin := filepath.Join(m, "bin", "node")
 		fi, statErr := os.Stat(bin)
 		if statErr != nil || fi.IsDir() || fi.Mode()&0o111 == 0 {
-			continue
+			bin = filepath.Join(m, "node.exe")
+			if fi, statErr = os.Stat(bin); statErr != nil || fi.IsDir() {
+				continue
+			}
 		}
 		v, verr := nodeVersion(bin)
 		if verr != nil {
@@ -410,10 +413,20 @@ func reuseInstalled(dir string) (path, version string, ok bool) {
 	return found[0].path, found[0].version, true
 }
 
-// installTarball unpacks the archive into a temporary directory below dir and
-// moves the resulting node-vX.Y.Z-<platform> tree into place.
-func installTarball(dir, filename string, tarball []byte) (string, error) {
-	base := strings.TrimSuffix(filename, ".tar.gz")
+// installArchive unpacks the release archive into a temporary directory below
+// dir and moves the resulting node-vX.Y.Z-<platform> tree into place. macOS and
+// Linux ship .tar.gz, Windows ships .zip.
+func installArchive(dir, filename string, data []byte) (string, error) {
+	base := strings.TrimSuffix(strings.TrimSuffix(filename, ".tar.gz"), ".zip")
+	var extract func(string) error
+	switch {
+	case strings.HasSuffix(filename, ".tar.gz"):
+		extract = func(dst string) error { return extractTarGz(dst, bytes.NewReader(data)) }
+	case strings.HasSuffix(filename, ".zip"):
+		extract = func(dst string) error { return extractZip(dst, bytes.NewReader(data), int64(len(data))) }
+	default:
+		return "", fmt.Errorf("nodeinstall: unsupported archive %q", filename)
+	}
 	if err := os.MkdirAll(dir, 0o755); err != nil {
 		return "", fmt.Errorf("nodeinstall: create install dir: %w", err)
 	}
@@ -423,7 +436,7 @@ func installTarball(dir, filename string, tarball []byte) (string, error) {
 	}
 	defer os.RemoveAll(tmp)
 
-	if err := extractTarGz(tmp, bytes.NewReader(tarball)); err != nil {
+	if err := extract(tmp); err != nil {
 		return "", err
 	}
 
@@ -439,7 +452,19 @@ func installTarball(dir, filename string, tarball []byte) (string, error) {
 	if err := os.Rename(src, dest); err != nil {
 		return "", fmt.Errorf("nodeinstall: move %q into place: %w", base, err)
 	}
-	return filepath.Join(dest, "bin", "node"), nil
+	return nodeBinaryIn(dest)
+}
+
+// nodeBinaryIn finds the runtime inside an unpacked release: bin/node on
+// macOS and Linux, node.exe at the top of the tree on Windows.
+func nodeBinaryIn(dir string) (string, error) {
+	for _, rel := range []string{"bin/node", "node.exe"} {
+		p := filepath.Join(dir, filepath.FromSlash(rel))
+		if st, err := os.Stat(p); err == nil && !st.IsDir() {
+			return p, nil
+		}
+	}
+	return "", fmt.Errorf("nodeinstall: no node binary in %q", dir)
 }
 
 // nodeVersion runs "<bin> --version" and returns its raw output.
