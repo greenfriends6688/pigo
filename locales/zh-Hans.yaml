@@ -1,0 +1,3048 @@
+# zh-Hans: written by scripts/gen_locales.py from lib/i18n/messages/zh-CN.ts.
+# Do not edit it by hand: change the TypeScript messages, then run
+#   python3 scripts/gen_locales.py && go tool nsgo i18n
+
+commonOk: "确定"
+commonLanguage: "语言"
+commonModels: "模型"
+commonSkills: "技能"
+commonAgents: "子代理"
+commonPlugins: "插件"
+commonSettings: "设置"
+settingsTitle: "设置"
+settingsGeneral: "常规"
+settingsGeneralDescription: "选择 Pi Web 的显示方式和界面语言。"
+settingsAppearance: "外观"
+settingsAppearanceDescription: "选择浅色或深色主题，也可以跟随系统设置。"
+settingsChatContentWidth: "聊天内容宽度"
+settingsChatContentFontSize: "聊天和终端字体大小"
+settingsTypography: "字体与排版"
+settingsUiFontFamily: "界面字体"
+settingsMonoFontFamily: "等宽字体"
+settingsUiFontPlaceholder: "系统默认"
+settingsMonoFontPlaceholder: "默认 Noto Sans Mono"
+settingsResetUiFont: "重置界面字体"
+settingsResetMonoFont: "重置等宽字体"
+settingsFontDescription: "填写本机已安装的字体名，多个用逗号分隔，留空使用默认。等宽字体用于代码和终端。仅保存在当前浏览器。"
+settingsUiFontWeight: "界面字体字重"
+settingsMonoFontWeight: "等宽字体字重"
+settingsFontWeightThin: "极细"
+settingsFontWeightExtraLight: "特细"
+settingsFontWeightLight: "细体"
+settingsFontWeightRegular: "常规"
+settingsFontWeightMedium: "中等"
+settingsFontWeightSemiBold: "半粗"
+settingsResetChatContentWidth: "重置聊天内容宽度"
+settingsResetChatContentFontSize: "重置聊天和终端字体大小"
+settingsChatContentWidthDescription: "设置消息内容和输入框的最大宽度。"
+settingsThemeLight: "浅色"
+settingsThemeDark: "深色"
+settingsThemeMist: "雾青"
+settingsThemeRose: "蔷薇"
+settingsThemePine: "松夜"
+settingsThemeSand: "暖沙"
+settingsThemeLilac: "丁香"
+settingsThemeSlate: "岩蓝"
+settingsThemeDusk: "暮紫"
+settingsThemeEmber: "余烬"
+settingsThemeContrastLight: "高对比浅色"
+settingsThemeContrastDark: "高对比深色"
+settingsThemeZenburn: "Zenburn"
+settingsThemeSystem: "跟随系统"
+settingsThinkingDisplay: "思考过程显示"
+settingsThinkingDisplayDescription: "选择消息加载时模型思考块是否默认展开。"
+settingsThinkingExpandedDefault: "默认展开思考块"
+settingsChat: "对话"
+settingsEnterSendMode: "发送按键"
+settingsEnterSendModeEnter: "Enter"
+settingsEnterSendModeCtrlEnter: "Ctrl/Cmd+Enter"
+settingsQuoteSelection: "选中文字时显示操作浮窗"
+settingsSidebar: "侧边栏"
+settingsFilesPlacement: "文件浏览器"
+settingsFilesPlacementBelow: "会话下方"
+settingsFilesPlacementTab: "单独标签页"
+settingsFilesPlacementDescription: "手机上始终用标签页切换。"
+settingsLanguageDescription: "选择整个界面使用的语言。"
+settingsShellTool: "Shell 工具"
+settingsShellToolDescription: "选择模型执行命令时使用的 Shell。直接输入的 ! 和 !! 命令仍使用 Bash。"
+settingsPushPermission: "后台推送（iOS 主屏应用）"
+settingsPushPermissionDescription: "将本站添加到主屏幕后（iPhone 需 iOS 16.4+），会话完成且页面不在前台时，可在锁屏收到系统通知。若通知不再送达，可回到这里重新注册。注册必须由点击触发，因此不会自动弹出授权。"
+settingsPushRegister: "注册推送"
+settingsPushRegisterLoading: "注册中…"
+settingsPushRegistered: "✅ 推送已注册，后台通知就绪。"
+settingsPushRegisterFailed: "❌ 注册失败："
+settingsUsePowerShell: "使用 PowerShell 替代 Bash"
+settingsProjectRequired: "打开项目后才能配置此项"
+settingsBackTo:
+  message: "返回{name}"
+  placeholders:
+    name: {type: String}
+settingsMcp: "MCP"
+authPrompt: "登录后继续使用"
+authPassword: "密码"
+authLogIn: "登录"
+authLoggingIn: "正在登录..."
+authInvalidPassword: "密码不正确"
+authLoginFailed: "登录失败，请重试。"
+authTooManyAttempts:
+  message: "失败次数过多，请在 {seconds} 秒后重试。"
+  placeholders:
+    seconds: {type: int}
+authLogOut: "退出登录"
+authLoggingOut: "正在退出..."
+authLogoutFailed: "退出失败，请重试。"
+skillsScopeGlobal: "全局"
+skillsScopeProject: "项目"
+skillsScopePath: "路径"
+skillsGroupSwitchOff:
+  message: "在模型提示词中显示「{group}」中的所有技能"
+  placeholders:
+    group: {type: String}
+skillsGroupSwitchOn:
+  message: "在模型提示词中隐藏「{group}」中的所有技能，仍可手动调用。"
+  placeholders:
+    group: {type: String}
+skillsBulkFailed:
+  message: "{total} 个技能中有 {count} 个未能更改："
+  placeholders:
+    count: {type: int}
+    total: {type: int}
+skillsInstructions: "说明"
+skillsNoInstructions: "此技能没有说明。"
+skillsDocumentBack: "返回"
+pluginsGroupSwitchOff:
+  message: "启用 {group} 中的所有包"
+  placeholders:
+    group: {type: String}
+pluginsGroupSwitchOn:
+  message: "禁用 {group} 中的所有包。设置了资源过滤的包会保持启用，因为禁用会清除其过滤设置；请使用它自己的开关。"
+  placeholders:
+    group: {type: String}
+pluginsBulkKeptFiltered:
+  message: "{count} 个设置了资源过滤的包保持启用：禁用会清除其过滤设置，请使用它自己的开关。"
+  placeholders:
+    count: {type: int}
+pluginsBulkEnabled: "包已启用。"
+pluginsBulkDisabled: "包已禁用。"
+pluginsBulkFailed:
+  message: "{total} 个包中有 {count} 个未能更改："
+  placeholders:
+    count: {type: int}
+    total: {type: int}
+pluginsStatusLoaded: "已加载"
+pluginsStatusInstalled: "已安装"
+pluginsStatusMissing: "缺失"
+pluginsStatusDisabled: "已禁用"
+pluginsDiagnostic: "1 条诊断"
+pluginsDiagnostics:
+  message: "{count} 条诊断"
+  placeholders:
+    count: {type: int}
+configSource: "来源"
+configExamples: "示例"
+configName: "名称"
+configSaveTo: "保存到"
+agentsClose: "关闭"
+agentsBuiltInTitle: "启用 Pi Web 内置子代理"
+agentsBuiltInDescription: "提供 Pi Web 集成的 Agent 工具，并停用发生冲突的 pi-subagents 扩展。"
+agentsReloadRequired: "重新加载当前会话后生效。"
+agentsReloadSession: "重新加载会话"
+agentsMaxConcurrent: "并发子代理数"
+agentsMaxConcurrentDescription: "每个父会话同时运行的最大任务数。"
+agentsReloading: "正在重新加载..."
+agentsLoading: "正在加载子代理..."
+agentsNew: "新建子代理"
+agentsEmpty: "选择或创建一个子代理配置"
+agentsName: "子代理 ID"
+agentsDisplayName: "显示名称"
+agentsDescription: "描述"
+agentsPrompt: "系统指令"
+agentsTools: "工具"
+agentsResources: "资源"
+agentsLoadSkills: "加载技能"
+agentsLoadExtensions: "加载扩展"
+agentsMcp: "连接 MCP 服务器"
+agentsCodemode: "代码模式"
+agentsCodemodeInherit: "跟随父会话"
+agentsCodemodeOn: "启用"
+agentsCodemodeOff: "禁用"
+agentsCodemodeHint: "「跟随父会话」沿用父会话当前的代码模式启用状态。代码模式内的工具权限仍取自此配置的工具列表。更改对之后新建的子代理生效。"
+agentsSkillsOnly:
+  message: "只加载这些技能：{skills}"
+  placeholders:
+    skills: {type: String}
+agentsSkillsNone: "不加载任何技能：profile 文件里的 skills 列表为空"
+agentsExtensionsOnly:
+  message: "只加载这些扩展：{extensions}"
+  placeholders:
+    extensions: {type: String}
+agentsExtensionsNone: "不加载任何扩展：profile 文件里的 extensions 列表为空"
+agentsMcpHint: "子代理会连接 mcp.json 里的 MCP 服务器。工具为只读时，只能调用服务器标记为只读的 MCP 工具。更改对之后新建的子代理生效。"
+agentsMcpChatOnly: "MCP 需要至少一个工具、技能或扩展：纯聊天的子代理不能使用。"
+agentsModel: "指定模型"
+agentsModelsLoading: "正在加载模型..."
+agentsModelUnavailable:
+  message: "{model}（不可用）"
+  placeholders:
+    model: {type: String}
+agentsThinking: "思考级别"
+agentsMaxTurns: "最大轮次"
+agentsInherit: "跟随父会话"
+agentsEnable: "启用子代理"
+agentsDisable: "停用子代理"
+agentsBuiltinPath: "内置配置"
+agentsInheritContext: "继承父会话上下文"
+agentsBackground: "默认在后台运行"
+agentsDuplicate: "创建副本"
+agentsCopyName:
+  message: "{name} 副本"
+  placeholders:
+    name: {type: String}
+agentsDelete: "删除"
+agentsDeleteConfirm:
+  message: "删除 {name}？"
+  placeholders:
+    name: {type: String}
+agentsSave: "保存"
+agentsSaving: "正在保存..."
+agentsScopeBuiltin: "内置"
+agentsScopeGlobal: "全局"
+agentsScopeWorkspace: "工作区"
+agentsScopeProject: "项目"
+agentsOverridden: "被覆盖"
+subagentOpenTab: "在侧栏面板中查看子代理工作"
+subagentCloseTab: "关闭子代理侧栏面板"
+subagentTabLabel:
+  message: "子代理 {name}"
+  placeholders:
+    name: {type: String}
+sessionpanelLoading: "正在加载…"
+sessionpanelMissing: "该会话已不存在。"
+sessionpanelError: "无法加载该会话。"
+sidechatDivider: "侧聊从这里开始"
+sidechatNew: "新建侧聊"
+agentswitcherOpenInMainChat: "已在主聊天打开"
+sidechatTitle: "侧聊"
+sidechatTabLabel: "侧聊"
+sidechatOpenTab: "在侧面板中打开侧聊"
+sidechatCloseTab: "关闭侧聊面板"
+sidechatErrorNoSession: "没有可派生侧聊的会话"
+sidechatErrorNotFound: "未找到该会话"
+sidechatErrorUnsaved: "该会话尚未保存，请先发送一条消息。"
+sidechatErrorEmpty: "没有可继承的内容：该会话还没有消息"
+sidechatErrorSubagent: "子代理会话不能发起侧聊"
+sidechatErrorSide: "侧聊不能再次发起侧聊"
+agentswitcherSideChat: "侧聊"
+codemodeCalls: "工具调用"
+codemodeCallCount:
+  message: "{count} 次调用"
+  placeholders:
+    count: {type: int}
+codemodeCallCountOne: "1 次调用"
+codemodeShowEarlierCalls:
+  message: "显示更早的 {count} 次调用"
+  placeholders:
+    count: {type: int}
+codemodeOmittedCalls:
+  message: "更早的 {count} 次调用未显示"
+  placeholders:
+    count: {type: int}
+codemodeModelCost:
+  message: "模型调用：{cost}"
+  placeholders:
+    cost: {type: String}
+codemodeStatusRunning: "运行中"
+codemodeStatusOk: "成功"
+codemodeStatusError: "失败"
+codemodeStatusCancelled: "已取消"
+agentswitcherTitle: "Agents"
+agentswitcherTitleRunning:
+  message: "Agents：{count} 个运行中"
+  placeholders:
+    count: {type: int}
+agentswitcherMain: "主 Agent"
+agentswitcherSubagent: "子 Agent"
+agentswitcherCurrent: "当前"
+agentswitcherCountOne:
+  message: "{count} 个 Agent"
+  placeholders:
+    count: {type: int}
+agentswitcherCount:
+  message: "{count} 个 Agent"
+  placeholders:
+    count: {type: int}
+agentswitcherRunningCount:
+  message: "{count} 个运行中"
+  placeholders:
+    count: {type: int}
+agentswitcherTokens:
+  message: "{count} tokens"
+  placeholders:
+    count: {type: int}
+agentswitcherTotalUsage: "合计"
+agentswitcherTotalUsageHint: "主 Agent 与全部子 Agent"
+agentswitcherSearch: "搜索 Agents"
+agentswitcherNoMatches: "没有匹配的 Agent"
+agentswitcherStatusStarting: "正在启动"
+agentswitcherStatusRunning: "运行中"
+agentswitcherStatusCompleted: "已完成"
+agentswitcherStatusFailed: "失败"
+agentswitcherStatusAborted: "已中止"
+agentswitcherStatusInterrupted: "已中断"
+appupdateReleaseNotes:
+  message: "Pi Web v{version} 可用，查看更新说明"
+  placeholders:
+    version: {type: String}
+sidebarHide: "隐藏侧边栏"
+sidebarShow: "显示侧边栏"
+themeLight: "主题：浅色"
+themeDark: "主题：深色"
+themeMist: "主题：雾青"
+themeRose: "主题：蔷薇"
+themePine: "主题：松夜"
+themeAuto: "主题：跟随系统"
+historyFull: "完整历史"
+historyUnsaved: "会话保存后才能查看完整历史"
+historyLabel: "完整历史"
+titleGenerating: "正在生成..."
+titleUpdated: "标题已更新"
+titleFailed: "生成失败"
+titleGenerate: "生成标题"
+titleUnsaved: "会话保存后才能生成标题"
+titleNoMessages: "请先发送消息，再为会话命名"
+titleGenerateSession: "生成会话标题"
+systemPrompt: "系统提示词"
+systemEmpty: "系统提示词为空（工具已禁用）"
+systemLoad: "系统提示词尚未加载"
+systemLoading: "正在加载系统提示词…"
+systemLabel: "系统"
+toolsLabel: "工具"
+toolsTitle: "工具定义"
+toolsDetails: "工具定义详情"
+toolsLoad: "工具定义尚未加载"
+toolsLoading: "正在加载工具定义…"
+toolsNoTools: "没有启用的工具"
+toolsDescription: "描述"
+toolsParameters: "参数"
+toolsParameterCount:
+  message: "{count} 个参数"
+  placeholders:
+    count: {type: int}
+toolsNoParameters: "无参数"
+toolsRequired: "必填"
+toolsOptional: "可选"
+toolsAllowedValues: "可选值"
+toolsDefaultValue: "默认值"
+toolsGuidelines: "提示词规则"
+sessionInfo: "会话信息"
+sessionName: "名称"
+sessionFile: "会话文件"
+sessionInMemory: "内存中"
+sessionId: "ID"
+sessionUser: "用户"
+sessionAssistant: "助手"
+sessionToolCalls: "工具调用"
+sessionToolResults: "工具结果"
+sessionTotal: "总计"
+sessionInput: "输入"
+sessionOutput: "输出"
+sessionCacheRead: "缓存读取"
+sessionCacheWrite: "缓存写入"
+sessionCost: "费用"
+sessionContext: "上下文"
+sessionCacheHitRate: "平均缓存命中率"
+sessionCopy:
+  message: "复制{value}"
+  placeholders:
+    value: {type: String}
+sessionCopied: "已复制"
+sessionTitle: "会话信息"
+sessionLoad: "发送消息或运行 /session 以加载会话信息"
+sessionInfoSection: "会话信息"
+sessionProjectSection: "项目信息"
+sessionMessages: "消息"
+sessionTokens: "Token"
+sessionTotalActive: "活跃时长"
+sessionCopyFile: "复制文件路径"
+sessionCopyId: "复制会话 ID"
+sessionProjectDir: "项目目录"
+sessionGitBranch: "Git 分支"
+sessionGitWorktree: "Worktree"
+sessionCopyProjectDir: "复制项目目录"
+sessionCopyGitBranch: "复制 Git 分支"
+sessionCopyGitWorktree: "复制 Worktree 路径"
+debugTitle: "调试"
+debugPanelLabel: "调试：连接与服务器状态"
+debugFailed: "调试面板无法显示，请关闭后重新打开。"
+debugReading: "正在读取…"
+debugCopyJson: "复制 JSON"
+debugCopyTitle: "以 JSON 复制面板显示的内容"
+debugCopied: "已复制"
+debugReadOnly: "只读：此面板不会启动、保活或重连任何内容。它读取本页面状态，并在打开且页面可见时每 2 秒请求一次 GET /api/agent/debug。"
+debugYes: "是"
+debugNo: "否"
+debugNone: "无"
+debugUnknown: "未知"
+debugNotYet: "尚无"
+debugTimes:
+  message: "{count} 次"
+  placeholders:
+    count: {type: int}
+debugDurationMs:
+  message: "{count} ms"
+  placeholders:
+    count: {type: int}
+debugDurationSeconds:
+  message: "{count}秒"
+  placeholders:
+    count: {type: int}
+debugDurationMinutes:
+  message: "{count}分"
+  placeholders:
+    count: {type: int}
+debugDurationHours:
+  message: "{count}小时"
+  placeholders:
+    count: {type: int}
+debugDurationDays:
+  message: "{count}天"
+  placeholders:
+    count: {type: int}
+debugDurationMinutesSeconds:
+  message: "{minutes}分{seconds}秒"
+  placeholders:
+    minutes: {type: int}
+    seconds: {type: int}
+debugDurationHoursMinutes:
+  message: "{hours}小时{minutes}分"
+  placeholders:
+    hours: {type: int}
+    minutes: {type: int}
+debugDurationDaysHours:
+  message: "{days}天{hours}小时"
+  placeholders:
+    days: {type: int}
+    hours: {type: int}
+debugTimeAgo:
+  message: "{time}前"
+  placeholders:
+    time: {type: String}
+debugTimeIn:
+  message: "{time}后"
+  placeholders:
+    time: {type: String}
+debugTimeDue: "已到期"
+debugPollWaiting: "正在等待服务器…"
+debugPollInFlight:
+  message: "已等待 {time}，尚无应答"
+  placeholders:
+    time: {type: String}
+debugPollTimeout: "5 秒内无应答：浏览器到此服务器的连接可能已全部占满（HTTP/1.1 每个源最多六个，所有标签页共用）"
+debugPollHttp:
+  message: "服务器返回 HTTP {status}"
+  placeholders:
+    status: {type: String}
+debugPollNetwork: "请求失败（网络或服务器不可用）"
+debugPollInvalid: "服务器的应答不是调试快照"
+debugPollHidden: "页面隐藏时暂停"
+debugHealthOk: "正常"
+debugHealthIssues:
+  message: "问题：{count}"
+  placeholders:
+    count: {type: int}
+debugIssuePool:
+  message: "本页面占用了 HTTP/1.1 每个源六个连接（所有标签页共用）中的 {count} 个"
+  placeholders:
+    count: {type: int}
+debugIssueNoServerStream: "服务器上没有来自本页面的 SSE"
+debugSectionPage: "本页面"
+debugSectionStream: "SSE"
+debugSectionLease: "Lease"
+debugSectionServer: "服务器"
+debugPageHttp1:
+  message: "{protocol} · 每个源六个连接，所有标签页共用"
+  placeholders:
+    protocol: {type: String}
+debugPageDebugPoll: "调试轮询"
+debugPageHiddenCount:
+  message: "隐藏过 {count} 次"
+  placeholders:
+    count: {type: int}
+debugPageLastHidden:
+  message: "上次隐藏于{time}"
+  placeholders:
+    time: {type: String}
+debugPageRunningPoll: "侧边栏轮询"
+debugPagePollCounts:
+  message: "{count} 次 · {failures} 次失败"
+  placeholders:
+    count: {type: int}
+    failures: {type: int}
+debugSparkTitle:
+  message: "{count} 次应答 · 中位数 {median} · 最长 {max}"
+  placeholders:
+    count: {type: int}
+    median: {type: int}
+    max: {type: int}
+debugPagePollError: "失败"
+debugPageSourceAgent: "Agent"
+debugPageSourceFileWatch: "文件监视"
+debugPageSourceTerminal: "终端"
+debugPageSourceConnecting: "连接中"
+debugPageSourceOpen: "已打开"
+debugPageSourceCounts:
+  message: "打开 {opens} 次 · {errors} 次错误"
+  placeholders:
+    opens: {type: int}
+    errors: {type: int}
+debugBoxFile: "文件"
+debugBoxTerminal: "终端"
+debugBoxProvider: "提供者"
+debugStreamNoChat: "没有已挂载的聊天"
+debugStreamReaderFailed: "无法读取聊天状态（请刷新页面）"
+debugStreamNoConnection: "尚无连接"
+debugStreamStateIdle: "空闲"
+debugStreamStateConnecting: "连接中"
+debugStreamStateConnected: "已连接"
+debugStreamStateRetrying: "重试中"
+debugStreamReadyState:
+  message: "readyState {value}"
+  placeholders:
+    value: {type: String}
+debugStreamOpened: "打开"
+debugStreamConnected: "连接"
+debugStreamLastData: "上次距今"
+debugStreamDataAgo:
+  message: "{time}前有数据"
+  placeholders:
+    time: {type: String}
+debugStreamHeartbeat:
+  message: "心跳 {time}"
+  placeholders:
+    time: {type: String}
+debugStreamEvents: "事件"
+debugStreamOpens: "打开 / 重试"
+debugStreamOpensRetries:
+  message: "{opens} / {retries}"
+  placeholders:
+    opens: {type: int}
+    retries: {type: int}
+debugStreamRetryDue:
+  message: "{time}重试"
+  placeholders:
+    time: {type: String}
+debugStreamLastError: "上次错误"
+debugStreamErrorReadyTimeout: "未及时连接"
+debugStreamErrorStartup: "启动错误"
+debugStreamErrorError: "连接错误"
+debugStreamErrorStale: "无响应（看门狗）"
+debugStreamLastClose: "上次关闭"
+debugStreamCloseReleased: "页面隐藏时释放"
+debugStreamCloseGraceEnd: "宽限结束"
+debugStreamCloseSendFailed: "发送失败"
+debugStreamCloseSetTools: "工具已更改"
+debugStreamCloseRebuilt: "服务器重建了会话"
+debugStreamCloseDeselected: "切换到了其他会话"
+debugStreamCloseStuck: "一直未连上"
+debugStreamCloseReplaced: "被新的 SSE 取代"
+debugStreamWatchdogArmed:
+  message: "已启用 · {time}无数据即判定无响应"
+  placeholders:
+    time: {type: String}
+debugStreamWanted: "页面需要"
+debugStreamReleased: "隐藏时释放"
+debugStreamReattached: "重新连接"
+debugStreamReattachVisible: "页面可见"
+debugStreamReattachActivity: "有活动"
+debugStreamGrace: "关闭前宽限"
+debugRunBash: "! 命令"
+debugRunCompacting: "压缩中"
+debugRunStreaming: "流式输出"
+debugRunPrompt: "提示词运行中"
+debugRunPending:
+  message: "另有 {count} 个提示词进行中"
+  placeholders:
+    count: {type: int}
+debugRunRetrying: "重试中"
+debugRunQueued:
+  message: "{count} 条排队消息"
+  placeholders:
+    count: {type: int}
+debugRunWaitingForMcp: "等待 MCP"
+debugRunTools:
+  message: "{count} 个工具运行中"
+  placeholders:
+    count: {type: int}
+debugRunMutating:
+  message: "{count} 个修改命令"
+  placeholders:
+    count: {type: int}
+debugRunReplacement:
+  message: "被 {kind} 替换"
+  placeholders:
+    kind: {type: String}
+debugRunStatusQueued: "排队中"
+debugLeaseNoHolder: "尚无"
+debugLeaseLast: "上次续期"
+debugLeaseOutcomeReply: "已应答"
+debugLeaseOutcomeUnanswered: "无应答"
+debugLeaseOutcomeError: "失败"
+debugLeaseNext: "下次续期"
+debugLeaseRenewsIn:
+  message: "{time}后续期"
+  placeholders:
+    time: {type: String}
+debugLeaseRenewing: "续期中"
+debugLeaseInFlight:
+  message: "已等待应答 {time}"
+  placeholders:
+    time: {type: String}
+debugLeaseEvery:
+  message: "每 {time}"
+  placeholders:
+    time: {type: String}
+debugLeaseCountsValue:
+  message: "已发送 {requests} · 无应答 {unanswered} · 失败 {errors}"
+  placeholders:
+    requests: {type: int}
+    unanswered: {type: int}
+    errors: {type: int}
+debugHolderThisPage: "本页面"
+debugHolderOtherPage: "其他页面"
+debugHolderNone: "无页面 ID"
+debugPagesTitle: "连接的页面"
+debugPagesUnknownClient: "未知浏览器"
+debugStateAlive: "存活"
+debugStateClosing: "关闭中"
+debugStateNone: "无 Wrapper"
+debugServerNoSession: "未选择会话"
+debugServerStale: "来自重新加载之前"
+debugServerSubagent: "子 Agent"
+debugServerChatOnly: "仅聊天"
+debugServerStarting: "启动中"
+debugServerNoWrapper: "无（未在服务器上运行）"
+debugServerStarted: "启动"
+debugServerClosingSince:
+  message: "{time}开始关闭"
+  placeholders:
+    time: {type: String}
+debugServerLastStart:
+  message: "上次 {time}"
+  placeholders:
+    time: {type: String}
+debugServerLastClosed:
+  message: "{time}关闭"
+  placeholders:
+    time: {type: String}
+debugServerUiRequests:
+  message: "{count} 个 UI 请求"
+  placeholders:
+    count: {type: int}
+debugServerCustomUis:
+  message: "{count} 个自定义 UI"
+  placeholders:
+    count: {type: int}
+debugServerExtensions: "扩展"
+debugServerExtensionsBinding: "绑定中"
+debugServerExtensionsBound: "已绑定"
+debugServerExtensionsFailed: "失败"
+debugServerExtensionsNone: "无"
+debugServerIdle: "回收倒计时"
+debugServerIdleTimeout:
+  message: "超时 {time}"
+  placeholders:
+    time: {type: String}
+debugServerIdleDisabled: "已禁用"
+debugServerIdleReset:
+  message: "{time}重置"
+  placeholders:
+    time: {type: String}
+debugServerIdleHint: "每次续期、命令或运行结束都会重新计时；到点时仍在运行或有扩展保活则顺延"
+debugServerIdleForced: "已停止：到点即关闭，运行中也不例外"
+debugServerListeners: "监听器"
+debugServerLastEvent: "上次事件"
+debugServerLastCommand: "上次命令"
+debugServerProviders: "存活提供者"
+debugServerProvidersUnknown: "无法列出（服务器代码来自重新加载之前）"
+debugServerProviderActive: "活动"
+debugServerProviderInactive: "不活动"
+debugServerProviderError: "错误"
+debugServerByFile: "按文件"
+debugServerStreamConnected:
+  message: "{time}连接"
+  placeholders:
+    time: {type: String}
+debugServerStreamStarting: "正在启动会话"
+debugServerLastWrite:
+  message: "上次写入 {time}"
+  placeholders:
+    time: {type: String}
+debugServerDropped:
+  message: "丢弃 {count}"
+  placeholders:
+    count: {type: int}
+debugServerQueued:
+  message: "排队 {size}"
+  placeholders:
+    size: {type: String}
+debugServerSubagents: "子 Agent"
+debugServerSubagentsActive: "有未结束的运行"
+debugServerBackground: "后台"
+debugServerResumed: "已恢复"
+debugServerAbortRequested: "已请求中止"
+debugServerNotifying:
+  message: "正在通知 {parent}"
+  placeholders:
+    parent: {type: String}
+debugServerMcpDisposed: "已释放"
+debugServerMcpRelease:
+  message: "空闲释放：{time}"
+  placeholders:
+    time: {type: String}
+debugServerMcpProblems:
+  message: "{count} 个问题"
+  placeholders:
+    count: {type: int}
+debugServerMcpError: "错误"
+debugServerMcpReleased: "已释放"
+debugGlobalUptime: "运行时长"
+debugGlobalTimers: "计时器"
+debugGlobalTimersValue:
+  message: "空闲 {idle} · 心跳 {heartbeat}"
+  placeholders:
+    idle: {type: String}
+    heartbeat: {type: String}
+debugGlobalWrappersValue:
+  message: "存活 {alive} · 关闭中 {closing} · 启动中 {starting}"
+  placeholders:
+    alive: {type: int}
+    closing: {type: int}
+    starting: {type: int}
+debugGlobalStreamsValue:
+  message: "{total} 个，来自 {pages} 个页面"
+  placeholders:
+    total: {type: int}
+    pages: {type: String}
+debugGlobalStreamCount:
+  message: "{count} 个流"
+  placeholders:
+    count: {type: int}
+debugGlobalStreamTotal:
+  message: "共 {count} 个"
+  placeholders:
+    count: {type: int}
+debugGlobalFileWatches: "文件监视"
+debugGlobalTerminals: "终端"
+debugGlobalTerminalsValue:
+  message: "{count} 个 · {listeners} 个流 · {detached} 个已分离 · {exited} 个已退出"
+  placeholders:
+    count: {type: int}
+    listeners: {type: int}
+    detached: {type: int}
+    exited: {type: int}
+debugGlobalCleanup:
+  message: "{time}清理"
+  placeholders:
+    time: {type: String}
+debugSessionsCurrent: "当前聊天"
+debugSessionsUnlisted: "不在会话列表中"
+debugSessionsHeadSession: "会话"
+debugSessionsHeadHolders: "持有者"
+debugOverlaySubagentId:
+  message: "{id}（子 Agent）"
+  placeholders:
+    id: {type: String}
+debugOverlayRunning: "运行中"
+debugOverlayAwaiting: "等待输入"
+debugOverlayStreams:
+  message: "{count} 个 SSE"
+  placeholders:
+    count: {type: int}
+debugOverlayProviders:
+  message: "{count} 个存活提供者"
+  placeholders:
+    count: {type: int}
+debugOverlayIdle:
+  message: "回收倒计时 {time}"
+  placeholders:
+    time: {type: String}
+debugOverlayClosesIn:
+  message: "{time}后关闭（已停止）"
+  placeholders:
+    time: {type: String}
+debugOverlayStarts:
+  message: "启动 {count} 次"
+  placeholders:
+    count: {type: int}
+workspaceOpening: "正在打开工作区..."
+workspaceUnable: "无法打开工作区"
+workspaceSelectSession: "从侧边栏选择一个会话"
+workspaceGetStarted: "开始使用"
+workspaceSelectProject: "从侧边栏选择项目目录"
+workspaceAddModels: "打开底部的“设置”，然后选择“模型”"
+workspaceStepProject: "从侧边栏选择项目目录"
+workspaceStepModels: "打开底部的“设置”，然后选择“模型”"
+workspaceNewSessionContext: "新会话的位置"
+workspaceProject: "项目"
+filesHidePanel: "隐藏文件面板"
+filesExpandPanel: "全宽展示文件面板"
+filesRestorePanelWidth: "还原文件面板宽度"
+filesShowPanel: "显示文件面板"
+filesNoneOpen: "没有打开的文件"
+layoutResizeSidebar: "调整侧边栏宽度"
+layoutResizeFilePanel: "调整文件面板宽度"
+layoutResizeHint: "拖动调整宽度。双击或按 Enter 恢复默认值。"
+sidebarNew: "新建"
+sidebarNewSessionTitle:
+  message: "在 {path} 中新建会话"
+  placeholders:
+    path: {type: String}
+sidebarRefresh: "刷新"
+sidebarSelectProject: "选择项目…"
+sidebarFilterProjects: "筛选项目…"
+sidebarNoMatchingProjects: "没有匹配的项目"
+sidebarUseDefaultDirectory: "使用默认目录"
+sidebarCustomPath: "自定义路径…"
+directorypickerSelectDirectory: "选择目录"
+directorypickerGoToParent: "转到上级目录"
+directorypickerDirectoryPath: "目录路径"
+directorypickerGoToDirectory: "转到目录"
+directorypickerGo: "转到"
+directorypickerLoadingDirectories: "正在加载目录…"
+directorypickerNoSubdirectories: "没有子目录"
+directorypickerOpenBeforeSelecting: "选择前请先打开此路径"
+directorypickerSelectCurrentDirectory: "选择当前目录"
+directorypickerSelectThisFolder: "选择此文件夹"
+directorypickerNoDrives: "未找到盘符"
+directorypickerNewDirectory: "新建目录"
+directorypickerCreateDirectory: "新建目录"
+directorypickerDirectoryName: "目录名"
+directorypickerDirectoryNamePlaceholder: "请输入目录名"
+directorypickerCreate: "创建"
+directorypickerCreating: "正在创建…"
+sidebarChecking: "检查中…"
+sidebarOpen: "打开"
+sidebarCancel: "取消"
+sidebarOpenRepoRoot: "打开仓库根目录"
+sidebarOpenRepoRootTitle: "打开仓库根目录以管理 worktree。"
+sidebarWorktrees: "Worktrees..."
+sidebarCheckingWorktrees: "正在检查此目录的 worktree。"
+sidebarFilterWorktrees: "筛选 worktree…"
+sidebarNoMatchingWorktrees: "没有匹配的 worktree"
+sidebarSwitchWorktree: "切换 worktree"
+sidebarMain: "主分支"
+sidebarForceRemoveCheckout: "存在未提交的更改或子模块。强制移除 checkout？"
+sidebarForce: "强制移除"
+sidebarCreateWorktreeTitle: "为分支创建 worktree checkout"
+sidebarNewWorktree: "新建 worktree…"
+sidebarBranchName: "分支名称"
+sidebarCreating: "创建中…"
+sidebarWorktreeBranchInUse:
+  message: "分支「{branch}」已在 {path} 检出。"
+  placeholders:
+    branch: {type: String}
+    path: {type: String}
+sidebarWorktreeBranchMissing:
+  message: "分支「{branch}」仍属于一个文件夹已不存在的 worktree（{path}）。运行 git worktree prune 可清除它。"
+  placeholders:
+    branch: {type: String}
+    path: {type: String}
+sidebarCreate: "创建"
+sidebarUploadFilesTitle: "将文件上传到项目根目录"
+sidebarUploadFiles: "上传文件"
+sidebarRefreshExplorer: "刷新文件列表"
+sidebarShowIgnoredFiles: "显示被忽略的文件"
+sidebarOpenInExplorer: "在资源管理器中打开"
+sidebarOpenInFinder: "在访达中打开"
+sidebarOpenInFileManager: "在文件管理器中打开"
+sidebarOpenInExplorerRemoteOnly: "仅在 Pi Web 运行在本机时可用"
+sidebarOpenInExplorerUnsupported: "当前平台不支持"
+sidebarSearchFiles: "搜索文件"
+sidebarSearchFilesPlaceholder: "搜索文件…"
+sidebarSearchingFiles: "搜索中…"
+sidebarNoMatchingFiles: "没有匹配的文件"
+sidebarClearSearch: "清除搜索"
+sidebarSearchSessions: "搜索所有对话..."
+sidebarToggleSessionSearch: "搜索对话"
+sidebarSessionSearching: "搜索中..."
+sidebarSessionSearchEmpty: "没有匹配的对话"
+sidebarSessionSearchCount:
+  message: "{count} 个匹配的对话"
+  placeholders:
+    count: {type: int}
+sidebarSessionSearchPartial: "已达到搜索上限，结果可能不完整。"
+sidebarSessionSearchFailed: "无法搜索对话"
+sidebarChangedFiles:
+  message: "{count} 个变更文件"
+  placeholders:
+    count: {type: int}
+sidebarLoading: "加载中..."
+sidebarNoSessions: "未找到会话"
+sidebarAgentRunning: "Agent 运行中…"
+sidebarAgentAwaitingInput: "Agent 等待你的输入"
+sidebarNewActivity: "有新活动"
+sidebarNewSessionActivity: "会话有新活动"
+sidebarDeleteSession:
+  message: "删除 {title}？"
+  placeholders:
+    title: {type: String}
+sidebarRename: "重命名"
+sidebarDelete: "删除"
+sidebarMessagesCount:
+  message: "{count} 条消息"
+  placeholders:
+    count: {type: int}
+sidebarWorktreePath:
+  message: "Worktree：{path}"
+  placeholders:
+    path: {type: String}
+sidebarRemoveWorktreeTitle:
+  message: "移除 worktree checkout {path}；保留分支"
+  placeholders:
+    path: {type: String}
+sidebarRemoveWorktreeHeading:
+  message: "移除 {name}"
+  placeholders:
+    name: {type: String}
+sidebarBrandLabel:
+  message: "Pi Web，版本：web {app}，pi {pi}"
+  placeholders:
+    app: {type: String}
+    pi: {type: String}
+sidebarTabsLabel: "侧边栏视图"
+sidebarTabSessions: "会话"
+sidebarTabFiles: "文件"
+sidebarResizeFiles: "调整文件浏览器高度"
+sidebarResizeFilesHint: "拖动调整高度。双击或按 Enter 恢复默认值。"
+sidebarFileActions: "文件操作"
+sidebarCollapseOtherGroups: "折叠其他项目"
+sidebarExpandAllGroups: "展开全部项目"
+sidebarCollapseAllGroups: "折叠全部项目"
+sidebarPinned: "置顶"
+sidebarPinnedProject: "已置顶"
+sidebarPin: "置顶"
+sidebarUnpin: "取消置顶"
+sidebarPinProject: "置顶项目"
+sidebarUnpinProject: "取消置顶项目"
+sidebarRenameProject: "重命名…"
+sidebarResetProjectName: "恢复默认名称"
+sidebarProjectName: "项目名称"
+sidebarMoveProjectUp: "上移"
+sidebarMoveProjectDown: "下移"
+sidebarArchive: "归档"
+sidebarUnarchive: "取消归档"
+sidebarRestore: "恢复"
+sidebarArchived: "已归档"
+sidebarArchivedCount:
+  message: "已归档 · {count}"
+  placeholders:
+    count: {type: int}
+sidebarArchivedToast:
+  message: "已归档「{title}」"
+  placeholders:
+    title: {type: String}
+sidebarArchivedManyToast:
+  message: "已归档 {count} 个会话"
+  placeholders:
+    count: {type: int}
+sidebarRestoredToast:
+  message: "已恢复「{title}」"
+  placeholders:
+    title: {type: String}
+sidebarRestoredManyToast:
+  message: "已恢复 {count} 个会话"
+  placeholders:
+    count: {type: int}
+sidebarUndo: "撤销"
+sidebarViewArchive: "查看"
+sidebarDismiss: "关闭"
+sidebarMarkRead: "标为已读"
+sidebarMarkUnread: "标为未读"
+sidebarMoreActions: "更多操作"
+sidebarSessionActions: "会话操作"
+sidebarShowMore:
+  message: "显示更多 · {count}"
+  placeholders:
+    count: {type: int}
+sidebarShowLess: "收起"
+sidebarOpenOtherProject: "打开其他项目…"
+sidebarNewSessionInProject:
+  message: "在 {name} 新建会话"
+  placeholders:
+    name: {type: String}
+sidebarProjectActions:
+  message: "{name} 的操作"
+  placeholders:
+    name: {type: String}
+sidebarArchiveOlderThanWeek:
+  message: "归档 7 天前的会话 · {count}"
+  placeholders:
+    count: {type: int}
+sidebarOpenInFilesTab: "在文件中打开"
+sidebarViewArchived:
+  message: "查看已归档 · {count}"
+  placeholders:
+    count: {type: int}
+sidebarArchiveActions: "归档操作"
+sidebarArchivedProjectActions:
+  message: "{name} 的已归档会话"
+  placeholders:
+    name: {type: String}
+sidebarRestoreAllArchived:
+  message: "全部恢复 · {count}"
+  placeholders:
+    count: {type: int}
+sidebarDeleteAllArchived:
+  message: "全部删除… · {count}"
+  placeholders:
+    count: {type: int}
+sidebarDeleteOldArchived:
+  message: "删除 30 天前归档的会话… · {count}"
+  placeholders:
+    count: {type: int}
+sidebarNoLiveSessions: "还没有会话"
+sidebarPinToKeep: "置顶以保留"
+sidebarNoArchived: "没有已归档的会话"
+sidebarBackToSessions: "返回"
+sidebarCannotArchiveRunning: "运行中"
+sidebarNewWorktreeForSession: "新建 worktree 并在其中新建会话"
+sidebarProjectAndWorktree: "项目和 worktree"
+sidebarUiStateFailed:
+  message: "保存失败：{error}"
+  placeholders:
+    error: {type: String}
+sidebarSessionNotFound: "该会话已不存在"
+sidebarFork: "分叉"
+sidebarOpenInNewTab: "在新标签页打开"
+sidebarForkedToast:
+  message: "已分叉「{title}」"
+  placeholders:
+    title: {type: String}
+sidebarForkNotFound: "该会话已不存在"
+sidebarForkUnsaved: "该会话尚未保存，请先发送一条消息。"
+sidebarForkEmpty: "没有可分叉的内容：此分支还没有消息"
+sidebarForkUnavailable: "无法分叉此会话"
+sidebarForkFailed:
+  message: "分叉失败：{error}"
+  placeholders:
+    error: {type: String}
+sidebarDeleteProjectSessions:
+  message: "删除全部会话… · {count}"
+  placeholders:
+    count: {type: int}
+sidebarDeleteProjectSessionsHeading:
+  message: "删除 {name} 的全部会话"
+  placeholders:
+    name: {type: String}
+sidebarDeleteProjectSessionsMessage: "置顶和已归档的会话也会删除，且无法撤销。"
+sidebarDeleteProjectSessionsRunning:
+  message: "正在运行的会话会保留（{count} 个）。"
+  placeholders:
+    count: {type: int}
+sidebarDeleteArchivedInProjectHeading:
+  message: "删除 {name} 的已归档会话"
+  placeholders:
+    name: {type: String}
+sidebarDeleteAllArchivedHeading: "删除全部已归档会话"
+sidebarDeleteOldArchivedHeading: "删除 30 天前归档的会话"
+sidebarDeleteArchivedMessage: "它们的子代理会话也会删除，且无法撤销。"
+sidebarDeleteCount:
+  message: "删除 {count} 个"
+  placeholders:
+    count: {type: int}
+sidebarDeletingSessions: "正在删除会话…"
+sidebarDeletedOneToast: "已删除 1 个会话"
+sidebarDeletedManyToast:
+  message: "已删除 {count} 个会话"
+  placeholders:
+    count: {type: int}
+sidebarKeptRunningToast:
+  message: "保留 {count} 个运行中的会话"
+  placeholders:
+    count: {type: int}
+sidebarDeleteFailed:
+  message: "删除失败：{error}"
+  placeholders:
+    error: {type: String}
+filesModified: "已修改"
+filesAdded: "已添加"
+filesDeleted: "已删除"
+filesRenamed: "已重命名"
+filesUntracked: "未跟踪"
+filesConflict: "冲突"
+filesNewlyUploaded: "刚上传"
+filesContainsChangedFiles: "包含已更改文件"
+filesHiddenIgnored: "已被 Git 忽略"
+filesHiddenExcluded: "默认隐藏（生成或依赖目录）"
+filesInsertPath: "将路径插入聊天"
+filesMention: "提及"
+filesDownload: "下载文件"
+filesBinary: "二进制"
+filesBinaryNoPreview: "二进制文件，无法预览。下载后打开。"
+filesOutsideLink:
+  message: "链接到项目外部：{target}"
+  placeholders:
+    target: {type: String}
+filesOutsideLinkEncloses: "该文件夹包含当前项目或你的主目录。"
+filesAllowOutsideLink: "允许浏览"
+filesAllowOutsideLinkTitle:
+  message: "在 Pi Web 重启前允许浏览 {target}，与将其选为项目目录相同"
+  placeholders:
+    target: {type: String}
+filesAllowEnclosingLinkConfirm:
+  message: "{target} 包含当前项目或你的主目录。允许后，在 Pi Web 重启前可浏览其下的所有内容。是否继续？"
+  placeholders:
+    target: {type: String}
+filesDismissError: "关闭错误"
+filesAddUploadedFile: "将上传的文件添加到聊天"
+filesAddAllUploadedFiles: "将所有上传的文件添加到聊天"
+filesDismissUploadResults: "关闭上传结果"
+filesLoading: "正在加载文件..."
+filesNoFiles: "未找到文件"
+filesChangedCount:
+  message: "{count} 个文件"
+  placeholders:
+    count: {type: int}
+filesChangeStats:
+  message: "{count} 个变更文件，新增 {additions} 行，删除 {deletions} 行"
+  placeholders:
+    count: {type: int}
+    additions: {type: int}
+    deletions: {type: int}
+filesViewAsTree: "树状视图"
+filesViewAsList: "列表视图"
+filesConflictSummary:
+  message: "已有 {count} 个文件：{files}"
+  placeholders:
+    count: {type: int}
+    countSuffix: {type: String}
+    files: {type: String}
+filesCannotReplace:
+  message: "无法替换：{files}"
+  placeholders:
+    files: {type: String}
+filesReplace: "替换"
+filesSkipExisting: "跳过已有文件"
+filesCancel: "取消"
+filesChecking: "正在检查文件"
+filesUploading:
+  message: "正在上传，{progress}%"
+  placeholders:
+    progress: {type: int}
+filesUploadedCount:
+  message: "已上传 {count} 个"
+  placeholders:
+    count: {type: int}
+filesSkippedCount:
+  message: "已跳过 {count} 个"
+  placeholders:
+    count: {type: int}
+filesFailedCount:
+  message: "{count} 个上传失败"
+  placeholders:
+    count: {type: int}
+filesImageLoadFailed: "图片加载失败"
+filesAudioLoadFailed: "音频加载失败"
+filesVideoLoadFailed: "视频加载失败"
+filesDropToUpload:
+  message: "松开鼠标，上传到 {directory}"
+  placeholders:
+    directory: {type: String}
+chatLoadingSession: "正在加载会话..."
+chatRunningTool: "正在运行工具..."
+chatGeneratingToolInput: "正在生成参数..."
+chatOperationAborted: "已中止"
+chatTruncatedByOutputLimit: "回复因达到模型输出长度上限而被截断。发送一条后续消息以继续。"
+chatTruncatedWithoutAnswer: "输出在生成正文前就达到了上限：额度被思考或接近占满的上下文耗尽。再发消息很可能再次截断。请先压缩上下文，或降低思考档位。"
+chatRunningNamedTool:
+  message: "正在运行 {name}..."
+  placeholders:
+    name: {type: String}
+chatRunningTools:
+  message: "正在运行 {names}..."
+  placeholders:
+    names: {type: String}
+chatRunningToolsMore:
+  message: "正在运行 {names}（另有 {count} 个）..."
+  placeholders:
+    names: {type: String}
+    count: {type: int}
+chatWaitingModel: "正在等待模型..."
+chatRunningCommand: "正在运行命令..."
+chatBashAlreadyRunning: "已有一个 bash 命令在运行。请先按 Esc 取消它。"
+chatThinking: "正在思考..."
+chatProcessDetails: "处理详情"
+chatMessage: "条消息"
+chatMessages: "条消息"
+chatToolCall: "次工具调用"
+chatToolCalls: "次工具调用"
+chatTurnDuration:
+  message: "耗时 {time}"
+  placeholders:
+    time: {type: String}
+chatViewFullOutput: "查看完整输出"
+chatLoadingFullOutput: "加载中…"
+chatDownloadFullOutput: "下载完整输出"
+chatOutputTruncated: "输出已截断，仅显示末尾部分。"
+chatFullOutputShown: "已显示完整输出。"
+chatFullOutputTooLarge: "完整输出过大，无法在此显示，请下载查看。"
+chatFullOutputUnavailable: "完整输出已不可用。"
+chatCollapseProcess: "收起处理详情"
+chatExpandProcess: "展开处理详情"
+transcriptnoticeCostSuffix:
+  message: "（约 {cost}）"
+  placeholders:
+    cost: {type: String}
+transcriptnoticeCacheMiss:
+  message: "缓存未命中：{tokens} Token 重新计费{cost}"
+  placeholders:
+    tokens: {type: int}
+    cost: {type: String}
+transcriptnoticeCacheMissIdle:
+  message: "空闲 {minutes} 分钟后缓存未命中：{tokens} Token 重新计费{cost}"
+  placeholders:
+    minutes: {type: int}
+    tokens: {type: int}
+    cost: {type: String}
+transcriptnoticeCacheMissModelSwitch:
+  message: "切换模型后缓存未命中：{tokens} Token 重新计费{cost}"
+  placeholders:
+    tokens: {type: int}
+    cost: {type: String}
+transcriptnoticeCacheWarmed:
+  message: "缓存已预热{note}：{cost}"
+  placeholders:
+    note: {type: String}
+    cost: {type: String}
+transcriptnoticeCacheWarmedNote:
+  message: "（{note}）"
+  placeholders:
+    note: {type: String}
+transcriptnoticeCompactionCost:
+  message: "本次压缩计费 {tokens} Token{cost}"
+  placeholders:
+    tokens: {type: int}
+    cost: {type: String}
+transcriptnoticeBranchSummaryCost:
+  message: "分支摘要计费 {tokens} Token{cost}"
+  placeholders:
+    tokens: {type: int}
+    cost: {type: String}
+transcriptnoticeThinkingDroppedOne: "Anthropic 丢弃了 1 个思考块（详情见会话文件）"
+transcriptnoticeThinkingDropped:
+  message: "Anthropic 丢弃了 {count} 个思考块（详情见会话文件）"
+  placeholders:
+    count: {type: int}
+transcriptnoticeFoldCacheMiss:
+  message: "缓存未命中 {tokens} Token{cost}"
+  placeholders:
+    tokens: {type: int}
+    cost: {type: String}
+transcriptnoticeFoldCacheMisses:
+  message: "缓存未命中 {count} 次 {tokens} Token{cost}"
+  placeholders:
+    count: {type: int}
+    tokens: {type: int}
+    cost: {type: String}
+settingsCacheMissNotices: "显示缓存与费用提示"
+settingsCacheMissNoticesDescription: "即 pi 的 showCacheMissNotices：在对话中显示缓存未命中、缓存预热、压缩费用，以及 Anthropic 丢弃思考块。保存到全局 settings.json，项目的 .pi/settings.json 可以覆盖它。"
+chatFilesWritten: "改动的文件"
+chatOpenWrittenFile:
+  message: "打开 {name}"
+  placeholders:
+    name: {type: String}
+chatLoadEarlier: "向上滚动以加载更早的消息"
+chatScrollToLatest: "回到最新消息"
+chatExtensionRequest: "扩展请求"
+chatExtensionExpiresIn:
+  message: "{seconds} 秒后过期"
+  placeholders:
+    seconds: {type: int}
+chatExtensionPending: "待回答"
+chatExtensionCollapse: "收起"
+chatExtensionExpand: "展开"
+chatExtensionMaximize: "放大"
+chatExtensionRestoreSize: "还原尺寸"
+chatExtensionMoreWaiting:
+  message: "还有 {count} 个"
+  placeholders:
+    count: {type: int}
+chatCancel: "取消"
+chatConfirm: "确认"
+chatSubmit: "提交"
+chatExtensionInput: "扩展终端输入"
+chatExtensionPanel: "扩展面板"
+chatExtensionWidgets: "扩展组件"
+chatExtensionWidgetAbove: "输入框上方组件"
+chatExtensionWidgetBelow: "输入框下方组件"
+chatExtensionWidgetLine:
+  message: "{count} 行"
+  placeholders:
+    count: {type: int}
+chatExtensionWidgetLines:
+  message: "{count} 行"
+  placeholders:
+    count: {type: int}
+chatClose: "关闭"
+chatQueued:
+  message: "已排队 · {count}"
+  placeholders:
+    count: {type: int}
+chatRecall: "移回输入框"
+chatRecallTitle: "移除所有排队消息并将其放回输入框编辑"
+chatRetrying:
+  message: "正在重试（{attempt}/{max}）…"
+  placeholders:
+    attempt: {type: int}
+    max: {type: int}
+chatLoadingCommands: "正在加载命令..."
+chatSlashCommands:
+  message: "斜杠命令 · {label}"
+  placeholders:
+    label: {type: String}
+chatTabEnter: "Tab / Enter"
+chatNoCommands: "未找到扩展、提示词或技能命令"
+chatMatch: "1 个匹配项"
+chatMatches:
+  message: "{count} 个匹配项"
+  placeholders:
+    count: {type: int}
+chatCommand: "1 个命令"
+chatCommands:
+  message: "{count} 个命令"
+  placeholders:
+    count: {type: int}
+chatLoadingFiles: "正在加载文件..."
+chatFiles:
+  message: "文件 · {label}{hint}"
+  placeholders:
+    label: {type: String}
+    hint: {type: String}
+chatSearching: "搜索中…"
+chatNoMatchingFiles: "未找到匹配的文件"
+chatSearchingAll: " · 正在搜索所有文件…"
+chatIndexTruncated: " · 索引不完整"
+chatSteerPlaceholder: "立即引导 / 排队后续消息..."
+chatAgentPlaceholder: "Agent 运行中…"
+chatMessagePlaceholder: "消息…输入 / 使用命令，输入 @ 查找文件"
+chatSideChat: "侧聊"
+chatSideChatHint: "在侧聊里问，不影响正在运行的任务"
+chatSteer: "引导"
+chatFollowUp: "后续消息"
+chatSteerHint: "在当前回复及其工具调用完成后送达（点“停止”可中断）"
+chatFollowUpHint: "在 Agent 完成后排队此消息"
+chatInputHistory: "输入历史"
+chatModelError: "模型错误"
+chatCwdMissingTitle: "找不到项目文件夹"
+chatCwdMissingBody:
+  message: "{cwd} 已不存在。如果项目已移动或重命名，请在新位置新建会话。"
+  placeholders:
+    cwd: {type: String}
+chatModelScopeWarning: "模型范围警告"
+chatModelScopeWarnings: "模型范围警告"
+chatSend: "发送"
+chatSelectionActions: "选中文字的操作"
+chatQuoteSelection: "引用"
+chatAskInSideChat: "在侧聊询问"
+chatNewQuoteChat: "关于选中文字的侧聊"
+chatAttachFiles: "附加文件"
+chatPreviewImage: "预览图片"
+chatFilterModels: "筛选模型…"
+chatModelScopeScoped: "已限定"
+chatModelScopeAll: "全部"
+chatSelectModel: "选择模型"
+chatNoModels: "没有模型"
+chatSwitchingModel: "正在切换模型"
+chatChangeModel: "更换模型"
+chatNoAvailableModels: "没有可用模型"
+chatNoMatchingModels: "没有匹配的模型"
+chatSaveDefaultModel: "使用并设为新会话默认模型"
+chatDefaultModel: "新会话默认模型"
+chatSaveDefaultThinking: "使用并设为新会话默认推理级别"
+chatDefaultThinking: "新会话默认推理级别"
+chatMoreControls: "更多控件"
+chatCollapseControls: "收起控件"
+chatShell: "Shell"
+terminalTitle: "终端"
+terminalTabLabel:
+  message: "终端：{name}"
+  placeholders:
+    name: {type: String}
+terminalOpen: "打开工作区终端"
+terminalClose: "终止终端"
+terminalRestart: "重启终端"
+terminalReconnect: "重新连接终端"
+terminalLightTheme: "终端切换为浅色主题"
+terminalDarkTheme: "终端切换为深色主题"
+terminalExtraKeys: "终端按键"
+terminalConnecting: "连接中"
+terminalReady: "已连接"
+terminalExited: "终端已关闭"
+terminalError: "连接错误"
+terminalExitCode:
+  message: "进程已退出，退出码 {code}"
+  placeholders:
+    code: {type: String}
+chatOutputLocal: "输出保留在本地"
+chatOutputModel: "输出发送给模型"
+chatConfiguredTools: "取自 settings.json 的 defaultTools"
+chatChatOnly: "仅聊天"
+chatReadOnlyTools:
+  message: "{count} 个只读内置工具"
+  placeholders:
+    count: {type: int}
+chatBuiltInTools:
+  message: "{count} 个内置工具"
+  placeholders:
+    count: {type: int}
+chatAllBuiltInTools: "全部内置工具"
+chatChangeReasoning:
+  message: "更改推理级别：{level}"
+  placeholders:
+    level: {type: String}
+chatChangeReasoningLabel: "更改推理级别"
+chatCurrentReasoning:
+  message: "本轮使用的推理级别：{level}"
+  placeholders:
+    level: {type: String}
+chatChangeToolPreset: "更改工具预设"
+chatStopCompaction: "停止压缩"
+chatCompactContext: "压缩上下文"
+chatCompacting: "正在压缩…"
+chatCompactingQueued:
+  message: "正在压缩… · {count} 条排队中"
+  placeholders:
+    count: {type: int}
+chatCompactingPlaceholder: "正在压缩…消息会排队，压缩结束后发送"
+chatCompact: "压缩"
+chatDismissCompactError: "关闭压缩错误"
+chatStopAgent: "停止 Agent"
+chatStop: "停止"
+chatDisableSound: "关闭完成提示音"
+chatEnableSound: "开启完成提示音"
+chatThinkingUseDefault: "使用 pi 默认设置"
+chatThinkingOff: "关闭推理"
+chatThinkingMinimal: "最低限度推理"
+chatThinkingLow: "低强度推理"
+chatThinkingMedium: "中等强度推理"
+chatThinkingHigh: "高强度推理"
+chatThinkingXhigh: "超高强度推理"
+chatThinkingMax: "最高强度推理"
+chatBuiltIn: "内置"
+chatExtensions: "扩展"
+chatPrompts: "提示词"
+chatSkills: "技能"
+chatDormant: "休眠"
+chatCommandCompact: "压缩上下文，可选附加说明"
+chatCommandAutoCompact: "切换自动上下文压缩（全局设置）"
+chatCommandReload: "重新加载扩展、技能、提示词和工具"
+chatCommandName: "设置会话显示名称"
+chatCommandSession: "显示会话消息、Token 和费用统计"
+chatCommandCopy: "复制最后一条助手消息"
+chatCommandClone: "将当前分支复制为独立新会话"
+chatCommandSide: "从当前会话派生一个侧聊"
+chatCompacted: "已压缩"
+chatImageNotSupportedTitle: "图片可能无法发送"
+chatImageNotSupportedBody:
+  message: "当前选择的模型（{model}）不支持图片输入，附加的图片可能会被忽略。"
+  placeholders:
+    model: {type: String}
+chatDropNeedsCwd: "请先选择工作目录，再添加文件。"
+chatDropUploaded:
+  message: "已将 {count} 个文件复制到工作目录"
+  placeholders:
+    count: {type: int}
+chatDropAlreadyExists:
+  message: "工作目录中已有同名文件，未覆盖，引用的是已有文件：{names}"
+  placeholders:
+    names: {type: String}
+chatDropFoldersUnsupported:
+  message: "不支持拖入文件夹，请拖入其中的文件：{names}"
+  placeholders:
+    names: {type: String}
+chatDropFailed:
+  message: "上传失败：{message}"
+  placeholders:
+    message: {type: String}
+chatSendUnconfirmed: "无法确认消息是否已发送。原文已放回输入框，重发前请先检查会话。"
+chatSendNotReceived: "消息没有送达服务器，原文已放回输入框。"
+chatTokensSaved:
+  message: "节省 {saved}"
+  placeholders:
+    saved: {type: String}
+chatminimapEarlierTurns:
+  message: "更早的 {count} 轮还没加载，点击加载"
+  placeholders:
+    count: {type: int}
+chatminimapLocateAssistant: "定位助手消息"
+chatminimapToolCalls:
+  message: "本轮 {count} 次工具调用"
+  placeholders:
+    count: {type: int}
+chatminimapLockPreview: "锁定：悬停时不展开预览"
+chatminimapUnlockPreview: "解锁悬停预览"
+i18nClose: "关闭"
+i18nCopy: "复制"
+i18nCopied: "已复制"
+i18nCancel: "取消"
+i18nSave: "保存"
+i18nSaving: "保存中…"
+i18nSaved: "已保存"
+i18nRemove: "移除"
+i18nRemoving: "移除中…"
+i18nDelete: "删除"
+i18nLoading: "加载中..."
+i18nLoadMore: "加载更多"
+i18nSearch: "搜索"
+i18nRefresh: "刷新"
+providerusageUsage: "用量"
+providerusageNotQueried: "尚未查询"
+providerusageRefresh: "刷新用量"
+providerusageRefreshing: "正在刷新用量"
+providerusageUpdated:
+  message: "更新于 {time}"
+  placeholders:
+    time: {type: String}
+providerusageQueryFailed: "用量查询失败。"
+providerusageAvailable: "可用"
+i18nUpdate: "更新"
+i18nUpdating: "更新中..."
+i18nCheck: "检查"
+i18nChecking: "检查中..."
+i18nInstall: "安装"
+i18nInstalling: "安装中..."
+i18nNoResults: "没有结果"
+i18nSearchProviders: "搜索 Provider…"
+i18nNoProviders: "没有匹配的 Provider"
+i18nNewModel: "新模型"
+i18nAddProvider: "添加 Provider"
+i18nSelectProviderModel: "选择 Provider 或模型"
+i18nVisibleInPrompt: "在模型提示词中可见，点击以禁用"
+i18nHiddenFromPrompt: "在模型提示词中隐藏，点击以启用"
+i18nDormant: "休眠"
+i18nHiddenButInvocable: "对模型隐藏，仍可手动调用"
+i18nSkillSearchPlaceholder: "例如 react、testing、deploy"
+i18nSearching: "搜索中…"
+i18nNoSkills: "未找到技能"
+i18nCheckUpdates: "检查更新"
+i18nUpdates: "项更新"
+i18nNoResolvedResources: "没有已解析资源"
+i18nEnablePackage: "启用包"
+i18nDisablePackage: "禁用包"
+i18nFiltered: "已筛选"
+i18nOpenSessionToReload: "打开会话后才能重新加载"
+i18nNotFound: "未找到"
+i18nNoPlugins: "未配置插件"
+trustResourcesNotLoaded: "受限模式"
+trustTrustProject: "信任项目"
+trustTrusting: "正在信任..."
+trustCancel: "取消"
+trustDialogTitle: "信任此项目？"
+trustDialogBody: "项目资源可以运行本地代码。请仅信任你了解其内容的项目。"
+trustSkillsNotLoaded: "此项目尚未受信任，项目技能未加载。"
+trustPluginsNotLoaded: "此项目尚未受信任，项目插件未加载。"
+trustProjectScopeUnavailable: "项目资源未加载时，无法安装到项目范围。"
+trustMcpTitle: ".pi/mcp.json 中的 MCP 服务器"
+trustMcpIntro: "信任此项目后，这些服务器即可在 Pi Web 和 pi CLI 中连接，两者共用这一信任决定。stdio 服务器会在运行 Pi Web 的计算机上执行其命令。"
+trustMcpLoading: "正在读取 .pi/mcp.json…"
+trustMcpLoadFailed: "无法列出此项目的 MCP 服务器。"
+trustMcpTimedOut: "列出此项目的 MCP 服务器耗时过长。"
+trustMcpNone: "该文件未声明任何服务器。"
+trustMcpUnchecked: "Pi Web 无法加载 SDK 的 MCP 校验，以下条目未经校验。"
+trustMcpCwd:
+  message: "工作目录：{path}"
+  placeholders:
+    path: {type: String}
+trustClose: "关闭"
+trustAlreadyTrusted: "此项目已受信任。"
+trustTrustFailed: "无法信任此项目。"
+mcpTransportStdio: "stdio"
+mcpTransportHttp: "HTTP"
+mcpFieldEnv:
+  message: "环境变量 {name}"
+  placeholders:
+    name: {type: String}
+mcpFieldHeader:
+  message: "请求头 {name}"
+  placeholders:
+    name: {type: String}
+mcpFieldOauthClientSecret: "oauth.clientSecret"
+mcpServerInvalid: "Pi 拒绝加载此条目，它不会连接："
+mcpServerWebPassword: "引用了 PI_WEB_PASSWORD。Pi Web 会拒绝连接它，但 pi CLI 也会读取此文件；如果 CLI 的运行环境中设置了该变量，它就会把密码传出去："
+mcpServerDisabled: "已在文件中关闭，不会连接。"
+mcpServerCommandFields: "每次连接都会执行 shell 命令："
+mcpServerReplacesGlobal: "此项目受信任时，它会替换你的同名全局服务器。"
+mcpServerOverridesGlobal:
+  message: "此项目受信任时，只更改你的同名全局服务器的 {keys}。"
+  placeholders:
+    keys: {type: String}
+mcpServerOverridesGlobalNothing: "指向你的同名全局服务器，但没有更改 enabled、exposure 或 toolExposure。"
+mcpServerMasked: "疑似密钥的部分已隐藏。"
+mcpServerHiddenCharacters: "包含不可见字符或控制字符，这里以 \\u'{'…'}' 代码显示。"
+mcpServerSendsVariables: "每次连接都会把运行 Pi Web 的计算机上的环境变量发送给此服务器："
+mcpServerPassesVariables: "会把运行 Pi Web 的计算机上的环境变量传给它启动的命令："
+mcpServerVariableIn:
+  message: "{field} 中的 {variable}"
+  placeholders:
+    variable: {type: String}
+    field: {type: String}
+mcpFileProblemUnparsable: "该文件不是有效的 JSON，其中的服务器都不会加载。"
+mcpFileProblemInvalidShape: "该文件不是包含 \"mcpServers\" 对象的对象，其中的服务器都不会加载。"
+mcpFileProblemAutoEnableCodemodeInvalid: "\"autoEnableCodemode\" 必须是 true 或 false；服务器仍会加载。"
+mcpFileProblemLinkDangling: "该文件是指向不存在目标的符号链接，不会从中加载任何服务器。"
+mcpFileProblemLinkOutside: "该文件是指向 Pi Web 可读取文件夹之外的符号链接，因此这里不列出其中的服务器。项目受信任后，Pi 仍会加载它们。"
+mcpFileProblemNotAFile: "该路径不是普通文件，Pi Web 不会读取。"
+mcpFileProblemTooLarge: "该文件超过 1 MiB，因此这里不列出其中的服务器。项目受信任后，Pi 仍会加载它们。"
+mcpFileProblemTooManyServers: "该文件声明了超过 200 个服务器，因此这里不列出它们。项目受信任后，Pi 仍会加载它们。"
+mcpFileProblemUnreadable: "Pi Web 无法读取该文件。"
+mcpReasonCwdInvalid: "未提供项目文件夹，或它不是绝对路径。"
+mcpReasonCwdDenied: "Pi Web 无权读取此文件夹。"
+mcpReasonCwdNotDirectory: "项目文件夹已不存在或不是文件夹。"
+mcpReasonRequestDenied: "该请求并非来自此页面，Pi Web 已拒绝。"
+mcpReasonContentType: "该请求不是以 JSON 发送的，Pi Web 已拒绝。"
+mcpReasonTrustUnreadable: "Pi Web 无法读取信任记录（trust.json），或它正被其他程序锁定。"
+mcpReasonTrustNotRequired: "此项目已没有需要信任的资源。"
+mcpReasonSessionBusy: "请等此文件夹中正在运行的会话结束后，再信任此项目。"
+mcpReasonInvalidRequest: "该请求没有要求 Pi Web 能够进行的更改，Pi Web 已拒绝。"
+mcpReasonMcpOff: "此 Pi Web 服务器上的 MCP 已关闭，因此不会更改任何服务器。"
+mcpReasonProjectUntrusted: "此项目未受信任，Pi Web 不会更改它的 .pi/mcp.json。"
+mcpReasonUnparsable: "该文件不是有效的 JSON，Pi Web 没有改动它。"
+mcpReasonInvalidShape: "该文件不是包含 \"mcpServers\" 对象的对象，Pi Web 没有改动它。"
+mcpReasonServerMissing: "该文件已不再定义此服务器。"
+mcpReasonEntryNotObject: "此条目不是对象，因此无法开启或关闭。请将其移除，或在文件中修正。"
+mcpReasonWebPassword: "它引用了 PI_WEB_PASSWORD，因此 Pi Web 不会开启它。"
+mcpReasonUndoUnavailable: "这次移除已无法撤销。"
+mcpReasonUndoNameTaken: "该文件又定义了同名的服务器，因此没有撤销这次移除。"
+mcpReasonNameTaken: "该文件已定义了同名的服务器。"
+mcpReasonLinkDangling: "该文件是指向不存在目标的符号链接，Pi Web 不会写入它。"
+mcpReasonLinkOutside: "该文件是指向 Pi Web 可读取的文件夹之外的符号链接，Pi Web 不会写入它。"
+mcpReasonNotAFile: "该路径不是普通文件，Pi Web 不会写入它。"
+mcpReasonTooLarge: "该文件超过 1 MiB，Pi Web 不会写入它。"
+mcpReasonTooManyServers: "该文件声明了超过 200 个服务器，Pi Web 不会对其中的条目执行操作。"
+mcpReasonLocked: "另一个程序正在写入该文件，请稍后再试。"
+mcpReasonServerInvalid: "Pi 拒绝此条目，因此 Pi Web 不会连接它。"
+mcpReasonSignInNotOauth: "此服务器不通过 OAuth 登录：只有没有 Authorization 请求头的 HTTP 服务器才会这样登录。"
+mcpReasonSignInUnknown: "Pi Web 已不再记得这次登录：它已结束一段时间，或者 Pi Web 已重启。"
+mcpReasonSignInNotWaiting: "这次登录现在没有在等待地址。"
+mcpReasonRedirectInvalid: "这不是一个网址。请从浏览器地址栏复制完整的地址。"
+mcpReasonRedirectStateMismatch: "该地址属于另一次登录。请粘贴这次登录后浏览器最终打开的地址。"
+mcpReasonRedirectNoCode: "该地址不含授权码。请粘贴你批准访问后浏览器最终打开的地址。"
+mcpReasonRedirectDenied: "授权服务器没有授予访问权限。请重新打开登录页，或取消。"
+mcpReasonImportFailed: "无法从粘贴的内容中读取服务器。"
+mcpReasonFieldsIncomplete: "有些需要填写的值缺失或无效。"
+mcpReasonNameInvalid: "服务器名称只能使用字母、数字、_ 和 -。"
+mcpReasonSecretGlobalOnly: "该服务器以明文保存了一个机密，因此只会保存在全局 mcp.json 中。"
+mcpReasonHostEnvConfirm: "该服务器会收到运行 Pi Web 的计算机上的变量，请先确认。"
+mcpReasonFolderNotFresh: "此文件夹已经变了：它现在有信任决定，或有需要信任的资源，因此 Pi Web 没有信任它，也没有添加任何内容。"
+mcpReasonTrustTooBroad: "信任此文件夹也会信任其中的各个文件夹，因此 Pi Web 不会自行这样做。"
+mcpLoadFailed: "无法读取 MCP 设置。"
+mcpLoadTimedOut: "Pi Web 没有及时响应。请点“刷新”重试。"
+mcpProjectNotListed:
+  message: "未列出此项目的服务器：{reason}"
+  placeholders:
+    reason: {type: String}
+mcpServerCount:
+  message: "已开启 {enabled}/{total} 个服务器"
+  placeholders:
+    enabled: {type: int}
+    total: {type: int}
+mcpGroupEmpty: "没有服务器"
+mcpGroupFileProblem: "未列出：请看下方的文件问题"
+mcpGroupNotListed: "未列出"
+mcpRowLabel:
+  message: "{name}：{state}"
+  placeholders:
+    name: {type: String}
+    state: {type: String}
+mcpStateOn: "已开启"
+mcpStateDisabled: "已在文件中关闭"
+mcpStateInvalid: "被 Pi 拒绝"
+mcpStateWebPassword: "已拒绝：引用了 PI_WEB_PASSWORD"
+mcpStateNotTrusted: "项目未受信任"
+mcpStateReplaced: "已被项目的同名服务器替换"
+mcpStateOverridden: "已被项目的覆盖设置更改"
+mcpStateMcpOff: "MCP 已关闭"
+mcpStateShortInvalid: "已拒绝"
+mcpStateShortWebPassword: "已拒绝"
+mcpStateShortDisabled: "已关闭"
+mcpStateShortNotTrusted: "未受信任"
+mcpStateShortReplaced: "已替换"
+mcpStateShortOverridden: "已覆盖"
+mcpServerShadowedByProject: "此项目受信任时，项目中的同名服务器会替换这个服务器。"
+mcpServerOverriddenByProject: "此项目受信任时，项目的 .pi/mcp.json 会更改这个服务器的设置。"
+mcpServerUnchecked: "未经校验：Pi Web 无法加载 SDK 的 MCP 校验。"
+mcpDetailDescription: "简介"
+mcpDetailTransport: "传输方式"
+mcpDetailCommand: "命令"
+mcpDetailUrl: "URL"
+mcpDetailCwd: "工作目录"
+mcpDetailEnv: "环境变量"
+mcpDetailHeaders: "请求头"
+mcpDetailValuesHidden: "这里不显示其值。"
+mcpDetailShellCommands: "Shell 命令"
+mcpDetailVariables: "主机环境变量"
+mcpDetailSignIn: "登录"
+mcpDetailExposure: "工具"
+mcpDetailFile: "文件"
+mcpDetailInProject: "此项目"
+mcpInProjectSaved: "只对此项目生效，保存在项目的 .pi/mcp.json。"
+mcpInProjectOverridden:
+  message: "此项目的 .pi/mcp.json 改了它的 {keys}。"
+  placeholders:
+    keys: {type: String}
+mcpInProjectRefused: "此项目的 .pi/mcp.json 覆盖了它，但 pi 不接受。"
+mcpInProjectTurnOff: "在此项目中关闭"
+mcpInProjectTurnOn: "在此项目中开启"
+mcpInProjectShow: "查看"
+mcpSignInSignedIn: "已登录。"
+mcpSignInNotSignedIn: "未登录。"
+mcpSignInRegistrationOnly: "未登录，但保存了此服务器的客户端注册信息或未完成的登录。"
+mcpSignInUnknown: "未知：无法读取 mcp-auth.json。"
+mcpSignInHeader: "Authorization 请求头"
+mcpSignInProvider:
+  message: "发送 pi 提供商 {provider} 的令牌：在“设置 › 模型”中登录它。"
+  placeholders:
+    provider: {type: String}
+mcpExposureCodemode: "只列出服务器名称和简介，代码模式脚本按需搜索它的工具。"
+mcpExposureDeferred: "工具搜索加载后才声明，不需要代码模式。"
+mcpExposureDirect: "每次请求都带全部工具的完整声明，最占 token。"
+mcpExposureHidden: "已注册但无法调用。"
+mcpExposureSandboxUnavailable: "代码模式无法在此 Pi Web 服务器上运行，因此这些工具改为通过工具搜索调用。"
+mcpExposureBuiltinDisabled: "-builtin:codemode 关闭了代码模式，因此只有在工具搜索开启时才能调用这些工具。"
+mcpExposureAutoEnableOff:
+  message: "{path} 中的 autoEnableCodemode 为 false，因此会话不会为这些工具开启代码模式：只有代码模式设为“始终开启”或工具搜索开启时才能调用它们。"
+  placeholders:
+    path: {type: String}
+mcpExposureLabel:
+  message: "{name} 的工具如何提供给模型"
+  placeholders:
+    name: {type: String}
+mcpExposureOptionDefault:
+  message: "{label}（默认）"
+  placeholders:
+    label: {type: String}
+mcpExposureToolOverrides:
+  message: "toolExposure 中的 {count} 条规则不受影响。"
+  placeholders:
+    count: {type: int}
+mcpExposureToolSearchDisabled:
+  message: "{path} 中的 -builtin:tool-search 关闭了工具搜索，因此这些工具只能在代码模式开启时由代码模式脚本调用。"
+  placeholders:
+    path: {type: String}
+mcpExposureToolSearchDisabledUnknown: "-builtin:tool-search 关闭了工具搜索，因此这些工具只能在代码模式开启时由代码模式脚本调用。"
+mcpEmpty:
+  message: "还没有 MCP 服务器。{globalPath} 和项目 .pi/mcp.json 中的服务器会显示在这里。"
+  placeholders:
+    globalPath: {type: String}
+mcpEmptyFileProblem: "无法列出任何服务器：请看下方的文件问题。"
+mcpSelectItem: "选择一个服务器或代码模式。"
+mcpUnavailableOperatorDisabled: "MCP 已关闭：运行 Pi Web 的环境设置了 PI_WEB_DISABLE_MCP。服务器会列出，但没有会话会连接它们。"
+mcpUnavailableInternalsUnavailable: "MCP 已关闭：Pi Web 无法加载 SDK 的 MCP 模块。服务器未经校验地列出，没有会话会连接它们。"
+mcpUnavailableBuiltinDisabled:
+  message: "MCP 已关闭：{path} 中的 extensions 设置关闭了 builtin:mcp，没有会话会连接这些服务器。"
+  placeholders:
+    path: {type: String}
+mcpUnavailableBuiltinDisabledUnknown: "MCP 已关闭：某个 extensions 设置关闭了 builtin:mcp，没有会话会连接这些服务器。"
+mcpTrustUntrusted: "此项目未受信任，其 .pi/mcp.json 中的服务器不会连接。"
+mcpTrustUntrustedThrough:
+  message: "此项目未受信任（{path} 被标记为不受信任），其 .pi/mcp.json 中的服务器不会连接。"
+  placeholders:
+    path: {type: String}
+mcpTrustTrustedThrough:
+  message: "通过 {path} 受信任：此项目 .pi/mcp.json 中的服务器会连接，它下面的每个文件夹都是如此。"
+  placeholders:
+    path: {type: String}
+mcpTrustUnreadable: "Pi Web 无法读取信任记录（trust.json），因此暂时把此项目的服务器视为未受信任。"
+mcpTrustTrustButton: "信任项目…"
+mcpFooterFileProblem: "1 个文件问题"
+mcpFooterFileProblems:
+  message: "{count} 个文件问题"
+  placeholders:
+    count: {type: int}
+mcpCodemodeTitle: "代码模式"
+mcpCodemodeRowLabel:
+  message: "代码模式：{state}"
+  placeholders:
+    state: {type: String}
+mcpCodemodeIntro: "让模型写一小段脚本来调用工具，MCP 工具默认用这种方式调用。改动只对之后新建的会话生效。"
+mcpCodemodeAutomatic: "自动"
+mcpCodemodeAlways: "始终开启"
+mcpCodemodeUnavailable: "不可用"
+mcpCodemodeMode: "模式"
+mcpCodemodeAutomaticDescription: "有使用代码模式的 MCP 服务器连上时自动开启。"
+mcpCodemodeAlwaysDescription: "会话启动时即开启代码模式。"
+mcpCodemodePreferenceError: "无法读取全局设置文件："
+mcpCodemodeSandbox: "沙箱"
+mcpCodemodeSandboxAvailable: "可用。"
+mcpCodemodeSandboxUnavailable: "无法在此 Pi Web 服务器上运行，因此没有会话提供代码模式："
+mcpCodemodeSandboxNotChecked: "尚未检查：Pi Web 启动后的第一个会话开始时才会运行自检。"
+mcpCodemodeBuiltin: "扩展"
+mcpCodemodeBuiltinDisabled:
+  message: "已被 {path} 中的 -builtin:codemode 关闭。"
+  placeholders:
+    path: {type: String}
+mcpCodemodeBuiltinDisabledUnknown: "已被某个 extensions 设置中的 -builtin:codemode 关闭。"
+mcpCodemodeBuiltinDisabledProject:
+  message: "{path} 中的 -builtin:codemode 为此项目的会话关闭了代码模式。“始终开启”仍对其他文件夹中的会话生效。"
+  placeholders:
+    path: {type: String}
+mcpCodemodeAutoEnableOff:
+  message: "{path} 中的 autoEnableCodemode 为 false，因此“自动”永远不会开启代码模式；使用代码模式公开方式的服务器，其工具只有在工具搜索开启时才能调用。"
+  placeholders:
+    path: {type: String}
+mcpCodemodeSaveFailed: "无法保存此选择："
+mcpCodemodeSaveTimedOut: "Pi Web 没有及时响应，此选择可能未保存。"
+mcpCodemodeAlwaysUnavailableSandbox: "“始终开启”不可用：代码模式的沙箱无法在此 Pi Web 服务器上运行。"
+mcpCodemodeAlwaysUnavailableBuiltin:
+  message: "“始终开启”不可用：{path} 中的 -builtin:codemode 关闭了代码模式。"
+  placeholders:
+    path: {type: String}
+mcpCodemodeProjectOverrideAlways:
+  message: "此项目自行决定：{path} 中的 defaultTools 让其会话启动时即开启代码模式，无论你在此处如何选择。"
+  placeholders:
+    path: {type: String}
+mcpCodemodeProjectOverrideAutomatic:
+  message: "此项目自行决定：{path} 中的 defaultTools 让其会话启动时不开启代码模式，与“自动”相同，无论你在此处如何选择。"
+  placeholders:
+    path: {type: String}
+mcpCodemodeToolMode: "内置工具"
+mcpCodemodeToolModeOn: "直接调用"
+mcpCodemodeToolModeOnly: "脚本调用"
+mcpCodemodeToolModeOnDescription: "模型直接调用 read、bash 等工具。"
+mcpCodemodeToolModeOnlyDescription: "代码模式开启时，模型只在脚本中调用 read、bash 等工具。"
+mcpCodemodeToolModeAutomaticNote: "模式为“自动”时，要等代码模式开启后才生效。"
+mcpCodemodeToolModeInvalid:
+  message: "{path} 中的 codemode.mode 为 {value}，pi 会把它当作 \"on\"。选择任一选项都会替换它。"
+  placeholders:
+    path: {type: String}
+    value: {type: String}
+mcpCodemodeToolModeProjectOverrideOn:
+  message: "此项目自行决定：{path} 中的 codemode 让其会话仍向模型声明这些工具，无论你在此处如何选择。"
+  placeholders:
+    path: {type: String}
+mcpCodemodeToolModeProjectOverrideOnly:
+  message: "此项目自行决定：{path} 中的 codemode.mode 让其会话只在脚本中调用这些工具，无论你在此处如何选择。"
+  placeholders:
+    path: {type: String}
+mcpCodemodeToolModeSaveFailed: "无法保存此设置："
+mcpCodemodeInlineBudget: "工具清单预算"
+mcpCodemodeInlineBudgetUnit: "token"
+mcpCodemodeInlineBudgetSave: "保存"
+mcpCodemodeInlineBudgetDescription:
+  message: "代码模式说明里列出工具最多用的 token 数，列不下的由脚本用 searchTools() 查找。留空使用默认值 {default}。"
+  placeholders:
+    default: {type: String}
+mcpCodemodeInlineBudgetInvalidDraft:
+  message: "请输入 0 到 {max} 之间的整数，或留空。"
+  placeholders:
+    max: {type: int}
+mcpCodemodeInlineBudgetInvalid:
+  message: "{path} 中的 codemode.inlineBudget 为 {value}，pi 会忽略它，因此会话使用 {default}。保存会替换它。"
+  placeholders:
+    path: {type: String}
+    value: {type: String}
+    default: {type: String}
+mcpCodemodeInlineBudgetProjectOverride:
+  message: "此项目自行决定：{path} 中的 codemode.inlineBudget 让其会话使用 {value}，无论你在此处保存什么。"
+  placeholders:
+    path: {type: String}
+    value: {type: String}
+mcpCodemodeInlineBudgetProjectOverrideDefault:
+  message: "此项目自行决定：{path} 中的 codemode 让其会话使用 pi 的默认值 {default}，无论你在此处保存什么。"
+  placeholders:
+    path: {type: String}
+    default: {type: String}
+mcpCodemodeInlineBudgetSaveFailed: "无法保存此预算："
+mcpReadOnlyMcpOff: "MCP 关闭期间，无法在此更改服务器。"
+mcpReadOnlyProjectUntrusted: "在此项目受信任之前，Pi Web 不会更改它们。"
+mcpReadOnlyTrustUnreadable: "在能够读取信任记录之前，Pi Web 不会更改它们。"
+mcpWriteSavedWhileOff: "更改会保存到文件中，但在 builtin:mcp 关闭期间，没有会话会连接这些服务器。"
+mcpServerSwitchOn:
+  message: "开启 {name}"
+  placeholders:
+    name: {type: String}
+mcpServerSwitchOff:
+  message: "关闭 {name}"
+  placeholders:
+    name: {type: String}
+mcpGroupSwitchOn:
+  message: "关闭 {group} 中的所有服务器"
+  placeholders:
+    group: {type: String}
+mcpGroupSwitchOff:
+  message: "开启 {group} 中的所有服务器"
+  placeholders:
+    group: {type: String}
+mcpGroupKeptOff:
+  message: "有 {count} 个引用 PI_WEB_PASSWORD 的服务器保持关闭。"
+  placeholders:
+    count: {type: int}
+mcpBulkFailed:
+  message: "{total} 个服务器中有 {count} 个未能更改："
+  placeholders:
+    count: {type: int}
+    total: {type: int}
+mcpActionFailed: "无法更改该服务器："
+mcpActionTimedOut: "Pi Web 没有及时响应，更改可能未生效。"
+mcpRemoved:
+  message: "已从 {path} 移除 {name}。"
+  placeholders:
+    name: {type: String}
+    path: {type: String}
+mcpUndo: "撤销"
+mcpUndoing: "正在撤销…"
+mcpUndoFailed: "无法撤销："
+mcpStateConnected: "测试时已连接"
+mcpStateNeedsAuth: "需要登录"
+mcpStateFailed: "测试时未能连接"
+mcpStateShortNeedsAuth: "需登录"
+mcpStateShortFailed: "失败"
+mcpExposureShortCodemode: "代码模式"
+mcpExposureShortDeferred: "工具搜索"
+mcpExposureShortDirect: "直接声明"
+mcpExposureShortHidden: "已隐藏"
+mcpTestButton: "测试连接"
+mcpTestTesting: "正在测试…"
+mcpTestNever: "尚未测试。"
+mcpTestSerial: "它会执行 shell 命令，因此测试要等其他此类测试结束。"
+mcpTestBlockedMcpOff: "此 Pi Web 服务器上的 MCP 已关闭，因此不会测试任何服务器。"
+mcpTestBlockedProjectUntrusted: "此项目未受信任，因此 Pi Web 不会启动它的服务器。"
+mcpTestBlockedTrustUnreadable: "Pi Web 无法读取信任记录（trust.json），因此不会启动此项目的服务器。"
+mcpTestBlockedInvalid: "Pi 拒绝此条目，因此没有可测试的内容。"
+mcpTestBlockedWebPassword: "它引用了 PI_WEB_PASSWORD，因此 Pi Web 不会连接它。"
+mcpTestRefusedEntryNotObject: "此条目不是对象，因此没有可测试的内容。请在文件中修正。"
+mcpTestRefusedInvalidRequest: "该请求没有指明 Pi Web 能够测试的服务器，Pi Web 已拒绝。"
+mcpTestRefusedUnparsable: "该文件不是有效的 JSON，Pi Web 无法读取此条目进行测试。"
+mcpTestRefusedInvalidShape: "该文件不是包含 \"mcpServers\" 对象的对象，Pi Web 无法读取此条目进行测试。"
+mcpTestRefusedLinkDangling: "该文件是指向不存在目标的符号链接，Pi Web 无法读取此条目进行测试。"
+mcpTestRefusedLinkOutside: "该文件是指向 Pi Web 可读取的文件夹之外的符号链接，Pi Web 不会测试其中的服务器。"
+mcpTestRefusedNotAFile: "该路径不是普通文件，Pi Web 不会读取它来测试此条目。"
+mcpTestRefusedTooLarge: "该文件超过 1 MiB，Pi Web 不会读取它来测试此条目。"
+mcpTestRefusedTooManyServers: "该文件声明了超过 200 个服务器，Pi Web 不会读取它来测试此条目。"
+mcpTestStateConnected: "已连接"
+mcpTestStateNeedsAuth: "需要登录"
+mcpTestStateFailed: "未能连接"
+mcpTestStateTimedOut: "无响应"
+mcpTestSummaryConnected:
+  message: "列出了 {count} 个工具，用时 {seconds} 秒，测试于 {time}。"
+  placeholders:
+    count: {type: int}
+    seconds: {type: int}
+    time: {type: String}
+mcpTestSummaryNeedsAuth:
+  message: "服务器要求 OAuth 登录。测试于 {time}。"
+  placeholders:
+    time: {type: String}
+mcpTestSummaryFailed:
+  message: "{seconds} 秒后放弃，测试于 {time}。"
+  placeholders:
+    seconds: {type: int}
+    time: {type: String}
+mcpTestSummaryTimedOut:
+  message: "它在 {seconds} 秒内没有响应，因此 Pi Web 已停止测试。测试于 {time}。"
+  placeholders:
+    seconds: {type: int}
+    time: {type: String}
+mcpTestError: "错误："
+mcpTestStderr: "它最后写入 stderr 的内容："
+mcpTestServerInfo:
+  message: "服务器：{name} {version}"
+  placeholders:
+    name: {type: String}
+    version: {type: String}
+mcpTestResources: "提供资源。"
+mcpTestRanIn:
+  message: "运行于 {path}。"
+  placeholders:
+    path: {type: String}
+mcpTestQueued:
+  message: "等待了 {seconds} 秒，因为另一个会执行 shell 命令的服务器正在测试。"
+  placeholders:
+    seconds: {type: int}
+mcpTestReadOnly: "只读"
+mcpTestMoreTools:
+  message: "另有 {count} 个未显示。"
+  placeholders:
+    count: {type: int}
+mcpTestQueueTimedOut: "另一个会执行 shell 命令的服务器的测试没有及时完成，因此此测试没有开始。请重试。"
+mcpTestRequestFailed: "无法测试该服务器："
+mcpTestRequestTimedOut: "Pi Web 没有及时响应。测试可能仍会完成，按“刷新”查看结果。"
+mcpStateConnecting: "正在会话中连接"
+mcpStateDisconnected: "会话中的连接已断开"
+mcpStateConflict: "名称已被其他扩展占用"
+mcpStateSessionConnected: "已在会话中连接"
+mcpStateSessionFailed: "未能在会话中连接"
+mcpStateShortConnecting: "连接中"
+mcpStateShortDisconnected: "已断开"
+mcpStateShortConflict: "冲突"
+mcpStateDetailDisconnected: "该会话会在下次调用它的工具时重新连接。"
+mcpStateDetailConflict: "请在文件中重命名此条目，或关闭那个扩展。"
+mcpSessionStateConnecting: "连接中"
+mcpSessionStateConnected: "已连接"
+mcpSessionStateNeedsAuth: "需要登录"
+mcpSessionStateFailed: "未能连接"
+mcpSessionStateDisconnected: "已断开"
+mcpSessionStateConflict: "名称已被占用"
+mcpSessionStateNotTrusted: "未读取"
+mcpSessionStateClosed: "已关闭"
+mcpSessionSummaryConnecting:
+  message: "{path} 中的一个会话于 {time} 开始连接它。"
+  placeholders:
+    path: {type: String}
+    time: {type: String}
+mcpSessionSummaryConnected:
+  message: "{path} 中的一个会话于 {time} 连接了它。"
+  placeholders:
+    path: {type: String}
+    time: {type: String}
+mcpSessionSummaryNeedsAuth:
+  message: "服务器于 {time} 要求 {path} 中的一个会话进行 OAuth 登录。"
+  placeholders:
+    path: {type: String}
+    time: {type: String}
+mcpSessionSummaryFailed:
+  message: "{path} 中的一个会话于 {time} 未能连接它。"
+  placeholders:
+    path: {type: String}
+    time: {type: String}
+mcpSessionSummaryDisconnected:
+  message: "{path} 中一个会话的连接于 {time} 断开。"
+  placeholders:
+    path: {type: String}
+    time: {type: String}
+mcpSessionSummaryConflict:
+  message: "{path} 中的一个会话于 {time} 发现该名称已被占用，因此没有连接此条目。"
+  placeholders:
+    path: {type: String}
+    time: {type: String}
+mcpSessionSummaryNotTrusted:
+  message: "{path} 中的一个会话于 {time} 没有读取它，因为当时没有任何决定信任该项目。"
+  placeholders:
+    path: {type: String}
+    time: {type: String}
+mcpSessionSummaryClosed:
+  message: "{path} 中的会话 {time} 连接，{closedTime} 关闭。"
+  placeholders:
+    path: {type: String}
+    time: {type: String}
+    closedTime: {type: String}
+mcpSessionConflictOwner: "先注册该名称的扩展："
+mcpHostInactive:
+  message: "{path} 中的一个会话不会通过 Pi Web 连接这些服务器：它的 /mcp 命令来自 {owner}，而不是 Pi 内置的 MCP 扩展。那个扩展可能会读取 mcp.json，并以自己的方式连接它们。"
+  placeholders:
+    path: {type: String}
+    owner: {type: String}
+mcpSignInButton: "登录"
+mcpSignInStarting: "正在开始…"
+mcpSignInCancel: "取消登录"
+mcpSignInCancelling: "正在取消…"
+mcpSignInCancelFailed: "无法取消登录："
+mcpSignInCancelTimedOut: "Pi Web 没有及时响应。登录可能仍在进行；一旦有进展，这里会显示。"
+mcpSignInSignOut: "退出登录"
+mcpSignInSigningOut: "正在退出登录…"
+mcpSignInReplaces: "登录可能会替换此服务器已保存的令牌和注册信息。"
+mcpSignInSignOutExplain: "退出登录会删除此服务器保存的令牌和注册信息，已打开的会话在下次请求时失去访问权限。"
+mcpSignInShared:
+  message: "另一个同名的 {name} 条目使用相同的 URL，这是它的登录：令牌对两者都有效。"
+  placeholders:
+    name: {type: String}
+mcpSignInSharedDone:
+  message: "已通过另一个同名的 {name} 条目登录，它使用相同的 URL，因此令牌对此条目同样有效。按“测试连接”查看此条目的服务器提供的内容。"
+  placeholders:
+    name: {type: String}
+mcpSignInSharedAlready:
+  message: "另一个同名的 {name} 条目使用相同的 URL，并且已经登录，因此令牌对此条目同样有效。按“测试连接”查看此条目的服务器提供的内容。"
+  placeholders:
+    name: {type: String}
+mcpSignInSharedConnectFailed:
+  message: "通过另一个同名的 {name} 条目（使用相同的 URL）进行的登录没有可登录的内容：该条目的服务器没有连接成功，也没有要求登录。它的“状态”一行说明了原因。"
+  placeholders:
+    name: {type: String}
+mcpSignInPhaseConnecting: "正在检查服务器是否要求登录…"
+mcpSignInPhaseStarting: "正在通过服务器的授权服务器准备登录…"
+mcpSignInPhaseFinishing: "正在完成登录…"
+mcpSignInPhaseNoCancel: "授权服务器已经回应，因此这一步无法再取消。"
+mcpSignInAuthorizeMessage: "打开登录页并批准访问。浏览器回到运行 Pi Web 的计算机后，登录会自动完成。如果浏览器在另一台设备上，或者它最终打开的页面无法加载，请复制该页面的地址并粘贴到这里。"
+mcpSignInAuthorizeLink: "登录页："
+mcpSignInAuthorizeNotALink: "服务器给出的登录页不是网址，因此只以文本显示："
+mcpSignInAuthorizeRedirect:
+  message: "批准后，浏览器会被发送到 {url}，只有运行 Pi Web 的计算机才能打开它。"
+  placeholders:
+    url: {type: String}
+mcpSignInAuthorizeWait: "Pi Web 从登录开始起最多等待 5 分钟。"
+mcpSignInPasteLabel: "浏览器最终打开的地址"
+mcpSignInPastePlaceholder: "http://127.0.0.1:…/callback?code=…"
+mcpSignInPasteSubmit: "继续"
+mcpSignInPasteChecking: "正在检查…"
+mcpSignInPasteRefused: "该地址无法完成这次登录："
+mcpSignInPasteTimedOut: "Pi Web 没有及时响应。如果它已接收该地址，这里会显示登录的进展。"
+mcpSignInDoneAlready: "已经登录：服务器无需重新登录就连接上了。"
+mcpSignInDoneSignedIn: "已登录。上方的“状态”显示服务器提供的内容。"
+mcpSignInDoneRefreshed: "已使用保存的刷新令牌重新登录，无需浏览器。上方的“状态”显示服务器提供的内容。"
+mcpSignInDoneFailedAfter: "已登录，但之后服务器没有连接成功。上方的“状态”说明了原因。"
+mcpSignInDoneNeedsAuthAfter: "已登录，但 Pi Web 再次连接时，服务器仍要求登录。"
+mcpSignInDoneNotConnected: "已登录。按“测试连接”查看服务器提供的内容。"
+mcpSignInCancelled: "已取消登录。"
+mcpSignInExpired: "登录没有在 5 分钟内完成，因此 Pi Web 停止了等待。"
+mcpSignInFailedConnectFailed: "服务器没有连接成功，也没有要求登录，因此没有可登录的内容。上方的“状态”说明了原因。"
+mcpSignInFailedQueueTimedOut: "另一个会执行 shell 命令的服务器的测试没有及时完成，因此登录没有开始。请重试。"
+mcpSignInFailedSignInFailed: "登录失败。"
+mcpSignInFailedInternal: "登录意外失败。"
+mcpSignInGone: "Pi Web 已不再记得这次登录：它已结束一段时间，或者 Pi Web 已重启。按“登录”重新开始。"
+mcpSignInRequestFailed: "无法登录："
+mcpSignInRequestTimedOut: "Pi Web 没有及时响应。再按一次“登录”可查看正在进行的登录。"
+mcpSignInSignOutFailed: "无法退出登录："
+mcpSignInSignedOutDone: "已退出登录：为该服务器保存的令牌已删除。"
+mcpSignInSignedOutNothing: "该服务器没有保存任何内容，因此无需退出登录。"
+mcpSignInBlockedMcpOff: "此 Pi Web 服务器上的 MCP 已关闭，因此不会登录任何服务器。"
+mcpSignInBlockedProjectUntrusted: "此项目未受信任，因此 Pi Web 不会登录或退出它的服务器。"
+mcpSignInBlockedTrustUnreadable: "Pi Web 无法读取信任存储（trust.json），因此不会登录或退出此项目的服务器。"
+mcpSignInBlockedInvalid: "Pi 拒绝此条目，因此没有可登录的内容。"
+mcpSignInRefusedFile: "Pi Web 已无法从文件中读取此条目。请按“刷新”。"
+mcpSignInRefusedInvalidRequest: "Pi Web 拒绝了该请求，因为它没有指明一个可以登录的服务器。"
+mcpSignInSummaryConnected:
+  message: "已登录，随后列出了 {count} 个工具，用时 {seconds} 秒，时间 {time}。"
+  placeholders:
+    count: {type: int}
+    seconds: {type: int}
+    time: {type: String}
+mcpSignInSummaryNeedsAuth:
+  message: "已登录，但服务器在 {time} 仍要求登录。"
+  placeholders:
+    time: {type: String}
+mcpSignInSummaryFailed:
+  message: "已登录，但连接在 {seconds} 秒后放弃，时间 {time}。"
+  placeholders:
+    seconds: {type: int}
+    time: {type: String}
+mcpSignInSummaryTimedOut:
+  message: "已登录，但服务器没有在 {seconds} 秒内响应，时间 {time}。"
+  placeholders:
+    seconds: {type: int}
+    time: {type: String}
+mcpAddAction: "添加 MCP"
+mcpAddTitle: "添加 MCP"
+mcpAddInputLabel: "要添加的服务器"
+mcpAddPlaceholder: "https://mcp.example.com/mcp\nnpx -y @scope/server\nclaude mcp add …\n'{' \"mcpServers\": '{' … '}' '}'"
+mcpAddExamples: "支持的格式（点击填入示例）"
+mcpAddRawPi: "启用 pi mcp 语法，支持 $NAME 和 !command"
+mcpAddRawPiOn: "环境变量和请求头里的 $NAME 会读取运行 Pi Web 的计算机上的变量，以 ! 开头的值每次连接都会作为命令执行。"
+mcpAddServerLabel: "服务器"
+mcpAddServerCount:
+  message: "这段内容包含 {count} 个服务器，请逐个添加。"
+  placeholders:
+    count: {type: int}
+mcpAddPreview: "预览"
+mcpAddReadAs: "识别为"
+mcpAddPreviewUnfilled: "尚未填写的值按粘贴内容中的原样显示。"
+mcpAddFields: "需要填写的值"
+mcpAddFieldOptional: "可选：留空时，它所属的值会被省略。"
+mcpAddFieldOptionalHeader:
+  message: "可选：留空则不发送请求头 {name}。"
+  placeholders:
+    name: {type: String}
+mcpAddFieldSlot: "填写的值"
+mcpAddFieldStoredAs:
+  message: "保存为 {value}。"
+  placeholders:
+    value: {type: String}
+mcpAddFieldStoredAsVariable:
+  message: "保存为 {value}：pi 每次连接时读取该变量，值本身不会写入 mcp.json。"
+  placeholders:
+    value: {type: String}
+mcpAddFieldUseVariable: "从运行 Pi Web 的计算机上的变量读取"
+mcpAddFieldVariableName:
+  message: "{field} 的变量"
+  placeholders:
+    field: {type: String}
+mcpAddFieldVariableHint: "保存为 $'{'…'}'：pi 每次连接时读取该变量，值本身不会写入 mcp.json。"
+mcpAddFieldChoose: "请选择…"
+mcpAddSecrets: "粘贴内容中的机密"
+mcpAddSecretHolds: "以明文保存了一个机密。"
+mcpAddSecretStoredAs:
+  message: "保存为 {value}：pi 每次连接时读取该变量，机密不会写入 mcp.json。"
+  placeholders:
+    value: {type: String}
+mcpAddSecretAsPasted: "按粘贴的内容保存到 mcp.json，因此该服务器只能保存在全局文件中。"
+mcpAddNameInvalid: "服务器名称只能使用字母、数字、_ 和 -。"
+mcpAddNameTaken:
+  message: "{path} 中已有名为 {name} 的服务器。"
+  placeholders:
+    path: {type: String}
+    name: {type: String}
+mcpAddUseName:
+  message: "使用 {name}"
+  placeholders:
+    name: {type: String}
+mcpAddButton: "添加"
+mcpAddButtonTrust: "添加并信任此文件夹"
+mcpAddAdding: "正在添加…"
+mcpAddTrustExplain:
+  message: "此文件夹还没有信任决定，而写入 .pi/mcp.json 会让它需要一个，因此“添加”会在同一步中信任 {path}。pi CLI 共用这个决定，其中的每个文件夹也都会受信任。"
+  placeholders:
+    path: {type: String}
+mcpAddAfterAdd: "添加后会测试一次连接。"
+mcpAddFailed: "未添加："
+mcpAddTrustKept:
+  message: "Pi Web 为这一步信任了 {folder}，但无法撤销，因此该文件夹仍受信任。"
+  placeholders:
+    folder: {type: String}
+mcpAddHostEnvBody:
+  message: "它的请求头或 OAuth 客户端密钥读取了 {names}，这些变量已在运行 Pi Web 的计算机上设置，pi 每次连接都会把它们的值发送给服务器。只有当此服务器应当获得这些值时才添加它。"
+  placeholders:
+    names: {type: String}
+mcpAddHostEnvConfirm: "添加并发送这些值"
+mcpAddBlockedNothing: "还没有可添加的内容：粘贴的内容中没有 pi 能用的服务器。"
+mcpAddBlockedFields:
+  message: "请先填写 {fields}。"
+  placeholders:
+    fields: {type: String}
+mcpAddBlockedFieldsInvalid:
+  message: "请先更正 {fields}。"
+  placeholders:
+    fields: {type: String}
+mcpAddBlockedWebPassword: "它引用了 PI_WEB_PASSWORD，因此 Pi Web 不会添加它。"
+mcpAddRefusedServerInvalid:
+  message: "按所填的值，pi 会拒绝它：{error}"
+  placeholders:
+    error: {type: String}
+mcpAddProjectBlockedNoProject: "打开一个项目后，才能把服务器添加到它的 .pi/mcp.json。"
+mcpAddProjectBlockedProjectNotListed: "未列出项目文件夹，因此不会写入它的 .pi/mcp.json。"
+mcpAddProjectBlockedTrustUnreadable: "Pi Web 无法读取信任记录（trust.json），因此不会写入此项目的 .pi/mcp.json。"
+mcpAddProjectBlockedProjectUntrusted: "此项目未受信任，因此 Pi Web 不会写入它的 .pi/mcp.json。请先信任它。"
+mcpAddProjectBlockedUntrustedDecision: "此文件夹被标记为不受信任，因此其 .pi/mcp.json 中的服务器永远不会连接。"
+mcpAddProjectBlockedSecret:
+  message: "{fields} 以明文保存了一个机密，因此该服务器只能保存在全局。要保存在项目中，请为它选择“从运行 Pi Web 的计算机上的变量读取”。"
+  placeholders:
+    fields: {type: String}
+mcpAddProjectBlockedSecretFixed:
+  message: "{fields} 在 pi 不读取变量的位置（URL、命令或其参数）以明文保存了一个机密，因此该服务器只能保存在全局。"
+  placeholders:
+    fields: {type: String}
+mcpAddProjectBlockedFolderNotFresh: "此文件夹的 .pi 下，或其上层某个 .agents/skills 文件夹中，有一个指向不存在目标的链接。目标出现后它就需要信任，因此 Pi Web 不会自行信任此文件夹。请删除或修复该链接，然后点击“刷新”。"
+mcpAddProjectBlockedFileProblem:
+  message: "无法写入 {path}：{reason}"
+  placeholders:
+    path: {type: String}
+    reason: {type: String}
+mcpAddProjectBlockedTrustTooBroadHome: "这是你的主目录。Pi Web 不会自行信任它，因为其中的每个文件夹都会一并受信任；请把服务器添加到全局。"
+mcpAddProjectBlockedTrustTooBroadRoot: "这是文件系统的根目录。Pi Web 不会自行信任它，因为其中的每个文件夹都会一并受信任；请把服务器添加到全局。"
+mcpAddProjectBlockedTrustTooBroadContainsHome:
+  message: "此文件夹包含你的主目录（{path}）。Pi Web 不会自行信任它，因为其中的每个文件夹都会一并受信任；请把服务器添加到全局。"
+  placeholders:
+    path: {type: String}
+mcpAddProjectBlockedTrustTooBroadContainsAgentDir:
+  message: "此文件夹包含 Pi 的 agent 文件夹（{path}）。Pi Web 不会自行信任它，因为其中的每个文件夹都会一并受信任；请把服务器添加到全局。"
+  placeholders:
+    path: {type: String}
+mcpAddProjectBlockedTrustTooBroadContainsFolder:
+  message: "此文件夹包含 Pi Web 已知的另一个文件夹 {path}，信任它也会信任那个文件夹。Pi Web 不会自行这样做；请把服务器添加到全局。"
+  placeholders:
+    path: {type: String}
+mcpAddProjectBlockedTrustTooBroadContainsProject:
+  message: "此文件夹包含 {path}，这是一个带有需要信任的资源、且自身尚无信任决定的项目，信任此文件夹也会信任它。Pi Web 不会自行这样做；请把服务器添加到全局，或打开那个项目单独信任它。"
+  placeholders:
+    path: {type: String}
+mcpAddProjectBlockedTrustTooBroadTooManyFolders: "此文件夹包含的文件夹太多，Pi Web 无法确认信任它不会同时信任其中的项目。Pi Web 不会自行信任它；请把服务器添加到全局。"
+mcpAddAdded:
+  message: "已把 {name} 添加到 {path}。"
+  placeholders:
+    name: {type: String}
+    path: {type: String}
+mcpAddAddedTrusted:
+  message: "已把 {name} 添加到 {path}，并信任了 {folder}。"
+  placeholders:
+    name: {type: String}
+    path: {type: String}
+    folder: {type: String}
+mcpAddAddedTrustedHere:
+  message: "已把 {name} 添加到 {path}，并信任了此文件夹。"
+  placeholders:
+    name: {type: String}
+    path: {type: String}
+mcpAddTesting: "正在测试连接…"
+mcpAddNeedsSignIn: "它要求登录。"
+mcpAddSourceUrl: "URL"
+mcpAddSourceCommandLine: "命令行"
+mcpAddSourcePiMcpAdd: "pi mcp add"
+mcpAddSourceClaudeMcpAdd: "claude mcp add"
+mcpAddSourceClaudeMcpAddJson: "claude mcp add-json"
+mcpAddSourceCodexMcpAdd: "codex mcp add"
+mcpAddSourceGeminiMcpAdd: "gemini mcp add"
+mcpAddSourceVscodeAddMcp: "code --add-mcp"
+mcpAddSourceMcpServersJson: "mcpServers 配置（Claude、Cursor、Gemini…）"
+mcpAddSourceVscodeJson: "VS Code 的 mcp.json"
+mcpAddSourceZedJson: "Zed 设置"
+mcpAddSourceOpencodeJson: "opencode 配置"
+mcpAddSourceServerObject: "单个服务器的 JSON"
+mcpAddSourceServerMap: "按名称列出的服务器（JSON）"
+mcpAddSourceRegistryServerJson: "MCP 注册表的 server.json"
+mcpAddSourceCursorInstallLink: "Cursor 安装链接"
+mcpAddSourceVscodeInstallLink: "VS Code 安装链接"
+mcpAddSourceVisualStudioInstallLink: "Visual Studio 安装链接"
+mcpAddSourceCopilotAppInstallLink: "GitHub Copilot 应用链接"
+mcpImportNoteForServer:
+  message: "{server}：{note}"
+  placeholders:
+    server: {type: String}
+    note: {type: String}
+mcpImportNoteEmptyInput: "还没有可读取的内容：请粘贴 URL、命令行或配置。"
+mcpImportNoteUnrecognizedInput: "Pi Web 无法识别这段内容。请粘贴服务器的 URL、启动它的命令、mcp add 命令、JSON 配置或安装链接。"
+mcpImportNoteInvalidJson:
+  message: "这看起来像 JSON，但无法解析：{detail}"
+  placeholders:
+    detail: {type: String}
+mcpImportNoteNoServersFound: "此配置中没有找到 MCP 服务器。"
+mcpImportNoteShellOperator:
+  message: "命令行用到了 shell 运算符 {operator}。请只粘贴启动服务器的那条命令。"
+  placeholders:
+    operator: {type: String}
+mcpImportNoteShellCommandSubstitution:
+  message: "命令行用到了 {syntax}，只有 shell 才会执行它。请直接写出该值。"
+  placeholders:
+    syntax: {type: String}
+mcpImportNoteShellMultipleCommands: "这里包含不止一条命令。请只粘贴启动服务器的那条。"
+mcpImportNoteShellUnterminatedQuote:
+  message: "有一个 {quote} 引号没有闭合。"
+  placeholders:
+    quote: {type: String}
+mcpImportNoteShellParameter:
+  message: "命令行用到了 shell 参数 {parameter}，Pi Web 无法填入它。"
+  placeholders:
+    parameter: {type: String}
+mcpImportNoteShellExpansion:
+  message: "命令行用到了 {expansion}，只有 shell 才会展开它。请直接写出该值。"
+  placeholders:
+    expansion: {type: String}
+mcpImportNoteUnsupportedUrlScheme:
+  message: "{scheme}: 地址不是服务器：pi 只连接 http 和 https URL。"
+  placeholders:
+    scheme: {type: String}
+mcpImportNoteGithubRepoLink:
+  message: "这是 GitHub 仓库 {repository}，不是服务器。请从它的 README 复制安装命令、URL 或配置。"
+  placeholders:
+    repository: {type: String}
+mcpImportNoteGithubMcpPage:
+  message: "这是 {name} 在 github.com/mcp 上的页面。它的“安装”按钮会打开其他应用，无法粘贴到这里；请改为从服务器的 README 复制 Cursor 或 VS Code 安装徽章的链接。"
+  placeholders:
+    name: {type: String}
+mcpImportNoteGithubPage: "这个 GitHub 页面不是服务器。请从服务器的 README 复制安装命令、URL 或配置。"
+mcpImportNoteByNameLink:
+  message: "这个链接只是在注册表中指明了 {name}，不含任何设置，因此 Pi Web 暂时无法添加它。请改为从服务器的 README 复制 Cursor 或 VS Code 安装徽章的链接。"
+  placeholders:
+    name: {type: String}
+mcpImportNoteBadgeImage: "这是徽章的图片。请改为复制徽章所打开的链接。"
+mcpImportNoteInstallLinkInvalid:
+  message: "无法读取此安装链接（{detail}）。"
+  placeholders:
+    detail: {type: String}
+mcpImportNoteClaudeDesktopImport: "claude mcp add-from-claude-desktop 会复制 Claude Desktop 自己的服务器。请改为粘贴 claude_desktop_config.json 中的 mcpServers 部分。"
+mcpImportNoteCliUnsupported:
+  message: "Pi Web 不读取 {cli} 的 mcp add。请改为粘贴服务器自己的命令行、URL 或 JSON 配置。"
+  placeholders:
+    cli: {type: String}
+mcpImportNoteCliUsage:
+  message: "这条 {cli} mcp add 命令不完整：它需要一个名称，以及一个 URL 或命令。"
+  placeholders:
+    cli: {type: String}
+mcpImportNoteCliUnknownOption:
+  message: "{cli} 没有选项 {option}。"
+  placeholders:
+    cli: {type: String}
+    option: {type: String}
+mcpImportNoteCliOptionNeedsValue:
+  message: "{cli} 的选项 {option} 需要一个值。"
+  placeholders:
+    cli: {type: String}
+    option: {type: String}
+mcpImportNoteCliOptionWrongTransport:
+  message: "{cli} 的选项 {option} 不适用于 {transport} 服务器。"
+  placeholders:
+    cli: {type: String}
+    option: {type: String}
+    transport: {type: String}
+mcpImportNoteCliInvalidPair:
+  message: "{cli} 的选项 {option} 无法读取 {value}。"
+  placeholders:
+    cli: {type: String}
+    option: {type: String}
+    value: {type: String}
+mcpImportNoteCliNotAServer:
+  message: "{cli} {command} 用于管理 {cli} 本身，它不是服务器。请粘贴启动服务器的命令，或 {cli} mcp add …"
+  placeholders:
+    cli: {type: String}
+    command: {type: String}
+mcpImportNotePiHelp: "pi mcp add --help 只会打印帮助，不会添加任何内容。"
+mcpImportNoteFieldRequired:
+  message: "请填写 {field}。"
+  placeholders:
+    field: {type: String}
+mcpImportNoteFieldInvalidOption:
+  message: "请为 {field} 选择一个提供的值。"
+  placeholders:
+    field: {type: String}
+mcpImportNoteFieldReferenceInvalidName:
+  message: "{field}：变量名只能包含字母、数字和 _，且不能以数字开头。"
+  placeholders:
+    field: {type: String}
+mcpImportNoteFieldReferenceInvalidTarget:
+  message: "{field} 不能取自变量：pi 只在 env 值、请求头和 OAuth 客户端密钥中读取变量。"
+  placeholders:
+    field: {type: String}
+mcpImportNoteFieldReferenceInvalidMissing:
+  message: "{field}：请输入要读取的变量名。"
+  placeholders:
+    field: {type: String}
+mcpImportNoteSseTransport: "它使用旧版 SSE 传输方式，pi 不支持。"
+mcpImportNoteSseTransportSuggested:
+  message: "它使用旧版 SSE 传输方式，pi 不支持。请改用它的 Streamable HTTP 地址：{suggestedUrl}"
+  placeholders:
+    suggestedUrl: {type: String}
+mcpImportNoteWebsocketTransport: "它通过 WebSocket 连接，pi 不支持。"
+mcpImportNoteUnsupportedTransport:
+  message: "它的传输方式 {type} 不是 pi 支持的方式（stdio 或 Streamable HTTP）。"
+  placeholders:
+    type: {type: String}
+mcpImportNoteAmbiguousCommandAndUrl: "它同时有命令和 URL，无法确定该用哪一个。"
+mcpImportNoteNoCommandOrUrl: "它既没有可启动的命令，也没有可连接的 URL。"
+mcpImportNoteZedExtensionServer: "它来自 Zed 扩展，只有 Zed 才能启动它。"
+mcpImportNoteRegistryPackagesUnsupported: "它只以待安装的软件包形式发布，而 pi 需要命令或 URL。请改为粘贴它的安装命令。"
+mcpImportNoteInvalidConfig:
+  message: "pi 会拒绝它：{problem}"
+  placeholders:
+    problem: {type: String}
+mcpImportNoteDroppedKey:
+  message: "{key} 在 pi 中没有对应项，已省略。"
+  placeholders:
+    key: {type: String}
+mcpImportNoteVariableUnsupportedHere:
+  message: "{field} 读取了变量 {name}，pi 不会在那里填入它，因此需要在下方填写其值。"
+  placeholders:
+    field: {type: String}
+    name: {type: String}
+mcpImportNoteVariableFallbackDropped:
+  message: "{field}：pi 不支持变量的默认值，因此省略了 {name} 的备用值 {fallback}。"
+  placeholders:
+    field: {type: String}
+    fallback: {type: String}
+    name: {type: String}
+mcpImportNoteBareDollarLiteral:
+  message: "{field} 中的 $'{'name'}' 是普通文本：此客户端不把它当作变量，pi 也不会。"
+  placeholders:
+    field: {type: String}
+mcpImportNoteHeaderEnvReference:
+  message: "请求头 {header} 会把运行 Pi Web 的计算机上 {names} 的值发送给此服务器。"
+  placeholders:
+    header: {type: String}
+    names: {type: String}
+mcpImportNoteClientSecretEnvReference:
+  message: "OAuth 客户端密钥取自运行 Pi Web 的计算机上的 {names}，并会发送给授权服务器。"
+  placeholders:
+    names: {type: String}
+mcpImportNoteShellCommandValue:
+  message: "{field} 每次连接都会在运行 Pi Web 的计算机上执行 shell 命令。"
+  placeholders:
+    field: {type: String}
+mcpImportNoteShellVariable:
+  message: "{field}：$'{'name'}' 本应由你的 shell 填入。pi 会从运行 Pi Web 的计算机的环境中读取它，否则需要在下方填写其值。"
+  placeholders:
+    field: {type: String}
+mcpImportNoteUnsupportedVariable:
+  message: "{field} 用到了 {variable}，pi 无法填入，因此需要在下方填写其值。"
+  placeholders:
+    field: {type: String}
+    variable: {type: String}
+mcpImportNoteInputUndefined:
+  message: "配置要求填写输入项 {id}，但没有定义它，因此需要在下方填写其值。"
+  placeholders:
+    id: {type: String}
+mcpImportNoteInputCommandUnsupported:
+  message: "输入项 {id} 会执行 VS Code 命令，Pi Web 无法执行，因此需要在下方填写其值。"
+  placeholders:
+    id: {type: String}
+mcpImportNoteTimeoutClamped:
+  message: "{from} 秒的超时时间已缩短为 {to} 秒。"
+  placeholders:
+    from: {type: String}
+    to: {type: String}
+mcpImportNoteTimeoutDropped:
+  message: "超时时间 {value} 不是秒数，已省略。"
+  placeholders:
+    value: {type: String}
+mcpImportNoteTimeoutUnitGuessedMilliseconds:
+  message: "超时时间 {value} 被当作毫秒读取，请核对。"
+  placeholders:
+    value: {type: String}
+mcpImportNoteTimeoutUnitGuessedSeconds:
+  message: "超时时间 {value} 被当作秒读取，请核对。"
+  placeholders:
+    value: {type: String}
+mcpImportNoteEnvNullDropped:
+  message: "{name} 被设为 null 以取消设置，pi 做不到这一点，因此已省略。"
+  placeholders:
+    name: {type: String}
+mcpImportNoteOauthOptionDropped:
+  message: "OAuth 选项 {key} 在 pi 中没有对应项，已省略。"
+  placeholders:
+    key: {type: String}
+mcpImportNoteOauthDisableUnsupported: "配置关闭了 OAuth，pi 无法这样做：只要服务器要求，pi 就会通过 OAuth 登录。"
+mcpImportNoteCallbackUrlDropped:
+  message: "OAuth 回调地址 {value} 不是 pi 能监听的回环地址，因此已省略。"
+  placeholders:
+    value: {type: String}
+mcpImportNoteCallbackPortDropped:
+  message: "OAuth 回调端口 {value} 不是端口号，因此已省略。"
+  placeholders:
+    value: {type: String}
+mcpImportNoteInvalidExposureDropped:
+  message: "exposure {value} 不是 pi 认识的值，因此已省略。"
+  placeholders:
+    value: {type: String}
+mcpImportNoteToolFilterImportedInclude:
+  message: "只提供这些工具，其余的隐藏：{tools}。"
+  placeholders:
+    tools: {type: String}
+mcpImportNoteToolFilterImportedExclude:
+  message: "这些工具被隐藏：{tools}。"
+  placeholders:
+    tools: {type: String}
+mcpImportNoteTransportGuessed: "配置没有指明传输方式，Pi Web 根据现有的键推断出了它。"
+mcpImportNoteInsecureHttp:
+  message: "{host} 通过未加密的 http 访问，因此发送的所有内容（包括令牌）都以明文传输。"
+  placeholders:
+    host: {type: String}
+mcpImportNoteLiteralSecret:
+  message: "{field} 以明文保存了一个机密，因此该服务器只能保存在全局 mcp.json 中。"
+  placeholders:
+    field: {type: String}
+mcpImportNoteCliOptionIgnored:
+  message: "{cli} 的选项 {option} 在 pi 中没有对应项，已忽略。"
+  placeholders:
+    cli: {type: String}
+    option: {type: String}
+mcpImportNoteCliOptionAsArg:
+  message: "{option} 位于服务器命令之后，因此会像 {cli} 那样作为参数传给服务器。"
+  placeholders:
+    option: {type: String}
+    cli: {type: String}
+mcpImportNoteCliExtraArguments:
+  message: "{cli} 只凭 URL 添加 HTTP 服务器，因此省略了多余的参数 {arguments}。"
+  placeholders:
+    cli: {type: String}
+    arguments: {type: String}
+mcpImportNoteMcpRemoteBridge:
+  message: "这会运行 mcp-remote 来访问 {url}。pi 可以直接连接该 URL：粘贴该 URL 即可不经桥接添加它。"
+  placeholders:
+    url: {type: String}
+mcpImportNoteLooksLikePiConfig: "这看起来像 pi 自己的 mcp.json。如果是从那里复制的，请打开“启用 pi mcp 语法，支持 $NAME 和 !command”。"
+mcpImportNoteWorkspaceFolderRelative:
+  message: "{field}：{from} 变成了会话所在的文件夹（.），pi 就在那里启动服务器。"
+  placeholders:
+    field: {type: String}
+    from: {type: String}
+mcpImportNoteHomeVariableTranslated:
+  message: "{field}：{from} 变成了 {to}，pi 会从环境中读取它。"
+  placeholders:
+    field: {type: String}
+    from: {type: String}
+    to: {type: String}
+mcpImportNoteNameTaken:
+  message: "该文件已有名为 {name} 的服务器。请换一个名称，例如 {suggestedName}。"
+  placeholders:
+    name: {type: String}
+    suggestedName: {type: String}
+mcpImportNoteEscapedValue:
+  message: "{field}：$ 和开头的 ! 已转义，因此 pi 会按原样读取该值，不执行任何内容。"
+  placeholders:
+    field: {type: String}
+mcpImportNoteVariableTranslated:
+  message: "{field}：{from} 变成了 {to}，这是 pi 读取该变量的写法。"
+  placeholders:
+    field: {type: String}
+    from: {type: String}
+    to: {type: String}
+mcpImportNoteHomeTranslated:
+  message: "{field}：{from} 变成了 ~，即主目录。"
+  placeholders:
+    field: {type: String}
+    from: {type: String}
+mcpImportNoteTimeoutConverted:
+  message: "{from} 毫秒的超时时间换算为 {to} 秒。"
+  placeholders:
+    from: {type: String}
+    to: {type: String}
+mcpImportNoteEnvValueStringified:
+  message: "{name} 不是文本，已转换为文本。"
+  placeholders:
+    name: {type: String}
+mcpImportNoteEmptyAuthorizationDropped: "省略了空的 Authorization 请求头，因此服务器要求时 pi 会通过 OAuth 登录。"
+mcpImportNoteImportedDisabled: "配置中它处于关闭状态，因此添加后也是关闭的。"
+mcpImportNoteNameDerived:
+  message: "根据它的地址或命令命名为 {name}。"
+  placeholders:
+    name: {type: String}
+mcpImportNoteNameSanitized:
+  message: "{original} 变成了 {name}：pi 服务器名称只能使用字母、数字、_ 和 -。"
+  placeholders:
+    original: {type: String}
+    name: {type: String}
+mcpImportNoteNameDeduplicated:
+  message: "{original} 已被占用，因此命名为 {name}。"
+  placeholders:
+    original: {type: String}
+    name: {type: String}
+mcpImportNoteCommandSplit:
+  message: "{command} 已拆分为命令及其参数。"
+  placeholders:
+    command: {type: String}
+mcpImportNoteTransportAssumedHttp: "没有指明传输方式，因此按 Streamable HTTP 服务器读取。"
+mcpImportNoteSchemeAssumed:
+  message: "按 {url} 读取。"
+  placeholders:
+    url: {type: String}
+mcpImportNoteClientSecretPrompt: "需要在下方填写 OAuth 客户端密钥。"
+mcpImportNoteUserinfoMovedToHeader: "URL 中的用户名和密码已移入 Authorization 请求头：pi 不会在 URL 中发送它们。"
+mcpImportProblemName:
+  message: "{name} 不是 pi 接受的服务器名称（字母、数字、_ 和 -）。"
+  placeholders:
+    name: {type: String}
+mcpImportProblemNotAnObject: "它不是对象。"
+mcpImportProblemExposure:
+  message: "exposure {value} 不是 pi 认识的值。"
+  placeholders:
+    value: {type: String}
+mcpImportProblemToolExposure: "toolExposure 必须把工具名映射到 exposure 值。"
+mcpImportProblemToolExposureTool:
+  message: "{tool} 的 toolExposure 不是 pi 认识的 exposure 值。"
+  placeholders:
+    tool: {type: String}
+mcpImportProblemEnabled: "enabled 必须是 true 或 false。"
+mcpImportProblemDescription: "description 必须是文本。"
+mcpImportProblemTimeout:
+  message: "超时时间 {value} 不是正的秒数。"
+  placeholders:
+    value: {type: String}
+mcpImportProblemSse: "不支持旧版 SSE 传输方式。"
+mcpImportProblemUrl:
+  message: "{url} 不是 http 或 https URL。"
+  placeholders:
+    url: {type: String}
+mcpImportProblemHeaders: "headers 必须把名称映射到文本。"
+mcpImportProblemAuth: "auth.provider 必须是一个 pi 提供商的名称。"
+mcpImportProblemAuthUrl: "auth 会发送提供商的令牌，所以 URL 必须是 https（或 localhost 上的 http）。"
+mcpImportProblemOauth: "oauth 必须是对象。"
+mcpImportProblemOauthClientId: "oauth.clientId 必须是文本。"
+mcpImportProblemOauthClientSecret: "oauth.clientSecret 必须是文本。"
+mcpImportProblemCallbackPort:
+  message: "OAuth 回调端口 {value} 不是端口号。"
+  placeholders:
+    value: {type: String}
+mcpImportProblemCallbackUrl:
+  message: "OAuth 回调地址 {value} 不是回环 http 地址。"
+  placeholders:
+    value: {type: String}
+mcpImportProblemCallbackPortMismatch:
+  message: "OAuth 回调地址使用的端口是 {value}，与回调端口不一致。"
+  placeholders:
+    value: {type: String}
+mcpImportProblemOauthScope: "oauth.scope 必须是文本。"
+mcpImportProblemOauthClientName: "oauth.clientName 必须是非空文本。"
+mcpImportProblemOauthClientRegistration:
+  message: "oauth.clientRegistration 的值 {value} 必须是 \"auto\"、\"dcr\" 或 \"cimd\"。"
+  placeholders:
+    value: {type: String}
+mcpImportProblemOauthClientRegistrationClient: "oauth.clientRegistration 为 \"cimd\" 时不能同时设置 oauth.clientId 或 oauth.clientName。"
+mcpImportProblemOauthClientRegistrationCallback: "oauth.clientRegistration 为 \"cimd\" 时，oauth.callbackUrl 必须在 localhost 或 127.0.0.1 上，且路径为 /callback。"
+mcpImportProblemAuthServerMetadataUrl:
+  message: "oauth.authServerMetadataUrl {value} 必须是 https 地址（或 localhost 上的 http）。"
+  placeholders:
+    value: {type: String}
+mcpImportProblemArgs: "args 必须是文本列表。"
+mcpImportProblemArgsIndex:
+  message: "args[{index}] 不是文本。"
+  placeholders:
+    index: {type: int}
+mcpImportProblemEnv: "env 必须把名称映射到文本。"
+mcpImportProblemCwd: "cwd 必须是文本。"
+mcpImportProblemNoCommandOrUrl: "它需要命令（stdio）或 URL（Streamable HTTP）。"
+mcpImportFieldReasonEmpty: "粘贴的内容在这里留空了。"
+mcpImportFieldReasonInput: "配置要求在安装时填写此项。"
+mcpImportFieldReasonVariable: "粘贴的内容在这里读取了一个 pi 不会填入的变量。"
+mcpImportFieldReasonHome: "粘贴的内容在这里以 pi 无法填入的方式读取主目录。"
+mcpImportFieldReasonWorkspaceBasename: "粘贴的内容在这里用到了工作区文件夹的名称，pi 不知道它。"
+mcpImportFieldReasonUnsupportedVariable: "粘贴的内容在这里用到了 pi 无法填入的变量。"
+mcpImportFieldReasonClientSecret: "该命令要求提供 OAuth 客户端密钥。"
+mcpImportFieldReasonRegistryHeader: "注册表条目要求提供此请求头。"
+mcpImportFieldReasonRegistryVariable: "注册表条目要求提供地址的这一部分。"
+i18nCreatingSession: "正在创建新会话…"
+i18nCreating: "创建中…"
+i18nSubscription: "订阅"
+i18nSubscriptions: "订阅服务"
+i18nCustomEndpoint: "自定义端点格式"
+i18nNoChanges: "没有更改"
+i18nBranches: "分支"
+i18nNoActiveSession: "没有活动会话"
+i18nNoBranches: "此会话没有分支"
+i18nBranchesLockedWhileRunning: "会话运行中，暂时无法切换分支"
+i18nSource: "源代码"
+i18nPreview: "预览"
+i18nDiff: "Diff"
+i18nDownloadFile: "下载文件"
+i18nLiveSync: "实时同步已启用"
+i18nNotWatching: "未监视"
+i18nFileViewMode: "文件视图模式"
+i18nCompareHead: "比较工作区与 HEAD"
+i18nMentionSelectedLines: "提及所选行"
+i18nDisableWrap: "禁用自动换行"
+i18nEnableWrap: "启用自动换行"
+i18nHtmlPreview: "HTML 预览"
+i18nPreviewFile:
+  message: "预览 {file}"
+  placeholders:
+    file: {type: String}
+i18nInvalidMermaid: "Mermaid 图表无效"
+i18nRenderingMermaid: "正在渲染 Mermaid 图表"
+i18nPreviewAfterStreaming: "流式输出完成后可预览"
+i18nShowMermaidSource: "显示 Mermaid 源码"
+i18nPreviewMermaid: "预览 Mermaid 图表"
+i18nOpenMermaidViewer: "打开图表查看器"
+i18nMermaidViewer: "Mermaid 图表查看器"
+i18nMermaidDiagram: "Mermaid 图表"
+i18nInvalidSvg: "SVG 图片无效"
+i18nShowSvgSource: "显示 SVG 源码"
+i18nPreviewSvg: "预览 SVG 图片"
+i18nOpenSvgViewer: "打开图片查看器"
+i18nSvgViewer: "SVG 图片查看器"
+i18nSvgImage: "SVG 图片"
+i18nZoomOut: "缩小"
+i18nZoomIn: "放大"
+i18nFitToWidth: "适应宽度"
+modelsDiscoveryFetching: "正在导入模型…"
+modelsDiscoveryFetch: "导入模型…"
+modelsDiscoveryFilterPlaceholder:
+  message: "筛选 {count} 个模型…"
+  placeholders:
+    count: {type: int}
+modelsDiscoveryFilter: "筛选上游模型"
+modelsDiscoverySelectShown: "选择当前结果"
+modelsDiscoveryNoMatches: "没有匹配的模型。"
+modelsConfigUnreadable:
+  message: "无法读取 models.json，为避免覆盖已禁用保存。请修复该文件后重新打开此面板。{error}"
+  placeholders:
+    error: {type: String}
+modelsProviderNameTaken:
+  message: "已存在名为“{name}”的 Provider，请换一个名称。"
+  placeholders:
+    name: {type: String}
+modelsProviderIncomplete:
+  message: "{provider} 需要 Base URL 或至少一个模型。请补全，或删除该 Provider。"
+  placeholders:
+    provider: {type: String}
+modelsProviderNeedsBaseUrl:
+  message: "{provider} 需要填写 Base URL。"
+  placeholders:
+    provider: {type: String}
+modelsApiKeyPlaceholder: "环境变量名、!shell 命令或密钥"
+modelsApiKeyEnable:
+  message: "输入 {provider} 的 API Key，即可启用 {count} 个模型。"
+  placeholders:
+    provider: {type: String}
+    count: {type: int}
+modelsApiKeyEnableOne:
+  message: "输入 {provider} 的 API Key，即可启用 1 个模型。"
+  placeholders:
+    provider: {type: String}
+modelsReplaceApiKey: "输入新的 API Key 以替换…"
+modelsConnectionLost: "连接已断开"
+modelsVerifying: "正在验证…"
+modelsServerError:
+  message: "服务器错误 {status}"
+  placeholders:
+    status: {type: String}
+modelsDeviceCodeExpires:
+  message: "将在 {minutes} 分钟后过期。"
+  placeholders:
+    minutes: {type: int}
+modelsModelCount:
+  message: "{count} 个模型"
+  placeholders:
+    count: {type: int}
+modelsModelCountOne: "1 个模型"
+modelsOauthConnect:
+  message: "连接你的 {provider} 账号。"
+  placeholders:
+    provider: {type: String}
+modelsOauthPasteRedirect: "在浏览器中完成登录，然后从地址栏复制跳转后的地址，粘贴到下面。"
+modelsOauthNoBrowser: "如果浏览器窗口没有打开，"
+modelsOauthOpenLoginPage: "点此打开登录页"
+modelsOauthOpenLoginPageEnd: "。"
+modelsOauthValuePlaceholder: "输入内容…"
+modelsOauthDeviceCode: "打开验证页面，输入下面的代码："
+modelsAddHeader: "添加 Header"
+modelsDisplayNamePlaceholder: "显示名称"
+modelsSortByName: "按显示名称排序模型（A–Z）"
+modelsDiscoveryAdded: "已添加"
+modelsDiscoveryShowing:
+  message: "显示前 {shown} 个，共 {total} 个"
+  placeholders:
+    shown: {type: int}
+    total: {type: int}
+modelsDiscoveryFetched:
+  message: "已获取 {count} 个模型"
+  placeholders:
+    count: {type: int}
+modelsDiscoveryAddSelected: "添加所选模型"
+modelsDiscoveryAddSelectedCount:
+  message: "添加所选模型（{count}）"
+  placeholders:
+    count: {type: int}
+modelsCatalogSource: "来源：models.dev ↗"
+modelsCatalogFilling: "正在填入模型信息…"
+modelsCatalogFill: "填入模型信息"
+modelsCatalogFilled:
+  message: "已填入 {count} 个字段"
+  placeholders:
+    count: {type: int}
+modelsCatalogNoEmptyFields: "没有需要填入的空字段"
+modelsCatalogNoExactMatch: "models.dev 中没有精确匹配"
+modelsCatalogPriceProvider:
+  message: "价格已匹配 Provider {provider}"
+  placeholders:
+    provider: {type: String}
+modelsCatalogPriceBaseUrl:
+  message: "价格已按 Base URL 匹配 {provider}"
+  placeholders:
+    provider: {type: String}
+modelsCatalogPriceConsensus:
+  message: "价格得到 {support}/{total} 条记录支持"
+  placeholders:
+    support: {type: String}
+    total: {type: int}
+modelsCatalogPriceUnreliable: "未找到可靠价格"
+modelsCatalogUndo: "撤销"
+modelsCapabilities: "能力"
+modelsReasoning: "推理 / 思考"
+modelsImageInput: "图片输入"
+modelsModelSpecs: "模型规格"
+modelsContextWindow: "上下文窗口（tokens）"
+modelsContextForModel:
+  message: "{model} 的上下文窗口"
+  placeholders:
+    model: {type: String}
+modelsContextInvalid:
+  message: "{model} 的上下文窗口：请输入正整数 tokens 数量。"
+  placeholders:
+    model: {type: String}
+modelsImageMaxBytesInvalid:
+  message: "{model} 的图片大小上限：请输入正整数字节数。"
+  placeholders:
+    model: {type: String}
+modelsContextOverrideHelp: "上下文窗口（tokens），留空使用默认值。"
+modelsApplyHelp: "已打开的会话：重选该模型后生效。"
+modelsMaxOutputTokens: "最大输出 tokens"
+modelsCostPerMillion: "每百万 tokens 价格"
+modelsCostInput: "输入"
+modelsCostOutput: "输出"
+modelsCostCacheRead: "缓存读取"
+modelsCostCacheWrite: "缓存写入"
+modelsNotProvided: "未提供"
+modelsEditCosts: "编辑价格"
+modelsFinishEditingCosts: "完成"
+modelsCostAllRequired: "请输入有效的非负价格；留空项将按 0 保存。"
+modelsAdvancedSettings: "高级设置"
+modelsProviderDefaults: "沿用 Provider 默认设置"
+modelsHeadersSummary:
+  message: "Headers：{count}"
+  placeholders:
+    count: {type: int}
+modelsCompatSummary:
+  message: "兼容性：{count}"
+  placeholders:
+    count: {type: int}
+modelsThinkingSummary:
+  message: "思考等级：{count}"
+  placeholders:
+    count: {type: int}
+modelsApiOverride: "API 覆盖"
+modelsBaseUrlOverride: "Base URL 覆盖"
+modelsHeaders: "Headers"
+modelsHeadersHelp: "覆盖 Provider 的同名 Header。"
+modelsImageMaxBytes: "图片大小上限（字节）"
+modelsImageMaxBytesHelp:
+  message: "单张图片 base64 后的上限，留空使用默认 {size}。"
+  placeholders:
+    size: {type: String}
+modelsImageMaxBytesSummary:
+  message: "图片 ≤ {size}"
+  placeholders:
+    size: {type: String}
+modelsCompatibility: "兼容性"
+modelsDeepSeekThinkingCompat: "DeepSeek 思考兼容"
+modelsDeveloperRole: "使用 developer role 传递系统提示词"
+modelsAdaptiveThinking: "Claude 自适应思考（effort 等级）"
+modelsThinkingLevelMap: "思考等级映射"
+modelsClearAll: "全部清除"
+modelsEnabledSection: "可用模型"
+modelsEnabledCount:
+  message: "已启用 {enabled}/{total}"
+  placeholders:
+    enabled: {type: int}
+    total: {type: int}
+modelsEnableAll: "全部开启"
+modelsDisableAll: "全部关闭"
+modelsEnableShown: "开启筛选结果"
+modelsDisableShown: "关闭筛选结果"
+modelsEnabledFilter: "筛选可用模型"
+modelsEnabledFilterPlaceholder:
+  message: "筛选 {count} 个模型…"
+  placeholders:
+    count: {type: int}
+modelsEnabledNoMatches: "没有匹配的模型。"
+modelsEnabledToggle:
+  message: "在模型选择器中显示 {model}"
+  placeholders:
+    model: {type: String}
+modelsEnabledProviderToggle:
+  message: "启用 {provider} 的全部模型"
+  placeholders:
+    provider: {type: String}
+modelsEnabledPinHint: "由 enabledModels 固定的思考等级，需在 settings.json 中修改。"
+modelsEnabledLastModel: "至少需要保留一个启用的模型。"
+modelsEnabledProjectScope: "当前项目的 .pi/settings.json 设置了 enabledModels 并覆盖全局配置，因此这些开关为只读。请直接修改该文件。"
+modelsEnabledUnavailable: "登录该 provider 后即可选择模型。"
+modelsRefreshCatalog: "刷新模型目录"
+modelsRefreshingCatalog: "刷新中…"
+modelsRefreshCatalogHint: "立即获取该 provider 当前发布的模型列表。pi 内置的列表固定在 pi-web 附带的 pi 版本上，新发布的模型需要刷新后才会出现。"
+modelsCatalogUpdated: "已从服务商更新模型列表。"
+modelsCatalogUnchanged: "模型列表已是最新。"
+modelsCatalogUnreachable: "无法获取模型目录。请检查网络连接和该 provider 的凭据后重试。"
+modelsCatalogOffline: "已设置 PI_OFFLINE，pi-web 不会联网获取模型目录。"
+modelsEnabledCustomEmpty: "这个 provider 目前没有可用模型。请先保存修改，并确认 API key 有效。"
+modelsEnabledStale:
+  message: "{count} 条失配"
+  placeholders:
+    count: {type: int}
+modelsEnabledStaleHint: "模型可用的前提是它所属的 provider 有可用凭证。凭证缺失、模型被改名或删除、配置是给别的机器写的，都会让条目匹配不到任何模型。"
+modelsEnabledPrune: "清理无效条目"
+modelsEnabledPruneHint: "删除匹配不到任何可用模型的配置条目，包括没有可用凭证的 provider 的条目：重新登录后不会恢复。其余保持不变。"
+modelsEnabledClear: "启用全部模型"
+modelsEnabledClearHint: "清除所有 provider 的模型筛选。"
+i18nTestingModel: "正在测试模型连接..."
+i18nConnected: "已连接"
+i18nFailed: "失败"
+i18nTest: "测试"
+i18nTestConnection: "测试模型连接"
+i18nProvider: "Provider"
+i18nModel: "模型"
+i18nProviderName: "Provider 名称"
+i18nRename: "重命名"
+i18nDefault: "默认"
+i18nDisabled: "已禁用"
+i18nNoResources: "没有资源"
+i18nUnknown: "未知"
+i18nInstalledVersion:
+  message: "已安装 {version}"
+  placeholders:
+    version: {type: String}
+i18nConfiguredVersion:
+  message: "已配置 {version}"
+  placeholders:
+    version: {type: String}
+i18nExtensions: "扩展"
+i18nPrompts: "提示词"
+i18nThemes: "主题"
+i18nResourceCount:
+  message: "{count}{label}"
+  placeholders:
+    count: {type: int}
+    label: {type: String}
+i18nExtensionShort: "扩展"
+i18nSkillShort: "技能"
+i18nPromptShort: "提示词"
+i18nThemeShort: "主题"
+i18nCustom: "自定义"
+i18nClearAll: "清除全部"
+i18nConnectedSuccessfully: "连接成功。"
+i18nNotConnected: "未连接"
+i18nConfigured: "已配置"
+i18nNotConfigured: "未配置"
+i18nOpeningBrowser: "正在打开浏览器…"
+i18nSubmit: "提交"
+i18nLogin: "登录"
+i18nRelogin: "重新登录"
+i18nDisconnect: "断开连接"
+i18nNetworkError: "网络错误"
+i18nContinuing: "继续中…"
+i18nSkills: "技能"
+i18nPlugins: "插件"
+i18nAddSkill: "添加技能"
+i18nAddPlugin: "添加插件"
+i18nSelectSkill: "选择技能"
+i18nSelectPackage: "选择包"
+i18nUpdateAvailable: "有可用更新"
+i18nUpToDate: "已是最新"
+i18nAutomaticChecksUnavailable: "自动检查不可用"
+i18nCheckFailed: "检查失败"
+i18nInstalled: "已安装"
+i18nStatus: "状态"
+i18nVersion: "版本"
+i18nDescription: "描述"
+i18nPackage: "包"
+i18nResources: "资源"
+i18nInstalledPath: "安装路径"
+i18nCwd: "CWD"
+i18nResolvedResources: "已解析资源"
+i18nReloadSession: "重新加载会话"
+i18nReloading: "重新加载中..."
+i18nPackageRemoved: "包已移除。"
+i18nPackageInstalled: "包已安装。"
+i18nPackageUpdated: "包已更新。"
+i18nPackagesUpdated: "所有插件已更新。"
+i18nUpdateAllPlugins: "更新全部"
+i18nUpdateAllPluginsHint: "更新所有已配置的插件"
+i18nPackageDisabled: "包已禁用。"
+i18nPackageEnabled: "包已启用。"
+i18nSessionReloaded: "会话已重新加载。"
+i18nThinking: "思考"
+i18nLargeMessageReveal:
+  message: "消息内容过大（{size}）。点击以纯文本查看 — 已禁用 markdown 渲染以避免页面卡顿。"
+  placeholders:
+    size: {type: String}
+i18nLoadingThinking: "正在加载思考内容..."
+i18nCopyMessage: "复制消息"
+i18nEditFromHere: "从此处编辑"
+i18nEditFromHereTitle: "从此处编辑，此会话内创建分支"
+i18nNewSession: "新会话"
+i18nNewSessionTitle: "新会话，从此处创建独立副本"
+i18nEstimatedTokens: "流式输出期间的估算 Token 数"
+i18nNoOutput: "（无输出）"
+i18nNoSummary: "（无摘要）"
+i18nConversationCompacted: "会话已压缩"
+i18nCompactedFromTokens:
+  message: "压缩前 {tokens} Token"
+  placeholders:
+    tokens: {type: int}
+i18nCompactionDescription: "此处之前的会话历史已压缩为以下摘要："
+i18nFileContext:
+  message: "文件上下文：{details}"
+  placeholders:
+    details: {type: String}
+i18nReadFiles: "读取的文件"
+i18nModifiedFiles: "修改的文件"
+i18nNoMessage: "（无消息）"
+i18nCollapse: "收起"
+i18nExpand: "展开"
+i18nHideDetails: "隐藏详情"
+i18nShowDetails: "显示详情"
+i18nThinkingUnavailable: "思考内容不可用"
+i18nBefore: "之前"
+i18nAfter: "之后"
+diffUnchangedLine: "1 行未改动"
+diffUnchangedLines:
+  message: "{count} 行未改动"
+  placeholders:
+    count: {type: int}
+i18nSessionComplete: "任务完成"
+i18nTaskFinished: "任务已完成。"
+i18nAttentionNeeded: "Pi 需要你的操作"
+i18nExtensionInputNeeded: "扩展正在等待你的输入。"

@@ -1,0 +1,3048 @@
+# en: written by scripts/gen_locales.py from lib/i18n/messages/en.ts.
+# Do not edit it by hand: change the TypeScript messages, then run
+#   python3 scripts/gen_locales.py && go tool nsgo i18n
+
+commonOk: "OK"
+commonLanguage: "Language"
+commonModels: "Models"
+commonSkills: "Skills"
+commonAgents: "Sub-agents"
+commonPlugins: "Plugins"
+commonSettings: "Settings"
+settingsTitle: "Settings"
+settingsGeneral: "General"
+settingsGeneralDescription: "Choose how Pi Web looks and which language it uses."
+settingsAppearance: "Appearance"
+settingsAppearanceDescription: "Select a theme or follow your system preference."
+settingsChatContentWidth: "Chat content width"
+settingsChatContentFontSize: "Chat & terminal font size"
+settingsTypography: "Fonts & layout"
+settingsUiFontFamily: "Interface font"
+settingsMonoFontFamily: "Monospace font"
+settingsUiFontPlaceholder: "System default"
+settingsMonoFontPlaceholder: "Default: Noto Sans Mono"
+settingsResetUiFont: "Reset interface font"
+settingsResetMonoFont: "Reset monospace font"
+settingsFontDescription: "Names of fonts installed on this device, comma-separated; leave blank for the default. The monospace font is used for code and the terminal. Saved in this browser only."
+settingsUiFontWeight: "Interface font weight"
+settingsMonoFontWeight: "Monospace font weight"
+settingsFontWeightThin: "Thin"
+settingsFontWeightExtraLight: "Extra Light"
+settingsFontWeightLight: "Light"
+settingsFontWeightRegular: "Regular"
+settingsFontWeightMedium: "Medium"
+settingsFontWeightSemiBold: "Semi Bold"
+settingsResetChatContentWidth: "Reset chat content width"
+settingsResetChatContentFontSize: "Reset chat & terminal font size"
+settingsChatContentWidthDescription: "Set the maximum width of messages and the composer."
+settingsThemeLight: "Light"
+settingsThemeDark: "Dark"
+settingsThemeMist: "Mist"
+settingsThemeRose: "Rose"
+settingsThemePine: "Pine"
+settingsThemeSand: "Sand"
+settingsThemeLilac: "Lilac"
+settingsThemeSlate: "Slate"
+settingsThemeDusk: "Dusk"
+settingsThemeEmber: "Ember"
+settingsThemeContrastLight: "High contrast light"
+settingsThemeContrastDark: "High contrast dark"
+settingsThemeZenburn: "Zenburn"
+settingsThemeSystem: "System"
+settingsThinkingDisplay: "Thinking display"
+settingsThinkingDisplayDescription: "Choose whether model reasoning blocks are expanded when messages load."
+settingsThinkingExpandedDefault: "Expand thinking blocks by default"
+settingsChat: "Chat"
+settingsEnterSendMode: "Send key"
+settingsEnterSendModeEnter: "Enter"
+settingsEnterSendModeCtrlEnter: "Ctrl/Cmd+Enter"
+settingsQuoteSelection: "Show actions for selected text"
+settingsSidebar: "Sidebar"
+settingsFilesPlacement: "File browser"
+settingsFilesPlacementBelow: "Below sessions"
+settingsFilesPlacementTab: "Separate tab"
+settingsFilesPlacementDescription: "Phones always use tabs."
+settingsLanguageDescription: "Choose the language used throughout the interface."
+settingsShellTool: "Shell tool"
+settingsShellToolDescription: "Choose which shell the model uses for commands. Direct ! and !! commands still use Bash."
+settingsPushPermission: "Background push (iOS home-screen app)"
+settingsPushPermissionDescription: "After adding this site to your home screen (iOS 16.4+), a system notification is shown on the lock screen when a session finishes while no window is visible. If notifications stop arriving, re-register here. Registration needs a user gesture, so it is never triggered automatically."
+settingsPushRegister: "Register push"
+settingsPushRegisterLoading: "Registering…"
+settingsPushRegistered: "✅ Push registered — background notifications are ready."
+settingsPushRegisterFailed: "❌ Registration failed:"
+settingsUsePowerShell: "Use PowerShell instead of Bash"
+settingsProjectRequired: "Open a project to configure this section"
+settingsBackTo:
+  message: "Back to {name}"
+  placeholders:
+    name: {type: String}
+settingsMcp: "MCP"
+authPrompt: "Sign in to continue"
+authPassword: "Password"
+authLogIn: "Log in"
+authLoggingIn: "Logging in..."
+authInvalidPassword: "Incorrect password"
+authLoginFailed: "Could not log in. Try again."
+authTooManyAttempts:
+  message: "Too many failed attempts. Try again in {seconds}s."
+  placeholders:
+    seconds: {type: int}
+authLogOut: "Log out"
+authLoggingOut: "Logging out..."
+authLogoutFailed: "Could not log out. Try again."
+skillsScopeGlobal: "global"
+skillsScopeProject: "project"
+skillsScopePath: "path"
+skillsGroupSwitchOff:
+  message: "Show every skill in {group} in the model prompt"
+  placeholders:
+    group: {type: String}
+skillsGroupSwitchOn:
+  message: "Hide every skill in {group} from the model prompt. They stay manually invocable."
+  placeholders:
+    group: {type: String}
+skillsBulkFailed:
+  message: "Could not change {count} of {total} skills:"
+  placeholders:
+    count: {type: int}
+    total: {type: int}
+skillsInstructions: "Instructions"
+skillsNoInstructions: "This skill has no instructions."
+skillsDocumentBack: "Back"
+pluginsGroupSwitchOff:
+  message: "Enable every {group} package"
+  placeholders:
+    group: {type: String}
+pluginsGroupSwitchOn:
+  message: "Disable every {group} package. A package with resource filters stays on, since disabling it removes them; use its own switch."
+  placeholders:
+    group: {type: String}
+pluginsBulkKeptFiltered:
+  message: "{count} filtered package(s) stayed on: disabling one removes its resource filters, so use its own switch."
+  placeholders:
+    count: {type: int}
+pluginsBulkEnabled: "Packages enabled."
+pluginsBulkDisabled: "Packages disabled."
+pluginsBulkFailed:
+  message: "Could not change {count} of {total} packages:"
+  placeholders:
+    count: {type: int}
+    total: {type: int}
+pluginsStatusLoaded: "loaded"
+pluginsStatusInstalled: "installed"
+pluginsStatusMissing: "missing"
+pluginsStatusDisabled: "disabled"
+pluginsDiagnostic: "1 diagnostic"
+pluginsDiagnostics:
+  message: "{count} diagnostics"
+  placeholders:
+    count: {type: int}
+configSource: "Source"
+configExamples: "Examples"
+configName: "Name"
+configSaveTo: "Save to"
+agentsClose: "Close"
+agentsBuiltInTitle: "Enable Pi Web built-in sub-agents"
+agentsBuiltInDescription: "Provides Pi Web's integrated Agent tools and disables a conflicting pi-subagents extension."
+agentsReloadRequired: "Reload the current session to apply this change."
+agentsReloadSession: "Reload session"
+agentsMaxConcurrent: "Concurrent sub-agents"
+agentsMaxConcurrentDescription: "Maximum prompts running at once per parent session."
+agentsReloading: "Reloading..."
+agentsLoading: "Loading sub-agents..."
+agentsNew: "New sub-agent"
+agentsEmpty: "Select or create a sub-agent profile"
+agentsName: "Sub-agent ID"
+agentsDisplayName: "Display name"
+agentsDescription: "Description"
+agentsPrompt: "System instructions"
+agentsTools: "Tools"
+agentsResources: "Resources"
+agentsLoadSkills: "Load skills"
+agentsLoadExtensions: "Load extensions"
+agentsMcp: "Connect MCP servers"
+agentsCodemode: "Code mode"
+agentsCodemodeInherit: "Follow parent session"
+agentsCodemodeOn: "Enabled"
+agentsCodemodeOff: "Disabled"
+agentsCodemodeHint: "\"Follow parent session\" matches the code mode the parent session is currently using. Tool permissions inside code mode still come from this profile's tool list. Changes apply to subagents started afterwards."
+agentsSkillsOnly:
+  message: "Loads only these skills: {skills}"
+  placeholders:
+    skills: {type: String}
+agentsSkillsNone: "Loads no skills: the skills list in the profile file is empty"
+agentsExtensionsOnly:
+  message: "Loads only these extensions: {extensions}"
+  placeholders:
+    extensions: {type: String}
+agentsExtensionsNone: "Loads no extensions: the extensions list in the profile file is empty"
+agentsMcpHint: "Subagents connect the MCP servers in mcp.json. With read-only tools, only MCP tools their server marks read-only run. Changes apply to subagents started afterwards."
+agentsMcpChatOnly: "MCP needs at least one tool, skills, or extensions: a chat-only subagent cannot use it."
+agentsModel: "Model override"
+agentsModelsLoading: "Loading models..."
+agentsModelUnavailable:
+  message: "{model} (unavailable)"
+  placeholders:
+    model: {type: String}
+agentsThinking: "Thinking"
+agentsMaxTurns: "Max turns"
+agentsInherit: "Parent default"
+agentsEnable: "Enable sub-agent"
+agentsDisable: "Disable sub-agent"
+agentsBuiltinPath: "Built-in profile"
+agentsInheritContext: "Inherit parent context"
+agentsBackground: "Run in background by default"
+agentsDuplicate: "Duplicate"
+agentsCopyName:
+  message: "{name} copy"
+  placeholders:
+    name: {type: String}
+agentsDelete: "Delete"
+agentsDeleteConfirm:
+  message: "Delete {name}?"
+  placeholders:
+    name: {type: String}
+agentsSave: "Save"
+agentsSaving: "Saving..."
+agentsScopeBuiltin: "built-in"
+agentsScopeGlobal: "global"
+agentsScopeWorkspace: "workspace"
+agentsScopeProject: "project"
+agentsOverridden: "Overridden"
+subagentOpenTab: "View sub-agent work in side panel"
+subagentCloseTab: "Close sub-agent side panel"
+subagentTabLabel:
+  message: "Sub-agent {name}"
+  placeholders:
+    name: {type: String}
+sessionpanelLoading: "Loading…"
+sessionpanelMissing: "This session no longer exists."
+sessionpanelError: "Could not load this session."
+sidechatDivider: "Side chat starts here"
+sidechatNew: "New side chat"
+agentswitcherOpenInMainChat: "Open in the main chat"
+sidechatTitle: "Side chat"
+sidechatTabLabel: "Side chat"
+sidechatOpenTab: "Open side chat in side panel"
+sidechatCloseTab: "Close side chat panel"
+sidechatErrorNoSession: "No active session to fork into a side chat"
+sidechatErrorNotFound: "The session was not found"
+sidechatErrorUnsaved: "This session has not been saved yet. Send a message first."
+sidechatErrorEmpty: "Nothing to inherit: the session has no messages"
+sidechatErrorSubagent: "A sub-agent session cannot start a side chat"
+sidechatErrorSide: "A side chat cannot start another side chat"
+agentswitcherSideChat: "Side chat"
+codemodeCalls: "Tool calls"
+codemodeCallCount:
+  message: "{count} calls"
+  placeholders:
+    count: {type: int}
+codemodeCallCountOne: "1 call"
+codemodeShowEarlierCalls:
+  message: "Show {count} earlier calls"
+  placeholders:
+    count: {type: int}
+codemodeOmittedCalls:
+  message: "{count} earlier calls not shown"
+  placeholders:
+    count: {type: int}
+codemodeModelCost:
+  message: "Model calls: {cost}"
+  placeholders:
+    cost: {type: String}
+codemodeStatusRunning: "Running"
+codemodeStatusOk: "Succeeded"
+codemodeStatusError: "Failed"
+codemodeStatusCancelled: "Cancelled"
+agentswitcherTitle: "Agents"
+agentswitcherTitleRunning:
+  message: "Agents: {count} running"
+  placeholders:
+    count: {type: int}
+agentswitcherMain: "Main agent"
+agentswitcherSubagent: "Sub-agent"
+agentswitcherCurrent: "Current"
+agentswitcherCountOne:
+  message: "{count} agent"
+  placeholders:
+    count: {type: int}
+agentswitcherCount:
+  message: "{count} agents"
+  placeholders:
+    count: {type: int}
+agentswitcherRunningCount:
+  message: "{count} running"
+  placeholders:
+    count: {type: int}
+agentswitcherTokens:
+  message: "{count} tokens"
+  placeholders:
+    count: {type: int}
+agentswitcherTotalUsage: "Total"
+agentswitcherTotalUsageHint: "Main agent and all sub-agents"
+agentswitcherSearch: "Search agents"
+agentswitcherNoMatches: "No matching agents"
+agentswitcherStatusStarting: "Starting"
+agentswitcherStatusRunning: "Running"
+agentswitcherStatusCompleted: "Completed"
+agentswitcherStatusFailed: "Failed"
+agentswitcherStatusAborted: "Aborted"
+agentswitcherStatusInterrupted: "Interrupted"
+appupdateReleaseNotes:
+  message: "Pi Web v{version} is available. View release notes"
+  placeholders:
+    version: {type: String}
+sidebarHide: "Hide sidebar"
+sidebarShow: "Show sidebar"
+themeLight: "Theme: Light"
+themeDark: "Theme: Dark"
+themeMist: "Theme: Mist"
+themeRose: "Theme: Rose"
+themePine: "Theme: Pine"
+themeAuto: "Theme: System"
+historyFull: "Full history"
+historyUnsaved: "Full history is available after the session is saved"
+historyLabel: "Full history"
+titleGenerating: "Generating..."
+titleUpdated: "Title updated"
+titleFailed: "Generation failed"
+titleGenerate: "Generate title"
+titleUnsaved: "Title generation is available after the session is saved"
+titleNoMessages: "Send a message before naming this session"
+titleGenerateSession: "Generate a session title"
+systemPrompt: "System prompt"
+systemEmpty: "System prompt is empty (tools are disabled)"
+systemLoad: "System prompt has not loaded yet"
+systemLoading: "Loading system prompt…"
+systemLabel: "System"
+toolsLabel: "Tools"
+toolsTitle: "Tool definitions"
+toolsDetails: "Tool definition details"
+toolsLoad: "Tool definitions have not loaded yet"
+toolsLoading: "Loading tool definitions…"
+toolsNoTools: "No active tools"
+toolsDescription: "Description"
+toolsParameters: "Parameters"
+toolsParameterCount:
+  message: "{count} parameters"
+  placeholders:
+    count: {type: int}
+toolsNoParameters: "No parameters"
+toolsRequired: "Required"
+toolsOptional: "Optional"
+toolsAllowedValues: "Allowed"
+toolsDefaultValue: "Default"
+toolsGuidelines: "Prompt guidelines"
+sessionInfo: "Session info"
+sessionName: "Name"
+sessionFile: "Session File"
+sessionInMemory: "In-memory"
+sessionId: "ID"
+sessionUser: "User"
+sessionAssistant: "Assistant"
+sessionToolCalls: "Tool Calls"
+sessionToolResults: "Tool Results"
+sessionTotal: "Total"
+sessionInput: "Input"
+sessionOutput: "Output"
+sessionCacheRead: "Cache Read"
+sessionCacheWrite: "Cache Write"
+sessionCost: "Cost"
+sessionContext: "Context"
+sessionCacheHitRate: "Avg cache hit rate"
+sessionCopy:
+  message: "Copy {value}"
+  placeholders:
+    value: {type: String}
+sessionCopied: "Copied"
+sessionTitle: "Session info"
+sessionLoad: "Send a message or run /session to load session info"
+sessionInfoSection: "Session Info"
+sessionProjectSection: "Project Info"
+sessionMessages: "Messages"
+sessionTokens: "Tokens"
+sessionTotalActive: "Active Time"
+sessionCopyFile: "Copy file path"
+sessionCopyId: "Copy session ID"
+sessionProjectDir: "Project Dir"
+sessionGitBranch: "Git Branch"
+sessionGitWorktree: "Worktree"
+sessionCopyProjectDir: "Copy project directory"
+sessionCopyGitBranch: "Copy git branch"
+sessionCopyGitWorktree: "Copy worktree path"
+debugTitle: "Debug"
+debugPanelLabel: "Debug: connections and server state"
+debugFailed: "The debug panel could not be shown. Close it and open it again."
+debugReading: "Reading…"
+debugCopyJson: "Copy JSON"
+debugCopyTitle: "Copy what the panel shows as JSON"
+debugCopied: "Copied"
+debugReadOnly: "Read-only: this panel starts, keeps alive or reconnects nothing. It reads this page and asks GET /api/agent/debug every 2 s while it is open and the page is visible."
+debugYes: "yes"
+debugNo: "no"
+debugNone: "none"
+debugUnknown: "unknown"
+debugNotYet: "not yet"
+debugTimes:
+  message: "{count}×"
+  placeholders:
+    count: {type: int}
+debugDurationMs:
+  message: "{count} ms"
+  placeholders:
+    count: {type: int}
+debugDurationSeconds:
+  message: "{count}s"
+  placeholders:
+    count: {type: int}
+debugDurationMinutes:
+  message: "{count}m"
+  placeholders:
+    count: {type: int}
+debugDurationHours:
+  message: "{count}h"
+  placeholders:
+    count: {type: int}
+debugDurationDays:
+  message: "{count}d"
+  placeholders:
+    count: {type: int}
+debugDurationMinutesSeconds:
+  message: "{minutes}m {seconds}s"
+  placeholders:
+    minutes: {type: int}
+    seconds: {type: int}
+debugDurationHoursMinutes:
+  message: "{hours}h {minutes}m"
+  placeholders:
+    hours: {type: int}
+    minutes: {type: int}
+debugDurationDaysHours:
+  message: "{days}d {hours}h"
+  placeholders:
+    days: {type: int}
+    hours: {type: int}
+debugTimeAgo:
+  message: "{time} ago"
+  placeholders:
+    time: {type: String}
+debugTimeIn:
+  message: "in {time}"
+  placeholders:
+    time: {type: String}
+debugTimeDue: "due"
+debugPollWaiting: "Waiting for the server…"
+debugPollInFlight:
+  message: "No answer yet after {time}"
+  placeholders:
+    time: {type: String}
+debugPollTimeout: "No answer in 5 s: the browser's connections to this server may all be taken (HTTP/1.1 allows six per origin, for all tabs)"
+debugPollHttp:
+  message: "The server answered HTTP {status}"
+  placeholders:
+    status: {type: String}
+debugPollNetwork: "The request failed (network or server down)"
+debugPollInvalid: "The server's answer is not a debug snapshot"
+debugPollHidden: "Paused while the page is hidden"
+debugHealthOk: "OK"
+debugHealthIssues:
+  message: "Issues: {count}"
+  placeholders:
+    count: {type: int}
+debugIssuePool:
+  message: "This page holds {count} of the six connections HTTP/1.1 allows per origin, for all tabs"
+  placeholders:
+    count: {type: int}
+debugIssueNoServerStream: "The server lists no event stream from this page"
+debugSectionPage: "This page"
+debugSectionStream: "SSE"
+debugSectionLease: "Lease"
+debugSectionServer: "Server"
+debugPageHttp1:
+  message: "{protocol} · six connections per origin, shared by all tabs"
+  placeholders:
+    protocol: {type: String}
+debugPageDebugPoll: "Debug poll"
+debugPageHiddenCount:
+  message: "hidden {count}×"
+  placeholders:
+    count: {type: int}
+debugPageLastHidden:
+  message: "last hidden {time}"
+  placeholders:
+    time: {type: String}
+debugPageRunningPoll: "Sidebar poll"
+debugPagePollCounts:
+  message: "{count} polls · {failures} failed"
+  placeholders:
+    count: {type: int}
+    failures: {type: int}
+debugSparkTitle:
+  message: "{count} answers · median {median} · max {max}"
+  placeholders:
+    count: {type: int}
+    median: {type: int}
+    max: {type: int}
+debugPagePollError: "failed"
+debugPageSourceAgent: "Agent"
+debugPageSourceFileWatch: "File watch"
+debugPageSourceTerminal: "Terminal"
+debugPageSourceConnecting: "connecting"
+debugPageSourceOpen: "open"
+debugPageSourceCounts:
+  message: "opened {opens}× · {errors} errors"
+  placeholders:
+    opens: {type: int}
+    errors: {type: int}
+debugBoxFile: "File"
+debugBoxTerminal: "Term"
+debugBoxProvider: "Provider"
+debugStreamNoChat: "No chat is mounted"
+debugStreamReaderFailed: "The chat's state could not be read (reload the page)"
+debugStreamNoConnection: "no connection yet"
+debugStreamStateIdle: "idle"
+debugStreamStateConnecting: "connecting"
+debugStreamStateConnected: "connected"
+debugStreamStateRetrying: "retrying"
+debugStreamReadyState:
+  message: "readyState {value}"
+  placeholders:
+    value: {type: String}
+debugStreamOpened: "Opened"
+debugStreamConnected: "Connected"
+debugStreamLastData: "Last data"
+debugStreamDataAgo:
+  message: "data {time} ago"
+  placeholders:
+    time: {type: String}
+debugStreamHeartbeat:
+  message: "heartbeat {time}"
+  placeholders:
+    time: {type: String}
+debugStreamEvents: "Events"
+debugStreamOpens: "Opens / retries"
+debugStreamOpensRetries:
+  message: "{opens} / {retries}"
+  placeholders:
+    opens: {type: int}
+    retries: {type: int}
+debugStreamRetryDue:
+  message: "retry {time}"
+  placeholders:
+    time: {type: String}
+debugStreamLastError: "Last error"
+debugStreamErrorReadyTimeout: "not connected in time"
+debugStreamErrorStartup: "startup error"
+debugStreamErrorError: "connection error"
+debugStreamErrorStale: "stale (watchdog)"
+debugStreamLastClose: "Last close"
+debugStreamCloseReleased: "released while hidden"
+debugStreamCloseGraceEnd: "grace ran out"
+debugStreamCloseSendFailed: "a send failed"
+debugStreamCloseSetTools: "tools changed"
+debugStreamCloseRebuilt: "server rebuilt the session"
+debugStreamCloseDeselected: "another session shown"
+debugStreamCloseStuck: "stuck connecting"
+debugStreamCloseReplaced: "replaced by a new stream"
+debugStreamWatchdogArmed:
+  message: "armed · stale after {time}"
+  placeholders:
+    time: {type: String}
+debugStreamWanted: "Page wants it"
+debugStreamReleased: "Released while hidden"
+debugStreamReattached: "Reattached"
+debugStreamReattachVisible: "page visible"
+debugStreamReattachActivity: "activity"
+debugStreamGrace: "Grace before close"
+debugRunBash: "! command"
+debugRunCompacting: "compacting"
+debugRunStreaming: "streaming"
+debugRunPrompt: "prompt"
+debugRunPending:
+  message: "{count} more prompts in flight"
+  placeholders:
+    count: {type: int}
+debugRunRetrying: "retrying"
+debugRunQueued:
+  message: "{count} queued messages"
+  placeholders:
+    count: {type: int}
+debugRunWaitingForMcp: "waiting for MCP"
+debugRunTools:
+  message: "{count} tools running"
+  placeholders:
+    count: {type: int}
+debugRunMutating:
+  message: "{count} mutating commands"
+  placeholders:
+    count: {type: int}
+debugRunReplacement:
+  message: "replaced by {kind}"
+  placeholders:
+    kind: {type: String}
+debugRunStatusQueued: "Queued"
+debugLeaseNoHolder: "none yet"
+debugLeaseLast: "Last renewal"
+debugLeaseOutcomeReply: "answered"
+debugLeaseOutcomeUnanswered: "unanswered"
+debugLeaseOutcomeError: "failed"
+debugLeaseNext: "Next renewal"
+debugLeaseRenewsIn:
+  message: "renews in {time}"
+  placeholders:
+    time: {type: String}
+debugLeaseRenewing: "renewing"
+debugLeaseInFlight:
+  message: "waiting {time} for an answer"
+  placeholders:
+    time: {type: String}
+debugLeaseEvery:
+  message: "every {time}"
+  placeholders:
+    time: {type: String}
+debugLeaseCountsValue:
+  message: "{requests} sent · {unanswered} unanswered · {errors} failed"
+  placeholders:
+    requests: {type: int}
+    unanswered: {type: int}
+    errors: {type: int}
+debugHolderThisPage: "this page"
+debugHolderOtherPage: "other page"
+debugHolderNone: "no page id"
+debugPagesTitle: "Connected pages"
+debugPagesUnknownClient: "unknown browser"
+debugStateAlive: "alive"
+debugStateClosing: "closing"
+debugStateNone: "no wrapper"
+debugServerNoSession: "No session selected"
+debugServerStale: "from before a reload"
+debugServerSubagent: "subagent"
+debugServerChatOnly: "Chat only"
+debugServerStarting: "starting"
+debugServerNoWrapper: "none (not running on the server)"
+debugServerStarted: "Started"
+debugServerClosingSince:
+  message: "closing {time}"
+  placeholders:
+    time: {type: String}
+debugServerLastStart:
+  message: "last {time}"
+  placeholders:
+    time: {type: String}
+debugServerLastClosed:
+  message: "closed {time}"
+  placeholders:
+    time: {type: String}
+debugServerUiRequests:
+  message: "{count} UI requests"
+  placeholders:
+    count: {type: int}
+debugServerCustomUis:
+  message: "{count} custom UIs"
+  placeholders:
+    count: {type: int}
+debugServerExtensions: "Extensions"
+debugServerExtensionsBinding: "binding"
+debugServerExtensionsBound: "bound"
+debugServerExtensionsFailed: "failed"
+debugServerExtensionsNone: "none"
+debugServerIdle: "Reap countdown"
+debugServerIdleTimeout:
+  message: "timeout {time}"
+  placeholders:
+    time: {type: String}
+debugServerIdleDisabled: "disabled"
+debugServerIdleReset:
+  message: "reset {time}"
+  placeholders:
+    time: {type: String}
+debugServerIdleHint: "Starts over at each renewal, command and run end; when it runs out, a run or an extension keeping the session alive starts it again"
+debugServerIdleForced: "Stopped: the session closes when it runs out, even while it runs"
+debugServerListeners: "Listeners"
+debugServerLastEvent: "Last event"
+debugServerLastCommand: "Last command"
+debugServerProviders: "Liveness providers"
+debugServerProvidersUnknown: "cannot be listed (server code from before a reload)"
+debugServerProviderActive: "active"
+debugServerProviderInactive: "inactive"
+debugServerProviderError: "error"
+debugServerByFile: "by file"
+debugServerStreamConnected:
+  message: "connected {time}"
+  placeholders:
+    time: {type: String}
+debugServerStreamStarting: "starting the session"
+debugServerLastWrite:
+  message: "last write {time}"
+  placeholders:
+    time: {type: String}
+debugServerDropped:
+  message: "{count} dropped"
+  placeholders:
+    count: {type: int}
+debugServerQueued:
+  message: "{size} queued"
+  placeholders:
+    size: {type: String}
+debugServerSubagents: "Subagents"
+debugServerSubagentsActive: "a run is unsettled"
+debugServerBackground: "background"
+debugServerResumed: "resumed"
+debugServerAbortRequested: "abort requested"
+debugServerNotifying:
+  message: "notifying {parent}"
+  placeholders:
+    parent: {type: String}
+debugServerMcpDisposed: "disposed"
+debugServerMcpRelease:
+  message: "idle release {time}"
+  placeholders:
+    time: {type: String}
+debugServerMcpProblems:
+  message: "{count} problems"
+  placeholders:
+    count: {type: int}
+debugServerMcpError: "error"
+debugServerMcpReleased: "released"
+debugGlobalUptime: "Uptime"
+debugGlobalTimers: "Timers"
+debugGlobalTimersValue:
+  message: "idle {idle} · heartbeat {heartbeat}"
+  placeholders:
+    idle: {type: String}
+    heartbeat: {type: String}
+debugGlobalWrappersValue:
+  message: "{alive} alive · {closing} closing · {starting} starting"
+  placeholders:
+    alive: {type: int}
+    closing: {type: int}
+    starting: {type: int}
+debugGlobalStreamsValue:
+  message: "{total} from {pages} pages"
+  placeholders:
+    total: {type: int}
+    pages: {type: String}
+debugGlobalStreamCount:
+  message: "{count} streams"
+  placeholders:
+    count: {type: int}
+debugGlobalStreamTotal:
+  message: "{count} total"
+  placeholders:
+    count: {type: int}
+debugGlobalFileWatches: "File watches"
+debugGlobalTerminals: "Terminals"
+debugGlobalTerminalsValue:
+  message: "{count} · {listeners} streams · {detached} detached · {exited} exited"
+  placeholders:
+    count: {type: int}
+    listeners: {type: int}
+    detached: {type: int}
+    exited: {type: int}
+debugGlobalCleanup:
+  message: "cleanup {time}"
+  placeholders:
+    time: {type: String}
+debugSessionsCurrent: "this chat"
+debugSessionsUnlisted: "Not in the session list"
+debugSessionsHeadSession: "Session"
+debugSessionsHeadHolders: "Held by"
+debugOverlaySubagentId:
+  message: "{id} (subagent)"
+  placeholders:
+    id: {type: String}
+debugOverlayRunning: "running"
+debugOverlayAwaiting: "awaiting input"
+debugOverlayStreams:
+  message: "{count} event streams"
+  placeholders:
+    count: {type: int}
+debugOverlayProviders:
+  message: "{count} liveness providers"
+  placeholders:
+    count: {type: int}
+debugOverlayIdle:
+  message: "reap countdown {time}"
+  placeholders:
+    time: {type: String}
+debugOverlayClosesIn:
+  message: "closes in {time} (after Stop)"
+  placeholders:
+    time: {type: String}
+debugOverlayStarts:
+  message: "started {count}×"
+  placeholders:
+    count: {type: int}
+workspaceOpening: "Opening workspace..."
+workspaceUnable: "Unable to open workspace"
+workspaceSelectSession: "Select a session from the sidebar"
+workspaceGetStarted: "Get Started"
+workspaceSelectProject: "Select a project directory from the sidebar"
+workspaceAddModels: "Open Settings at the bottom, then choose Models"
+workspaceStepProject: "Select a project directory from the sidebar"
+workspaceStepModels: "Open Settings at the bottom, then choose Models"
+workspaceNewSessionContext: "New session location"
+workspaceProject: "Project"
+filesHidePanel: "Hide file panel"
+filesExpandPanel: "Expand file panel"
+filesRestorePanelWidth: "Restore file panel width"
+filesShowPanel: "Show file panel"
+filesNoneOpen: "No file open"
+layoutResizeSidebar: "Resize sidebar"
+layoutResizeFilePanel: "Resize file panel"
+layoutResizeHint: "Drag to resize. Double-click or press Enter to reset."
+sidebarNew: "New"
+sidebarNewSessionTitle:
+  message: "New session in {path}"
+  placeholders:
+    path: {type: String}
+sidebarRefresh: "Refresh"
+sidebarSelectProject: "Select project…"
+sidebarFilterProjects: "Filter projects…"
+sidebarNoMatchingProjects: "No matching projects"
+sidebarUseDefaultDirectory: "Use default directory"
+sidebarCustomPath: "Custom path…"
+directorypickerSelectDirectory: "Select directory"
+directorypickerGoToParent: "Go to parent directory"
+directorypickerDirectoryPath: "Directory path"
+directorypickerGoToDirectory: "Go to directory"
+directorypickerGo: "Go"
+directorypickerLoadingDirectories: "Loading directories…"
+directorypickerNoSubdirectories: "No subdirectories"
+directorypickerOpenBeforeSelecting: "Open this path before selecting it"
+directorypickerSelectCurrentDirectory: "Select current directory"
+directorypickerSelectThisFolder: "Select this folder"
+directorypickerNoDrives: "No drives found"
+directorypickerNewDirectory: "New directory"
+directorypickerCreateDirectory: "Create directory"
+directorypickerDirectoryName: "Directory name"
+directorypickerDirectoryNamePlaceholder: "Enter a directory name"
+directorypickerCreate: "Create"
+directorypickerCreating: "Creating…"
+sidebarChecking: "Checking…"
+sidebarOpen: "Open"
+sidebarCancel: "Cancel"
+sidebarOpenRepoRoot: "Open repo root"
+sidebarOpenRepoRootTitle: "Open the repository root to manage worktrees."
+sidebarWorktrees: "Worktrees..."
+sidebarCheckingWorktrees: "Checking worktrees for this directory."
+sidebarFilterWorktrees: "Filter worktrees…"
+sidebarNoMatchingWorktrees: "No matching worktrees"
+sidebarSwitchWorktree: "Switch worktree"
+sidebarMain: "main"
+sidebarForceRemoveCheckout: "Has changes or submodules. Force remove checkout?"
+sidebarForce: "Force"
+sidebarCreateWorktreeTitle: "Create a worktree checkout for a branch"
+sidebarNewWorktree: "New worktree…"
+sidebarBranchName: "branch name"
+sidebarCreating: "Creating…"
+sidebarWorktreeBranchInUse:
+  message: "Branch “{branch}” is already checked out at {path}."
+  placeholders:
+    branch: {type: String}
+    path: {type: String}
+sidebarWorktreeBranchMissing:
+  message: "Branch “{branch}” still belongs to a worktree whose folder is gone ({path}). Run git worktree prune to clear it."
+  placeholders:
+    branch: {type: String}
+    path: {type: String}
+sidebarCreate: "Create"
+sidebarUploadFilesTitle: "Upload files to project root"
+sidebarUploadFiles: "Upload files"
+sidebarRefreshExplorer: "Refresh file list"
+sidebarShowIgnoredFiles: "Show ignored files"
+sidebarOpenInExplorer: "Open in Explorer"
+sidebarOpenInFinder: "Open in Finder"
+sidebarOpenInFileManager: "Open in file manager"
+sidebarOpenInExplorerRemoteOnly: "Only available when Pi Web runs on this computer"
+sidebarOpenInExplorerUnsupported: "Not supported on this platform"
+sidebarSearchFiles: "Search files"
+sidebarSearchFilesPlaceholder: "Search files…"
+sidebarSearchingFiles: "Searching…"
+sidebarNoMatchingFiles: "No matching files"
+sidebarClearSearch: "Clear search"
+sidebarSearchSessions: "Search all conversations..."
+sidebarToggleSessionSearch: "Search conversations"
+sidebarSessionSearching: "Searching..."
+sidebarSessionSearchEmpty: "No matching conversations"
+sidebarSessionSearchCount:
+  message: "{count} matching conversations"
+  placeholders:
+    count: {type: int}
+sidebarSessionSearchPartial: "Search limit reached. Results may be incomplete."
+sidebarSessionSearchFailed: "Could not search conversations"
+sidebarChangedFiles:
+  message: "{count} changed files"
+  placeholders:
+    count: {type: int}
+sidebarLoading: "Loading..."
+sidebarNoSessions: "No sessions found"
+sidebarAgentRunning: "Agent running…"
+sidebarAgentAwaitingInput: "Agent waiting for your input"
+sidebarNewActivity: "New activity"
+sidebarNewSessionActivity: "New session activity"
+sidebarDeleteSession:
+  message: "Delete {title}?"
+  placeholders:
+    title: {type: String}
+sidebarRename: "Rename"
+sidebarDelete: "Delete"
+sidebarMessagesCount:
+  message: "{count} msgs"
+  placeholders:
+    count: {type: int}
+sidebarWorktreePath:
+  message: "Worktree: {path}"
+  placeholders:
+    path: {type: String}
+sidebarRemoveWorktreeTitle:
+  message: "Remove worktree checkout {path}; the branch is kept"
+  placeholders:
+    path: {type: String}
+sidebarRemoveWorktreeHeading:
+  message: "Remove {name}"
+  placeholders:
+    name: {type: String}
+sidebarBrandLabel:
+  message: "Pi Web, versions: web {app}, pi {pi}"
+  placeholders:
+    app: {type: String}
+    pi: {type: String}
+sidebarTabsLabel: "Sidebar view"
+sidebarTabSessions: "Sessions"
+sidebarTabFiles: "Files"
+sidebarResizeFiles: "Resize file browser"
+sidebarResizeFilesHint: "Drag to resize. Double-click or press Enter to reset."
+sidebarFileActions: "File actions"
+sidebarCollapseOtherGroups: "Collapse other projects"
+sidebarExpandAllGroups: "Expand all projects"
+sidebarCollapseAllGroups: "Collapse all projects"
+sidebarPinned: "Pinned"
+sidebarPinnedProject: "Pinned"
+sidebarPin: "Pin"
+sidebarUnpin: "Unpin"
+sidebarPinProject: "Pin project"
+sidebarUnpinProject: "Unpin project"
+sidebarRenameProject: "Rename…"
+sidebarResetProjectName: "Reset name"
+sidebarProjectName: "Project name"
+sidebarMoveProjectUp: "Move up"
+sidebarMoveProjectDown: "Move down"
+sidebarArchive: "Archive"
+sidebarUnarchive: "Unarchive"
+sidebarRestore: "Restore"
+sidebarArchived: "Archived"
+sidebarArchivedCount:
+  message: "Archived · {count}"
+  placeholders:
+    count: {type: int}
+sidebarArchivedToast:
+  message: "Archived “{title}”"
+  placeholders:
+    title: {type: String}
+sidebarArchivedManyToast:
+  message: "Archived {count} sessions"
+  placeholders:
+    count: {type: int}
+sidebarRestoredToast:
+  message: "Restored “{title}”"
+  placeholders:
+    title: {type: String}
+sidebarRestoredManyToast:
+  message: "Restored {count} sessions"
+  placeholders:
+    count: {type: int}
+sidebarUndo: "Undo"
+sidebarViewArchive: "View"
+sidebarDismiss: "Dismiss"
+sidebarMarkRead: "Mark as read"
+sidebarMarkUnread: "Mark as unread"
+sidebarMoreActions: "More actions"
+sidebarSessionActions: "Session actions"
+sidebarShowMore:
+  message: "Show more · {count}"
+  placeholders:
+    count: {type: int}
+sidebarShowLess: "Show less"
+sidebarOpenOtherProject: "Open another project…"
+sidebarNewSessionInProject:
+  message: "New session in {name}"
+  placeholders:
+    name: {type: String}
+sidebarProjectActions:
+  message: "{name} actions"
+  placeholders:
+    name: {type: String}
+sidebarArchiveOlderThanWeek:
+  message: "Archive sessions older than 7 days · {count}"
+  placeholders:
+    count: {type: int}
+sidebarOpenInFilesTab: "Open in Files"
+sidebarViewArchived:
+  message: "View archived · {count}"
+  placeholders:
+    count: {type: int}
+sidebarArchiveActions: "Archive actions"
+sidebarArchivedProjectActions:
+  message: "Archived sessions of {name}"
+  placeholders:
+    name: {type: String}
+sidebarRestoreAllArchived:
+  message: "Restore all · {count}"
+  placeholders:
+    count: {type: int}
+sidebarDeleteAllArchived:
+  message: "Delete all… · {count}"
+  placeholders:
+    count: {type: int}
+sidebarDeleteOldArchived:
+  message: "Delete archived over 30 days ago… · {count}"
+  placeholders:
+    count: {type: int}
+sidebarNoLiveSessions: "No sessions yet"
+sidebarPinToKeep: "Pin to keep"
+sidebarNoArchived: "No archived sessions"
+sidebarBackToSessions: "Back"
+sidebarCannotArchiveRunning: "Running"
+sidebarNewWorktreeForSession: "New worktree for a new session"
+sidebarProjectAndWorktree: "Project and worktree"
+sidebarUiStateFailed:
+  message: "Couldn’t save: {error}"
+  placeholders:
+    error: {type: String}
+sidebarSessionNotFound: "This session no longer exists"
+sidebarFork: "Fork"
+sidebarOpenInNewTab: "Open in new tab"
+sidebarForkedToast:
+  message: "Forked “{title}”"
+  placeholders:
+    title: {type: String}
+sidebarForkNotFound: "This session no longer exists"
+sidebarForkUnsaved: "This session hasn’t been saved yet. Send a message first."
+sidebarForkEmpty: "Nothing to fork: this branch has no messages yet"
+sidebarForkUnavailable: "This session can’t be forked"
+sidebarForkFailed:
+  message: "Couldn’t fork: {error}"
+  placeholders:
+    error: {type: String}
+sidebarDeleteProjectSessions:
+  message: "Delete all sessions… · {count}"
+  placeholders:
+    count: {type: int}
+sidebarDeleteProjectSessionsHeading:
+  message: "Delete all sessions in {name}"
+  placeholders:
+    name: {type: String}
+sidebarDeleteProjectSessionsMessage: "Pinned and archived sessions go too. This can’t be undone."
+sidebarDeleteProjectSessionsRunning:
+  message: "Sessions running now are kept ({count})."
+  placeholders:
+    count: {type: int}
+sidebarDeleteArchivedInProjectHeading:
+  message: "Delete archived sessions in {name}"
+  placeholders:
+    name: {type: String}
+sidebarDeleteAllArchivedHeading: "Delete all archived sessions"
+sidebarDeleteOldArchivedHeading: "Delete sessions archived over 30 days ago"
+sidebarDeleteArchivedMessage: "Their subagent sessions go too. This can’t be undone."
+sidebarDeleteCount:
+  message: "Delete {count}"
+  placeholders:
+    count: {type: int}
+sidebarDeletingSessions: "Deleting sessions…"
+sidebarDeletedOneToast: "Deleted 1 session"
+sidebarDeletedManyToast:
+  message: "Deleted {count} sessions"
+  placeholders:
+    count: {type: int}
+sidebarKeptRunningToast:
+  message: "kept {count} running"
+  placeholders:
+    count: {type: int}
+sidebarDeleteFailed:
+  message: "Couldn’t delete: {error}"
+  placeholders:
+    error: {type: String}
+filesModified: "Modified"
+filesAdded: "Added"
+filesDeleted: "Deleted"
+filesRenamed: "Renamed"
+filesUntracked: "Untracked"
+filesConflict: "Conflict"
+filesNewlyUploaded: "Newly uploaded"
+filesContainsChangedFiles: "Contains changed files"
+filesHiddenIgnored: "Ignored by Git"
+filesHiddenExcluded: "Hidden by default (generated or dependency folder)"
+filesInsertPath: "Insert path into chat"
+filesMention: "mention"
+filesDownload: "Download file"
+filesBinary: "binary"
+filesBinaryNoPreview: "Binary file: no preview. Download it to open it."
+filesOutsideLink:
+  message: "Links to {target}, outside this project"
+  placeholders:
+    target: {type: String}
+filesOutsideLinkEncloses: "That folder contains this project or your home folder."
+filesAllowOutsideLink: "Allow browsing"
+filesAllowOutsideLinkTitle:
+  message: "Browse {target} until Pi Web restarts, the same as selecting it as a project directory"
+  placeholders:
+    target: {type: String}
+filesAllowEnclosingLinkConfirm:
+  message: "{target} contains this project or your home folder. Allowing it lets Pi Web browse everything below it until it restarts. Continue?"
+  placeholders:
+    target: {type: String}
+filesDismissError: "Dismiss error"
+filesAddUploadedFile: "Add uploaded file to chat"
+filesAddAllUploadedFiles: "Add all uploaded files to chat"
+filesDismissUploadResults: "Dismiss upload results"
+filesLoading: "Loading files..."
+filesNoFiles: "No files found"
+filesChangedCount:
+  message: "{count} files"
+  placeholders:
+    count: {type: int}
+filesChangeStats:
+  message: "{count} changed files, {additions} lines added, {deletions} lines deleted"
+  placeholders:
+    count: {type: int}
+    additions: {type: int}
+    deletions: {type: int}
+filesViewAsTree: "View as Tree"
+filesViewAsList: "View as List"
+filesConflictSummary:
+  message: "{count} file{countSuffix} already exist: {files}"
+  placeholders:
+    count: {type: int}
+    countSuffix: {type: String}
+    files: {type: String}
+filesCannotReplace:
+  message: "Cannot replace: {files}"
+  placeholders:
+    files: {type: String}
+filesReplace: "Replace"
+filesSkipExisting: "Skip existing"
+filesCancel: "Cancel"
+filesChecking: "Checking files"
+filesUploading:
+  message: "Uploading, {progress}%"
+  placeholders:
+    progress: {type: int}
+filesUploadedCount:
+  message: "{count} uploaded"
+  placeholders:
+    count: {type: int}
+filesSkippedCount:
+  message: "{count} skipped"
+  placeholders:
+    count: {type: int}
+filesFailedCount:
+  message: "{count} failed"
+  placeholders:
+    count: {type: int}
+filesImageLoadFailed: "Failed to load image"
+filesAudioLoadFailed: "Failed to load audio"
+filesVideoLoadFailed: "Failed to load video"
+filesDropToUpload:
+  message: "Release to upload to {directory}"
+  placeholders:
+    directory: {type: String}
+chatLoadingSession: "Loading session..."
+chatRunningTool: "Running tool..."
+chatGeneratingToolInput: "Generating parameters..."
+chatOperationAborted: "Stopped"
+chatTruncatedByOutputLimit: "This response was cut off after reaching the model’s output limit. Send a follow-up to continue."
+chatTruncatedWithoutAnswer: "The output limit was reached before an answer was produced: thinking or a nearly full context used it up. Sending another message will likely be cut off again. Compact the context first, or lower the thinking level."
+chatRunningNamedTool:
+  message: "Running {name}..."
+  placeholders:
+    name: {type: String}
+chatRunningTools:
+  message: "Running {names}..."
+  placeholders:
+    names: {type: String}
+chatRunningToolsMore:
+  message: "Running {names} (+{count})..."
+  placeholders:
+    names: {type: String}
+    count: {type: int}
+chatWaitingModel: "Waiting for model..."
+chatRunningCommand: "Running command..."
+chatBashAlreadyRunning: "A bash command is already running. Press Esc to cancel it first."
+chatThinking: "Thinking..."
+chatProcessDetails: "Process details"
+chatMessage: "message"
+chatMessages: "messages"
+chatToolCall: "tool call"
+chatToolCalls: "tool calls"
+chatTurnDuration:
+  message: "took {time}"
+  placeholders:
+    time: {type: String}
+chatViewFullOutput: "view full output"
+chatLoadingFullOutput: "loading…"
+chatDownloadFullOutput: "download full output"
+chatOutputTruncated: "Output truncated: only its end is shown."
+chatFullOutputShown: "Showing the full output."
+chatFullOutputTooLarge: "The full output is too large to show here. Download it instead."
+chatFullOutputUnavailable: "The full output is no longer available."
+chatCollapseProcess: "Collapse process details"
+chatExpandProcess: "Expand process details"
+transcriptnoticeCostSuffix:
+  message: " (~{cost})"
+  placeholders:
+    cost: {type: String}
+transcriptnoticeCacheMiss:
+  message: "Cache miss: {tokens} tokens re-billed{cost}"
+  placeholders:
+    tokens: {type: int}
+    cost: {type: String}
+transcriptnoticeCacheMissIdle:
+  message: "Cache miss after {minutes}m idle: {tokens} tokens re-billed{cost}"
+  placeholders:
+    minutes: {type: int}
+    tokens: {type: int}
+    cost: {type: String}
+transcriptnoticeCacheMissModelSwitch:
+  message: "Cache miss after model switch: {tokens} tokens re-billed{cost}"
+  placeholders:
+    tokens: {type: int}
+    cost: {type: String}
+transcriptnoticeCacheWarmed:
+  message: "Cache warmed{note}: {cost}"
+  placeholders:
+    note: {type: String}
+    cost: {type: String}
+transcriptnoticeCacheWarmedNote:
+  message: " ({note})"
+  placeholders:
+    note: {type: String}
+transcriptnoticeCompactionCost:
+  message: "Compaction: {tokens} tokens billed{cost}"
+  placeholders:
+    tokens: {type: int}
+    cost: {type: String}
+transcriptnoticeBranchSummaryCost:
+  message: "Branch summary: {tokens} tokens billed{cost}"
+  placeholders:
+    tokens: {type: int}
+    cost: {type: String}
+transcriptnoticeThinkingDroppedOne: "Anthropic dropped 1 thinking block (details in session)"
+transcriptnoticeThinkingDropped:
+  message: "Anthropic dropped {count} thinking blocks (details in session)"
+  placeholders:
+    count: {type: int}
+transcriptnoticeFoldCacheMiss:
+  message: "cache miss {tokens} tokens{cost}"
+  placeholders:
+    tokens: {type: int}
+    cost: {type: String}
+transcriptnoticeFoldCacheMisses:
+  message: "{count} cache misses {tokens} tokens{cost}"
+  placeholders:
+    count: {type: int}
+    tokens: {type: int}
+    cost: {type: String}
+settingsCacheMissNotices: "Show cache and cost notices"
+settingsCacheMissNoticesDescription: "pi's showCacheMissNotices: cache misses, cache warming, compaction cost and Anthropic dropping thinking blocks, in the chat. Saved to the global settings.json; a project's .pi/settings.json can override it."
+chatFilesWritten: "Files changed"
+chatOpenWrittenFile:
+  message: "Open {name}"
+  placeholders:
+    name: {type: String}
+chatLoadEarlier: "Scroll up to load earlier messages"
+chatScrollToLatest: "Scroll to latest"
+chatExtensionRequest: "extension request"
+chatExtensionExpiresIn:
+  message: "expires in {seconds}s"
+  placeholders:
+    seconds: {type: int}
+chatExtensionPending: "Awaiting response"
+chatExtensionCollapse: "Collapse"
+chatExtensionExpand: "Expand"
+chatExtensionMaximize: "Maximize"
+chatExtensionRestoreSize: "Restore size"
+chatExtensionMoreWaiting:
+  message: "+{count} more"
+  placeholders:
+    count: {type: int}
+chatCancel: "Cancel"
+chatConfirm: "Confirm"
+chatSubmit: "Submit"
+chatExtensionInput: "Extension terminal input"
+chatExtensionPanel: "Extension panel"
+chatExtensionWidgets: "Extension widgets"
+chatExtensionWidgetAbove: "Above editor widget"
+chatExtensionWidgetBelow: "Below editor widget"
+chatExtensionWidgetLine:
+  message: "{count} line"
+  placeholders:
+    count: {type: int}
+chatExtensionWidgetLines:
+  message: "{count} lines"
+  placeholders:
+    count: {type: int}
+chatClose: "Close"
+chatQueued:
+  message: "Queued · {count}"
+  placeholders:
+    count: {type: int}
+chatRecall: "Recall to input"
+chatRecallTitle: "Remove all queued messages and put them back into the input box for editing"
+chatRetrying:
+  message: "Retrying ({attempt}/{max})…"
+  placeholders:
+    attempt: {type: int}
+    max: {type: int}
+chatLoadingCommands: "Loading commands..."
+chatSlashCommands:
+  message: "Slash commands · {label}"
+  placeholders:
+    label: {type: String}
+chatTabEnter: "Tab / Enter"
+chatNoCommands: "No extension, prompt, or skill commands found"
+chatMatch: "1 match"
+chatMatches:
+  message: "{count} matches"
+  placeholders:
+    count: {type: int}
+chatCommand: "1 command"
+chatCommands:
+  message: "{count} commands"
+  placeholders:
+    count: {type: int}
+chatLoadingFiles: "Loading files..."
+chatFiles:
+  message: "Files · {label}{hint}"
+  placeholders:
+    label: {type: String}
+    hint: {type: String}
+chatSearching: "Searching…"
+chatNoMatchingFiles: "No matching files"
+chatSearchingAll: " · searching all files…"
+chatIndexTruncated: " · index truncated"
+chatSteerPlaceholder: "Steer now / queue follow-up..."
+chatAgentPlaceholder: "Agent is running…"
+chatMessagePlaceholder: "Message… Type / for commands, @ for files"
+chatSideChat: "Side chat"
+chatSideChatHint: "Ask this in a side chat. The run keeps going."
+chatSteer: "Steer"
+chatFollowUp: "Follow-up"
+chatSteerHint: "Deliver after the current response and its tool calls finish (Stop interrupts them)"
+chatFollowUpHint: "Queue this message after the agent finishes"
+chatInputHistory: "Input history"
+chatModelError: "Model error"
+chatCwdMissingTitle: "Project folder not found"
+chatCwdMissingBody:
+  message: "{cwd} no longer exists. If the project was moved or renamed, start a new session in its new location."
+  placeholders:
+    cwd: {type: String}
+chatModelScopeWarning: "Model scope warning"
+chatModelScopeWarnings: "Model scope warnings"
+chatSend: "Send"
+chatSelectionActions: "Selected text actions"
+chatQuoteSelection: "Quote"
+chatAskInSideChat: "Ask in side chat"
+chatNewQuoteChat: "Side chat about selected text"
+chatAttachFiles: "Attach files"
+chatPreviewImage: "Preview image"
+chatFilterModels: "Filter models…"
+chatModelScopeScoped: "scoped"
+chatModelScopeAll: "all"
+chatSelectModel: "Select model"
+chatNoModels: "No models"
+chatSwitchingModel: "Switching model"
+chatChangeModel: "Change model"
+chatNoAvailableModels: "No available models"
+chatNoMatchingModels: "No matching models"
+chatSaveDefaultModel: "Use and save as default for new chats"
+chatDefaultModel: "Default model for new chats"
+chatSaveDefaultThinking: "Use and save as default reasoning level"
+chatDefaultThinking: "Default reasoning level for new chats"
+chatMoreControls: "More controls"
+chatCollapseControls: "Collapse controls"
+chatShell: "Shell"
+terminalTitle: "Terminal"
+terminalTabLabel:
+  message: "Terminal: {name}"
+  placeholders:
+    name: {type: String}
+terminalOpen: "Open workspace terminal"
+terminalClose: "Terminate terminal"
+terminalRestart: "Restart terminal"
+terminalReconnect: "Reconnect terminal"
+terminalLightTheme: "Switch terminal to light theme"
+terminalDarkTheme: "Switch terminal to dark theme"
+terminalExtraKeys: "Terminal keys"
+terminalConnecting: "Connecting"
+terminalReady: "Connected"
+terminalExited: "Terminal closed"
+terminalError: "Connection error"
+terminalExitCode:
+  message: "Process exited with code {code}"
+  placeholders:
+    code: {type: String}
+chatOutputLocal: "output stays local"
+chatOutputModel: "output sent to model"
+chatConfiguredTools: "From settings.json defaultTools"
+chatChatOnly: "Chat only"
+chatReadOnlyTools:
+  message: "{count} read-only built-in tools"
+  placeholders:
+    count: {type: int}
+chatBuiltInTools:
+  message: "{count} built-in tools"
+  placeholders:
+    count: {type: int}
+chatAllBuiltInTools: "All built-in tools"
+chatChangeReasoning:
+  message: "Change reasoning level: {level}"
+  placeholders:
+    level: {type: String}
+chatChangeReasoningLabel: "Change reasoning level"
+chatCurrentReasoning:
+  message: "Reasoning level for this turn: {level}"
+  placeholders:
+    level: {type: String}
+chatChangeToolPreset: "Change tool preset"
+chatStopCompaction: "Stop compaction"
+chatCompactContext: "Compact context"
+chatCompacting: "Compacting…"
+chatCompactingQueued:
+  message: "Compacting… · {count} queued"
+  placeholders:
+    count: {type: int}
+chatCompactingPlaceholder: "Compacting… messages queue until it finishes"
+chatCompact: "Compact"
+chatDismissCompactError: "Dismiss compaction error"
+chatStopAgent: "Stop agent"
+chatStop: "Stop"
+chatDisableSound: "Disable completion sound"
+chatEnableSound: "Enable completion sound"
+chatThinkingUseDefault: "Use pi default"
+chatThinkingOff: "Reasoning off"
+chatThinkingMinimal: "Minimal reasoning"
+chatThinkingLow: "Low reasoning"
+chatThinkingMedium: "Medium reasoning"
+chatThinkingHigh: "High reasoning"
+chatThinkingXhigh: "Extra-high reasoning"
+chatThinkingMax: "Max reasoning"
+chatBuiltIn: "Built-in"
+chatExtensions: "Extensions"
+chatPrompts: "Prompts"
+chatSkills: "Skills"
+chatDormant: "dormant"
+chatCommandCompact: "Compress context, optionally with instructions"
+chatCommandAutoCompact: "Toggle automatic context compaction in settings"
+chatCommandReload: "Reload extensions, skills, prompts, and tools"
+chatCommandName: "Set the session display name"
+chatCommandSession: "Show session message, token, and cost stats"
+chatCommandCopy: "Copy the last assistant message"
+chatCommandClone: "Clone the current branch into a new session"
+chatCommandSide: "Open a side chat forked from this session"
+chatCompacted: "Compacted"
+chatImageNotSupportedTitle: "Images may not be sent"
+chatImageNotSupportedBody:
+  message: "The selected model ({model}) does not support image input. The attached images will likely be ignored."
+  placeholders:
+    model: {type: String}
+chatDropNeedsCwd: "Choose a working directory before adding files."
+chatDropUploaded:
+  message: "Copied {count} file(s) into the working directory"
+  placeholders:
+    count: {type: int}
+chatDropAlreadyExists:
+  message: "Already in the working directory and not replaced; the mention points to the existing file: {names}"
+  placeholders:
+    names: {type: String}
+chatDropFoldersUnsupported:
+  message: "Folders cannot be dropped here; drop the files inside instead: {names}"
+  placeholders:
+    names: {type: String}
+chatDropFailed:
+  message: "Upload failed: {message}"
+  placeholders:
+    message: {type: String}
+chatSendUnconfirmed: "Couldn't confirm the message was sent. Its text is back in the input box: check the conversation before sending it again."
+chatSendNotReceived: "The message did not reach the server. Its text is back in the input box."
+chatTokensSaved:
+  message: "{saved} saved"
+  placeholders:
+    saved: {type: String}
+chatminimapEarlierTurns:
+  message: "Earlier turns not loaded: {count}. Click to load"
+  placeholders:
+    count: {type: int}
+chatminimapLocateAssistant: "Locate assistant message"
+chatminimapToolCalls:
+  message: "Tool calls this turn: {count}"
+  placeholders:
+    count: {type: int}
+chatminimapLockPreview: "Lock: don't open the preview on hover"
+chatminimapUnlockPreview: "Unlock the hover preview"
+i18nClose: "Close"
+i18nCopy: "Copy"
+i18nCopied: "Copied"
+i18nCancel: "Cancel"
+i18nSave: "Save"
+i18nSaving: "Saving…"
+i18nSaved: "Saved"
+i18nRemove: "Remove"
+i18nRemoving: "Removing…"
+i18nDelete: "Delete"
+i18nLoading: "Loading..."
+i18nLoadMore: "Load more"
+i18nSearch: "Search"
+i18nRefresh: "Refresh"
+providerusageUsage: "Usage"
+providerusageNotQueried: "Not queried"
+providerusageRefresh: "Refresh usage"
+providerusageRefreshing: "Refreshing usage"
+providerusageUpdated:
+  message: "Updated {time}"
+  placeholders:
+    time: {type: String}
+providerusageQueryFailed: "Usage query failed."
+providerusageAvailable: "Available"
+i18nUpdate: "Update"
+i18nUpdating: "Updating..."
+i18nCheck: "Check"
+i18nChecking: "Checking..."
+i18nInstall: "Install"
+i18nInstalling: "Installing..."
+i18nNoResults: "No results"
+i18nSearchProviders: "Search providers…"
+i18nNoProviders: "No providers match"
+i18nNewModel: "new model"
+i18nAddProvider: "Add provider"
+i18nSelectProviderModel: "Select a provider or model"
+i18nVisibleInPrompt: "Visible in model prompt — click to disable"
+i18nHiddenFromPrompt: "Hidden from model prompt — click to enable"
+i18nDormant: "Dormant"
+i18nHiddenButInvocable: "Hidden from model, still manually invocable"
+i18nSkillSearchPlaceholder: "e.g. react, testing, deploy"
+i18nSearching: "Searching…"
+i18nNoSkills: "No skills found"
+i18nCheckUpdates: "Check updates"
+i18nUpdates: "updates"
+i18nNoResolvedResources: "No resolved resources"
+i18nEnablePackage: "Enable package"
+i18nDisablePackage: "Disable package"
+i18nFiltered: "filtered"
+i18nOpenSessionToReload: "Open a session to reload"
+i18nNotFound: "Not found"
+i18nNoPlugins: "No plugins configured"
+trustResourcesNotLoaded: "Restricted mode"
+trustTrustProject: "Trust project"
+trustTrusting: "Trusting..."
+trustCancel: "Cancel"
+trustDialogTitle: "Trust this project?"
+trustDialogBody: "Project resources can run local code. Trust only projects whose contents you know."
+trustSkillsNotLoaded: "Project skills are not loaded because this project is not trusted."
+trustPluginsNotLoaded: "Project plugins are not loaded because this project is not trusted."
+trustProjectScopeUnavailable: "Project installs are unavailable while project resources are not loaded."
+trustMcpTitle: "MCP servers in .pi/mcp.json"
+trustMcpIntro: "Trusting this project lets these servers connect, in Pi Web and in the pi CLI, which share this decision. A stdio server runs its command on the computer running Pi Web."
+trustMcpLoading: "Reading .pi/mcp.json…"
+trustMcpLoadFailed: "Could not list this project's MCP servers."
+trustMcpTimedOut: "Listing this project's MCP servers took too long."
+trustMcpNone: "The file declares no servers."
+trustMcpUnchecked: "Pi Web cannot load the SDK's MCP checks, so these entries are listed unchecked."
+trustMcpCwd:
+  message: "Working directory: {path}"
+  placeholders:
+    path: {type: String}
+trustClose: "Close"
+trustAlreadyTrusted: "This project is already trusted."
+trustTrustFailed: "Could not trust this project."
+mcpTransportStdio: "stdio"
+mcpTransportHttp: "HTTP"
+mcpFieldEnv:
+  message: "env {name}"
+  placeholders:
+    name: {type: String}
+mcpFieldHeader:
+  message: "header {name}"
+  placeholders:
+    name: {type: String}
+mcpFieldOauthClientSecret: "oauth.clientSecret"
+mcpServerInvalid: "Pi refuses this entry, so it never connects:"
+mcpServerWebPassword: "References PI_WEB_PASSWORD. Pi Web refuses to connect it, but the pi CLI reads this file too and would send the password on if that variable is set where the CLI runs:"
+mcpServerDisabled: "Turned off in the file, so it does not connect."
+mcpServerCommandFields: "Runs a shell command on every connection:"
+mcpServerReplacesGlobal: "Replaces your global server of the same name while this project is trusted."
+mcpServerOverridesGlobal:
+  message: "Changes only {keys} of your global server of the same name while this project is trusted."
+  placeholders:
+    keys: {type: String}
+mcpServerOverridesGlobalNothing: "Names your global server of the same name, but changes none of enabled, exposure and toolExposure."
+mcpServerMasked: "Parts that look like secrets are hidden."
+mcpServerHiddenCharacters: "Holds invisible or control characters, shown here as \\u'{'…'}' codes."
+mcpServerSendsVariables: "Sends environment variables of the computer running Pi Web to this server on every connection:"
+mcpServerPassesVariables: "Passes environment variables of the computer running Pi Web to the command it starts:"
+mcpServerVariableIn:
+  message: "{variable} in {field}"
+  placeholders:
+    variable: {type: String}
+    field: {type: String}
+mcpFileProblemUnparsable: "The file is not valid JSON, so none of its servers load."
+mcpFileProblemInvalidShape: "The file is not an object with an \"mcpServers\" object, so none of its servers load."
+mcpFileProblemAutoEnableCodemodeInvalid: "\"autoEnableCodemode\" must be true or false; the servers still load."
+mcpFileProblemLinkDangling: "The file is a symbolic link to nothing, so no servers load from it."
+mcpFileProblemLinkOutside: "The file is a symbolic link outside the folders Pi Web may read, so its servers are not listed here. Pi still loads them once the project is trusted."
+mcpFileProblemNotAFile: "The path is not a regular file, so Pi Web does not read it."
+mcpFileProblemTooLarge: "The file is larger than 1 MiB, so its servers are not listed here. Pi still loads them once the project is trusted."
+mcpFileProblemTooManyServers: "The file declares more than 200 servers, so they are not listed here. Pi still loads them once the project is trusted."
+mcpFileProblemUnreadable: "Pi Web cannot read the file."
+mcpReasonCwdInvalid: "The project folder is missing or not an absolute path."
+mcpReasonCwdDenied: "Pi Web may not read this folder."
+mcpReasonCwdNotDirectory: "The project folder no longer exists or is not a folder."
+mcpReasonRequestDenied: "Pi Web refused the request because it did not come from this page."
+mcpReasonContentType: "Pi Web refused the request because it was not sent as JSON."
+mcpReasonTrustUnreadable: "Pi Web cannot read the trust store (trust.json), or another program has it locked."
+mcpReasonTrustNotRequired: "This project has no resources that need trust anymore."
+mcpReasonSessionBusy: "Wait for the running session in this folder to finish, then trust the project."
+mcpReasonInvalidRequest: "Pi Web refused the request because it does not ask for a change Pi Web can make."
+mcpReasonMcpOff: "MCP is off on this Pi Web server, so it changes no server."
+mcpReasonProjectUntrusted: "This project is not trusted, so Pi Web does not change its .pi/mcp.json."
+mcpReasonUnparsable: "The file is not valid JSON, so Pi Web left it unchanged."
+mcpReasonInvalidShape: "The file is not an object with an \"mcpServers\" object, so Pi Web left it unchanged."
+mcpReasonServerMissing: "The file no longer defines this server."
+mcpReasonEntryNotObject: "This entry is not an object, so it cannot be turned on or off. Remove it, or fix it in the file."
+mcpReasonWebPassword: "It references PI_WEB_PASSWORD, so Pi Web does not turn it on."
+mcpReasonUndoUnavailable: "The removal can no longer be undone."
+mcpReasonUndoNameTaken: "The file defines a server of the same name again, so the removal was not undone."
+mcpReasonNameTaken: "The file already defines a server of that name."
+mcpReasonLinkDangling: "The file is a symbolic link to nothing, so Pi Web does not write it."
+mcpReasonLinkOutside: "The file is a symbolic link outside the folders Pi Web may read, so Pi Web does not write it."
+mcpReasonNotAFile: "The path is not a regular file, so Pi Web does not write it."
+mcpReasonTooLarge: "The file is larger than 1 MiB, so Pi Web does not write it."
+mcpReasonTooManyServers: "The file declares more than 200 servers, so Pi Web does not act on its entries."
+mcpReasonLocked: "Another program is writing the file. Try again in a moment."
+mcpReasonServerInvalid: "Pi refuses this entry, so Pi Web does not connect it."
+mcpReasonSignInNotOauth: "This server does not sign in with OAuth: only an HTTP server without an Authorization header does."
+mcpReasonSignInUnknown: "Pi Web no longer knows this sign-in: it ended a while ago, or Pi Web restarted."
+mcpReasonSignInNotWaiting: "The sign-in is not waiting for an address right now."
+mcpReasonRedirectInvalid: "That is not a web address. Copy the whole address from the browser's address bar."
+mcpReasonRedirectStateMismatch: "That address belongs to another sign-in. Paste the address the browser landed on after this one."
+mcpReasonRedirectNoCode: "That address holds no authorization code. Paste the address the browser landed on after you approved access."
+mcpReasonRedirectDenied: "The authorization server did not grant access. Open the sign-in page again, or cancel."
+mcpReasonImportFailed: "No server could be read from the paste."
+mcpReasonFieldsIncomplete: "Some values to fill in are missing or not valid."
+mcpReasonNameInvalid: "A server name uses letters, digits, _ and - only."
+mcpReasonSecretGlobalOnly: "The server holds a secret as plain text, so it is saved only in the global mcp.json."
+mcpReasonHostEnvConfirm: "The server would be sent variables of the computer running Pi Web; confirm that first."
+mcpReasonFolderNotFresh: "The folder changed since: it has a trust decision now, or resources that need one, so Pi Web did not trust it and added nothing."
+mcpReasonTrustTooBroad: "Trusting this folder would trust the folders inside it too, so Pi Web does not do it by itself."
+mcpLoadFailed: "Could not read the MCP settings."
+mcpLoadTimedOut: "Pi Web did not answer in time. Press Refresh to try again."
+mcpProjectNotListed:
+  message: "This project's servers are not listed: {reason}"
+  placeholders:
+    reason: {type: String}
+mcpServerCount:
+  message: "{enabled} of {total} servers turned on"
+  placeholders:
+    enabled: {type: int}
+    total: {type: int}
+mcpGroupEmpty: "No servers"
+mcpGroupFileProblem: "Not listed: see the file problem below"
+mcpGroupNotListed: "Not listed"
+mcpRowLabel:
+  message: "{name}: {state}"
+  placeholders:
+    name: {type: String}
+    state: {type: String}
+mcpStateOn: "On"
+mcpStateDisabled: "Turned off in the file"
+mcpStateInvalid: "Refused by Pi"
+mcpStateWebPassword: "Refused: references PI_WEB_PASSWORD"
+mcpStateNotTrusted: "Project not trusted"
+mcpStateReplaced: "Replaced by the project's server"
+mcpStateOverridden: "Changed by the project's override"
+mcpStateMcpOff: "MCP is off"
+mcpStateShortInvalid: "refused"
+mcpStateShortWebPassword: "refused"
+mcpStateShortDisabled: "off"
+mcpStateShortNotTrusted: "untrusted"
+mcpStateShortReplaced: "replaced"
+mcpStateShortOverridden: "overridden"
+mcpServerShadowedByProject: "The project's server of the same name replaces this one while the project is trusted."
+mcpServerOverriddenByProject: "The project's .pi/mcp.json changes this server while the project is trusted."
+mcpServerUnchecked: "Listed unchecked: Pi Web cannot load the SDK's MCP checks."
+mcpDetailDescription: "Description"
+mcpDetailTransport: "Transport"
+mcpDetailCommand: "Command"
+mcpDetailUrl: "URL"
+mcpDetailCwd: "Working directory"
+mcpDetailEnv: "Environment"
+mcpDetailHeaders: "Headers"
+mcpDetailValuesHidden: "Values are not shown here."
+mcpDetailShellCommands: "Shell commands"
+mcpDetailVariables: "Host variables"
+mcpDetailSignIn: "Sign-in"
+mcpDetailExposure: "Tools"
+mcpDetailFile: "File"
+mcpDetailInProject: "This project"
+mcpInProjectSaved: "Only for this project; saved in its .pi/mcp.json."
+mcpInProjectOverridden:
+  message: "This project's .pi/mcp.json changes its {keys}."
+  placeholders:
+    keys: {type: String}
+mcpInProjectRefused: "This project's .pi/mcp.json overrides it, but pi refuses the override."
+mcpInProjectTurnOff: "Turn off in this project"
+mcpInProjectTurnOn: "Turn on in this project"
+mcpInProjectShow: "Show"
+mcpSignInSignedIn: "Signed in."
+mcpSignInNotSignedIn: "Not signed in."
+mcpSignInRegistrationOnly: "Not signed in, but a client registration or an unfinished sign-in is stored for this server."
+mcpSignInUnknown: "Unknown: mcp-auth.json cannot be read."
+mcpSignInHeader: "Authorization header"
+mcpSignInProvider:
+  message: "Sends the token of the pi provider {provider}: sign in to it under Settings › Models."
+  placeholders:
+    provider: {type: String}
+mcpExposureCodemode: "Only the server's name and summary are listed; Code mode scripts search for its tools."
+mcpExposureDeferred: "Declared once tool search loads them; needs no Code mode."
+mcpExposureDirect: "Every tool's full declaration goes with every request: the most tokens."
+mcpExposureHidden: "Registered but unreachable."
+mcpExposureSandboxUnavailable: "Code mode cannot run on this Pi Web server, so these tools are reached through tool search instead."
+mcpExposureBuiltinDisabled: "-builtin:codemode turns Code mode off, so these tools can be called only while tool search is active."
+mcpExposureAutoEnableOff:
+  message: "autoEnableCodemode is false in {path}, so sessions do not turn Code mode on for these tools: they can be called only while Code mode is Always on or tool search is active."
+  placeholders:
+    path: {type: String}
+mcpExposureLabel:
+  message: "How {name}'s tools reach the model"
+  placeholders:
+    name: {type: String}
+mcpExposureOptionDefault:
+  message: "{label} (default)"
+  placeholders:
+    label: {type: String}
+mcpExposureToolOverrides:
+  message: "Rules in toolExposure ({count}) keep their own exposure."
+  placeholders:
+    count: {type: int}
+mcpExposureToolSearchDisabled:
+  message: "-builtin:tool-search in {path} turns tool search off, so these tools can be called only from Code mode scripts while Code mode is on."
+  placeholders:
+    path: {type: String}
+mcpExposureToolSearchDisabledUnknown: "-builtin:tool-search turns tool search off, so these tools can be called only from Code mode scripts while Code mode is on."
+mcpEmpty:
+  message: "No MCP servers yet. Servers in {globalPath} and in a project's .pi/mcp.json appear here."
+  placeholders:
+    globalPath: {type: String}
+mcpEmptyFileProblem: "No servers could be listed: see the file problems below."
+mcpSelectItem: "Select a server or Code mode."
+mcpUnavailableOperatorDisabled: "MCP is off: PI_WEB_DISABLE_MCP is set where Pi Web runs. The servers are listed, but no session connects them."
+mcpUnavailableInternalsUnavailable: "MCP is off: Pi Web cannot load the SDK's MCP modules. The servers are listed unchecked, and no session connects them."
+mcpUnavailableBuiltinDisabled:
+  message: "MCP is off: the extensions setting in {path} turns off builtin:mcp, so no session connects these servers."
+  placeholders:
+    path: {type: String}
+mcpUnavailableBuiltinDisabledUnknown: "MCP is off: an extensions setting turns off builtin:mcp, so no session connects these servers."
+mcpTrustUntrusted: "This project is not trusted, so the servers in its .pi/mcp.json do not connect."
+mcpTrustUntrustedThrough:
+  message: "This project is not trusted ({path} is marked untrusted), so the servers in its .pi/mcp.json do not connect."
+  placeholders:
+    path: {type: String}
+mcpTrustTrustedThrough:
+  message: "Trusted through {path}: the servers in this project's .pi/mcp.json connect, as in every folder under it."
+  placeholders:
+    path: {type: String}
+mcpTrustUnreadable: "Pi Web cannot read the trust store (trust.json), so this project's servers count as untrusted for now."
+mcpTrustTrustButton: "Trust project…"
+mcpFooterFileProblem: "1 file problem"
+mcpFooterFileProblems:
+  message: "{count} file problems"
+  placeholders:
+    count: {type: int}
+mcpCodemodeTitle: "Code mode"
+mcpCodemodeRowLabel:
+  message: "Code mode: {state}"
+  placeholders:
+    state: {type: String}
+mcpCodemodeIntro: "The model calls tools from a short script; MCP tools use it by default. Changes apply to sessions started afterwards."
+mcpCodemodeAutomatic: "Automatic"
+mcpCodemodeAlways: "Always on"
+mcpCodemodeUnavailable: "Unavailable"
+mcpCodemodeMode: "Mode"
+mcpCodemodeAutomaticDescription: "Turns on when an MCP server that uses code mode connects."
+mcpCodemodeAlwaysDescription: "Sessions start with Code mode on."
+mcpCodemodePreferenceError: "Cannot read the global settings file:"
+mcpCodemodeSandbox: "Sandbox"
+mcpCodemodeSandboxAvailable: "Available."
+mcpCodemodeSandboxUnavailable: "Cannot run on this Pi Web server, so no session offers Code mode:"
+mcpCodemodeSandboxNotChecked: "Not checked yet: the self-test runs when the first session starts after Pi Web does."
+mcpCodemodeBuiltin: "Extension"
+mcpCodemodeBuiltinDisabled:
+  message: "Turned off by -builtin:codemode in {path}."
+  placeholders:
+    path: {type: String}
+mcpCodemodeBuiltinDisabledUnknown: "Turned off by -builtin:codemode in an extensions setting."
+mcpCodemodeBuiltinDisabledProject:
+  message: "Turned off for this project's sessions by -builtin:codemode in {path}. Always on still applies to sessions in other folders."
+  placeholders:
+    path: {type: String}
+mcpCodemodeAutoEnableOff:
+  message: "autoEnableCodemode is false in {path}, so Automatic never turns Code mode on, and the tools of servers with code mode exposure can be called only while tool search is active."
+  placeholders:
+    path: {type: String}
+mcpCodemodeSaveFailed: "Could not save the choice:"
+mcpCodemodeSaveTimedOut: "Pi Web did not answer in time, so the choice may not have been saved."
+mcpCodemodeAlwaysUnavailableSandbox: "Always on is unavailable: Code mode's sandbox cannot run on this Pi Web server."
+mcpCodemodeAlwaysUnavailableBuiltin:
+  message: "Always on is unavailable: -builtin:codemode in {path} turns Code mode off."
+  placeholders:
+    path: {type: String}
+mcpCodemodeProjectOverrideAlways:
+  message: "This project decides for itself: defaultTools in {path} starts its sessions with Code mode on, whichever you choose here."
+  placeholders:
+    path: {type: String}
+mcpCodemodeProjectOverrideAutomatic:
+  message: "This project decides for itself: defaultTools in {path} starts its sessions without Code mode, as Automatic does, whichever you choose here."
+  placeholders:
+    path: {type: String}
+mcpCodemodeToolMode: "Built-in tools"
+mcpCodemodeToolModeOn: "Direct"
+mcpCodemodeToolModeOnly: "In scripts"
+mcpCodemodeToolModeOnDescription: "The model calls read, bash and the other tools directly."
+mcpCodemodeToolModeOnlyDescription: "While Code mode is on, the model calls read, bash and the other tools only from scripts."
+mcpCodemodeToolModeAutomaticNote: "Under Automatic, this waits until Code mode turns on."
+mcpCodemodeToolModeInvalid:
+  message: "codemode.mode in {path} is {value}, which pi reads as \"on\". Choosing either option replaces it."
+  placeholders:
+    path: {type: String}
+    value: {type: String}
+mcpCodemodeToolModeProjectOverrideOn:
+  message: "This project decides for itself: codemode in {path} keeps these tools declared in its sessions, whatever you choose here."
+  placeholders:
+    path: {type: String}
+mcpCodemodeToolModeProjectOverrideOnly:
+  message: "This project decides for itself: codemode.mode in {path} has its sessions call these tools from scripts only, whatever you choose here."
+  placeholders:
+    path: {type: String}
+mcpCodemodeToolModeSaveFailed: "Could not save the setting:"
+mcpCodemodeInlineBudget: "Tool list budget"
+mcpCodemodeInlineBudgetUnit: "tokens"
+mcpCodemodeInlineBudgetSave: "Save"
+mcpCodemodeInlineBudgetDescription:
+  message: "Tokens the code mode description may spend listing tools; scripts find the rest with searchTools(). Leave empty for pi's default, {default}."
+  placeholders:
+    default: {type: String}
+mcpCodemodeInlineBudgetInvalidDraft:
+  message: "Enter a whole number from 0 to {max}, or leave it empty."
+  placeholders:
+    max: {type: int}
+mcpCodemodeInlineBudgetInvalid:
+  message: "codemode.inlineBudget in {path} is {value}, which pi ignores, so sessions use {default}. Saving replaces it."
+  placeholders:
+    path: {type: String}
+    value: {type: String}
+    default: {type: String}
+mcpCodemodeInlineBudgetProjectOverride:
+  message: "This project decides for itself: codemode.inlineBudget in {path} gives its sessions {value}, whatever you save here."
+  placeholders:
+    path: {type: String}
+    value: {type: String}
+mcpCodemodeInlineBudgetProjectOverrideDefault:
+  message: "This project decides for itself: codemode in {path} leaves its sessions pi's default, {default}, whatever you save here."
+  placeholders:
+    path: {type: String}
+    default: {type: String}
+mcpCodemodeInlineBudgetSaveFailed: "Could not save the budget:"
+mcpReadOnlyMcpOff: "Servers cannot be changed here while MCP is off."
+mcpReadOnlyProjectUntrusted: "Pi Web does not change them until the project is trusted."
+mcpReadOnlyTrustUnreadable: "Pi Web does not change them until it can read the trust store."
+mcpWriteSavedWhileOff: "Changes are saved to the file, but no session connects these servers while builtin:mcp is off."
+mcpServerSwitchOn:
+  message: "Turn {name} on"
+  placeholders:
+    name: {type: String}
+mcpServerSwitchOff:
+  message: "Turn {name} off"
+  placeholders:
+    name: {type: String}
+mcpGroupSwitchOn:
+  message: "Turn off every {group} server"
+  placeholders:
+    group: {type: String}
+mcpGroupSwitchOff:
+  message: "Turn on every {group} server"
+  placeholders:
+    group: {type: String}
+mcpGroupKeptOff:
+  message: "{count} server(s) that reference PI_WEB_PASSWORD stayed off."
+  placeholders:
+    count: {type: int}
+mcpBulkFailed:
+  message: "Could not change {count} of {total} servers:"
+  placeholders:
+    count: {type: int}
+    total: {type: int}
+mcpActionFailed: "Could not change the server:"
+mcpActionTimedOut: "Pi Web did not answer in time, so the change may not have been made."
+mcpRemoved:
+  message: "Removed {name} from {path}."
+  placeholders:
+    name: {type: String}
+    path: {type: String}
+mcpUndo: "Undo"
+mcpUndoing: "Undoing…"
+mcpUndoFailed: "Could not undo:"
+mcpStateConnected: "Connected when tested"
+mcpStateNeedsAuth: "Needs sign-in"
+mcpStateFailed: "Did not connect when tested"
+mcpStateShortNeedsAuth: "sign-in"
+mcpStateShortFailed: "failed"
+mcpExposureShortCodemode: "Code mode"
+mcpExposureShortDeferred: "tool search"
+mcpExposureShortDirect: "direct"
+mcpExposureShortHidden: "hidden"
+mcpTestButton: "Test connection"
+mcpTestTesting: "Testing…"
+mcpTestNever: "Not tested yet."
+mcpTestSerial: "It runs a shell command, so its test waits for other such tests."
+mcpTestBlockedMcpOff: "MCP is off on this Pi Web server, so it tests no server."
+mcpTestBlockedProjectUntrusted: "This project is not trusted, so Pi Web does not start its servers."
+mcpTestBlockedTrustUnreadable: "Pi Web cannot read the trust store (trust.json), so it does not start this project's servers."
+mcpTestBlockedInvalid: "Pi refuses this entry, so there is nothing to test."
+mcpTestBlockedWebPassword: "It references PI_WEB_PASSWORD, so Pi Web does not connect it."
+mcpTestRefusedEntryNotObject: "This entry is not an object, so there is nothing to test. Fix it in the file."
+mcpTestRefusedInvalidRequest: "Pi Web refused the request because it does not name a server it can test."
+mcpTestRefusedUnparsable: "The file is not valid JSON, so Pi Web cannot read this entry to test it."
+mcpTestRefusedInvalidShape: "The file is not an object with an \"mcpServers\" object, so Pi Web cannot read this entry to test it."
+mcpTestRefusedLinkDangling: "The file is a symbolic link to nothing, so Pi Web cannot read this entry to test it."
+mcpTestRefusedLinkOutside: "The file is a symbolic link outside the folders Pi Web may read, so Pi Web does not test its servers."
+mcpTestRefusedNotAFile: "The path is not a regular file, so Pi Web does not read it to test this entry."
+mcpTestRefusedTooLarge: "The file is larger than 1 MiB, so Pi Web does not read it to test this entry."
+mcpTestRefusedTooManyServers: "The file declares more than 200 servers, so Pi Web does not read it to test this entry."
+mcpTestStateConnected: "Connected"
+mcpTestStateNeedsAuth: "Needs sign-in"
+mcpTestStateFailed: "Did not connect"
+mcpTestStateTimedOut: "No answer"
+mcpTestSummaryConnected:
+  message: "{count} tool(s) listed in {seconds} s, tested at {time}."
+  placeholders:
+    count: {type: int}
+    seconds: {type: int}
+    time: {type: String}
+mcpTestSummaryNeedsAuth:
+  message: "The server asked for an OAuth sign-in. Tested at {time}."
+  placeholders:
+    time: {type: String}
+mcpTestSummaryFailed:
+  message: "Gave up after {seconds} s, tested at {time}."
+  placeholders:
+    seconds: {type: int}
+    time: {type: String}
+mcpTestSummaryTimedOut:
+  message: "It did not answer within {seconds} s, so Pi Web stopped the test. Tested at {time}."
+  placeholders:
+    seconds: {type: int}
+    time: {type: String}
+mcpTestError: "Error:"
+mcpTestStderr: "The last lines it wrote to stderr:"
+mcpTestServerInfo:
+  message: "Server: {name} {version}"
+  placeholders:
+    name: {type: String}
+    version: {type: String}
+mcpTestResources: "Offers resources."
+mcpTestRanIn:
+  message: "Ran in {path}."
+  placeholders:
+    path: {type: String}
+mcpTestQueued:
+  message: "Waited {seconds} s for another test of a server that runs a shell command."
+  placeholders:
+    seconds: {type: int}
+mcpTestReadOnly: "read-only"
+mcpTestMoreTools:
+  message: "{count} more not shown."
+  placeholders:
+    count: {type: int}
+mcpTestQueueTimedOut: "Another test of a server that runs a shell command did not finish in time, so this one did not start. Try again."
+mcpTestRequestFailed: "Could not test the server:"
+mcpTestRequestTimedOut: "Pi Web did not answer in time. The test may still finish; press Refresh to see its result."
+mcpStateConnecting: "Connecting in a session"
+mcpStateDisconnected: "Connection dropped in a session"
+mcpStateConflict: "Name taken by another extension"
+mcpStateSessionConnected: "Connected in a session"
+mcpStateSessionFailed: "Did not connect in a session"
+mcpStateShortConnecting: "connecting"
+mcpStateShortDisconnected: "dropped"
+mcpStateShortConflict: "conflict"
+mcpStateDetailDisconnected: "That session connects it again at the next call to one of its tools."
+mcpStateDetailConflict: "Rename the entry in its file, or turn the other extension off."
+mcpSessionStateConnecting: "Connecting"
+mcpSessionStateConnected: "Connected"
+mcpSessionStateNeedsAuth: "Needs sign-in"
+mcpSessionStateFailed: "Did not connect"
+mcpSessionStateDisconnected: "Dropped"
+mcpSessionStateConflict: "Name taken"
+mcpSessionStateNotTrusted: "Not read"
+mcpSessionStateClosed: "Closed"
+mcpSessionSummaryConnecting:
+  message: "A session in {path} started connecting it at {time}."
+  placeholders:
+    path: {type: String}
+    time: {type: String}
+mcpSessionSummaryConnected:
+  message: "A session in {path} connected it at {time}."
+  placeholders:
+    path: {type: String}
+    time: {type: String}
+mcpSessionSummaryNeedsAuth:
+  message: "The server asked a session in {path} for an OAuth sign-in at {time}."
+  placeholders:
+    path: {type: String}
+    time: {type: String}
+mcpSessionSummaryFailed:
+  message: "A session in {path} could not connect it at {time}."
+  placeholders:
+    path: {type: String}
+    time: {type: String}
+mcpSessionSummaryDisconnected:
+  message: "The connection of a session in {path} dropped at {time}."
+  placeholders:
+    path: {type: String}
+    time: {type: String}
+mcpSessionSummaryConflict:
+  message: "A session in {path} found the name taken at {time}, so it did not connect this entry."
+  placeholders:
+    path: {type: String}
+    time: {type: String}
+mcpSessionSummaryNotTrusted:
+  message: "A session in {path} did not read it at {time}, because no decision trusted the project then."
+  placeholders:
+    path: {type: String}
+    time: {type: String}
+mcpSessionSummaryClosed:
+  message: "A session in {path} connected it at {time} and closed it at {closedTime}."
+  placeholders:
+    path: {type: String}
+    time: {type: String}
+    closedTime: {type: String}
+mcpSessionConflictOwner: "Registered first by:"
+mcpHostInactive:
+  message: "A session in {path} connects none of these servers through Pi Web: its /mcp command comes from {owner}, not from Pi's built-in MCP extension. That extension may read mcp.json and connect them its own way."
+  placeholders:
+    path: {type: String}
+    owner: {type: String}
+mcpSignInButton: "Sign in"
+mcpSignInStarting: "Starting…"
+mcpSignInCancel: "Cancel sign-in"
+mcpSignInCancelling: "Cancelling…"
+mcpSignInCancelFailed: "Could not cancel the sign-in:"
+mcpSignInCancelTimedOut: "Pi Web did not answer in time. The sign-in may still be under way; this line shows it once it moves on."
+mcpSignInSignOut: "Sign out"
+mcpSignInSigningOut: "Signing out…"
+mcpSignInReplaces: "Signing in may replace what is stored for this server."
+mcpSignInSignOutExplain: "Sign out deletes what is stored for this server; open sessions lose access at their next request."
+mcpSignInShared:
+  message: "The other {name} entry, with the same URL, started this sign-in: the tokens serve both."
+  placeholders:
+    name: {type: String}
+mcpSignInSharedDone:
+  message: "Signed in through the other {name} entry, which has the same URL, so the tokens serve this entry too. Press Test connection to see what this entry's server offers."
+  placeholders:
+    name: {type: String}
+mcpSignInSharedAlready:
+  message: "The other {name} entry, which has the same URL, was already signed in, so the tokens serve this entry too. Press Test connection to see what this entry's server offers."
+  placeholders:
+    name: {type: String}
+mcpSignInSharedConnectFailed:
+  message: "The sign-in through the other {name} entry, which has the same URL, found nothing to sign in to: that entry's server did not connect, and did not ask for a sign-in. Its Status row says why."
+  placeholders:
+    name: {type: String}
+mcpSignInPhaseConnecting: "Checking whether the server asks for a sign-in…"
+mcpSignInPhaseStarting: "Preparing the sign-in with the server's authorization server…"
+mcpSignInPhaseFinishing: "Finishing the sign-in…"
+mcpSignInPhaseNoCancel: "The authorization server has answered, so this step can no longer be cancelled."
+mcpSignInAuthorizeMessage: "Open the sign-in page and approve access. When the browser comes back to the computer running Pi Web, the sign-in finishes by itself. If the browser runs on another device, or the page it lands on does not load, copy that page's address and paste it here."
+mcpSignInAuthorizeLink: "Sign-in page:"
+mcpSignInAuthorizeNotALink: "The server's sign-in page is not a web address, so it is shown as text only:"
+mcpSignInAuthorizeRedirect:
+  message: "After you approve, the browser is sent to {url}, which only the computer running Pi Web can open."
+  placeholders:
+    url: {type: String}
+mcpSignInAuthorizeWait: "Pi Web waits up to 5 minutes from the start of the sign-in."
+mcpSignInPasteLabel: "Address the browser landed on"
+mcpSignInPastePlaceholder: "http://127.0.0.1:…/callback?code=…"
+mcpSignInPasteSubmit: "Continue"
+mcpSignInPasteChecking: "Checking…"
+mcpSignInPasteRefused: "That address does not finish this sign-in:"
+mcpSignInPasteTimedOut: "Pi Web did not answer in time. If it took the address, this line shows the sign-in moving on."
+mcpSignInDoneAlready: "Already signed in: the server connected without a new sign-in."
+mcpSignInDoneSignedIn: "Signed in. Status above shows what the server offers."
+mcpSignInDoneRefreshed: "Signed in again with the stored refresh token, without the browser. Status above shows what the server offers."
+mcpSignInDoneFailedAfter: "Signed in, but the server did not connect afterwards. Status above says why."
+mcpSignInDoneNeedsAuthAfter: "Signed in, but the server still asked for a sign-in when Pi Web connected again."
+mcpSignInDoneNotConnected: "Signed in. Press Test connection to see what the server offers."
+mcpSignInCancelled: "Sign-in cancelled."
+mcpSignInExpired: "The sign-in was not finished within 5 minutes, so Pi Web stopped waiting."
+mcpSignInFailedConnectFailed: "The server did not connect, and did not ask for a sign-in, so there was nothing to sign in to. Status above says why."
+mcpSignInFailedQueueTimedOut: "Another test of a server that runs a shell command did not finish in time, so the sign-in did not start. Try again."
+mcpSignInFailedSignInFailed: "The sign-in failed."
+mcpSignInFailedInternal: "The sign-in failed unexpectedly."
+mcpSignInGone: "Pi Web no longer knows this sign-in: it ended a while ago, or Pi Web restarted. Press Sign in to start again."
+mcpSignInRequestFailed: "Could not sign in:"
+mcpSignInRequestTimedOut: "Pi Web did not answer in time. Press Sign in again to see the sign-in under way."
+mcpSignInSignOutFailed: "Could not sign out:"
+mcpSignInSignedOutDone: "Signed out: the tokens stored for this server were deleted."
+mcpSignInSignedOutNothing: "Nothing was stored for this server, so there was nothing to sign out of."
+mcpSignInBlockedMcpOff: "MCP is off on this Pi Web server, so it signs in to no server."
+mcpSignInBlockedProjectUntrusted: "This project is not trusted, so Pi Web does not sign in to or out of its servers."
+mcpSignInBlockedTrustUnreadable: "Pi Web cannot read the trust store (trust.json), so it does not sign in to or out of this project's servers."
+mcpSignInBlockedInvalid: "Pi refuses this entry, so there is nothing to sign in to."
+mcpSignInRefusedFile: "Pi Web cannot read this entry from its file anymore. Press Refresh."
+mcpSignInRefusedInvalidRequest: "Pi Web refused the request because it does not name a server it can sign in to."
+mcpSignInSummaryConnected:
+  message: "Signed in, then {count} tool(s) listed in {seconds} s, at {time}."
+  placeholders:
+    count: {type: int}
+    seconds: {type: int}
+    time: {type: String}
+mcpSignInSummaryNeedsAuth:
+  message: "Signed in, but the server still asked for a sign-in at {time}."
+  placeholders:
+    time: {type: String}
+mcpSignInSummaryFailed:
+  message: "Signed in, but connecting gave up after {seconds} s, at {time}."
+  placeholders:
+    seconds: {type: int}
+    time: {type: String}
+mcpSignInSummaryTimedOut:
+  message: "Signed in, but the server did not answer within {seconds} s, at {time}."
+  placeholders:
+    seconds: {type: int}
+    time: {type: String}
+mcpAddAction: "Add MCP"
+mcpAddTitle: "Add MCP"
+mcpAddInputLabel: "Server to add"
+mcpAddPlaceholder: "https://mcp.example.com/mcp\nnpx -y @scope/server\nclaude mcp add …\n'{' \"mcpServers\": '{' … '}' '}'"
+mcpAddExamples: "Supported formats (click one to fill in an example)"
+mcpAddRawPi: "Enable pi mcp syntax ($NAME, !command)"
+mcpAddRawPiOn: "In env and header values, $NAME reads a variable on the computer running Pi Web, and a value starting with ! runs as a command at every connection."
+mcpAddServerLabel: "Server"
+mcpAddServerCount:
+  message: "This paste holds {count} servers; add them one at a time."
+  placeholders:
+    count: {type: int}
+mcpAddPreview: "Preview"
+mcpAddReadAs: "Read as"
+mcpAddPreviewUnfilled: "Values still to fill in show what the paste holds there."
+mcpAddFields: "Values to fill in"
+mcpAddFieldOptional: "Optional: left blank, the value it belongs to is left out."
+mcpAddFieldOptionalHeader:
+  message: "Optional: left blank, the {name} header is not sent."
+  placeholders:
+    name: {type: String}
+mcpAddFieldSlot: "your value"
+mcpAddFieldStoredAs:
+  message: "Stored as {value}."
+  placeholders:
+    value: {type: String}
+mcpAddFieldStoredAsVariable:
+  message: "Stored as {value}: pi reads the variable each time it connects, and the value stays out of mcp.json."
+  placeholders:
+    value: {type: String}
+mcpAddFieldUseVariable: "Read it from a variable of the computer running Pi Web"
+mcpAddFieldVariableName:
+  message: "Variable for {field}"
+  placeholders:
+    field: {type: String}
+mcpAddFieldVariableHint: "Stored as $'{'…'}': pi reads the variable each time it connects, and the value stays out of mcp.json."
+mcpAddFieldChoose: "Choose…"
+mcpAddSecrets: "Secrets in the paste"
+mcpAddSecretHolds: "holds a secret as plain text."
+mcpAddSecretStoredAs:
+  message: "Stored as {value}: pi reads the variable each time it connects, and the secret stays out of mcp.json."
+  placeholders:
+    value: {type: String}
+mcpAddSecretAsPasted: "Saved in mcp.json as pasted, so the server can be saved only in the global file."
+mcpAddNameInvalid: "A server name uses letters, digits, _ and - only."
+mcpAddNameTaken:
+  message: "{path} already has a server named {name}."
+  placeholders:
+    path: {type: String}
+    name: {type: String}
+mcpAddUseName:
+  message: "Use {name}"
+  placeholders:
+    name: {type: String}
+mcpAddButton: "Add"
+mcpAddButtonTrust: "Add and trust this folder"
+mcpAddAdding: "Adding…"
+mcpAddTrustExplain:
+  message: "This folder has no trust decision yet, and writing .pi/mcp.json makes it need one, so Add trusts {path} in the same step. The pi CLI shares this decision, and every folder inside it is trusted too."
+  placeholders:
+    path: {type: String}
+mcpAddAfterAdd: "Adding tests the connection once."
+mcpAddFailed: "Not added:"
+mcpAddTrustKept:
+  message: "Pi Web trusted {folder} for this step and could not take that back, so the folder stays trusted."
+  placeholders:
+    folder: {type: String}
+mcpAddHostEnvBody:
+  message: "Its headers or OAuth client secret read {names}, which are set on the computer running Pi Web, and pi sends their values to the server at every connection. Add it only if this server should have them."
+  placeholders:
+    names: {type: String}
+mcpAddHostEnvConfirm: "Add and send these values"
+mcpAddBlockedNothing: "Nothing to add yet: the paste holds no server pi can use."
+mcpAddBlockedFields:
+  message: "Fill in {fields} first."
+  placeholders:
+    fields: {type: String}
+mcpAddBlockedFieldsInvalid:
+  message: "Correct {fields} first."
+  placeholders:
+    fields: {type: String}
+mcpAddBlockedWebPassword: "It references PI_WEB_PASSWORD, so Pi Web does not add it."
+mcpAddRefusedServerInvalid:
+  message: "pi refuses it as filled in: {error}"
+  placeholders:
+    error: {type: String}
+mcpAddProjectBlockedNoProject: "Open a project to add a server to its .pi/mcp.json."
+mcpAddProjectBlockedProjectNotListed: "The project folder is not listed, so its .pi/mcp.json is not written."
+mcpAddProjectBlockedTrustUnreadable: "Pi Web cannot read the trust store (trust.json), so it does not write this project's .pi/mcp.json."
+mcpAddProjectBlockedProjectUntrusted: "This project is not trusted, so Pi Web does not write its .pi/mcp.json. Trust it first."
+mcpAddProjectBlockedUntrustedDecision: "This folder is marked as not trusted, so a server in its .pi/mcp.json would never connect."
+mcpAddProjectBlockedSecret:
+  message: "{fields} holds a secret as plain text, so this server can be saved only globally. To save it in the project, choose “Read it from a variable of the computer running Pi Web” for it."
+  placeholders:
+    fields: {type: String}
+mcpAddProjectBlockedSecretFixed:
+  message: "{fields} holds a secret as plain text where pi reads no variable (the URL, the command or its arguments), so this server can be saved only globally."
+  placeholders:
+    fields: {type: String}
+mcpAddProjectBlockedFolderNotFresh: "Something under this folder's .pi, or an .agents/skills folder above it, is a link to nothing. It would need trust once its target appears, so Pi Web does not trust the folder by itself. Remove or fix the link, then press Refresh."
+mcpAddProjectBlockedFileProblem:
+  message: "{path} cannot be written: {reason}"
+  placeholders:
+    path: {type: String}
+    reason: {type: String}
+mcpAddProjectBlockedTrustTooBroadHome: "This is your home folder. Pi Web does not trust it by itself, since every folder in it would be trusted too; add the server globally."
+mcpAddProjectBlockedTrustTooBroadRoot: "This is a filesystem root. Pi Web does not trust it by itself, since every folder on it would be trusted too; add the server globally."
+mcpAddProjectBlockedTrustTooBroadContainsHome:
+  message: "This folder holds your home folder ({path}). Pi Web does not trust it by itself, since every folder in it would be trusted too; add the server globally."
+  placeholders:
+    path: {type: String}
+mcpAddProjectBlockedTrustTooBroadContainsAgentDir:
+  message: "This folder holds Pi's agent folder ({path}). Pi Web does not trust it by itself, since every folder in it would be trusted too; add the server globally."
+  placeholders:
+    path: {type: String}
+mcpAddProjectBlockedTrustTooBroadContainsFolder:
+  message: "This folder holds {path}, another folder Pi Web knows, which trusting it would trust too. Pi Web does not do that by itself; add the server globally."
+  placeholders:
+    path: {type: String}
+mcpAddProjectBlockedTrustTooBroadContainsProject:
+  message: "This folder holds {path}, a project with resources that need trust and no decision of its own, which trusting this folder would trust too. Pi Web does not do that by itself; add the server globally, or open that project and trust it on its own."
+  placeholders:
+    path: {type: String}
+mcpAddProjectBlockedTrustTooBroadTooManyFolders: "This folder holds too many folders for Pi Web to check that trusting it would trust no project inside them. Pi Web does not trust it by itself; add the server globally."
+mcpAddAdded:
+  message: "Added {name} to {path}."
+  placeholders:
+    name: {type: String}
+    path: {type: String}
+mcpAddAddedTrusted:
+  message: "Added {name} to {path}, and trusted {folder}."
+  placeholders:
+    name: {type: String}
+    path: {type: String}
+    folder: {type: String}
+mcpAddAddedTrustedHere:
+  message: "Added {name} to {path}, and trusted this folder."
+  placeholders:
+    name: {type: String}
+    path: {type: String}
+mcpAddTesting: "Testing its connection…"
+mcpAddNeedsSignIn: "It asks for a sign-in."
+mcpAddSourceUrl: "a URL"
+mcpAddSourceCommandLine: "a command line"
+mcpAddSourcePiMcpAdd: "pi mcp add"
+mcpAddSourceClaudeMcpAdd: "claude mcp add"
+mcpAddSourceClaudeMcpAddJson: "claude mcp add-json"
+mcpAddSourceCodexMcpAdd: "codex mcp add"
+mcpAddSourceGeminiMcpAdd: "gemini mcp add"
+mcpAddSourceVscodeAddMcp: "code --add-mcp"
+mcpAddSourceMcpServersJson: "an mcpServers config (Claude, Cursor, Gemini…)"
+mcpAddSourceVscodeJson: "a VS Code mcp.json"
+mcpAddSourceZedJson: "Zed settings"
+mcpAddSourceOpencodeJson: "an opencode config"
+mcpAddSourceServerObject: "one server's JSON"
+mcpAddSourceServerMap: "servers by name (JSON)"
+mcpAddSourceRegistryServerJson: "an MCP registry server.json"
+mcpAddSourceCursorInstallLink: "a Cursor install link"
+mcpAddSourceVscodeInstallLink: "a VS Code install link"
+mcpAddSourceVisualStudioInstallLink: "a Visual Studio install link"
+mcpAddSourceCopilotAppInstallLink: "a GitHub Copilot app link"
+mcpImportNoteForServer:
+  message: "{server}: {note}"
+  placeholders:
+    server: {type: String}
+    note: {type: String}
+mcpImportNoteEmptyInput: "Nothing to read yet: paste a URL, a command line or a config."
+mcpImportNoteUnrecognizedInput: "Pi Web does not recognize this. Paste a server's URL, the command that starts it, an mcp add command, a JSON config or an install link."
+mcpImportNoteInvalidJson:
+  message: "This looks like JSON but does not parse: {detail}"
+  placeholders:
+    detail: {type: String}
+mcpImportNoteNoServersFound: "No MCP server was found in this config."
+mcpImportNoteShellOperator:
+  message: "The command line uses the shell operator {operator}. Paste only the command that starts the server."
+  placeholders:
+    operator: {type: String}
+mcpImportNoteShellCommandSubstitution:
+  message: "The command line uses {syntax}, which only a shell runs. Write the value out instead."
+  placeholders:
+    syntax: {type: String}
+mcpImportNoteShellMultipleCommands: "This holds more than one command. Paste only the one that starts the server."
+mcpImportNoteShellUnterminatedQuote:
+  message: "A {quote} quote is never closed."
+  placeholders:
+    quote: {type: String}
+mcpImportNoteShellParameter:
+  message: "The command line uses the shell parameter {parameter}, which Pi Web cannot fill in."
+  placeholders:
+    parameter: {type: String}
+mcpImportNoteShellExpansion:
+  message: "The command line uses {expansion}, which only a shell expands. Write the value out instead."
+  placeholders:
+    expansion: {type: String}
+mcpImportNoteUnsupportedUrlScheme:
+  message: "A {scheme}: address is not a server: pi connects to http and https URLs."
+  placeholders:
+    scheme: {type: String}
+mcpImportNoteGithubRepoLink:
+  message: "This is the GitHub repository {repository}, not a server. Copy the install command, URL or config from its README."
+  placeholders:
+    repository: {type: String}
+mcpImportNoteGithubMcpPage:
+  message: "This is the github.com/mcp page of {name}. Its Install buttons open other apps and cannot be pasted here; copy the Cursor or VS Code install badge from the server's README instead."
+  placeholders:
+    name: {type: String}
+mcpImportNoteGithubPage: "This GitHub page is not a server. Copy the install command, URL or config from the server's README."
+mcpImportNoteByNameLink:
+  message: "This link only names {name} in a registry and holds no settings, so Pi Web cannot add it yet. Copy the Cursor or VS Code install badge from the server's README instead."
+  placeholders:
+    name: {type: String}
+mcpImportNoteBadgeImage: "This is a badge's image. Copy the link the badge opens instead."
+mcpImportNoteInstallLinkInvalid:
+  message: "This install link cannot be read ({detail})."
+  placeholders:
+    detail: {type: String}
+mcpImportNoteClaudeDesktopImport: "claude mcp add-from-claude-desktop copies Claude Desktop's own servers. Paste the mcpServers part of claude_desktop_config.json instead."
+mcpImportNoteCliUnsupported:
+  message: "Pi Web does not read {cli}'s mcp add. Paste the server's own command line, URL or JSON config instead."
+  placeholders:
+    cli: {type: String}
+mcpImportNoteCliUsage:
+  message: "This {cli} mcp add command is incomplete: it needs a name, and a URL or a command."
+  placeholders:
+    cli: {type: String}
+mcpImportNoteCliUnknownOption:
+  message: "{cli} has no option {option}."
+  placeholders:
+    cli: {type: String}
+    option: {type: String}
+mcpImportNoteCliOptionNeedsValue:
+  message: "The {cli} option {option} needs a value."
+  placeholders:
+    cli: {type: String}
+    option: {type: String}
+mcpImportNoteCliOptionWrongTransport:
+  message: "The {cli} option {option} does not apply to {transport} servers."
+  placeholders:
+    cli: {type: String}
+    option: {type: String}
+    transport: {type: String}
+mcpImportNoteCliInvalidPair:
+  message: "The {cli} option {option} cannot read {value}."
+  placeholders:
+    cli: {type: String}
+    option: {type: String}
+    value: {type: String}
+mcpImportNoteCliNotAServer:
+  message: "{cli} {command} manages {cli} itself; it is not a server. Paste the command that starts the server, or {cli} mcp add …"
+  placeholders:
+    cli: {type: String}
+    command: {type: String}
+mcpImportNotePiHelp: "pi mcp add --help prints help and adds nothing."
+mcpImportNoteFieldRequired:
+  message: "Fill in {field}."
+  placeholders:
+    field: {type: String}
+mcpImportNoteFieldInvalidOption:
+  message: "Pick one of the offered values for {field}."
+  placeholders:
+    field: {type: String}
+mcpImportNoteFieldReferenceInvalidName:
+  message: "{field}: a variable name has letters, digits and _, and does not start with a digit."
+  placeholders:
+    field: {type: String}
+mcpImportNoteFieldReferenceInvalidTarget:
+  message: "{field} cannot come from a variable: pi reads variables only in env values, headers and the OAuth client secret."
+  placeholders:
+    field: {type: String}
+mcpImportNoteFieldReferenceInvalidMissing:
+  message: "{field}: enter the name of the variable to read it from."
+  placeholders:
+    field: {type: String}
+mcpImportNoteSseTransport: "It uses the legacy SSE transport, which pi does not support."
+mcpImportNoteSseTransportSuggested:
+  message: "It uses the legacy SSE transport, which pi does not support. Try its streamable HTTP address instead: {suggestedUrl}"
+  placeholders:
+    suggestedUrl: {type: String}
+mcpImportNoteWebsocketTransport: "It connects over a WebSocket, which pi does not support."
+mcpImportNoteUnsupportedTransport:
+  message: "Its transport {type} is not one pi supports (stdio or streamable HTTP)."
+  placeholders:
+    type: {type: String}
+mcpImportNoteAmbiguousCommandAndUrl: "It has both a command and a URL, so which to use is unclear."
+mcpImportNoteNoCommandOrUrl: "It has neither a command to start nor a URL to connect to."
+mcpImportNoteZedExtensionServer: "It comes from a Zed extension, which only Zed can start."
+mcpImportNoteRegistryPackagesUnsupported: "It is published only as packages to install, while pi needs a command or a URL. Paste its install command instead."
+mcpImportNoteInvalidConfig:
+  message: "pi would refuse it: {problem}"
+  placeholders:
+    problem: {type: String}
+mcpImportNoteDroppedKey:
+  message: "{key} has no pi equivalent and was left out."
+  placeholders:
+    key: {type: String}
+mcpImportNoteVariableUnsupportedHere:
+  message: "{field} reads the variable {name}, which pi does not fill in there, so its value is asked for below."
+  placeholders:
+    field: {type: String}
+    name: {type: String}
+mcpImportNoteVariableFallbackDropped:
+  message: "{field}: pi has no default for a variable, so the fallback {fallback} of {name} was left out."
+  placeholders:
+    field: {type: String}
+    fallback: {type: String}
+    name: {type: String}
+mcpImportNoteBareDollarLiteral:
+  message: "{field} holds $'{'name'}' as text: this client does not read it as a variable, and pi will not either."
+  placeholders:
+    field: {type: String}
+mcpImportNoteHeaderEnvReference:
+  message: "The header {header} sends the value of {names} from the computer running Pi Web to this server."
+  placeholders:
+    header: {type: String}
+    names: {type: String}
+mcpImportNoteClientSecretEnvReference:
+  message: "The OAuth client secret is read from {names} on the computer running Pi Web and sent to the authorization server."
+  placeholders:
+    names: {type: String}
+mcpImportNoteShellCommandValue:
+  message: "{field} runs a shell command on the computer running Pi Web at every connection."
+  placeholders:
+    field: {type: String}
+mcpImportNoteShellVariable:
+  message: "{field}: $'{'name'}' would be filled in by your shell. pi reads it from the environment of the computer running Pi Web, or its value is asked for below."
+  placeholders:
+    field: {type: String}
+mcpImportNoteUnsupportedVariable:
+  message: "{field} uses {variable}, which pi cannot fill in, so its value is asked for below."
+  placeholders:
+    field: {type: String}
+    variable: {type: String}
+mcpImportNoteInputUndefined:
+  message: "The config asks for the input {id} but does not define it, so its value is asked for below."
+  placeholders:
+    id: {type: String}
+mcpImportNoteInputCommandUnsupported:
+  message: "The input {id} runs a VS Code command, which Pi Web cannot, so its value is asked for below."
+  placeholders:
+    id: {type: String}
+mcpImportNoteTimeoutClamped:
+  message: "The timeout of {from} seconds was cut to {to} seconds."
+  placeholders:
+    from: {type: String}
+    to: {type: String}
+mcpImportNoteTimeoutDropped:
+  message: "The timeout {value} is not a number of seconds and was left out."
+  placeholders:
+    value: {type: String}
+mcpImportNoteTimeoutUnitGuessedMilliseconds:
+  message: "The timeout {value} was read as milliseconds; check it."
+  placeholders:
+    value: {type: String}
+mcpImportNoteTimeoutUnitGuessedSeconds:
+  message: "The timeout {value} was read as seconds; check it."
+  placeholders:
+    value: {type: String}
+mcpImportNoteEnvNullDropped:
+  message: "{name} is set to null to unset it, which pi cannot do, so it was left out."
+  placeholders:
+    name: {type: String}
+mcpImportNoteOauthOptionDropped:
+  message: "The OAuth option {key} has no pi equivalent and was left out."
+  placeholders:
+    key: {type: String}
+mcpImportNoteOauthDisableUnsupported: "The config turns OAuth off, which pi cannot: pi signs in with OAuth whenever the server asks."
+mcpImportNoteCallbackUrlDropped:
+  message: "The OAuth callback address {value} is not a loopback address pi can listen on, so it was left out."
+  placeholders:
+    value: {type: String}
+mcpImportNoteCallbackPortDropped:
+  message: "The OAuth callback port {value} is not a port number, so it was left out."
+  placeholders:
+    value: {type: String}
+mcpImportNoteInvalidExposureDropped:
+  message: "The exposure {value} is not one pi knows, so it was left out."
+  placeholders:
+    value: {type: String}
+mcpImportNoteToolFilterImportedInclude:
+  message: "Only these tools are offered, the others hidden: {tools}."
+  placeholders:
+    tools: {type: String}
+mcpImportNoteToolFilterImportedExclude:
+  message: "These tools are hidden: {tools}."
+  placeholders:
+    tools: {type: String}
+mcpImportNoteTransportGuessed: "The config names no transport, so Pi Web read it from the keys present."
+mcpImportNoteInsecureHttp:
+  message: "{host} is reached over plain http, so everything sent, tokens included, travels unencrypted."
+  placeholders:
+    host: {type: String}
+mcpImportNoteLiteralSecret:
+  message: "{field} holds a secret as plain text, so the server can be saved only in the global mcp.json."
+  placeholders:
+    field: {type: String}
+mcpImportNoteCliOptionIgnored:
+  message: "The {cli} option {option} has no pi equivalent and was ignored."
+  placeholders:
+    cli: {type: String}
+    option: {type: String}
+mcpImportNoteCliOptionAsArg:
+  message: "{option} comes after the server's command, so it is passed to the server as an argument, as {cli} does."
+  placeholders:
+    option: {type: String}
+    cli: {type: String}
+mcpImportNoteCliExtraArguments:
+  message: "{cli} adds an HTTP server by its URL alone, so the extra arguments {arguments} were left out."
+  placeholders:
+    cli: {type: String}
+    arguments: {type: String}
+mcpImportNoteMcpRemoteBridge:
+  message: "This runs mcp-remote to reach {url}. pi can connect to that URL itself: paste the URL to add it without the bridge."
+  placeholders:
+    url: {type: String}
+mcpImportNoteLooksLikePiConfig: "This looks like pi's own mcp.json. If you copied it from there, turn on “Enable pi mcp syntax ($NAME, !command)”."
+mcpImportNoteWorkspaceFolderRelative:
+  message: "{field}: {from} became the session's folder (.), where pi starts the server."
+  placeholders:
+    field: {type: String}
+    from: {type: String}
+mcpImportNoteHomeVariableTranslated:
+  message: "{field}: {from} became {to}, which pi reads from the environment."
+  placeholders:
+    field: {type: String}
+    from: {type: String}
+    to: {type: String}
+mcpImportNoteNameTaken:
+  message: "The file already has a server named {name}. Pick another name, such as {suggestedName}."
+  placeholders:
+    name: {type: String}
+    suggestedName: {type: String}
+mcpImportNoteEscapedValue:
+  message: "{field}: $ and a leading ! were escaped, so pi reads the value as written and runs nothing."
+  placeholders:
+    field: {type: String}
+mcpImportNoteVariableTranslated:
+  message: "{field}: {from} became {to}, the way pi reads that variable."
+  placeholders:
+    field: {type: String}
+    from: {type: String}
+    to: {type: String}
+mcpImportNoteHomeTranslated:
+  message: "{field}: {from} became ~, the home folder."
+  placeholders:
+    field: {type: String}
+    from: {type: String}
+mcpImportNoteTimeoutConverted:
+  message: "The timeout of {from} ms became {to} seconds."
+  placeholders:
+    from: {type: String}
+    to: {type: String}
+mcpImportNoteEnvValueStringified:
+  message: "{name} was not text, so it was turned into text."
+  placeholders:
+    name: {type: String}
+mcpImportNoteEmptyAuthorizationDropped: "An empty Authorization header was left out, so pi signs in with OAuth if the server asks."
+mcpImportNoteImportedDisabled: "The config has it turned off, so it is added switched off."
+mcpImportNoteNameDerived:
+  message: "Named {name} after its address or command."
+  placeholders:
+    name: {type: String}
+mcpImportNoteNameSanitized:
+  message: "{original} became {name}: pi server names use letters, digits, _ and -."
+  placeholders:
+    original: {type: String}
+    name: {type: String}
+mcpImportNoteNameDeduplicated:
+  message: "{original} is already in use, so it is named {name}."
+  placeholders:
+    original: {type: String}
+    name: {type: String}
+mcpImportNoteCommandSplit:
+  message: "{command} was split into a command and its arguments."
+  placeholders:
+    command: {type: String}
+mcpImportNoteTransportAssumedHttp: "No transport is given, so it is read as a streamable HTTP server."
+mcpImportNoteSchemeAssumed:
+  message: "Read as {url}."
+  placeholders:
+    url: {type: String}
+mcpImportNoteClientSecretPrompt: "The OAuth client secret is asked for below."
+mcpImportNoteUserinfoMovedToHeader: "The user name and password in the URL moved into an Authorization header: pi does not send them in the URL."
+mcpImportProblemName:
+  message: "{name} is not a server name pi accepts (letters, digits, _ and -)."
+  placeholders:
+    name: {type: String}
+mcpImportProblemNotAnObject: "it is not an object."
+mcpImportProblemExposure:
+  message: "the exposure {value} is not one pi knows."
+  placeholders:
+    value: {type: String}
+mcpImportProblemToolExposure: "toolExposure must map tool names to exposures."
+mcpImportProblemToolExposureTool:
+  message: "the toolExposure of {tool} is not an exposure pi knows."
+  placeholders:
+    tool: {type: String}
+mcpImportProblemEnabled: "enabled must be true or false."
+mcpImportProblemDescription: "description must be text."
+mcpImportProblemTimeout:
+  message: "the timeout {value} is not a positive number of seconds."
+  placeholders:
+    value: {type: String}
+mcpImportProblemSse: "the legacy SSE transport is not supported."
+mcpImportProblemUrl:
+  message: "{url} is not an http or https URL."
+  placeholders:
+    url: {type: String}
+mcpImportProblemHeaders: "headers must map names to text."
+mcpImportProblemAuth: "auth.provider must name a pi provider."
+mcpImportProblemAuthUrl: "auth sends a provider's token, so the URL must be https (or http on localhost)."
+mcpImportProblemOauth: "oauth must be an object."
+mcpImportProblemOauthClientId: "oauth.clientId must be text."
+mcpImportProblemOauthClientSecret: "oauth.clientSecret must be text."
+mcpImportProblemCallbackPort:
+  message: "the OAuth callback port {value} is not a port number."
+  placeholders:
+    value: {type: String}
+mcpImportProblemCallbackUrl:
+  message: "the OAuth callback address {value} is not a loopback http address."
+  placeholders:
+    value: {type: String}
+mcpImportProblemCallbackPortMismatch:
+  message: "the OAuth callback address uses port {value}, not the callback port."
+  placeholders:
+    value: {type: String}
+mcpImportProblemOauthScope: "oauth.scope must be text."
+mcpImportProblemOauthClientName: "oauth.clientName must be non-empty text."
+mcpImportProblemOauthClientRegistration:
+  message: "oauth.clientRegistration {value} must be \"auto\", \"dcr\" or \"cimd\"."
+  placeholders:
+    value: {type: String}
+mcpImportProblemOauthClientRegistrationClient: "oauth.clientRegistration \"cimd\" cannot go with oauth.clientId or oauth.clientName."
+mcpImportProblemOauthClientRegistrationCallback: "oauth.clientRegistration \"cimd\" needs oauth.callbackUrl on localhost or 127.0.0.1 with the path /callback."
+mcpImportProblemAuthServerMetadataUrl:
+  message: "oauth.authServerMetadataUrl {value} must be an https address (or http on localhost)."
+  placeholders:
+    value: {type: String}
+mcpImportProblemArgs: "args must be a list of text."
+mcpImportProblemArgsIndex:
+  message: "args[{index}] is not text."
+  placeholders:
+    index: {type: int}
+mcpImportProblemEnv: "env must map names to text."
+mcpImportProblemCwd: "cwd must be text."
+mcpImportProblemNoCommandOrUrl: "it needs a command (stdio) or a URL (streamable HTTP)."
+mcpImportFieldReasonEmpty: "The paste leaves this empty."
+mcpImportFieldReasonInput: "The config asks for this when it is installed."
+mcpImportFieldReasonVariable: "The paste reads a variable here that pi does not fill in."
+mcpImportFieldReasonHome: "The paste reads the home folder here in a way pi does not fill in."
+mcpImportFieldReasonWorkspaceBasename: "The paste uses the workspace folder's name here, which pi does not know."
+mcpImportFieldReasonUnsupportedVariable: "The paste uses a variable here that pi cannot fill in."
+mcpImportFieldReasonClientSecret: "The command asks for the OAuth client secret."
+mcpImportFieldReasonRegistryHeader: "The registry entry asks for this header."
+mcpImportFieldReasonRegistryVariable: "The registry entry asks for this part of the address."
+i18nCreatingSession: "Creating new session…"
+i18nCreating: "Creating…"
+i18nSubscription: "Subscription"
+i18nSubscriptions: "Subscriptions"
+i18nCustomEndpoint: "Custom endpoint format"
+i18nNoChanges: "No changes"
+i18nBranches: "Branches"
+i18nNoActiveSession: "No active session"
+i18nNoBranches: "This session has no branches"
+i18nBranchesLockedWhileRunning: "Branches can't be switched while the session is running"
+i18nSource: "Source"
+i18nPreview: "Preview"
+i18nDiff: "Diff"
+i18nDownloadFile: "Download file"
+i18nLiveSync: "Live sync active"
+i18nNotWatching: "Not watching"
+i18nFileViewMode: "File view mode"
+i18nCompareHead: "Compare working tree with HEAD"
+i18nMentionSelectedLines: "Mention selected lines"
+i18nDisableWrap: "Disable word wrap"
+i18nEnableWrap: "Enable word wrap"
+i18nHtmlPreview: "HTML preview"
+i18nPreviewFile:
+  message: "Preview {file}"
+  placeholders:
+    file: {type: String}
+i18nInvalidMermaid: "Invalid Mermaid diagram"
+i18nRenderingMermaid: "Rendering Mermaid diagram"
+i18nPreviewAfterStreaming: "Preview available after streaming"
+i18nShowMermaidSource: "Show Mermaid source"
+i18nPreviewMermaid: "Preview Mermaid diagram"
+i18nOpenMermaidViewer: "Open diagram viewer"
+i18nMermaidViewer: "Mermaid diagram viewer"
+i18nMermaidDiagram: "Mermaid diagram"
+i18nInvalidSvg: "Invalid SVG image"
+i18nShowSvgSource: "Show SVG source"
+i18nPreviewSvg: "Preview SVG image"
+i18nOpenSvgViewer: "Open image viewer"
+i18nSvgViewer: "SVG image viewer"
+i18nSvgImage: "SVG image"
+i18nZoomOut: "Zoom out"
+i18nZoomIn: "Zoom in"
+i18nFitToWidth: "Fit to width"
+modelsDiscoveryFetching: "Importing models…"
+modelsDiscoveryFetch: "Import models…"
+modelsDiscoveryFilterPlaceholder:
+  message: "Filter {count} models…"
+  placeholders:
+    count: {type: int}
+modelsDiscoveryFilter: "Filter upstream models"
+modelsDiscoverySelectShown: "Select shown"
+modelsDiscoveryNoMatches: "No matching models."
+modelsConfigUnreadable:
+  message: "Could not read models.json, so saving is disabled to avoid overwriting it. Fix the file, then reopen this panel. {error}"
+  placeholders:
+    error: {type: String}
+modelsProviderNameTaken:
+  message: "Another provider is already named \"{name}\". Choose a different name."
+  placeholders:
+    name: {type: String}
+modelsProviderIncomplete:
+  message: "{provider} needs a Base URL or at least one model. Fill it in or delete the provider."
+  placeholders:
+    provider: {type: String}
+modelsProviderNeedsBaseUrl:
+  message: "{provider} needs a Base URL."
+  placeholders:
+    provider: {type: String}
+modelsApiKeyPlaceholder: "ENV_VAR_NAME, !shell-command, or literal key"
+modelsApiKeyEnable:
+  message: "Enter your {provider} API key to enable {count} models."
+  placeholders:
+    provider: {type: String}
+    count: {type: int}
+modelsApiKeyEnableOne:
+  message: "Enter your {provider} API key to enable 1 model."
+  placeholders:
+    provider: {type: String}
+modelsReplaceApiKey: "Enter new key to replace…"
+modelsConnectionLost: "Connection lost"
+modelsVerifying: "Verifying…"
+modelsServerError:
+  message: "Server error {status}"
+  placeholders:
+    status: {type: String}
+modelsDeviceCodeExpires:
+  message: "Expires in {minutes} minutes."
+  placeholders:
+    minutes: {type: int}
+modelsModelCount:
+  message: "{count} models"
+  placeholders:
+    count: {type: int}
+modelsModelCountOne: "1 model"
+modelsOauthConnect:
+  message: "Connect your {provider} account."
+  placeholders:
+    provider: {type: String}
+modelsOauthPasteRedirect: "Complete sign-in in the browser, then copy the redirect URL from the address bar and paste it below."
+modelsOauthNoBrowser: "If the browser window did not open,"
+modelsOauthOpenLoginPage: "click here to open the login page"
+modelsOauthOpenLoginPageEnd: "."
+modelsOauthValuePlaceholder: "Enter value…"
+modelsOauthDeviceCode: "Open the verification page and enter this code:"
+modelsAddHeader: "Add header"
+modelsDisplayNamePlaceholder: "Display name"
+modelsSortByName: "Sort models by shown name (A–Z)"
+modelsDiscoveryAdded: "added"
+modelsDiscoveryShowing:
+  message: "Showing first {shown} of {total}"
+  placeholders:
+    shown: {type: int}
+    total: {type: int}
+modelsDiscoveryFetched:
+  message: "{count} models fetched"
+  placeholders:
+    count: {type: int}
+modelsDiscoveryAddSelected: "Add selected"
+modelsDiscoveryAddSelectedCount:
+  message: "Add selected ({count})"
+  placeholders:
+    count: {type: int}
+modelsCatalogSource: "source: models.dev ↗"
+modelsCatalogFilling: "Filling details…"
+modelsCatalogFill: "Fill model details"
+modelsCatalogFilled:
+  message: "{count} fields filled"
+  placeholders:
+    count: {type: int}
+modelsCatalogNoEmptyFields: "No empty fields to fill"
+modelsCatalogNoExactMatch: "No exact models.dev match"
+modelsCatalogPriceProvider:
+  message: "Price matched Provider {provider}"
+  placeholders:
+    provider: {type: String}
+modelsCatalogPriceBaseUrl:
+  message: "Price matched Base URL to {provider}"
+  placeholders:
+    provider: {type: String}
+modelsCatalogPriceConsensus:
+  message: "Price agreed by {support}/{total} records"
+  placeholders:
+    support: {type: String}
+    total: {type: int}
+modelsCatalogPriceUnreliable: "No reliable price found"
+modelsCatalogUndo: "Undo"
+modelsCapabilities: "Capabilities"
+modelsReasoning: "Reasoning / thinking"
+modelsImageInput: "Image input"
+modelsModelSpecs: "Model specifications"
+modelsContextWindow: "Context window (tokens)"
+modelsContextForModel:
+  message: "Context window for {model}"
+  placeholders:
+    model: {type: String}
+modelsContextInvalid:
+  message: "Context window of {model}: enter a positive whole number of tokens."
+  placeholders:
+    model: {type: String}
+modelsImageMaxBytesInvalid:
+  message: "Image size limit of {model}: enter a positive whole number of bytes."
+  placeholders:
+    model: {type: String}
+modelsContextOverrideHelp: "Context window in tokens; blank uses the default."
+modelsApplyHelp: "Open sessions: select the model again to apply."
+modelsMaxOutputTokens: "Max output tokens"
+modelsCostPerMillion: "Cost per million tokens"
+modelsCostInput: "Input"
+modelsCostOutput: "Output"
+modelsCostCacheRead: "Cache read"
+modelsCostCacheWrite: "Cache write"
+modelsNotProvided: "Not provided"
+modelsEditCosts: "Edit prices"
+modelsFinishEditingCosts: "Done"
+modelsCostAllRequired: "Enter a valid non-negative price; blank fields are saved as 0."
+modelsAdvancedSettings: "Advanced settings"
+modelsProviderDefaults: "Using provider defaults"
+modelsHeadersSummary:
+  message: "Headers: {count}"
+  placeholders:
+    count: {type: int}
+modelsCompatSummary:
+  message: "Compatibility: {count}"
+  placeholders:
+    count: {type: int}
+modelsThinkingSummary:
+  message: "Thinking levels: {count}"
+  placeholders:
+    count: {type: int}
+modelsApiOverride: "API override"
+modelsBaseUrlOverride: "Base URL override"
+modelsHeaders: "Headers"
+modelsHeadersHelp: "Overrides provider headers of the same name."
+modelsImageMaxBytes: "Image size limit (bytes)"
+modelsImageMaxBytesHelp:
+  message: "Per image, after base64. Blank uses pi's default, {size}."
+  placeholders:
+    size: {type: String}
+modelsImageMaxBytesSummary:
+  message: "Images ≤ {size}"
+  placeholders:
+    size: {type: String}
+modelsCompatibility: "Compatibility"
+modelsDeepSeekThinkingCompat: "DeepSeek thinking compatibility"
+modelsDeveloperRole: "Use the developer role for the system prompt"
+modelsAdaptiveThinking: "Claude adaptive thinking (effort levels)"
+modelsThinkingLevelMap: "Thinking level map"
+modelsClearAll: "Clear all"
+modelsEnabledSection: "Available models"
+modelsEnabledCount:
+  message: "{enabled}/{total} enabled"
+  placeholders:
+    enabled: {type: int}
+    total: {type: int}
+modelsEnableAll: "Enable all"
+modelsDisableAll: "Disable all"
+modelsEnableShown: "Enable shown"
+modelsDisableShown: "Disable shown"
+modelsEnabledFilter: "Filter available models"
+modelsEnabledFilterPlaceholder:
+  message: "Filter {count} models…"
+  placeholders:
+    count: {type: int}
+modelsEnabledNoMatches: "No matching models."
+modelsEnabledToggle:
+  message: "Show {model} in the model selector"
+  placeholders:
+    model: {type: String}
+modelsEnabledProviderToggle:
+  message: "Enable all {provider} models"
+  placeholders:
+    provider: {type: String}
+modelsEnabledPinHint: "Thinking level pinned by enabledModels. Edit settings.json to change it."
+modelsEnabledLastModel: "At least one model has to stay enabled."
+modelsEnabledProjectScope: "This project's .pi/settings.json sets enabledModels and overrides the global value, so these switches are read-only. Edit that file to change the list."
+modelsEnabledUnavailable: "Sign in to this provider to choose its models."
+modelsRefreshCatalog: "Refresh catalog"
+modelsRefreshingCatalog: "Refreshing…"
+modelsRefreshCatalogHint: "Fetch the model list this provider publishes now. pi's built-in list is fixed at the pi version pi-web ships with, so a newly released model only shows up after a refresh."
+modelsCatalogUpdated: "Model list updated from the provider."
+modelsCatalogUnchanged: "Already up to date."
+modelsCatalogUnreachable: "Could not reach the catalog. Check the connection and the provider credential, then try again."
+modelsCatalogOffline: "PI_OFFLINE is set, so pi-web does not fetch catalogs."
+modelsEnabledCustomEmpty: "No models available from this provider yet. Save your changes, and check that the API key works."
+modelsEnabledStale:
+  message: "{count} unmatched"
+  placeholders:
+    count: {type: int}
+modelsEnabledStaleHint: "A model is available when its provider has a usable credential. An entry matches nothing when that credential is missing, when the model was renamed or deleted, or when the entry was written for another machine."
+modelsEnabledPrune: "Remove unmatched entries"
+modelsEnabledPruneHint: "Delete the configured entries that match no available model, a signed-out provider's included: signing back in will not bring them back. Everything else stays as it is."
+modelsEnabledClear: "Enable all models"
+modelsEnabledClearHint: "Remove the model filter for every provider."
+i18nTestingModel: "Testing model connection..."
+i18nConnected: "Connected"
+i18nFailed: "Failed"
+i18nTest: "Test"
+i18nTestConnection: "Test model connection"
+i18nProvider: "Provider"
+i18nModel: "Model"
+i18nProviderName: "Provider name"
+i18nRename: "Rename"
+i18nDefault: "Default"
+i18nDisabled: "Disabled"
+i18nNoResources: "No resources"
+i18nUnknown: "Unknown"
+i18nInstalledVersion:
+  message: "installed {version}"
+  placeholders:
+    version: {type: String}
+i18nConfiguredVersion:
+  message: "configured {version}"
+  placeholders:
+    version: {type: String}
+i18nExtensions: "Extensions"
+i18nPrompts: "Prompts"
+i18nThemes: "Themes"
+i18nResourceCount:
+  message: "{count} {label}"
+  placeholders:
+    count: {type: int}
+    label: {type: String}
+i18nExtensionShort: "ext"
+i18nSkillShort: "skills"
+i18nPromptShort: "prompts"
+i18nThemeShort: "themes"
+i18nCustom: "Custom"
+i18nClearAll: "clear all"
+i18nConnectedSuccessfully: "Connected successfully."
+i18nNotConnected: "not connected"
+i18nConfigured: "configured"
+i18nNotConfigured: "not configured"
+i18nOpeningBrowser: "Opening browser…"
+i18nSubmit: "Submit"
+i18nLogin: "Login"
+i18nRelogin: "Re-login"
+i18nDisconnect: "Disconnect"
+i18nNetworkError: "Network error"
+i18nContinuing: "Continuing…"
+i18nSkills: "Skills"
+i18nPlugins: "Plugins"
+i18nAddSkill: "Add skill"
+i18nAddPlugin: "Add plugin"
+i18nSelectSkill: "Select a skill"
+i18nSelectPackage: "Select a package"
+i18nUpdateAvailable: "Update available"
+i18nUpToDate: "Up to date"
+i18nAutomaticChecksUnavailable: "Automatic checks unavailable"
+i18nCheckFailed: "Check failed"
+i18nInstalled: "Installed"
+i18nStatus: "Status"
+i18nVersion: "Version"
+i18nDescription: "Description"
+i18nPackage: "Package"
+i18nResources: "Resources"
+i18nInstalledPath: "Installed path"
+i18nCwd: "CWD"
+i18nResolvedResources: "Resolved Resources"
+i18nReloadSession: "Reload session"
+i18nReloading: "Reloading..."
+i18nPackageRemoved: "Package removed."
+i18nPackageInstalled: "Package installed."
+i18nPackageUpdated: "Package updated."
+i18nPackagesUpdated: "Packages updated."
+i18nUpdateAllPlugins: "Update all"
+i18nUpdateAllPluginsHint: "Updates all configured plugins"
+i18nPackageDisabled: "Package disabled."
+i18nPackageEnabled: "Package enabled."
+i18nSessionReloaded: "Session reloaded."
+i18nThinking: "Thinking"
+i18nLargeMessageReveal:
+  message: "Message content is very large ({size}). Click to view as plain text — markdown rendering is disabled to keep the page responsive."
+  placeholders:
+    size: {type: String}
+i18nLoadingThinking: "Loading thinking..."
+i18nCopyMessage: "Copy message"
+i18nEditFromHere: "Edit from here"
+i18nEditFromHereTitle: "Edit from here — branches within this session"
+i18nNewSession: "New session"
+i18nNewSessionTitle: "New session — creates an independent copy from here"
+i18nEstimatedTokens: "Estimated token count while streaming"
+i18nNoOutput: "(no output)"
+i18nNoSummary: "(no summary)"
+i18nConversationCompacted: "Conversation compacted"
+i18nCompactedFromTokens:
+  message: "Compacted from {tokens} tokens"
+  placeholders:
+    tokens: {type: int}
+i18nCompactionDescription: "The conversation history before this point was compacted into the following summary:"
+i18nFileContext:
+  message: "File context: {details}"
+  placeholders:
+    details: {type: String}
+i18nReadFiles: "Read files"
+i18nModifiedFiles: "Modified files"
+i18nNoMessage: "(no message)"
+i18nCollapse: "Collapse"
+i18nExpand: "Expand"
+i18nHideDetails: "Hide details"
+i18nShowDetails: "Show details"
+i18nThinkingUnavailable: "Thinking content unavailable"
+i18nBefore: "Before"
+i18nAfter: "After"
+diffUnchangedLine: "1 unchanged line"
+diffUnchangedLines:
+  message: "{count} unchanged lines"
+  placeholders:
+    count: {type: int}
+i18nSessionComplete: "Session complete"
+i18nTaskFinished: "Task finished."
+i18nAttentionNeeded: "Pi needs your attention"
+i18nExtensionInputNeeded: "An extension is waiting for your input."

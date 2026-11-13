@@ -1,0 +1,27 @@
+name: Pi Web Native
+id: dev.piweb.native
+version: 0.1.0
+dev:
+  target: native
+build:
+  output: dist
+  targets: [macos_arm64]
+# The app's catalogs: a YAML file per language in locales/, en's with every
+# message. Its languages are the ones the app shows.
+i18n:
+  dir: locales
+  source: en
+
+# The desktop widget: the current session and the library at a glance.
+widgets:
+  - kind: session
+    name: Pi Session
+    description: Current pi session, project and session count.
+    families: [small, medium]
+
+# The macOS package's Info.plist: dictation reads both, and macOS refuses the
+# microphone or the recognizer without its own sentence for it.
+apple:
+  info:
+    NSMicrophoneUsageDescription: 按住麦克风说话，内容会转成输入框里的文字。
+    NSSpeechRecognitionUsageDescription: 语音输入要用系统的语音识别把话转成文字。

@@ -1,0 +1,3048 @@
+# zh-Hant: written by scripts/gen_locales.py from lib/i18n/messages/zh-TW.ts.
+# Do not edit it by hand: change the TypeScript messages, then run
+#   python3 scripts/gen_locales.py && go tool nsgo i18n
+
+commonOk: "確定"
+commonLanguage: "語言"
+commonModels: "模型"
+commonSkills: "技能"
+commonAgents: "子代理"
+commonPlugins: "外掛"
+commonSettings: "設定"
+settingsTitle: "設定"
+settingsGeneral: "一般"
+settingsGeneralDescription: "選擇 Pi Web 的外觀與介面語言。"
+settingsAppearance: "外觀"
+settingsAppearanceDescription: "選擇淺色或深色主題，也可以跟隨系統設定。"
+settingsChatContentWidth: "聊天內容寬度"
+settingsChatContentFontSize: "聊天和終端字體大小"
+settingsTypography: "字體與排版"
+settingsUiFontFamily: "介面字體"
+settingsMonoFontFamily: "等寬字體"
+settingsUiFontPlaceholder: "系統預設"
+settingsMonoFontPlaceholder: "預設 Noto Sans Mono"
+settingsResetUiFont: "重設介面字體"
+settingsResetMonoFont: "重設等寬字體"
+settingsFontDescription: "填寫本機已安裝的字體名稱，多個以逗號分隔，留空使用預設。等寬字體用於程式碼和終端。僅儲存在目前瀏覽器。"
+settingsUiFontWeight: "介面字體字重"
+settingsMonoFontWeight: "等寬字體字重"
+settingsFontWeightThin: "極細"
+settingsFontWeightExtraLight: "特細"
+settingsFontWeightLight: "細體"
+settingsFontWeightRegular: "一般"
+settingsFontWeightMedium: "中等"
+settingsFontWeightSemiBold: "半粗"
+settingsResetChatContentWidth: "重設聊天內容寬度"
+settingsResetChatContentFontSize: "重設聊天和終端字體大小"
+settingsChatContentWidthDescription: "設定訊息內容和輸入框的最大寬度。"
+settingsThemeLight: "淺色"
+settingsThemeDark: "深色"
+settingsThemeMist: "霧青"
+settingsThemeRose: "薔薇"
+settingsThemePine: "松夜"
+settingsThemeSand: "暖沙"
+settingsThemeLilac: "丁香"
+settingsThemeSlate: "岩藍"
+settingsThemeDusk: "暮紫"
+settingsThemeEmber: "餘燼"
+settingsThemeContrastLight: "高對比淺色"
+settingsThemeContrastDark: "高對比深色"
+settingsThemeZenburn: "Zenburn"
+settingsThemeSystem: "跟隨系統"
+settingsThinkingDisplay: "思考過程顯示"
+settingsThinkingDisplayDescription: "選擇訊息載入時模型思考區塊是否預設展開。"
+settingsThinkingExpandedDefault: "預設展開思考區塊"
+settingsChat: "對話"
+settingsEnterSendMode: "傳送按鍵"
+settingsEnterSendModeEnter: "Enter"
+settingsEnterSendModeCtrlEnter: "Ctrl/Cmd+Enter"
+settingsQuoteSelection: "選取文字時顯示操作浮窗"
+settingsSidebar: "側邊欄"
+settingsFilesPlacement: "檔案瀏覽器"
+settingsFilesPlacementBelow: "工作階段下方"
+settingsFilesPlacementTab: "獨立分頁"
+settingsFilesPlacementDescription: "手機上一律使用分頁切換。"
+settingsLanguageDescription: "選擇整個介面使用的語言。"
+settingsShellTool: "Shell 工具"
+settingsShellToolDescription: "選擇模型執行命令時使用的 Shell。直接輸入的 ! 和 !! 命令仍使用 Bash。"
+settingsPushPermission: "背景推送（iOS 主畫面應用）"
+settingsPushPermissionDescription: "將本站加入主畫面後（iPhone 需 iOS 16.4+），工作階段完成且頁面不在前景時，可在鎖定畫面收到系統通知。若通知不再送達，可回到這裡重新註冊。註冊必須由點擊觸發，因此不會自動彈出授權。"
+settingsPushRegister: "註冊推送"
+settingsPushRegisterLoading: "註冊中…"
+settingsPushRegistered: "✅ 推送已註冊，背景通知就緒。"
+settingsPushRegisterFailed: "❌ 註冊失敗："
+settingsUsePowerShell: "使用 PowerShell 取代 Bash"
+settingsProjectRequired: "開啟專案後才能設定此項"
+settingsBackTo:
+  message: "返回{name}"
+  placeholders:
+    name: {type: String}
+settingsMcp: "MCP"
+authPrompt: "登入後繼續使用"
+authPassword: "密碼"
+authLogIn: "登入"
+authLoggingIn: "正在登入..."
+authInvalidPassword: "密碼不正確"
+authLoginFailed: "登入失敗，請再試一次。"
+authTooManyAttempts:
+  message: "失敗次數過多，請在 {seconds} 秒後再試。"
+  placeholders:
+    seconds: {type: int}
+authLogOut: "登出"
+authLoggingOut: "正在登出..."
+authLogoutFailed: "登出失敗，請再試一次。"
+skillsScopeGlobal: "全域"
+skillsScopeProject: "專案"
+skillsScopePath: "路徑"
+skillsGroupSwitchOff:
+  message: "在模型提示詞中顯示「{group}」中的所有技能"
+  placeholders:
+    group: {type: String}
+skillsGroupSwitchOn:
+  message: "在模型提示詞中隱藏「{group}」中的所有技能，仍可手動呼叫。"
+  placeholders:
+    group: {type: String}
+skillsBulkFailed:
+  message: "{total} 個技能中有 {count} 個無法變更："
+  placeholders:
+    count: {type: int}
+    total: {type: int}
+skillsInstructions: "說明"
+skillsNoInstructions: "此技能沒有說明。"
+skillsDocumentBack: "返回"
+pluginsGroupSwitchOff:
+  message: "啟用 {group} 中的所有套件"
+  placeholders:
+    group: {type: String}
+pluginsGroupSwitchOn:
+  message: "停用 {group} 中的所有套件。設定了資源篩選的套件會保持啟用，因為停用會清除其篩選設定；請使用它自己的開關。"
+  placeholders:
+    group: {type: String}
+pluginsBulkKeptFiltered:
+  message: "{count} 個設定了資源篩選的套件保持啟用：停用會清除其篩選設定，請使用它自己的開關。"
+  placeholders:
+    count: {type: int}
+pluginsBulkEnabled: "套件已啟用。"
+pluginsBulkDisabled: "套件已停用。"
+pluginsBulkFailed:
+  message: "{total} 個套件中有 {count} 個無法變更："
+  placeholders:
+    count: {type: int}
+    total: {type: int}
+pluginsStatusLoaded: "已載入"
+pluginsStatusInstalled: "已安裝"
+pluginsStatusMissing: "缺失"
+pluginsStatusDisabled: "已停用"
+pluginsDiagnostic: "1 則診斷"
+pluginsDiagnostics:
+  message: "{count} 則診斷"
+  placeholders:
+    count: {type: int}
+configSource: "來源"
+configExamples: "範例"
+configName: "名稱"
+configSaveTo: "儲存至"
+agentsClose: "關閉"
+agentsBuiltInTitle: "啟用 Pi Web 內建子代理"
+agentsBuiltInDescription: "提供 Pi Web 整合的 Agent 工具，並停用發生衝突的 pi-subagents 擴充功能。"
+agentsReloadRequired: "重新載入目前工作階段後生效。"
+agentsReloadSession: "重新載入工作階段"
+agentsMaxConcurrent: "並行子代理數"
+agentsMaxConcurrentDescription: "每個父工作階段同時執行的最大任務數。"
+agentsReloading: "正在重新載入..."
+agentsLoading: "正在載入子代理..."
+agentsNew: "新增子代理"
+agentsEmpty: "選擇或建立子代理設定檔"
+agentsName: "子代理 ID"
+agentsDisplayName: "顯示名稱"
+agentsDescription: "描述"
+agentsPrompt: "系統指令"
+agentsTools: "工具"
+agentsResources: "資源"
+agentsLoadSkills: "載入技能"
+agentsLoadExtensions: "載入擴充功能"
+agentsMcp: "連接 MCP 伺服器"
+agentsCodemode: "程式碼模式"
+agentsCodemodeInherit: "沿用父工作階段"
+agentsCodemodeOn: "啟用"
+agentsCodemodeOff: "停用"
+agentsCodemodeHint: "「沿用父工作階段」沿用父工作階段目前的程式碼模式啟用狀態。程式碼模式內的工具權限仍取自此設定的工具清單。變更對之後新建的子代理生效。"
+agentsSkillsOnly:
+  message: "只載入這些技能：{skills}"
+  placeholders:
+    skills: {type: String}
+agentsSkillsNone: "不載入任何技能：profile 檔案中的 skills 清單為空"
+agentsExtensionsOnly:
+  message: "只載入這些擴充功能：{extensions}"
+  placeholders:
+    extensions: {type: String}
+agentsExtensionsNone: "不載入任何擴充功能：profile 檔案中的 extensions 清單為空"
+agentsMcpHint: "子代理會連接 mcp.json 中的 MCP 伺服器。工具為唯讀時，只能呼叫伺服器標記為唯讀的 MCP 工具。變更對之後新建的子代理生效。"
+agentsMcpChatOnly: "MCP 需要至少一個工具、技能或擴充功能：純聊天的子代理無法使用。"
+agentsModel: "指定模型"
+agentsModelsLoading: "正在載入模型..."
+agentsModelUnavailable:
+  message: "{model}（無法使用）"
+  placeholders:
+    model: {type: String}
+agentsThinking: "思考層級"
+agentsMaxTurns: "最大輪次"
+agentsInherit: "沿用父工作階段"
+agentsEnable: "啟用子代理"
+agentsDisable: "停用子代理"
+agentsBuiltinPath: "內建設定檔"
+agentsInheritContext: "繼承父工作階段上下文"
+agentsBackground: "預設在背景執行"
+agentsDuplicate: "建立副本"
+agentsCopyName:
+  message: "{name} 副本"
+  placeholders:
+    name: {type: String}
+agentsDelete: "刪除"
+agentsDeleteConfirm:
+  message: "刪除 {name}？"
+  placeholders:
+    name: {type: String}
+agentsSave: "儲存"
+agentsSaving: "正在儲存..."
+agentsScopeBuiltin: "內建"
+agentsScopeGlobal: "全域"
+agentsScopeWorkspace: "工作區"
+agentsScopeProject: "專案"
+agentsOverridden: "已被覆寫"
+subagentOpenTab: "在側欄面板中檢視子代理工作"
+subagentCloseTab: "關閉子代理側欄面板"
+subagentTabLabel:
+  message: "子代理 {name}"
+  placeholders:
+    name: {type: String}
+sessionpanelLoading: "正在載入…"
+sessionpanelMissing: "此工作階段已不存在。"
+sessionpanelError: "無法載入此工作階段。"
+sidechatDivider: "側聊從這裡開始"
+sidechatNew: "新增側聊"
+agentswitcherOpenInMainChat: "已在主聊天開啟"
+sidechatTitle: "側聊"
+sidechatTabLabel: "側聊"
+sidechatOpenTab: "在側面板中開啟側聊"
+sidechatCloseTab: "關閉側聊面板"
+sidechatErrorNoSession: "沒有可衍生側聊的會話"
+sidechatErrorNotFound: "找不到該會話"
+sidechatErrorUnsaved: "該會話尚未儲存，請先傳送一則訊息。"
+sidechatErrorEmpty: "沒有可繼承的內容：該會話還沒有訊息"
+sidechatErrorSubagent: "子代理會話不能發起側聊"
+sidechatErrorSide: "側聊不能再次發起側聊"
+agentswitcherSideChat: "側聊"
+codemodeCalls: "工具呼叫"
+codemodeCallCount:
+  message: "{count} 次呼叫"
+  placeholders:
+    count: {type: int}
+codemodeCallCountOne: "1 次呼叫"
+codemodeShowEarlierCalls:
+  message: "顯示更早的 {count} 次呼叫"
+  placeholders:
+    count: {type: int}
+codemodeOmittedCalls:
+  message: "更早的 {count} 次呼叫未顯示"
+  placeholders:
+    count: {type: int}
+codemodeModelCost:
+  message: "模型呼叫：{cost}"
+  placeholders:
+    cost: {type: String}
+codemodeStatusRunning: "執行中"
+codemodeStatusOk: "成功"
+codemodeStatusError: "失敗"
+codemodeStatusCancelled: "已取消"
+agentswitcherTitle: "Agents"
+agentswitcherTitleRunning:
+  message: "Agents：{count} 個執行中"
+  placeholders:
+    count: {type: int}
+agentswitcherMain: "主 Agent"
+agentswitcherSubagent: "子 Agent"
+agentswitcherCurrent: "目前"
+agentswitcherCountOne:
+  message: "{count} 個 Agent"
+  placeholders:
+    count: {type: int}
+agentswitcherCount:
+  message: "{count} 個 Agent"
+  placeholders:
+    count: {type: int}
+agentswitcherRunningCount:
+  message: "{count} 個執行中"
+  placeholders:
+    count: {type: int}
+agentswitcherTokens:
+  message: "{count} tokens"
+  placeholders:
+    count: {type: int}
+agentswitcherTotalUsage: "合計"
+agentswitcherTotalUsageHint: "主 Agent 與全部子 Agent"
+agentswitcherSearch: "搜尋 Agents"
+agentswitcherNoMatches: "找不到相符的 Agent"
+agentswitcherStatusStarting: "正在啟動"
+agentswitcherStatusRunning: "執行中"
+agentswitcherStatusCompleted: "已完成"
+agentswitcherStatusFailed: "失敗"
+agentswitcherStatusAborted: "已中止"
+agentswitcherStatusInterrupted: "已中斷"
+appupdateReleaseNotes:
+  message: "Pi Web v{version} 已推出，查看版本資訊"
+  placeholders:
+    version: {type: String}
+sidebarHide: "隱藏側邊欄"
+sidebarShow: "顯示側邊欄"
+themeLight: "主題：淺色"
+themeDark: "主題：深色"
+themeMist: "主題：霧青"
+themeRose: "主題：薔薇"
+themePine: "主題：松夜"
+themeAuto: "主題：跟隨系統"
+historyFull: "完整紀錄"
+historyUnsaved: "工作階段儲存後才能查看完整紀錄"
+historyLabel: "完整紀錄"
+titleGenerating: "正在產生..."
+titleUpdated: "標題已更新"
+titleFailed: "產生失敗"
+titleGenerate: "產生標題"
+titleUnsaved: "工作階段儲存後才能產生標題"
+titleNoMessages: "請先傳送訊息，再為工作階段命名"
+titleGenerateSession: "產生工作階段標題"
+systemPrompt: "系統提示詞"
+systemEmpty: "系統提示詞為空（工具已停用）"
+systemLoad: "系統提示詞尚未載入"
+systemLoading: "正在載入系統提示詞…"
+systemLabel: "系統"
+toolsLabel: "工具"
+toolsTitle: "工具定義"
+toolsDetails: "工具定義詳細資料"
+toolsLoad: "工具定義尚未載入"
+toolsLoading: "正在載入工具定義…"
+toolsNoTools: "沒有啟用的工具"
+toolsDescription: "描述"
+toolsParameters: "參數"
+toolsParameterCount:
+  message: "{count} 個參數"
+  placeholders:
+    count: {type: int}
+toolsNoParameters: "無參數"
+toolsRequired: "必填"
+toolsOptional: "選填"
+toolsAllowedValues: "允許值"
+toolsDefaultValue: "預設值"
+toolsGuidelines: "提示詞規則"
+sessionInfo: "工作階段資訊"
+sessionName: "名稱"
+sessionFile: "工作階段檔案"
+sessionInMemory: "記憶體中"
+sessionId: "ID"
+sessionUser: "使用者"
+sessionAssistant: "助理"
+sessionToolCalls: "工具呼叫"
+sessionToolResults: "工具結果"
+sessionTotal: "總計"
+sessionInput: "輸入"
+sessionOutput: "輸出"
+sessionCacheRead: "快取讀取"
+sessionCacheWrite: "快取寫入"
+sessionCost: "費用"
+sessionContext: "上下文"
+sessionCacheHitRate: "平均快取命中率"
+sessionCopy:
+  message: "複製{value}"
+  placeholders:
+    value: {type: String}
+sessionCopied: "已複製"
+sessionTitle: "工作階段資訊"
+sessionLoad: "傳送訊息或執行 /session 以載入工作階段資訊"
+sessionInfoSection: "工作階段資訊"
+sessionProjectSection: "專案資訊"
+sessionMessages: "訊息"
+sessionTokens: "Token"
+sessionTotalActive: "活躍時間"
+sessionCopyFile: "複製檔案路徑"
+sessionCopyId: "複製工作階段 ID"
+sessionProjectDir: "專案目錄"
+sessionGitBranch: "Git 分支"
+sessionGitWorktree: "Worktree"
+sessionCopyProjectDir: "複製專案目錄"
+sessionCopyGitBranch: "複製 Git 分支"
+sessionCopyGitWorktree: "複製 Worktree 路徑"
+debugTitle: "除錯"
+debugPanelLabel: "除錯：連線與伺服器狀態"
+debugFailed: "除錯面板無法顯示，請關閉後重新開啟。"
+debugReading: "正在讀取…"
+debugCopyJson: "複製 JSON"
+debugCopyTitle: "以 JSON 複製面板顯示的內容"
+debugCopied: "已複製"
+debugReadOnly: "唯讀：此面板不會啟動、保活或重新連線任何內容。它讀取本頁面狀態，並在開啟且頁面可見時每 2 秒請求一次 GET /api/agent/debug。"
+debugYes: "是"
+debugNo: "否"
+debugNone: "無"
+debugUnknown: "未知"
+debugNotYet: "尚無"
+debugTimes:
+  message: "{count} 次"
+  placeholders:
+    count: {type: int}
+debugDurationMs:
+  message: "{count} ms"
+  placeholders:
+    count: {type: int}
+debugDurationSeconds:
+  message: "{count}秒"
+  placeholders:
+    count: {type: int}
+debugDurationMinutes:
+  message: "{count}分"
+  placeholders:
+    count: {type: int}
+debugDurationHours:
+  message: "{count}小時"
+  placeholders:
+    count: {type: int}
+debugDurationDays:
+  message: "{count}天"
+  placeholders:
+    count: {type: int}
+debugDurationMinutesSeconds:
+  message: "{minutes}分{seconds}秒"
+  placeholders:
+    minutes: {type: int}
+    seconds: {type: int}
+debugDurationHoursMinutes:
+  message: "{hours}小時{minutes}分"
+  placeholders:
+    hours: {type: int}
+    minutes: {type: int}
+debugDurationDaysHours:
+  message: "{days}天{hours}小時"
+  placeholders:
+    days: {type: int}
+    hours: {type: int}
+debugTimeAgo:
+  message: "{time}前"
+  placeholders:
+    time: {type: String}
+debugTimeIn:
+  message: "{time}後"
+  placeholders:
+    time: {type: String}
+debugTimeDue: "已到期"
+debugPollWaiting: "正在等待伺服器…"
+debugPollInFlight:
+  message: "已等待 {time}，尚無回應"
+  placeholders:
+    time: {type: String}
+debugPollTimeout: "5 秒內無回應：瀏覽器到此伺服器的連線可能已全部占滿（HTTP/1.1 每個來源最多六個，所有分頁共用）"
+debugPollHttp:
+  message: "伺服器回傳 HTTP {status}"
+  placeholders:
+    status: {type: String}
+debugPollNetwork: "請求失敗（網路或伺服器無法使用）"
+debugPollInvalid: "伺服器的回應不是除錯快照"
+debugPollHidden: "頁面隱藏時暫停"
+debugHealthOk: "正常"
+debugHealthIssues:
+  message: "問題：{count}"
+  placeholders:
+    count: {type: int}
+debugIssuePool:
+  message: "本頁面佔用了 HTTP/1.1 每個來源六個連線（所有分頁共用）中的 {count} 個"
+  placeholders:
+    count: {type: int}
+debugIssueNoServerStream: "伺服器上沒有來自本頁面的 SSE"
+debugSectionPage: "本頁面"
+debugSectionStream: "SSE"
+debugSectionLease: "Lease"
+debugSectionServer: "伺服器"
+debugPageHttp1:
+  message: "{protocol} · 每個來源六個連線，所有分頁共用"
+  placeholders:
+    protocol: {type: String}
+debugPageDebugPoll: "除錯輪詢"
+debugPageHiddenCount:
+  message: "隱藏過 {count} 次"
+  placeholders:
+    count: {type: int}
+debugPageLastHidden:
+  message: "上次隱藏於{time}"
+  placeholders:
+    time: {type: String}
+debugPageRunningPoll: "側邊欄輪詢"
+debugPagePollCounts:
+  message: "{count} 次 · {failures} 次失敗"
+  placeholders:
+    count: {type: int}
+    failures: {type: int}
+debugSparkTitle:
+  message: "{count} 次回應 · 中位數 {median} · 最長 {max}"
+  placeholders:
+    count: {type: int}
+    median: {type: int}
+    max: {type: int}
+debugPagePollError: "失敗"
+debugPageSourceAgent: "Agent"
+debugPageSourceFileWatch: "檔案監看"
+debugPageSourceTerminal: "終端機"
+debugPageSourceConnecting: "連線中"
+debugPageSourceOpen: "已開啟"
+debugPageSourceCounts:
+  message: "開啟 {opens} 次 · {errors} 次錯誤"
+  placeholders:
+    opens: {type: int}
+    errors: {type: int}
+debugBoxFile: "檔案"
+debugBoxTerminal: "終端"
+debugBoxProvider: "提供者"
+debugStreamNoChat: "沒有已掛載的聊天"
+debugStreamReaderFailed: "無法讀取聊天狀態（請重新載入頁面）"
+debugStreamNoConnection: "尚無連線"
+debugStreamStateIdle: "閒置"
+debugStreamStateConnecting: "連線中"
+debugStreamStateConnected: "已連線"
+debugStreamStateRetrying: "重試中"
+debugStreamReadyState:
+  message: "readyState {value}"
+  placeholders:
+    value: {type: String}
+debugStreamOpened: "開啟"
+debugStreamConnected: "連線"
+debugStreamLastData: "上次距今"
+debugStreamDataAgo:
+  message: "{time}前有資料"
+  placeholders:
+    time: {type: String}
+debugStreamHeartbeat:
+  message: "心跳 {time}"
+  placeholders:
+    time: {type: String}
+debugStreamEvents: "事件"
+debugStreamOpens: "開啟 / 重試"
+debugStreamOpensRetries:
+  message: "{opens} / {retries}"
+  placeholders:
+    opens: {type: int}
+    retries: {type: int}
+debugStreamRetryDue:
+  message: "{time}重試"
+  placeholders:
+    time: {type: String}
+debugStreamLastError: "上次錯誤"
+debugStreamErrorReadyTimeout: "未及時連線"
+debugStreamErrorStartup: "啟動錯誤"
+debugStreamErrorError: "連線錯誤"
+debugStreamErrorStale: "無回應（看門狗）"
+debugStreamLastClose: "上次關閉"
+debugStreamCloseReleased: "頁面隱藏時釋放"
+debugStreamCloseGraceEnd: "寬限結束"
+debugStreamCloseSendFailed: "傳送失敗"
+debugStreamCloseSetTools: "工具已變更"
+debugStreamCloseRebuilt: "伺服器重建了工作階段"
+debugStreamCloseDeselected: "切換到了其他工作階段"
+debugStreamCloseStuck: "一直未連上"
+debugStreamCloseReplaced: "被新的 SSE 取代"
+debugStreamWatchdogArmed:
+  message: "已啟用 · {time}無資料即判定無回應"
+  placeholders:
+    time: {type: String}
+debugStreamWanted: "頁面需要"
+debugStreamReleased: "隱藏時釋放"
+debugStreamReattached: "重新連線"
+debugStreamReattachVisible: "頁面可見"
+debugStreamReattachActivity: "有活動"
+debugStreamGrace: "關閉前寬限"
+debugRunBash: "! 指令"
+debugRunCompacting: "壓縮中"
+debugRunStreaming: "串流輸出"
+debugRunPrompt: "提示詞執行中"
+debugRunPending:
+  message: "另有 {count} 個提示詞進行中"
+  placeholders:
+    count: {type: int}
+debugRunRetrying: "重試中"
+debugRunQueued:
+  message: "{count} 則排隊訊息"
+  placeholders:
+    count: {type: int}
+debugRunWaitingForMcp: "等待 MCP"
+debugRunTools:
+  message: "{count} 個工具執行中"
+  placeholders:
+    count: {type: int}
+debugRunMutating:
+  message: "{count} 個修改指令"
+  placeholders:
+    count: {type: int}
+debugRunReplacement:
+  message: "被 {kind} 取代"
+  placeholders:
+    kind: {type: String}
+debugRunStatusQueued: "排隊中"
+debugLeaseNoHolder: "尚無"
+debugLeaseLast: "上次續期"
+debugLeaseOutcomeReply: "已回應"
+debugLeaseOutcomeUnanswered: "無回應"
+debugLeaseOutcomeError: "失敗"
+debugLeaseNext: "下次續期"
+debugLeaseRenewsIn:
+  message: "{time}後續期"
+  placeholders:
+    time: {type: String}
+debugLeaseRenewing: "續期中"
+debugLeaseInFlight:
+  message: "已等待回應 {time}"
+  placeholders:
+    time: {type: String}
+debugLeaseEvery:
+  message: "每 {time}"
+  placeholders:
+    time: {type: String}
+debugLeaseCountsValue:
+  message: "已傳送 {requests} · 無回應 {unanswered} · 失敗 {errors}"
+  placeholders:
+    requests: {type: int}
+    unanswered: {type: int}
+    errors: {type: int}
+debugHolderThisPage: "本頁面"
+debugHolderOtherPage: "其他頁面"
+debugHolderNone: "無頁面 ID"
+debugPagesTitle: "連線的頁面"
+debugPagesUnknownClient: "未知瀏覽器"
+debugStateAlive: "存活"
+debugStateClosing: "關閉中"
+debugStateNone: "無 Wrapper"
+debugServerNoSession: "未選擇工作階段"
+debugServerStale: "來自重新載入之前"
+debugServerSubagent: "子 Agent"
+debugServerChatOnly: "僅聊天"
+debugServerStarting: "啟動中"
+debugServerNoWrapper: "無（未在伺服器上執行）"
+debugServerStarted: "啟動"
+debugServerClosingSince:
+  message: "{time}開始關閉"
+  placeholders:
+    time: {type: String}
+debugServerLastStart:
+  message: "上次 {time}"
+  placeholders:
+    time: {type: String}
+debugServerLastClosed:
+  message: "{time}關閉"
+  placeholders:
+    time: {type: String}
+debugServerUiRequests:
+  message: "{count} 個 UI 請求"
+  placeholders:
+    count: {type: int}
+debugServerCustomUis:
+  message: "{count} 個自訂 UI"
+  placeholders:
+    count: {type: int}
+debugServerExtensions: "擴充"
+debugServerExtensionsBinding: "綁定中"
+debugServerExtensionsBound: "已綁定"
+debugServerExtensionsFailed: "失敗"
+debugServerExtensionsNone: "無"
+debugServerIdle: "回收倒數"
+debugServerIdleTimeout:
+  message: "逾時 {time}"
+  placeholders:
+    time: {type: String}
+debugServerIdleDisabled: "已停用"
+debugServerIdleReset:
+  message: "{time}重設"
+  placeholders:
+    time: {type: String}
+debugServerIdleHint: "每次續期、指令或執行結束都會重新計時；到點時仍在執行或有擴充功能保活則順延"
+debugServerIdleForced: "已停止：到點即關閉，執行中也不例外"
+debugServerListeners: "監聽器"
+debugServerLastEvent: "上次事件"
+debugServerLastCommand: "上次指令"
+debugServerProviders: "存活提供者"
+debugServerProvidersUnknown: "無法列出（伺服器程式碼來自重新載入之前）"
+debugServerProviderActive: "活動"
+debugServerProviderInactive: "不活動"
+debugServerProviderError: "錯誤"
+debugServerByFile: "按檔案"
+debugServerStreamConnected:
+  message: "{time}連線"
+  placeholders:
+    time: {type: String}
+debugServerStreamStarting: "正在啟動工作階段"
+debugServerLastWrite:
+  message: "上次寫入 {time}"
+  placeholders:
+    time: {type: String}
+debugServerDropped:
+  message: "丟棄 {count}"
+  placeholders:
+    count: {type: int}
+debugServerQueued:
+  message: "排隊 {size}"
+  placeholders:
+    size: {type: String}
+debugServerSubagents: "子 Agent"
+debugServerSubagentsActive: "有未結束的執行"
+debugServerBackground: "背景"
+debugServerResumed: "已恢復"
+debugServerAbortRequested: "已請求中止"
+debugServerNotifying:
+  message: "正在通知 {parent}"
+  placeholders:
+    parent: {type: String}
+debugServerMcpDisposed: "已釋放"
+debugServerMcpRelease:
+  message: "閒置釋放：{time}"
+  placeholders:
+    time: {type: String}
+debugServerMcpProblems:
+  message: "{count} 個問題"
+  placeholders:
+    count: {type: int}
+debugServerMcpError: "錯誤"
+debugServerMcpReleased: "已釋放"
+debugGlobalUptime: "執行時長"
+debugGlobalTimers: "計時器"
+debugGlobalTimersValue:
+  message: "閒置 {idle} · 心跳 {heartbeat}"
+  placeholders:
+    idle: {type: String}
+    heartbeat: {type: String}
+debugGlobalWrappersValue:
+  message: "存活 {alive} · 關閉中 {closing} · 啟動中 {starting}"
+  placeholders:
+    alive: {type: int}
+    closing: {type: int}
+    starting: {type: int}
+debugGlobalStreamsValue:
+  message: "{total} 個，來自 {pages} 個頁面"
+  placeholders:
+    total: {type: int}
+    pages: {type: String}
+debugGlobalStreamCount:
+  message: "{count} 個串流"
+  placeholders:
+    count: {type: int}
+debugGlobalStreamTotal:
+  message: "共 {count} 個"
+  placeholders:
+    count: {type: int}
+debugGlobalFileWatches: "檔案監看"
+debugGlobalTerminals: "終端機"
+debugGlobalTerminalsValue:
+  message: "{count} 個 · {listeners} 個串流 · {detached} 個已分離 · {exited} 個已結束"
+  placeholders:
+    count: {type: int}
+    listeners: {type: int}
+    detached: {type: int}
+    exited: {type: int}
+debugGlobalCleanup:
+  message: "{time}清理"
+  placeholders:
+    time: {type: String}
+debugSessionsCurrent: "目前聊天"
+debugSessionsUnlisted: "不在工作階段列表中"
+debugSessionsHeadSession: "工作階段"
+debugSessionsHeadHolders: "持有者"
+debugOverlaySubagentId:
+  message: "{id}（子 Agent）"
+  placeholders:
+    id: {type: String}
+debugOverlayRunning: "執行中"
+debugOverlayAwaiting: "等待輸入"
+debugOverlayStreams:
+  message: "{count} 個 SSE"
+  placeholders:
+    count: {type: int}
+debugOverlayProviders:
+  message: "{count} 個存活提供者"
+  placeholders:
+    count: {type: int}
+debugOverlayIdle:
+  message: "回收倒數 {time}"
+  placeholders:
+    time: {type: String}
+debugOverlayClosesIn:
+  message: "{time}後關閉（已停止）"
+  placeholders:
+    time: {type: String}
+debugOverlayStarts:
+  message: "啟動 {count} 次"
+  placeholders:
+    count: {type: int}
+workspaceOpening: "正在開啟工作區..."
+workspaceUnable: "無法開啟工作區"
+workspaceSelectSession: "從側邊欄選擇工作階段"
+workspaceGetStarted: "開始使用"
+workspaceSelectProject: "從側邊欄選擇專案目錄"
+workspaceAddModels: "開啟底部的「設定」，然後選擇「模型」"
+workspaceStepProject: "從側邊欄選擇專案目錄"
+workspaceStepModels: "開啟底部的「設定」，然後選擇「模型」"
+workspaceNewSessionContext: "新工作階段的位置"
+workspaceProject: "專案"
+filesHidePanel: "隱藏檔案面板"
+filesExpandPanel: "全寬顯示檔案面板"
+filesRestorePanelWidth: "還原檔案面板寬度"
+filesShowPanel: "顯示檔案面板"
+filesNoneOpen: "沒有開啟的檔案"
+layoutResizeSidebar: "調整側邊欄寬度"
+layoutResizeFilePanel: "調整檔案面板寬度"
+layoutResizeHint: "拖曳以調整寬度。按兩下或按 Enter 鍵即可重設。"
+sidebarNew: "新增"
+sidebarNewSessionTitle:
+  message: "在 {path} 中新增工作階段"
+  placeholders:
+    path: {type: String}
+sidebarRefresh: "重新整理"
+sidebarSelectProject: "選擇專案…"
+sidebarFilterProjects: "篩選專案…"
+sidebarNoMatchingProjects: "找不到相符的專案"
+sidebarUseDefaultDirectory: "使用預設目錄"
+sidebarCustomPath: "自訂路徑…"
+directorypickerSelectDirectory: "選擇目錄"
+directorypickerGoToParent: "前往上一層目錄"
+directorypickerDirectoryPath: "目錄路徑"
+directorypickerGoToDirectory: "前往目錄"
+directorypickerGo: "前往"
+directorypickerLoadingDirectories: "正在載入目錄…"
+directorypickerNoSubdirectories: "沒有子目錄"
+directorypickerOpenBeforeSelecting: "選擇前請先開啟此路徑"
+directorypickerSelectCurrentDirectory: "選擇目前目錄"
+directorypickerSelectThisFolder: "選擇此資料夾"
+directorypickerNoDrives: "找不到磁碟機代號"
+directorypickerNewDirectory: "新增目錄"
+directorypickerCreateDirectory: "新增目錄"
+directorypickerDirectoryName: "目錄名稱"
+directorypickerDirectoryNamePlaceholder: "請輸入目錄名稱"
+directorypickerCreate: "建立"
+directorypickerCreating: "正在建立…"
+sidebarChecking: "檢查中…"
+sidebarOpen: "開啟"
+sidebarCancel: "取消"
+sidebarOpenRepoRoot: "開啟儲存庫根目錄"
+sidebarOpenRepoRootTitle: "開啟儲存庫根目錄以管理 worktree。"
+sidebarWorktrees: "Worktrees..."
+sidebarCheckingWorktrees: "正在檢查此目錄的 worktree。"
+sidebarFilterWorktrees: "篩選 worktree…"
+sidebarNoMatchingWorktrees: "找不到相符的 worktree"
+sidebarSwitchWorktree: "切換 worktree"
+sidebarMain: "主分支"
+sidebarForceRemoveCheckout: "有未提交的變更或子模組。要強制移除 checkout 嗎？"
+sidebarForce: "強制移除"
+sidebarCreateWorktreeTitle: "為分支建立 worktree checkout"
+sidebarNewWorktree: "新增 worktree…"
+sidebarBranchName: "分支名稱"
+sidebarCreating: "建立中…"
+sidebarWorktreeBranchInUse:
+  message: "分支「{branch}」已在 {path} 簽出。"
+  placeholders:
+    branch: {type: String}
+    path: {type: String}
+sidebarWorktreeBranchMissing:
+  message: "分支「{branch}」仍屬於一個資料夾已不存在的 worktree（{path}）。執行 git worktree prune 即可清除。"
+  placeholders:
+    branch: {type: String}
+    path: {type: String}
+sidebarCreate: "建立"
+sidebarUploadFilesTitle: "將檔案上傳到專案根目錄"
+sidebarUploadFiles: "上傳檔案"
+sidebarRefreshExplorer: "重新整理檔案列表"
+sidebarShowIgnoredFiles: "顯示被忽略的檔案"
+sidebarOpenInExplorer: "在檔案總管中開啟"
+sidebarOpenInFinder: "在 Finder 中開啟"
+sidebarOpenInFileManager: "在檔案管理員中開啟"
+sidebarOpenInExplorerRemoteOnly: "僅在 Pi Web 執行於本機時可用"
+sidebarOpenInExplorerUnsupported: "目前平台不支援"
+sidebarSearchFiles: "搜尋檔案"
+sidebarSearchFilesPlaceholder: "搜尋檔案…"
+sidebarSearchingFiles: "搜尋中…"
+sidebarNoMatchingFiles: "找不到相符的檔案"
+sidebarClearSearch: "清除搜尋"
+sidebarSearchSessions: "搜尋所有對話..."
+sidebarToggleSessionSearch: "搜尋對話"
+sidebarSessionSearching: "搜尋中..."
+sidebarSessionSearchEmpty: "找不到相符的對話"
+sidebarSessionSearchCount:
+  message: "{count} 個相符的對話"
+  placeholders:
+    count: {type: int}
+sidebarSessionSearchPartial: "已達搜尋上限，結果可能不完整。"
+sidebarSessionSearchFailed: "無法搜尋對話"
+sidebarChangedFiles:
+  message: "{count} 個已變更檔案"
+  placeholders:
+    count: {type: int}
+sidebarLoading: "載入中..."
+sidebarNoSessions: "找不到工作階段"
+sidebarAgentRunning: "Agent 執行中…"
+sidebarAgentAwaitingInput: "Agent 等待你的輸入"
+sidebarNewActivity: "有新活動"
+sidebarNewSessionActivity: "工作階段有新活動"
+sidebarDeleteSession:
+  message: "刪除 {title}？"
+  placeholders:
+    title: {type: String}
+sidebarRename: "重新命名"
+sidebarDelete: "刪除"
+sidebarMessagesCount:
+  message: "{count} 則訊息"
+  placeholders:
+    count: {type: int}
+sidebarWorktreePath:
+  message: "Worktree：{path}"
+  placeholders:
+    path: {type: String}
+sidebarRemoveWorktreeTitle:
+  message: "移除 worktree checkout {path}；保留分支"
+  placeholders:
+    path: {type: String}
+sidebarRemoveWorktreeHeading:
+  message: "移除 {name}"
+  placeholders:
+    name: {type: String}
+sidebarBrandLabel:
+  message: "Pi Web，版本：web {app}，pi {pi}"
+  placeholders:
+    app: {type: String}
+    pi: {type: String}
+sidebarTabsLabel: "側邊欄檢視"
+sidebarTabSessions: "工作階段"
+sidebarTabFiles: "檔案"
+sidebarResizeFiles: "調整檔案瀏覽器高度"
+sidebarResizeFilesHint: "拖曳以調整高度。按兩下或按 Enter 鍵即可重設。"
+sidebarFileActions: "檔案操作"
+sidebarCollapseOtherGroups: "摺疊其他專案"
+sidebarExpandAllGroups: "展開全部專案"
+sidebarCollapseAllGroups: "收合全部專案"
+sidebarPinned: "釘選"
+sidebarPinnedProject: "已釘選"
+sidebarPin: "釘選"
+sidebarUnpin: "取消釘選"
+sidebarPinProject: "釘選專案"
+sidebarUnpinProject: "取消釘選專案"
+sidebarRenameProject: "重新命名…"
+sidebarResetProjectName: "恢復預設名稱"
+sidebarProjectName: "專案名稱"
+sidebarMoveProjectUp: "上移"
+sidebarMoveProjectDown: "下移"
+sidebarArchive: "封存"
+sidebarUnarchive: "取消封存"
+sidebarRestore: "還原"
+sidebarArchived: "已封存"
+sidebarArchivedCount:
+  message: "已封存 · {count}"
+  placeholders:
+    count: {type: int}
+sidebarArchivedToast:
+  message: "已封存「{title}」"
+  placeholders:
+    title: {type: String}
+sidebarArchivedManyToast:
+  message: "已封存 {count} 個工作階段"
+  placeholders:
+    count: {type: int}
+sidebarRestoredToast:
+  message: "已還原「{title}」"
+  placeholders:
+    title: {type: String}
+sidebarRestoredManyToast:
+  message: "已還原 {count} 個工作階段"
+  placeholders:
+    count: {type: int}
+sidebarUndo: "復原"
+sidebarViewArchive: "檢視"
+sidebarDismiss: "關閉"
+sidebarMarkRead: "標為已讀"
+sidebarMarkUnread: "標為未讀"
+sidebarMoreActions: "更多操作"
+sidebarSessionActions: "工作階段操作"
+sidebarShowMore:
+  message: "顯示更多 · {count}"
+  placeholders:
+    count: {type: int}
+sidebarShowLess: "收起"
+sidebarOpenOtherProject: "開啟其他專案…"
+sidebarNewSessionInProject:
+  message: "在 {name} 新增工作階段"
+  placeholders:
+    name: {type: String}
+sidebarProjectActions:
+  message: "{name} 的操作"
+  placeholders:
+    name: {type: String}
+sidebarArchiveOlderThanWeek:
+  message: "封存 7 天前的工作階段 · {count}"
+  placeholders:
+    count: {type: int}
+sidebarOpenInFilesTab: "在檔案中開啟"
+sidebarViewArchived:
+  message: "檢視已封存 · {count}"
+  placeholders:
+    count: {type: int}
+sidebarArchiveActions: "封存操作"
+sidebarArchivedProjectActions:
+  message: "{name} 的已封存工作階段"
+  placeholders:
+    name: {type: String}
+sidebarRestoreAllArchived:
+  message: "全部還原 · {count}"
+  placeholders:
+    count: {type: int}
+sidebarDeleteAllArchived:
+  message: "全部刪除… · {count}"
+  placeholders:
+    count: {type: int}
+sidebarDeleteOldArchived:
+  message: "刪除 30 天前封存的工作階段… · {count}"
+  placeholders:
+    count: {type: int}
+sidebarNoLiveSessions: "還沒有工作階段"
+sidebarPinToKeep: "釘選以保留"
+sidebarNoArchived: "沒有已封存的工作階段"
+sidebarBackToSessions: "返回"
+sidebarCannotArchiveRunning: "執行中"
+sidebarNewWorktreeForSession: "新增 worktree 並在其中新增工作階段"
+sidebarProjectAndWorktree: "專案和 worktree"
+sidebarUiStateFailed:
+  message: "儲存失敗：{error}"
+  placeholders:
+    error: {type: String}
+sidebarSessionNotFound: "此工作階段已不存在"
+sidebarFork: "分叉"
+sidebarOpenInNewTab: "在新分頁開啟"
+sidebarForkedToast:
+  message: "已分叉「{title}」"
+  placeholders:
+    title: {type: String}
+sidebarForkNotFound: "此工作階段已不存在"
+sidebarForkUnsaved: "此工作階段尚未儲存，請先傳送一則訊息。"
+sidebarForkEmpty: "沒有可分叉的內容：此分支還沒有訊息"
+sidebarForkUnavailable: "無法分叉此工作階段"
+sidebarForkFailed:
+  message: "分叉失敗：{error}"
+  placeholders:
+    error: {type: String}
+sidebarDeleteProjectSessions:
+  message: "刪除全部工作階段… · {count}"
+  placeholders:
+    count: {type: int}
+sidebarDeleteProjectSessionsHeading:
+  message: "刪除 {name} 的全部工作階段"
+  placeholders:
+    name: {type: String}
+sidebarDeleteProjectSessionsMessage: "釘選和已封存的工作階段也會刪除，且無法復原。"
+sidebarDeleteProjectSessionsRunning:
+  message: "執行中的工作階段會保留（{count} 個）。"
+  placeholders:
+    count: {type: int}
+sidebarDeleteArchivedInProjectHeading:
+  message: "刪除 {name} 的已封存工作階段"
+  placeholders:
+    name: {type: String}
+sidebarDeleteAllArchivedHeading: "刪除全部已封存工作階段"
+sidebarDeleteOldArchivedHeading: "刪除 30 天前封存的工作階段"
+sidebarDeleteArchivedMessage: "它們的子代理工作階段也會刪除，且無法復原。"
+sidebarDeleteCount:
+  message: "刪除 {count} 個"
+  placeholders:
+    count: {type: int}
+sidebarDeletingSessions: "正在刪除工作階段…"
+sidebarDeletedOneToast: "已刪除 1 個工作階段"
+sidebarDeletedManyToast:
+  message: "已刪除 {count} 個工作階段"
+  placeholders:
+    count: {type: int}
+sidebarKeptRunningToast:
+  message: "保留 {count} 個執行中的工作階段"
+  placeholders:
+    count: {type: int}
+sidebarDeleteFailed:
+  message: "刪除失敗：{error}"
+  placeholders:
+    error: {type: String}
+filesModified: "已修改"
+filesAdded: "已新增"
+filesDeleted: "已刪除"
+filesRenamed: "已重新命名"
+filesUntracked: "未追蹤"
+filesConflict: "衝突"
+filesNewlyUploaded: "剛上傳"
+filesContainsChangedFiles: "包含已變更的檔案"
+filesHiddenIgnored: "已被 Git 忽略"
+filesHiddenExcluded: "預設隱藏（產生或相依目錄）"
+filesInsertPath: "將路徑插入聊天"
+filesMention: "提及"
+filesDownload: "下載檔案"
+filesBinary: "二進位"
+filesBinaryNoPreview: "二進位檔案，無法預覽。下載後開啟。"
+filesOutsideLink:
+  message: "連結到專案外部：{target}"
+  placeholders:
+    target: {type: String}
+filesOutsideLinkEncloses: "此資料夾包含目前的專案或你的主目錄。"
+filesAllowOutsideLink: "允許瀏覽"
+filesAllowOutsideLinkTitle:
+  message: "在 Pi Web 重新啟動前允許瀏覽 {target}，與將其選為專案目錄相同"
+  placeholders:
+    target: {type: String}
+filesAllowEnclosingLinkConfirm:
+  message: "{target} 包含目前的專案或你的主目錄。允許後，在 Pi Web 重新啟動前可瀏覽其下的所有內容。是否繼續？"
+  placeholders:
+    target: {type: String}
+filesDismissError: "關閉錯誤訊息"
+filesAddUploadedFile: "將上傳的檔案加入聊天"
+filesAddAllUploadedFiles: "將所有上傳的檔案加入聊天"
+filesDismissUploadResults: "關閉上傳結果"
+filesLoading: "正在載入檔案..."
+filesNoFiles: "找不到檔案"
+filesChangedCount:
+  message: "{count} 個檔案"
+  placeholders:
+    count: {type: int}
+filesChangeStats:
+  message: "{count} 個變更檔案，新增 {additions} 行，刪除 {deletions} 行"
+  placeholders:
+    count: {type: int}
+    additions: {type: int}
+    deletions: {type: int}
+filesViewAsTree: "樹狀檢視"
+filesViewAsList: "清單檢視"
+filesConflictSummary:
+  message: "{count} 個檔案已存在：{files}"
+  placeholders:
+    count: {type: int}
+    countSuffix: {type: String}
+    files: {type: String}
+filesCannotReplace:
+  message: "無法取代：{files}"
+  placeholders:
+    files: {type: String}
+filesReplace: "取代"
+filesSkipExisting: "略過現有檔案"
+filesCancel: "取消"
+filesChecking: "正在檢查檔案"
+filesUploading:
+  message: "正在上傳，{progress}%"
+  placeholders:
+    progress: {type: int}
+filesUploadedCount:
+  message: "已上傳 {count} 個"
+  placeholders:
+    count: {type: int}
+filesSkippedCount:
+  message: "已略過 {count} 個"
+  placeholders:
+    count: {type: int}
+filesFailedCount:
+  message: "{count} 個上傳失敗"
+  placeholders:
+    count: {type: int}
+filesImageLoadFailed: "圖片載入失敗"
+filesAudioLoadFailed: "音訊載入失敗"
+filesVideoLoadFailed: "影片載入失敗"
+filesDropToUpload:
+  message: "放開滑鼠，上傳至 {directory}"
+  placeholders:
+    directory: {type: String}
+chatLoadingSession: "正在載入工作階段..."
+chatRunningTool: "正在執行工具..."
+chatGeneratingToolInput: "正在產生參數..."
+chatOperationAborted: "已中止"
+chatTruncatedByOutputLimit: "回覆因達到模型輸出長度上限而被截斷。傳送一則後續訊息以繼續。"
+chatTruncatedWithoutAnswer: "輸出在產生正文前就達到了上限：額度被思考或接近佔滿的上下文耗盡。再傳訊息很可能再次截斷。請先壓縮上下文，或降低思考檔位。"
+chatRunningNamedTool:
+  message: "正在執行 {name}..."
+  placeholders:
+    name: {type: String}
+chatRunningTools:
+  message: "正在執行 {names}..."
+  placeholders:
+    names: {type: String}
+chatRunningToolsMore:
+  message: "正在執行 {names}（另有 {count} 個）..."
+  placeholders:
+    names: {type: String}
+    count: {type: int}
+chatWaitingModel: "正在等待模型..."
+chatRunningCommand: "正在執行命令..."
+chatBashAlreadyRunning: "已有一個 bash 命令在執行。請先按 Esc 取消它。"
+chatThinking: "正在思考..."
+chatProcessDetails: "處理詳細資料"
+chatMessage: "則訊息"
+chatMessages: "則訊息"
+chatToolCall: "次工具呼叫"
+chatToolCalls: "次工具呼叫"
+chatTurnDuration:
+  message: "耗時 {time}"
+  placeholders:
+    time: {type: String}
+chatViewFullOutput: "檢視完整輸出"
+chatLoadingFullOutput: "載入中…"
+chatDownloadFullOutput: "下載完整輸出"
+chatOutputTruncated: "輸出已截斷，僅顯示末尾部分。"
+chatFullOutputShown: "已顯示完整輸出。"
+chatFullOutputTooLarge: "完整輸出過大，無法在此顯示，請下載檢視。"
+chatFullOutputUnavailable: "完整輸出已無法取得。"
+chatCollapseProcess: "收起處理詳細資料"
+chatExpandProcess: "展開處理詳細資料"
+transcriptnoticeCostSuffix:
+  message: "（約 {cost}）"
+  placeholders:
+    cost: {type: String}
+transcriptnoticeCacheMiss:
+  message: "快取未命中：{tokens} Token 重新計費{cost}"
+  placeholders:
+    tokens: {type: int}
+    cost: {type: String}
+transcriptnoticeCacheMissIdle:
+  message: "閒置 {minutes} 分鐘後快取未命中：{tokens} Token 重新計費{cost}"
+  placeholders:
+    minutes: {type: int}
+    tokens: {type: int}
+    cost: {type: String}
+transcriptnoticeCacheMissModelSwitch:
+  message: "切換模型後快取未命中：{tokens} Token 重新計費{cost}"
+  placeholders:
+    tokens: {type: int}
+    cost: {type: String}
+transcriptnoticeCacheWarmed:
+  message: "快取已預熱{note}：{cost}"
+  placeholders:
+    note: {type: String}
+    cost: {type: String}
+transcriptnoticeCacheWarmedNote:
+  message: "（{note}）"
+  placeholders:
+    note: {type: String}
+transcriptnoticeCompactionCost:
+  message: "本次壓縮計費 {tokens} Token{cost}"
+  placeholders:
+    tokens: {type: int}
+    cost: {type: String}
+transcriptnoticeBranchSummaryCost:
+  message: "分支摘要計費 {tokens} Token{cost}"
+  placeholders:
+    tokens: {type: int}
+    cost: {type: String}
+transcriptnoticeThinkingDroppedOne: "Anthropic 捨棄了 1 個思考區塊（詳情見工作階段檔案）"
+transcriptnoticeThinkingDropped:
+  message: "Anthropic 捨棄了 {count} 個思考區塊（詳情見工作階段檔案）"
+  placeholders:
+    count: {type: int}
+transcriptnoticeFoldCacheMiss:
+  message: "快取未命中 {tokens} Token{cost}"
+  placeholders:
+    tokens: {type: int}
+    cost: {type: String}
+transcriptnoticeFoldCacheMisses:
+  message: "快取未命中 {count} 次 {tokens} Token{cost}"
+  placeholders:
+    count: {type: int}
+    tokens: {type: int}
+    cost: {type: String}
+settingsCacheMissNotices: "顯示快取與費用提示"
+settingsCacheMissNoticesDescription: "即 pi 的 showCacheMissNotices：在對話中顯示快取未命中、快取預熱、壓縮費用，以及 Anthropic 捨棄思考區塊。儲存到全域 settings.json，專案的 .pi/settings.json 可以覆寫它。"
+chatFilesWritten: "已變更的檔案"
+chatOpenWrittenFile:
+  message: "開啟 {name}"
+  placeholders:
+    name: {type: String}
+chatLoadEarlier: "向上捲動以載入較早的訊息"
+chatScrollToLatest: "回到最新訊息"
+chatExtensionRequest: "擴充功能請求"
+chatExtensionExpiresIn:
+  message: "{seconds} 秒後過期"
+  placeholders:
+    seconds: {type: int}
+chatExtensionPending: "待回答"
+chatExtensionCollapse: "收起"
+chatExtensionExpand: "展開"
+chatExtensionMaximize: "放大"
+chatExtensionRestoreSize: "還原尺寸"
+chatExtensionMoreWaiting:
+  message: "還有 {count} 個"
+  placeholders:
+    count: {type: int}
+chatCancel: "取消"
+chatConfirm: "確認"
+chatSubmit: "送出"
+chatExtensionInput: "擴充功能終端輸入"
+chatExtensionPanel: "擴充功能面板"
+chatExtensionWidgets: "擴充功能小工具"
+chatExtensionWidgetAbove: "編輯器上方小工具"
+chatExtensionWidgetBelow: "編輯器下方小工具"
+chatExtensionWidgetLine:
+  message: "{count} 行"
+  placeholders:
+    count: {type: int}
+chatExtensionWidgetLines:
+  message: "{count} 行"
+  placeholders:
+    count: {type: int}
+chatClose: "關閉"
+chatQueued:
+  message: "已排入佇列 · {count}"
+  placeholders:
+    count: {type: int}
+chatRecall: "移回輸入框"
+chatRecallTitle: "將所有佇列中的訊息移回輸入框以便編輯"
+chatRetrying:
+  message: "正在重試（{attempt}/{max}）…"
+  placeholders:
+    attempt: {type: int}
+    max: {type: int}
+chatLoadingCommands: "正在載入命令..."
+chatSlashCommands:
+  message: "斜線命令 · {label}"
+  placeholders:
+    label: {type: String}
+chatTabEnter: "Tab / Enter"
+chatNoCommands: "找不到擴充功能、提示詞或技能命令"
+chatMatch: "1 個相符項目"
+chatMatches:
+  message: "{count} 個相符項目"
+  placeholders:
+    count: {type: int}
+chatCommand: "1 個命令"
+chatCommands:
+  message: "{count} 個命令"
+  placeholders:
+    count: {type: int}
+chatLoadingFiles: "正在載入檔案..."
+chatFiles:
+  message: "檔案 · {label}{hint}"
+  placeholders:
+    label: {type: String}
+    hint: {type: String}
+chatSearching: "搜尋中…"
+chatNoMatchingFiles: "找不到相符的檔案"
+chatSearchingAll: " · 正在搜尋所有檔案…"
+chatIndexTruncated: " · 索引已截斷"
+chatSteerPlaceholder: "立即引導 / 將後續訊息排入佇列..."
+chatAgentPlaceholder: "Agent 執行中…"
+chatMessagePlaceholder: "訊息…輸入 / 使用命令，輸入 @ 搜尋檔案"
+chatSideChat: "側聊"
+chatSideChatHint: "在側聊裡問，不影響正在執行的任務"
+chatSteer: "引導"
+chatFollowUp: "後續訊息"
+chatSteerHint: "在目前的回覆及其工具呼叫完成後送達（按「停止」可中斷）"
+chatFollowUpHint: "在 Agent 完成後排入此訊息"
+chatInputHistory: "輸入紀錄"
+chatModelError: "模型錯誤"
+chatCwdMissingTitle: "找不到專案資料夾"
+chatCwdMissingBody:
+  message: "{cwd} 已不存在。如果專案已移動或重新命名，請在新位置建立新的工作階段。"
+  placeholders:
+    cwd: {type: String}
+chatModelScopeWarning: "模型範圍警告"
+chatModelScopeWarnings: "模型範圍警告"
+chatSend: "傳送"
+chatSelectionActions: "選取文字的操作"
+chatQuoteSelection: "引用"
+chatAskInSideChat: "在側聊詢問"
+chatNewQuoteChat: "關於選取文字的側聊"
+chatAttachFiles: "附加檔案"
+chatPreviewImage: "預覽圖片"
+chatFilterModels: "篩選模型…"
+chatModelScopeScoped: "已限定"
+chatModelScopeAll: "全部"
+chatSelectModel: "選擇模型"
+chatNoModels: "沒有模型"
+chatSwitchingModel: "正在切換模型"
+chatChangeModel: "更換模型"
+chatNoAvailableModels: "沒有可用模型"
+chatNoMatchingModels: "找不到相符的模型"
+chatSaveDefaultModel: "使用並設為新工作階段預設模型"
+chatDefaultModel: "新工作階段預設模型"
+chatSaveDefaultThinking: "使用並設為新工作階段預設推理層級"
+chatDefaultThinking: "新工作階段預設推理層級"
+chatMoreControls: "更多控制項"
+chatCollapseControls: "收起控制項"
+chatShell: "Shell"
+terminalTitle: "終端機"
+terminalTabLabel:
+  message: "終端機：{name}"
+  placeholders:
+    name: {type: String}
+terminalOpen: "開啟工作區終端機"
+terminalClose: "終止終端機"
+terminalRestart: "重新啟動終端機"
+terminalReconnect: "重新連線終端機"
+terminalLightTheme: "終端機切換為淺色主題"
+terminalDarkTheme: "終端機切換為深色主題"
+terminalExtraKeys: "終端機按鍵"
+terminalConnecting: "連線中"
+terminalReady: "已連線"
+terminalExited: "終端機已關閉"
+terminalError: "連線錯誤"
+terminalExitCode:
+  message: "程序已結束，結束代碼 {code}"
+  placeholders:
+    code: {type: String}
+chatOutputLocal: "輸出保留在本地"
+chatOutputModel: "輸出會傳送給模型"
+chatConfiguredTools: "取自 settings.json 的 defaultTools"
+chatChatOnly: "僅聊天"
+chatReadOnlyTools:
+  message: "{count} 個只讀內建工具"
+  placeholders:
+    count: {type: int}
+chatBuiltInTools:
+  message: "{count} 個內建工具"
+  placeholders:
+    count: {type: int}
+chatAllBuiltInTools: "全部內建工具"
+chatChangeReasoning:
+  message: "變更推理層級：{level}"
+  placeholders:
+    level: {type: String}
+chatChangeReasoningLabel: "變更推理層級"
+chatCurrentReasoning:
+  message: "本輪使用的推理層級：{level}"
+  placeholders:
+    level: {type: String}
+chatChangeToolPreset: "更改工具預設"
+chatStopCompaction: "停止壓縮"
+chatCompactContext: "壓縮上下文"
+chatCompacting: "正在壓縮…"
+chatCompactingQueued:
+  message: "正在壓縮… · {count} 則排隊中"
+  placeholders:
+    count: {type: int}
+chatCompactingPlaceholder: "正在壓縮…訊息會排入佇列，壓縮結束後送出"
+chatCompact: "壓縮"
+chatDismissCompactError: "關閉壓縮錯誤"
+chatStopAgent: "停止 Agent"
+chatStop: "停止"
+chatDisableSound: "關閉完成提示音"
+chatEnableSound: "開啟完成提示音"
+chatThinkingUseDefault: "使用 pi 預設設定"
+chatThinkingOff: "關閉推理"
+chatThinkingMinimal: "最低程度推理"
+chatThinkingLow: "低程度推理"
+chatThinkingMedium: "中等程度推理"
+chatThinkingHigh: "高程度推理"
+chatThinkingXhigh: "超高程度推理"
+chatThinkingMax: "最高程度推理"
+chatBuiltIn: "內建"
+chatExtensions: "擴充功能"
+chatPrompts: "提示詞"
+chatSkills: "技能"
+chatDormant: "休眠"
+chatCommandCompact: "壓縮上下文，可附加說明"
+chatCommandAutoCompact: "切換自動上下文壓縮（全域設定）"
+chatCommandReload: "重新載入擴充功能、技能、提示詞和工具"
+chatCommandName: "設定工作階段顯示名稱"
+chatCommandSession: "顯示工作階段的訊息、Token 和費用統計"
+chatCommandCopy: "複製最後一則助理訊息"
+chatCommandClone: "將目前分支複製為獨立新工作階段"
+chatCommandSide: "從目前會話衍生一個側聊"
+chatCompacted: "已壓縮"
+chatImageNotSupportedTitle: "圖片可能無法傳送"
+chatImageNotSupportedBody:
+  message: "目前選擇的模型（{model}）不支援圖片輸入，附加的圖片可能會被忽略。"
+  placeholders:
+    model: {type: String}
+chatDropNeedsCwd: "請先選擇工作目錄，再加入檔案。"
+chatDropUploaded:
+  message: "已將 {count} 個檔案複製到工作目錄"
+  placeholders:
+    count: {type: int}
+chatDropAlreadyExists:
+  message: "工作目錄中已有同名檔案，未覆寫，引用的是既有檔案：{names}"
+  placeholders:
+    names: {type: String}
+chatDropFoldersUnsupported:
+  message: "不支援拖入資料夾，請拖入其中的檔案：{names}"
+  placeholders:
+    names: {type: String}
+chatDropFailed:
+  message: "上傳失敗：{message}"
+  placeholders:
+    message: {type: String}
+chatSendUnconfirmed: "無法確認訊息是否已送出。原文已移回輸入框，重新送出前請先檢查對話。"
+chatSendNotReceived: "訊息沒有送達伺服器，原文已移回輸入框。"
+chatTokensSaved:
+  message: "已節省 {saved}"
+  placeholders:
+    saved: {type: String}
+chatminimapEarlierTurns:
+  message: "更早的 {count} 輪尚未載入，點擊載入"
+  placeholders:
+    count: {type: int}
+chatminimapLocateAssistant: "定位助理訊息"
+chatminimapToolCalls:
+  message: "本輪 {count} 次工具呼叫"
+  placeholders:
+    count: {type: int}
+chatminimapLockPreview: "鎖定：懸停時不展開預覽"
+chatminimapUnlockPreview: "解鎖懸停預覽"
+i18nClose: "關閉"
+i18nCopy: "複製"
+i18nCopied: "已複製"
+i18nCancel: "取消"
+i18nSave: "儲存"
+i18nSaving: "儲存中…"
+i18nSaved: "已儲存"
+i18nRemove: "移除"
+i18nRemoving: "移除中…"
+i18nDelete: "刪除"
+i18nLoading: "載入中..."
+i18nLoadMore: "載入更多"
+i18nSearch: "搜尋"
+i18nRefresh: "重新整理"
+providerusageUsage: "用量"
+providerusageNotQueried: "尚未查詢"
+providerusageRefresh: "重新整理用量"
+providerusageRefreshing: "正在重新整理用量"
+providerusageUpdated:
+  message: "更新於 {time}"
+  placeholders:
+    time: {type: String}
+providerusageQueryFailed: "用量查詢失敗。"
+providerusageAvailable: "可用"
+i18nUpdate: "更新"
+i18nUpdating: "更新中..."
+i18nCheck: "檢查"
+i18nChecking: "檢查中..."
+i18nInstall: "安裝"
+i18nInstalling: "安裝中..."
+i18nNoResults: "找不到結果"
+i18nSearchProviders: "搜尋 Provider…"
+i18nNoProviders: "找不到相符的 Provider"
+i18nNewModel: "新模型"
+i18nAddProvider: "新增 Provider"
+i18nSelectProviderModel: "選擇 Provider 或模型"
+i18nVisibleInPrompt: "會顯示在模型提示詞中，點選以停用"
+i18nHiddenFromPrompt: "不會顯示在模型提示詞中，點選以啟用"
+i18nDormant: "休眠"
+i18nHiddenButInvocable: "對模型隱藏，仍可手動呼叫"
+i18nSkillSearchPlaceholder: "例如 react、testing、deploy"
+i18nSearching: "搜尋中…"
+i18nNoSkills: "找不到技能"
+i18nCheckUpdates: "檢查更新"
+i18nUpdates: "項更新"
+i18nNoResolvedResources: "沒有已解析資源"
+i18nEnablePackage: "啟用套件"
+i18nDisablePackage: "停用套件"
+i18nFiltered: "已篩選"
+i18nOpenSessionToReload: "開啟工作階段後才能重新載入"
+i18nNotFound: "找不到"
+i18nNoPlugins: "尚未設定外掛"
+trustResourcesNotLoaded: "受限模式"
+trustTrustProject: "信任專案"
+trustTrusting: "正在信任..."
+trustCancel: "取消"
+trustDialogTitle: "信任此專案？"
+trustDialogBody: "專案資源可以執行本機程式碼。請只信任內容來源可靠的專案。"
+trustSkillsNotLoaded: "此專案尚未受信任，專案技能未載入。"
+trustPluginsNotLoaded: "此專案尚未受信任，專案外掛未載入。"
+trustProjectScopeUnavailable: "專案資源未載入時，無法安裝到專案範圍。"
+trustMcpTitle: ".pi/mcp.json 中的 MCP 伺服器"
+trustMcpIntro: "信任此專案後，這些伺服器即可在 Pi Web 和 pi CLI 中連線，兩者共用這項信任決定。stdio 伺服器會在執行 Pi Web 的電腦上執行其命令。"
+trustMcpLoading: "正在讀取 .pi/mcp.json…"
+trustMcpLoadFailed: "無法列出此專案的 MCP 伺服器。"
+trustMcpTimedOut: "列出此專案的 MCP 伺服器花費太久。"
+trustMcpNone: "此檔案未宣告任何伺服器。"
+trustMcpUnchecked: "Pi Web 無法載入 SDK 的 MCP 檢查，以下項目未經檢查。"
+trustMcpCwd:
+  message: "工作目錄：{path}"
+  placeholders:
+    path: {type: String}
+trustClose: "關閉"
+trustAlreadyTrusted: "此專案已受信任。"
+trustTrustFailed: "無法信任此專案。"
+mcpTransportStdio: "stdio"
+mcpTransportHttp: "HTTP"
+mcpFieldEnv:
+  message: "環境變數 {name}"
+  placeholders:
+    name: {type: String}
+mcpFieldHeader:
+  message: "標頭 {name}"
+  placeholders:
+    name: {type: String}
+mcpFieldOauthClientSecret: "oauth.clientSecret"
+mcpServerInvalid: "Pi 拒絕載入此項目，它不會連線："
+mcpServerWebPassword: "參照了 PI_WEB_PASSWORD。Pi Web 會拒絕連線到它，但 pi CLI 也會讀取此檔案；如果 CLI 的執行環境中設定了該變數，它就會把密碼傳出去："
+mcpServerDisabled: "已在檔案中關閉，不會連線。"
+mcpServerCommandFields: "每次連線都會執行 shell 命令："
+mcpServerReplacesGlobal: "此專案受信任時，它會取代你的同名全域伺服器。"
+mcpServerOverridesGlobal:
+  message: "此專案受信任時，只變更你的同名全域伺服器的 {keys}。"
+  placeholders:
+    keys: {type: String}
+mcpServerOverridesGlobalNothing: "指向你的同名全域伺服器，但沒有變更 enabled、exposure 或 toolExposure。"
+mcpServerMasked: "疑似機密的部分已隱藏。"
+mcpServerHiddenCharacters: "包含不可見字元或控制字元，這裡以 \\u'{'…'}' 代碼顯示。"
+mcpServerSendsVariables: "每次連線都會把執行 Pi Web 的電腦上的環境變數傳送給此伺服器："
+mcpServerPassesVariables: "會把執行 Pi Web 的電腦上的環境變數傳給它啟動的命令："
+mcpServerVariableIn:
+  message: "{field} 中的 {variable}"
+  placeholders:
+    variable: {type: String}
+    field: {type: String}
+mcpFileProblemUnparsable: "此檔案不是有效的 JSON，其中的伺服器都不會載入。"
+mcpFileProblemInvalidShape: "此檔案不是包含 \"mcpServers\" 物件的物件，其中的伺服器都不會載入。"
+mcpFileProblemAutoEnableCodemodeInvalid: "\"autoEnableCodemode\" 必須是 true 或 false；伺服器仍會載入。"
+mcpFileProblemLinkDangling: "此檔案是指向不存在目標的符號連結，不會從中載入任何伺服器。"
+mcpFileProblemLinkOutside: "此檔案是指向 Pi Web 可讀取資料夾之外的符號連結，因此這裡不列出其中的伺服器。專案受信任後，Pi 仍會載入它們。"
+mcpFileProblemNotAFile: "此路徑不是一般檔案，Pi Web 不會讀取。"
+mcpFileProblemTooLarge: "此檔案超過 1 MiB，因此這裡不列出其中的伺服器。專案受信任後，Pi 仍會載入它們。"
+mcpFileProblemTooManyServers: "此檔案宣告了超過 200 個伺服器，因此這裡不列出它們。專案受信任後，Pi 仍會載入它們。"
+mcpFileProblemUnreadable: "Pi Web 無法讀取此檔案。"
+mcpReasonCwdInvalid: "未提供專案資料夾，或它不是絕對路徑。"
+mcpReasonCwdDenied: "Pi Web 無權讀取此資料夾。"
+mcpReasonCwdNotDirectory: "專案資料夾已不存在或不是資料夾。"
+mcpReasonRequestDenied: "此要求並非來自這個頁面，Pi Web 已拒絕。"
+mcpReasonContentType: "此要求不是以 JSON 傳送的，Pi Web 已拒絕。"
+mcpReasonTrustUnreadable: "Pi Web 無法讀取信任記錄（trust.json），或它正被其他程式鎖定。"
+mcpReasonTrustNotRequired: "此專案已沒有需要信任的資源。"
+mcpReasonSessionBusy: "請等此資料夾中正在執行的工作階段結束後，再信任此專案。"
+mcpReasonInvalidRequest: "此要求並未要求 Pi Web 能夠進行的變更，Pi Web 已拒絕。"
+mcpReasonMcpOff: "此 Pi Web 伺服器上的 MCP 已關閉，因此不會變更任何伺服器。"
+mcpReasonProjectUntrusted: "此專案未受信任，Pi Web 不會變更它的 .pi/mcp.json。"
+mcpReasonUnparsable: "該檔案不是有效的 JSON，Pi Web 沒有更動它。"
+mcpReasonInvalidShape: "該檔案不是包含 \"mcpServers\" 物件的物件，Pi Web 沒有更動它。"
+mcpReasonServerMissing: "該檔案已不再定義此伺服器。"
+mcpReasonEntryNotObject: "此項目不是物件，因此無法開啟或關閉。請將其移除，或在檔案中修正。"
+mcpReasonWebPassword: "它引用了 PI_WEB_PASSWORD，因此 Pi Web 不會開啟它。"
+mcpReasonUndoUnavailable: "這次移除已無法復原。"
+mcpReasonUndoNameTaken: "該檔案又定義了同名的伺服器，因此沒有復原這次移除。"
+mcpReasonNameTaken: "該檔案已定義了同名的伺服器。"
+mcpReasonLinkDangling: "該檔案是指向不存在目標的符號連結，Pi Web 不會寫入它。"
+mcpReasonLinkOutside: "該檔案是指向 Pi Web 可讀取的資料夾之外的符號連結，Pi Web 不會寫入它。"
+mcpReasonNotAFile: "該路徑不是一般檔案，Pi Web 不會寫入它。"
+mcpReasonTooLarge: "該檔案超過 1 MiB，Pi Web 不會寫入它。"
+mcpReasonTooManyServers: "該檔案宣告了超過 200 個伺服器，Pi Web 不會對其中的項目執行操作。"
+mcpReasonLocked: "另一個程式正在寫入該檔案，請稍後再試。"
+mcpReasonServerInvalid: "Pi 拒絕此項目，因此 Pi Web 不會連線到它。"
+mcpReasonSignInNotOauth: "此伺服器不透過 OAuth 登入：只有沒有 Authorization 標頭的 HTTP 伺服器才會這樣登入。"
+mcpReasonSignInUnknown: "Pi Web 已不再記得這次登入：它已結束一段時間，或者 Pi Web 已重新啟動。"
+mcpReasonSignInNotWaiting: "這次登入現在沒有在等待網址。"
+mcpReasonRedirectInvalid: "這不是網址。請從瀏覽器網址列複製完整的網址。"
+mcpReasonRedirectStateMismatch: "這個網址屬於另一次登入。請貼上這次登入後瀏覽器最後開啟的網址。"
+mcpReasonRedirectNoCode: "這個網址不含授權碼。請貼上你核准存取後瀏覽器最後開啟的網址。"
+mcpReasonRedirectDenied: "授權伺服器沒有授予存取權。請重新開啟登入頁面，或取消。"
+mcpReasonImportFailed: "無法從貼上的內容中讀取伺服器。"
+mcpReasonFieldsIncomplete: "有些需要填寫的值缺少或無效。"
+mcpReasonNameInvalid: "伺服器名稱只能使用字母、數字、_ 和 -。"
+mcpReasonSecretGlobalOnly: "此伺服器以明文保存了一項機密，因此只會儲存在全域 mcp.json 中。"
+mcpReasonHostEnvConfirm: "此伺服器會收到執行 Pi Web 的電腦上的變數，請先確認。"
+mcpReasonFolderNotFresh: "此資料夾已經變了：它現在有信任決定，或有需要信任的資源，因此 Pi Web 沒有信任它，也沒有新增任何內容。"
+mcpReasonTrustTooBroad: "信任此資料夾也會信任其中的各個資料夾，因此 Pi Web 不會自行這樣做。"
+mcpLoadFailed: "無法讀取 MCP 設定。"
+mcpLoadTimedOut: "Pi Web 沒有及時回應。請按「重新整理」再試一次。"
+mcpProjectNotListed:
+  message: "未列出此專案的伺服器：{reason}"
+  placeholders:
+    reason: {type: String}
+mcpServerCount:
+  message: "已開啟 {enabled}/{total} 個伺服器"
+  placeholders:
+    enabled: {type: int}
+    total: {type: int}
+mcpGroupEmpty: "沒有伺服器"
+mcpGroupFileProblem: "未列出：請看下方的檔案問題"
+mcpGroupNotListed: "未列出"
+mcpRowLabel:
+  message: "{name}：{state}"
+  placeholders:
+    name: {type: String}
+    state: {type: String}
+mcpStateOn: "已開啟"
+mcpStateDisabled: "已在檔案中關閉"
+mcpStateInvalid: "被 Pi 拒絕"
+mcpStateWebPassword: "已拒絕：參照了 PI_WEB_PASSWORD"
+mcpStateNotTrusted: "專案未受信任"
+mcpStateReplaced: "已被專案的同名伺服器取代"
+mcpStateOverridden: "已被專案的覆寫設定變更"
+mcpStateMcpOff: "MCP 已關閉"
+mcpStateShortInvalid: "已拒絕"
+mcpStateShortWebPassword: "已拒絕"
+mcpStateShortDisabled: "已關閉"
+mcpStateShortNotTrusted: "未受信任"
+mcpStateShortReplaced: "已取代"
+mcpStateShortOverridden: "已覆寫"
+mcpServerShadowedByProject: "此專案受信任時，專案中的同名伺服器會取代這個伺服器。"
+mcpServerOverriddenByProject: "此專案受信任時，專案的 .pi/mcp.json 會變更這個伺服器的設定。"
+mcpServerUnchecked: "未經檢查：Pi Web 無法載入 SDK 的 MCP 檢查。"
+mcpDetailDescription: "簡介"
+mcpDetailTransport: "傳輸方式"
+mcpDetailCommand: "命令"
+mcpDetailUrl: "URL"
+mcpDetailCwd: "工作目錄"
+mcpDetailEnv: "環境變數"
+mcpDetailHeaders: "標頭"
+mcpDetailValuesHidden: "這裡不顯示其值。"
+mcpDetailShellCommands: "Shell 命令"
+mcpDetailVariables: "主機環境變數"
+mcpDetailSignIn: "登入"
+mcpDetailExposure: "工具"
+mcpDetailFile: "檔案"
+mcpDetailInProject: "此專案"
+mcpInProjectSaved: "只對此專案生效，儲存在專案的 .pi/mcp.json。"
+mcpInProjectOverridden:
+  message: "此專案的 .pi/mcp.json 改了它的 {keys}。"
+  placeholders:
+    keys: {type: String}
+mcpInProjectRefused: "此專案的 .pi/mcp.json 覆寫了它，但 pi 不接受。"
+mcpInProjectTurnOff: "在此專案中關閉"
+mcpInProjectTurnOn: "在此專案中開啟"
+mcpInProjectShow: "查看"
+mcpSignInSignedIn: "已登入。"
+mcpSignInNotSignedIn: "未登入。"
+mcpSignInRegistrationOnly: "未登入，但儲存了此伺服器的用戶端註冊資訊或未完成的登入。"
+mcpSignInUnknown: "未知：無法讀取 mcp-auth.json。"
+mcpSignInHeader: "Authorization 標頭"
+mcpSignInProvider:
+  message: "傳送 pi 提供者 {provider} 的權杖：在「設定 › 模型」中登入它。"
+  placeholders:
+    provider: {type: String}
+mcpExposureCodemode: "只列出伺服器名稱和簡介，程式碼模式指令碼按需搜尋它的工具。"
+mcpExposureDeferred: "工具搜尋載入後才宣告，不需要程式碼模式。"
+mcpExposureDirect: "每次請求都帶全部工具的完整宣告，最占 token。"
+mcpExposureHidden: "已註冊但無法呼叫。"
+mcpExposureSandboxUnavailable: "程式碼模式無法在此 Pi Web 伺服器上執行，因此這些工具改為透過工具搜尋呼叫。"
+mcpExposureBuiltinDisabled: "-builtin:codemode 關閉了程式碼模式，因此只有在工具搜尋開啟時才能呼叫這些工具。"
+mcpExposureAutoEnableOff:
+  message: "{path} 中的 autoEnableCodemode 為 false，因此工作階段不會為這些工具開啟程式碼模式：只有程式碼模式設為「一律開啟」或工具搜尋開啟時才能呼叫它們。"
+  placeholders:
+    path: {type: String}
+mcpExposureLabel:
+  message: "{name} 的工具如何提供給模型"
+  placeholders:
+    name: {type: String}
+mcpExposureOptionDefault:
+  message: "{label}（預設）"
+  placeholders:
+    label: {type: String}
+mcpExposureToolOverrides:
+  message: "toolExposure 中的 {count} 條規則不受影響。"
+  placeholders:
+    count: {type: int}
+mcpExposureToolSearchDisabled:
+  message: "{path} 中的 -builtin:tool-search 關閉了工具搜尋，因此這些工具只能在程式碼模式開啟時由程式碼模式指令碼呼叫。"
+  placeholders:
+    path: {type: String}
+mcpExposureToolSearchDisabledUnknown: "-builtin:tool-search 關閉了工具搜尋，因此這些工具只能在程式碼模式開啟時由程式碼模式指令碼呼叫。"
+mcpEmpty:
+  message: "還沒有 MCP 伺服器。{globalPath} 和專案 .pi/mcp.json 中的伺服器會顯示在這裡。"
+  placeholders:
+    globalPath: {type: String}
+mcpEmptyFileProblem: "無法列出任何伺服器：請看下方的檔案問題。"
+mcpSelectItem: "選擇一個伺服器或程式碼模式。"
+mcpUnavailableOperatorDisabled: "MCP 已關閉：執行 Pi Web 的環境設定了 PI_WEB_DISABLE_MCP。伺服器會列出，但沒有工作階段會連線到它們。"
+mcpUnavailableInternalsUnavailable: "MCP 已關閉：Pi Web 無法載入 SDK 的 MCP 模組。伺服器未經檢查地列出，沒有工作階段會連線到它們。"
+mcpUnavailableBuiltinDisabled:
+  message: "MCP 已關閉：{path} 中的 extensions 設定關閉了 builtin:mcp，沒有工作階段會連線到這些伺服器。"
+  placeholders:
+    path: {type: String}
+mcpUnavailableBuiltinDisabledUnknown: "MCP 已關閉：某個 extensions 設定關閉了 builtin:mcp，沒有工作階段會連線到這些伺服器。"
+mcpTrustUntrusted: "此專案未受信任，其 .pi/mcp.json 中的伺服器不會連線。"
+mcpTrustUntrustedThrough:
+  message: "此專案未受信任（{path} 被標記為不受信任），其 .pi/mcp.json 中的伺服器不會連線。"
+  placeholders:
+    path: {type: String}
+mcpTrustTrustedThrough:
+  message: "透過 {path} 受信任：此專案 .pi/mcp.json 中的伺服器會連線，它底下的每個資料夾都是如此。"
+  placeholders:
+    path: {type: String}
+mcpTrustUnreadable: "Pi Web 無法讀取信任記錄（trust.json），因此暫時把此專案的伺服器視為未受信任。"
+mcpTrustTrustButton: "信任專案…"
+mcpFooterFileProblem: "1 個檔案問題"
+mcpFooterFileProblems:
+  message: "{count} 個檔案問題"
+  placeholders:
+    count: {type: int}
+mcpCodemodeTitle: "程式碼模式"
+mcpCodemodeRowLabel:
+  message: "程式碼模式：{state}"
+  placeholders:
+    state: {type: String}
+mcpCodemodeIntro: "讓模型寫一小段指令碼來呼叫工具，MCP 工具預設用這種方式呼叫。變更只對之後新建的工作階段生效。"
+mcpCodemodeAutomatic: "自動"
+mcpCodemodeAlways: "一律開啟"
+mcpCodemodeUnavailable: "無法使用"
+mcpCodemodeMode: "模式"
+mcpCodemodeAutomaticDescription: "有使用程式碼模式的 MCP 伺服器連上時自動開啟。"
+mcpCodemodeAlwaysDescription: "工作階段啟動時即開啟程式碼模式。"
+mcpCodemodePreferenceError: "無法讀取全域設定檔："
+mcpCodemodeSandbox: "沙箱"
+mcpCodemodeSandboxAvailable: "可用。"
+mcpCodemodeSandboxUnavailable: "無法在此 Pi Web 伺服器上執行，因此沒有工作階段提供程式碼模式："
+mcpCodemodeSandboxNotChecked: "尚未檢查：Pi Web 啟動後的第一個工作階段開始時才會執行自我檢查。"
+mcpCodemodeBuiltin: "擴充功能"
+mcpCodemodeBuiltinDisabled:
+  message: "已被 {path} 中的 -builtin:codemode 關閉。"
+  placeholders:
+    path: {type: String}
+mcpCodemodeBuiltinDisabledUnknown: "已被某個 extensions 設定中的 -builtin:codemode 關閉。"
+mcpCodemodeBuiltinDisabledProject:
+  message: "{path} 中的 -builtin:codemode 為此專案的工作階段關閉了程式碼模式。「一律開啟」仍對其他資料夾中的工作階段生效。"
+  placeholders:
+    path: {type: String}
+mcpCodemodeAutoEnableOff:
+  message: "{path} 中的 autoEnableCodemode 為 false，因此「自動」永遠不會開啟程式碼模式；使用程式碼模式公開方式的伺服器，其工具只有在工具搜尋開啟時才能呼叫。"
+  placeholders:
+    path: {type: String}
+mcpCodemodeSaveFailed: "無法儲存此選擇："
+mcpCodemodeSaveTimedOut: "Pi Web 沒有及時回應，此選擇可能未儲存。"
+mcpCodemodeAlwaysUnavailableSandbox: "「一律開啟」無法使用：程式碼模式的沙箱無法在此 Pi Web 伺服器上執行。"
+mcpCodemodeAlwaysUnavailableBuiltin:
+  message: "「一律開啟」無法使用：{path} 中的 -builtin:codemode 關閉了程式碼模式。"
+  placeholders:
+    path: {type: String}
+mcpCodemodeProjectOverrideAlways:
+  message: "此專案自行決定：{path} 中的 defaultTools 讓其工作階段啟動時即開啟程式碼模式，無論你在此處如何選擇。"
+  placeholders:
+    path: {type: String}
+mcpCodemodeProjectOverrideAutomatic:
+  message: "此專案自行決定：{path} 中的 defaultTools 讓其工作階段啟動時不開啟程式碼模式，與「自動」相同，無論你在此處如何選擇。"
+  placeholders:
+    path: {type: String}
+mcpCodemodeToolMode: "內建工具"
+mcpCodemodeToolModeOn: "直接呼叫"
+mcpCodemodeToolModeOnly: "經指令碼"
+mcpCodemodeToolModeOnDescription: "模型直接呼叫 read、bash 等工具。"
+mcpCodemodeToolModeOnlyDescription: "程式碼模式開啟時，模型只在指令碼中呼叫 read、bash 等工具。"
+mcpCodemodeToolModeAutomaticNote: "模式為「自動」時，要等程式碼模式開啟後才生效。"
+mcpCodemodeToolModeInvalid:
+  message: "{path} 中的 codemode.mode 為 {value}，pi 會把它當作 \"on\"。選擇任一選項都會取代它。"
+  placeholders:
+    path: {type: String}
+    value: {type: String}
+mcpCodemodeToolModeProjectOverrideOn:
+  message: "此專案自行決定：{path} 中的 codemode 讓其工作階段仍向模型宣告這些工具，無論你在此處如何選擇。"
+  placeholders:
+    path: {type: String}
+mcpCodemodeToolModeProjectOverrideOnly:
+  message: "此專案自行決定：{path} 中的 codemode.mode 讓其工作階段只在指令碼中呼叫這些工具，無論你在此處如何選擇。"
+  placeholders:
+    path: {type: String}
+mcpCodemodeToolModeSaveFailed: "無法儲存此設定："
+mcpCodemodeInlineBudget: "工具清單預算"
+mcpCodemodeInlineBudgetUnit: "token"
+mcpCodemodeInlineBudgetSave: "儲存"
+mcpCodemodeInlineBudgetDescription:
+  message: "程式碼模式說明裡列出工具最多用的 token 數，列不下的由指令碼用 searchTools() 尋找。留空使用預設值 {default}。"
+  placeholders:
+    default: {type: String}
+mcpCodemodeInlineBudgetInvalidDraft:
+  message: "請輸入 0 到 {max} 之間的整數，或留空。"
+  placeholders:
+    max: {type: int}
+mcpCodemodeInlineBudgetInvalid:
+  message: "{path} 中的 codemode.inlineBudget 為 {value}，pi 會忽略它，因此工作階段使用 {default}。儲存會取代它。"
+  placeholders:
+    path: {type: String}
+    value: {type: String}
+    default: {type: String}
+mcpCodemodeInlineBudgetProjectOverride:
+  message: "此專案自行決定：{path} 中的 codemode.inlineBudget 讓其工作階段使用 {value}，無論你在此處儲存什麼。"
+  placeholders:
+    path: {type: String}
+    value: {type: String}
+mcpCodemodeInlineBudgetProjectOverrideDefault:
+  message: "此專案自行決定：{path} 中的 codemode 讓其工作階段使用 pi 的預設值 {default}，無論你在此處儲存什麼。"
+  placeholders:
+    path: {type: String}
+    default: {type: String}
+mcpCodemodeInlineBudgetSaveFailed: "無法儲存此預算："
+mcpReadOnlyMcpOff: "MCP 關閉期間，無法在此變更伺服器。"
+mcpReadOnlyProjectUntrusted: "在此專案受信任之前，Pi Web 不會變更它們。"
+mcpReadOnlyTrustUnreadable: "在能夠讀取信任記錄之前，Pi Web 不會變更它們。"
+mcpWriteSavedWhileOff: "變更會儲存到檔案中，但在 builtin:mcp 關閉期間，沒有工作階段會連線到這些伺服器。"
+mcpServerSwitchOn:
+  message: "開啟 {name}"
+  placeholders:
+    name: {type: String}
+mcpServerSwitchOff:
+  message: "關閉 {name}"
+  placeholders:
+    name: {type: String}
+mcpGroupSwitchOn:
+  message: "關閉 {group} 中的所有伺服器"
+  placeholders:
+    group: {type: String}
+mcpGroupSwitchOff:
+  message: "開啟 {group} 中的所有伺服器"
+  placeholders:
+    group: {type: String}
+mcpGroupKeptOff:
+  message: "有 {count} 個引用 PI_WEB_PASSWORD 的伺服器保持關閉。"
+  placeholders:
+    count: {type: int}
+mcpBulkFailed:
+  message: "{total} 個伺服器中有 {count} 個無法變更："
+  placeholders:
+    count: {type: int}
+    total: {type: int}
+mcpActionFailed: "無法變更該伺服器："
+mcpActionTimedOut: "Pi Web 沒有及時回應，變更可能未生效。"
+mcpRemoved:
+  message: "已從 {path} 移除 {name}。"
+  placeholders:
+    name: {type: String}
+    path: {type: String}
+mcpUndo: "復原"
+mcpUndoing: "正在復原…"
+mcpUndoFailed: "無法復原："
+mcpStateConnected: "測試時已連線"
+mcpStateNeedsAuth: "需要登入"
+mcpStateFailed: "測試時未能連線"
+mcpStateShortNeedsAuth: "需登入"
+mcpStateShortFailed: "失敗"
+mcpExposureShortCodemode: "程式碼模式"
+mcpExposureShortDeferred: "工具搜尋"
+mcpExposureShortDirect: "直接宣告"
+mcpExposureShortHidden: "已隱藏"
+mcpTestButton: "測試連線"
+mcpTestTesting: "正在測試…"
+mcpTestNever: "尚未測試。"
+mcpTestSerial: "它會執行 shell 命令，因此測試要等其他此類測試結束。"
+mcpTestBlockedMcpOff: "此 Pi Web 伺服器上的 MCP 已關閉，因此不會測試任何伺服器。"
+mcpTestBlockedProjectUntrusted: "此專案未受信任，因此 Pi Web 不會啟動它的伺服器。"
+mcpTestBlockedTrustUnreadable: "Pi Web 無法讀取信任記錄（trust.json），因此不會啟動此專案的伺服器。"
+mcpTestBlockedInvalid: "Pi 拒絕此項目，因此沒有可測試的內容。"
+mcpTestBlockedWebPassword: "它引用了 PI_WEB_PASSWORD，因此 Pi Web 不會連線到它。"
+mcpTestRefusedEntryNotObject: "此項目不是物件，因此沒有可測試的內容。請在檔案中修正。"
+mcpTestRefusedInvalidRequest: "此要求並未指明 Pi Web 能夠測試的伺服器，Pi Web 已拒絕。"
+mcpTestRefusedUnparsable: "該檔案不是有效的 JSON，Pi Web 無法讀取此項目進行測試。"
+mcpTestRefusedInvalidShape: "該檔案不是包含 \"mcpServers\" 物件的物件，Pi Web 無法讀取此項目進行測試。"
+mcpTestRefusedLinkDangling: "該檔案是指向不存在目標的符號連結，Pi Web 無法讀取此項目進行測試。"
+mcpTestRefusedLinkOutside: "該檔案是指向 Pi Web 可讀取的資料夾之外的符號連結，Pi Web 不會測試其中的伺服器。"
+mcpTestRefusedNotAFile: "該路徑不是一般檔案，Pi Web 不會讀取它來測試此項目。"
+mcpTestRefusedTooLarge: "該檔案超過 1 MiB，Pi Web 不會讀取它來測試此項目。"
+mcpTestRefusedTooManyServers: "該檔案宣告了超過 200 個伺服器，Pi Web 不會讀取它來測試此項目。"
+mcpTestStateConnected: "已連線"
+mcpTestStateNeedsAuth: "需要登入"
+mcpTestStateFailed: "未能連線"
+mcpTestStateTimedOut: "沒有回應"
+mcpTestSummaryConnected:
+  message: "列出了 {count} 個工具，耗時 {seconds} 秒，測試於 {time}。"
+  placeholders:
+    count: {type: int}
+    seconds: {type: int}
+    time: {type: String}
+mcpTestSummaryNeedsAuth:
+  message: "伺服器要求 OAuth 登入。測試於 {time}。"
+  placeholders:
+    time: {type: String}
+mcpTestSummaryFailed:
+  message: "{seconds} 秒後放棄，測試於 {time}。"
+  placeholders:
+    seconds: {type: int}
+    time: {type: String}
+mcpTestSummaryTimedOut:
+  message: "它在 {seconds} 秒內沒有回應，因此 Pi Web 已停止測試。測試於 {time}。"
+  placeholders:
+    seconds: {type: int}
+    time: {type: String}
+mcpTestError: "錯誤："
+mcpTestStderr: "它最後寫入 stderr 的內容："
+mcpTestServerInfo:
+  message: "伺服器：{name} {version}"
+  placeholders:
+    name: {type: String}
+    version: {type: String}
+mcpTestResources: "提供資源。"
+mcpTestRanIn:
+  message: "在 {path} 中執行。"
+  placeholders:
+    path: {type: String}
+mcpTestQueued:
+  message: "等待了 {seconds} 秒，因為另一個會執行 shell 命令的伺服器正在測試。"
+  placeholders:
+    seconds: {type: int}
+mcpTestReadOnly: "唯讀"
+mcpTestMoreTools:
+  message: "另有 {count} 個未顯示。"
+  placeholders:
+    count: {type: int}
+mcpTestQueueTimedOut: "另一個會執行 shell 命令的伺服器的測試沒有及時完成，因此此測試沒有開始。請再試一次。"
+mcpTestRequestFailed: "無法測試該伺服器："
+mcpTestRequestTimedOut: "Pi Web 沒有及時回應。測試可能仍會完成，按「重新整理」查看結果。"
+mcpStateConnecting: "正在工作階段中連線"
+mcpStateDisconnected: "工作階段中的連線已中斷"
+mcpStateConflict: "名稱已被其他擴充功能佔用"
+mcpStateSessionConnected: "已在工作階段中連線"
+mcpStateSessionFailed: "未能在工作階段中連線"
+mcpStateShortConnecting: "連線中"
+mcpStateShortDisconnected: "已中斷"
+mcpStateShortConflict: "衝突"
+mcpStateDetailDisconnected: "該工作階段會在下次呼叫它的工具時重新連線。"
+mcpStateDetailConflict: "請在檔案中重新命名此項目，或關閉那個擴充功能。"
+mcpSessionStateConnecting: "連線中"
+mcpSessionStateConnected: "已連線"
+mcpSessionStateNeedsAuth: "需要登入"
+mcpSessionStateFailed: "未能連線"
+mcpSessionStateDisconnected: "已中斷"
+mcpSessionStateConflict: "名稱已被佔用"
+mcpSessionStateNotTrusted: "未讀取"
+mcpSessionStateClosed: "已關閉"
+mcpSessionSummaryConnecting:
+  message: "{path} 中的一個工作階段於 {time} 開始連線到它。"
+  placeholders:
+    path: {type: String}
+    time: {type: String}
+mcpSessionSummaryConnected:
+  message: "{path} 中的一個工作階段於 {time} 連線到它。"
+  placeholders:
+    path: {type: String}
+    time: {type: String}
+mcpSessionSummaryNeedsAuth:
+  message: "伺服器於 {time} 要求 {path} 中的一個工作階段進行 OAuth 登入。"
+  placeholders:
+    path: {type: String}
+    time: {type: String}
+mcpSessionSummaryFailed:
+  message: "{path} 中的一個工作階段於 {time} 未能連線到它。"
+  placeholders:
+    path: {type: String}
+    time: {type: String}
+mcpSessionSummaryDisconnected:
+  message: "{path} 中一個工作階段的連線於 {time} 中斷。"
+  placeholders:
+    path: {type: String}
+    time: {type: String}
+mcpSessionSummaryConflict:
+  message: "{path} 中的一個工作階段於 {time} 發現該名稱已被佔用，因此沒有連線到此項目。"
+  placeholders:
+    path: {type: String}
+    time: {type: String}
+mcpSessionSummaryNotTrusted:
+  message: "{path} 中的一個工作階段於 {time} 沒有讀取它，因為當時沒有任何決定信任該專案。"
+  placeholders:
+    path: {type: String}
+    time: {type: String}
+mcpSessionSummaryClosed:
+  message: "{path} 中的工作階段 {time} 連線，{closedTime} 關閉。"
+  placeholders:
+    path: {type: String}
+    time: {type: String}
+    closedTime: {type: String}
+mcpSessionConflictOwner: "先註冊該名稱的擴充功能："
+mcpHostInactive:
+  message: "{path} 中的一個工作階段不會透過 Pi Web 連線到這些伺服器：它的 /mcp 命令來自 {owner}，而不是 Pi 內建的 MCP 擴充功能。那個擴充功能可能會讀取 mcp.json，並以自己的方式連線到它們。"
+  placeholders:
+    path: {type: String}
+    owner: {type: String}
+mcpSignInButton: "登入"
+mcpSignInStarting: "正在開始…"
+mcpSignInCancel: "取消登入"
+mcpSignInCancelling: "正在取消…"
+mcpSignInCancelFailed: "無法取消登入："
+mcpSignInCancelTimedOut: "Pi Web 沒有及時回應。登入可能仍在進行；一有進展，這裡就會顯示。"
+mcpSignInSignOut: "登出"
+mcpSignInSigningOut: "正在登出…"
+mcpSignInReplaces: "登入可能會取代此伺服器已儲存的權杖和註冊資訊。"
+mcpSignInSignOutExplain: "登出會刪除此伺服器儲存的權杖和註冊資訊，已開啟的工作階段在下次請求時失去存取權。"
+mcpSignInShared:
+  message: "另一個同名的 {name} 項目使用相同的網址，這是它的登入：權杖對兩者都有效。"
+  placeholders:
+    name: {type: String}
+mcpSignInSharedDone:
+  message: "已透過另一個同名的 {name} 項目登入，它使用相同的網址，因此權杖對此項目同樣有效。按「測試連線」查看此項目的伺服器提供的內容。"
+  placeholders:
+    name: {type: String}
+mcpSignInSharedAlready:
+  message: "另一個同名的 {name} 項目使用相同的網址，並且已經登入，因此權杖對此項目同樣有效。按「測試連線」查看此項目的伺服器提供的內容。"
+  placeholders:
+    name: {type: String}
+mcpSignInSharedConnectFailed:
+  message: "透過另一個同名的 {name} 項目（使用相同的網址）進行的登入沒有可登入的對象：該項目的伺服器沒有連線成功，也沒有要求登入。它的「狀態」一列說明了原因。"
+  placeholders:
+    name: {type: String}
+mcpSignInPhaseConnecting: "正在檢查伺服器是否要求登入…"
+mcpSignInPhaseStarting: "正在透過伺服器的授權伺服器準備登入…"
+mcpSignInPhaseFinishing: "正在完成登入…"
+mcpSignInPhaseNoCancel: "授權伺服器已經回應，因此這個步驟無法再取消。"
+mcpSignInAuthorizeMessage: "開啟登入頁面並核准存取。瀏覽器回到執行 Pi Web 的電腦後，登入會自動完成。如果瀏覽器在另一台裝置上，或者它最後開啟的頁面無法載入，請複製該頁面的網址並貼到這裡。"
+mcpSignInAuthorizeLink: "登入頁面："
+mcpSignInAuthorizeNotALink: "伺服器提供的登入頁面不是網址，因此只以文字顯示："
+mcpSignInAuthorizeRedirect:
+  message: "核准後，瀏覽器會被導向 {url}，只有執行 Pi Web 的電腦才能開啟它。"
+  placeholders:
+    url: {type: String}
+mcpSignInAuthorizeWait: "Pi Web 從登入開始起最多等待 5 分鐘。"
+mcpSignInPasteLabel: "瀏覽器最後開啟的網址"
+mcpSignInPastePlaceholder: "http://127.0.0.1:…/callback?code=…"
+mcpSignInPasteSubmit: "繼續"
+mcpSignInPasteChecking: "正在檢查…"
+mcpSignInPasteRefused: "這個網址無法完成這次登入："
+mcpSignInPasteTimedOut: "Pi Web 沒有及時回應。如果它已收下這個網址，這裡會顯示登入的進展。"
+mcpSignInDoneAlready: "已經登入：伺服器不需重新登入就連線成功。"
+mcpSignInDoneSignedIn: "已登入。上方的「狀態」顯示伺服器提供的內容。"
+mcpSignInDoneRefreshed: "已使用儲存的重新整理權杖再次登入，不需要瀏覽器。上方的「狀態」顯示伺服器提供的內容。"
+mcpSignInDoneFailedAfter: "已登入，但之後伺服器沒有連線成功。上方的「狀態」說明了原因。"
+mcpSignInDoneNeedsAuthAfter: "已登入，但 Pi Web 再次連線時，伺服器仍要求登入。"
+mcpSignInDoneNotConnected: "已登入。按「測試連線」查看伺服器提供的內容。"
+mcpSignInCancelled: "已取消登入。"
+mcpSignInExpired: "登入沒有在 5 分鐘內完成，因此 Pi Web 停止了等待。"
+mcpSignInFailedConnectFailed: "伺服器沒有連線成功，也沒有要求登入，因此沒有可登入的對象。上方的「狀態」說明了原因。"
+mcpSignInFailedQueueTimedOut: "另一個會執行 shell 命令的伺服器的測試沒有及時完成，因此登入沒有開始。請再試一次。"
+mcpSignInFailedSignInFailed: "登入失敗。"
+mcpSignInFailedInternal: "登入意外失敗。"
+mcpSignInGone: "Pi Web 已不再記得這次登入：它已結束一段時間，或者 Pi Web 已重新啟動。按「登入」重新開始。"
+mcpSignInRequestFailed: "無法登入："
+mcpSignInRequestTimedOut: "Pi Web 沒有及時回應。再按一次「登入」可查看正在進行的登入。"
+mcpSignInSignOutFailed: "無法登出："
+mcpSignInSignedOutDone: "已登出：為此伺服器儲存的權杖已刪除。"
+mcpSignInSignedOutNothing: "此伺服器沒有儲存任何內容，因此不需要登出。"
+mcpSignInBlockedMcpOff: "此 Pi Web 伺服器上的 MCP 已關閉，因此不會登入任何伺服器。"
+mcpSignInBlockedProjectUntrusted: "此專案未受信任，因此 Pi Web 不會登入或登出它的伺服器。"
+mcpSignInBlockedTrustUnreadable: "Pi Web 無法讀取信任儲存區（trust.json），因此不會登入或登出此專案的伺服器。"
+mcpSignInBlockedInvalid: "Pi 拒絕此項目，因此沒有可登入的對象。"
+mcpSignInRefusedFile: "Pi Web 已無法從檔案中讀取此項目。請按「重新整理」。"
+mcpSignInRefusedInvalidRequest: "Pi Web 拒絕了這個請求，因為它沒有指明一個可以登入的伺服器。"
+mcpSignInSummaryConnected:
+  message: "已登入，接著列出了 {count} 個工具，耗時 {seconds} 秒，時間 {time}。"
+  placeholders:
+    count: {type: int}
+    seconds: {type: int}
+    time: {type: String}
+mcpSignInSummaryNeedsAuth:
+  message: "已登入，但伺服器在 {time} 仍要求登入。"
+  placeholders:
+    time: {type: String}
+mcpSignInSummaryFailed:
+  message: "已登入，但連線在 {seconds} 秒後放棄，時間 {time}。"
+  placeholders:
+    seconds: {type: int}
+    time: {type: String}
+mcpSignInSummaryTimedOut:
+  message: "已登入，但伺服器沒有在 {seconds} 秒內回應，時間 {time}。"
+  placeholders:
+    seconds: {type: int}
+    time: {type: String}
+mcpAddAction: "新增 MCP"
+mcpAddTitle: "新增 MCP"
+mcpAddInputLabel: "要新增的伺服器"
+mcpAddPlaceholder: "https://mcp.example.com/mcp\nnpx -y @scope/server\nclaude mcp add …\n'{' \"mcpServers\": '{' … '}' '}'"
+mcpAddExamples: "支援的格式（點擊填入範例）"
+mcpAddRawPi: "啟用 pi mcp 語法，支援 $NAME 和 !command"
+mcpAddRawPiOn: "環境變數和請求標頭中的 $NAME 會讀取執行 Pi Web 的電腦上的變數，以 ! 開頭的值每次連線都會當作命令執行。"
+mcpAddServerLabel: "伺服器"
+mcpAddServerCount:
+  message: "這段內容包含 {count} 個伺服器，請逐一新增。"
+  placeholders:
+    count: {type: int}
+mcpAddPreview: "預覽"
+mcpAddReadAs: "辨識為"
+mcpAddPreviewUnfilled: "尚未填寫的值按貼上內容中的原樣顯示。"
+mcpAddFields: "需要填寫的值"
+mcpAddFieldOptional: "選填：留空時，它所屬的值會被省略。"
+mcpAddFieldOptionalHeader:
+  message: "選填：留空則不傳送標頭 {name}。"
+  placeholders:
+    name: {type: String}
+mcpAddFieldSlot: "填寫的值"
+mcpAddFieldStoredAs:
+  message: "儲存為 {value}。"
+  placeholders:
+    value: {type: String}
+mcpAddFieldStoredAsVariable:
+  message: "儲存為 {value}：pi 每次連線時讀取該變數，值本身不會寫入 mcp.json。"
+  placeholders:
+    value: {type: String}
+mcpAddFieldUseVariable: "從執行 Pi Web 的電腦上的變數讀取"
+mcpAddFieldVariableName:
+  message: "{field} 的變數"
+  placeholders:
+    field: {type: String}
+mcpAddFieldVariableHint: "儲存為 $'{'…'}'：pi 每次連線時讀取該變數，值本身不會寫入 mcp.json。"
+mcpAddFieldChoose: "請選擇…"
+mcpAddSecrets: "貼上內容中的機密"
+mcpAddSecretHolds: "以明文保存了一項機密。"
+mcpAddSecretStoredAs:
+  message: "儲存為 {value}：pi 每次連線時讀取該變數，機密不會寫入 mcp.json。"
+  placeholders:
+    value: {type: String}
+mcpAddSecretAsPasted: "按貼上的內容儲存到 mcp.json，因此此伺服器只能儲存在全域檔案中。"
+mcpAddNameInvalid: "伺服器名稱只能使用字母、數字、_ 和 -。"
+mcpAddNameTaken:
+  message: "{path} 中已有名為 {name} 的伺服器。"
+  placeholders:
+    path: {type: String}
+    name: {type: String}
+mcpAddUseName:
+  message: "使用 {name}"
+  placeholders:
+    name: {type: String}
+mcpAddButton: "新增"
+mcpAddButtonTrust: "新增並信任此資料夾"
+mcpAddAdding: "正在新增…"
+mcpAddTrustExplain:
+  message: "此資料夾還沒有信任決定，而寫入 .pi/mcp.json 會讓它需要一個，因此「新增」會在同一步中信任 {path}。pi CLI 共用這個決定，其中的每個資料夾也都會受信任。"
+  placeholders:
+    path: {type: String}
+mcpAddAfterAdd: "新增後會測試一次連線。"
+mcpAddFailed: "未新增："
+mcpAddTrustKept:
+  message: "Pi Web 為這一步信任了 {folder}，但無法撤銷，因此該資料夾仍受信任。"
+  placeholders:
+    folder: {type: String}
+mcpAddHostEnvBody:
+  message: "它的標頭或 OAuth 用戶端密鑰讀取了 {names}，這些變數已在執行 Pi Web 的電腦上設定，pi 每次連線都會把它們的值傳送給伺服器。只有當此伺服器應當取得這些值時才新增它。"
+  placeholders:
+    names: {type: String}
+mcpAddHostEnvConfirm: "新增並傳送這些值"
+mcpAddBlockedNothing: "還沒有可新增的內容：貼上的內容中沒有 pi 能用的伺服器。"
+mcpAddBlockedFields:
+  message: "請先填寫 {fields}。"
+  placeholders:
+    fields: {type: String}
+mcpAddBlockedFieldsInvalid:
+  message: "請先更正 {fields}。"
+  placeholders:
+    fields: {type: String}
+mcpAddBlockedWebPassword: "它參照了 PI_WEB_PASSWORD，因此 Pi Web 不會新增它。"
+mcpAddRefusedServerInvalid:
+  message: "依所填的值，pi 會拒絕它：{error}"
+  placeholders:
+    error: {type: String}
+mcpAddProjectBlockedNoProject: "開啟一個專案後，才能把伺服器新增到它的 .pi/mcp.json。"
+mcpAddProjectBlockedProjectNotListed: "未列出專案資料夾，因此不會寫入它的 .pi/mcp.json。"
+mcpAddProjectBlockedTrustUnreadable: "Pi Web 無法讀取信任記錄（trust.json），因此不會寫入此專案的 .pi/mcp.json。"
+mcpAddProjectBlockedProjectUntrusted: "此專案未受信任，因此 Pi Web 不會寫入它的 .pi/mcp.json。請先信任它。"
+mcpAddProjectBlockedUntrustedDecision: "此資料夾被標記為不受信任，因此其 .pi/mcp.json 中的伺服器永遠不會連線。"
+mcpAddProjectBlockedSecret:
+  message: "{fields} 以明文保存了一項機密，因此此伺服器只能儲存在全域。要儲存在專案中，請為它選擇「從執行 Pi Web 的電腦上的變數讀取」。"
+  placeholders:
+    fields: {type: String}
+mcpAddProjectBlockedSecretFixed:
+  message: "{fields} 在 pi 不讀取變數的位置（URL、命令或其引數）以明文保存了一項機密，因此此伺服器只能儲存在全域。"
+  placeholders:
+    fields: {type: String}
+mcpAddProjectBlockedFolderNotFresh: "此資料夾的 .pi 下，或其上層某個 .agents/skills 資料夾中，有一個指向不存在目標的連結。目標出現後它就需要信任，因此 Pi Web 不會自行信任此資料夾。請刪除或修正該連結，然後按「重新整理」。"
+mcpAddProjectBlockedFileProblem:
+  message: "無法寫入 {path}：{reason}"
+  placeholders:
+    path: {type: String}
+    reason: {type: String}
+mcpAddProjectBlockedTrustTooBroadHome: "這是你的主資料夾。Pi Web 不會自行信任它，因為其中的每個資料夾都會一併受信任；請把伺服器新增到全域。"
+mcpAddProjectBlockedTrustTooBroadRoot: "這是檔案系統的根目錄。Pi Web 不會自行信任它，因為其中的每個資料夾都會一併受信任；請把伺服器新增到全域。"
+mcpAddProjectBlockedTrustTooBroadContainsHome:
+  message: "此資料夾包含你的主資料夾（{path}）。Pi Web 不會自行信任它，因為其中的每個資料夾都會一併受信任；請把伺服器新增到全域。"
+  placeholders:
+    path: {type: String}
+mcpAddProjectBlockedTrustTooBroadContainsAgentDir:
+  message: "此資料夾包含 Pi 的 agent 資料夾（{path}）。Pi Web 不會自行信任它，因為其中的每個資料夾都會一併受信任；請把伺服器新增到全域。"
+  placeholders:
+    path: {type: String}
+mcpAddProjectBlockedTrustTooBroadContainsFolder:
+  message: "此資料夾包含 Pi Web 已知的另一個資料夾 {path}，信任它也會信任那個資料夾。Pi Web 不會自行這樣做；請把伺服器新增到全域。"
+  placeholders:
+    path: {type: String}
+mcpAddProjectBlockedTrustTooBroadContainsProject:
+  message: "此資料夾包含 {path}，這是一個帶有需要信任的資源、且本身尚無信任決定的專案，信任此資料夾也會信任它。Pi Web 不會自行這樣做；請把伺服器新增到全域，或開啟那個專案單獨信任它。"
+  placeholders:
+    path: {type: String}
+mcpAddProjectBlockedTrustTooBroadTooManyFolders: "此資料夾包含的資料夾太多，Pi Web 無法確認信任它不會同時信任其中的專案。Pi Web 不會自行信任它；請把伺服器新增到全域。"
+mcpAddAdded:
+  message: "已把 {name} 新增到 {path}。"
+  placeholders:
+    name: {type: String}
+    path: {type: String}
+mcpAddAddedTrusted:
+  message: "已把 {name} 新增到 {path}，並信任了 {folder}。"
+  placeholders:
+    name: {type: String}
+    path: {type: String}
+    folder: {type: String}
+mcpAddAddedTrustedHere:
+  message: "已把 {name} 新增到 {path}，並信任了此資料夾。"
+  placeholders:
+    name: {type: String}
+    path: {type: String}
+mcpAddTesting: "正在測試連線…"
+mcpAddNeedsSignIn: "它要求登入。"
+mcpAddSourceUrl: "網址"
+mcpAddSourceCommandLine: "命令列"
+mcpAddSourcePiMcpAdd: "pi mcp add"
+mcpAddSourceClaudeMcpAdd: "claude mcp add"
+mcpAddSourceClaudeMcpAddJson: "claude mcp add-json"
+mcpAddSourceCodexMcpAdd: "codex mcp add"
+mcpAddSourceGeminiMcpAdd: "gemini mcp add"
+mcpAddSourceVscodeAddMcp: "code --add-mcp"
+mcpAddSourceMcpServersJson: "mcpServers 設定（Claude、Cursor、Gemini…）"
+mcpAddSourceVscodeJson: "VS Code 的 mcp.json"
+mcpAddSourceZedJson: "Zed 設定"
+mcpAddSourceOpencodeJson: "opencode 設定"
+mcpAddSourceServerObject: "單一伺服器的 JSON"
+mcpAddSourceServerMap: "依名稱列出的伺服器（JSON）"
+mcpAddSourceRegistryServerJson: "MCP 登錄檔的 server.json"
+mcpAddSourceCursorInstallLink: "Cursor 安裝連結"
+mcpAddSourceVscodeInstallLink: "VS Code 安裝連結"
+mcpAddSourceVisualStudioInstallLink: "Visual Studio 安裝連結"
+mcpAddSourceCopilotAppInstallLink: "GitHub Copilot 應用程式連結"
+mcpImportNoteForServer:
+  message: "{server}：{note}"
+  placeholders:
+    server: {type: String}
+    note: {type: String}
+mcpImportNoteEmptyInput: "還沒有可讀取的內容：請貼上網址、命令列或設定。"
+mcpImportNoteUnrecognizedInput: "Pi Web 無法辨識這段內容。請貼上伺服器的網址、啟動它的命令、mcp add 命令、JSON 設定或安裝連結。"
+mcpImportNoteInvalidJson:
+  message: "這看起來像 JSON，但無法解析：{detail}"
+  placeholders:
+    detail: {type: String}
+mcpImportNoteNoServersFound: "此設定中沒有找到 MCP 伺服器。"
+mcpImportNoteShellOperator:
+  message: "命令列用到了 shell 運算子 {operator}。請只貼上啟動伺服器的那條命令。"
+  placeholders:
+    operator: {type: String}
+mcpImportNoteShellCommandSubstitution:
+  message: "命令列用到了 {syntax}，只有 shell 才會執行它。請直接寫出該值。"
+  placeholders:
+    syntax: {type: String}
+mcpImportNoteShellMultipleCommands: "這裡包含不只一條命令。請只貼上啟動伺服器的那條。"
+mcpImportNoteShellUnterminatedQuote:
+  message: "有一個 {quote} 引號沒有閉合。"
+  placeholders:
+    quote: {type: String}
+mcpImportNoteShellParameter:
+  message: "命令列用到了 shell 參數 {parameter}，Pi Web 無法填入它。"
+  placeholders:
+    parameter: {type: String}
+mcpImportNoteShellExpansion:
+  message: "命令列用到了 {expansion}，只有 shell 才會展開它。請直接寫出該值。"
+  placeholders:
+    expansion: {type: String}
+mcpImportNoteUnsupportedUrlScheme:
+  message: "{scheme}: 位址不是伺服器：pi 只連線到 http 和 https 網址。"
+  placeholders:
+    scheme: {type: String}
+mcpImportNoteGithubRepoLink:
+  message: "這是 GitHub 存放庫 {repository}，不是伺服器。請從它的 README 複製安裝命令、網址或設定。"
+  placeholders:
+    repository: {type: String}
+mcpImportNoteGithubMcpPage:
+  message: "這是 {name} 在 github.com/mcp 上的頁面。它的「安裝」按鈕會開啟其他應用程式，無法貼到這裡；請改為從伺服器的 README 複製 Cursor 或 VS Code 安裝徽章的連結。"
+  placeholders:
+    name: {type: String}
+mcpImportNoteGithubPage: "這個 GitHub 頁面不是伺服器。請從伺服器的 README 複製安裝命令、網址或設定。"
+mcpImportNoteByNameLink:
+  message: "這個連結只是在登錄檔中指明了 {name}，不含任何設定，因此 Pi Web 暫時無法新增它。請改為從伺服器的 README 複製 Cursor 或 VS Code 安裝徽章的連結。"
+  placeholders:
+    name: {type: String}
+mcpImportNoteBadgeImage: "這是徽章的圖片。請改為複製徽章所開啟的連結。"
+mcpImportNoteInstallLinkInvalid:
+  message: "無法讀取此安裝連結（{detail}）。"
+  placeholders:
+    detail: {type: String}
+mcpImportNoteClaudeDesktopImport: "claude mcp add-from-claude-desktop 會複製 Claude Desktop 自己的伺服器。請改為貼上 claude_desktop_config.json 中的 mcpServers 部分。"
+mcpImportNoteCliUnsupported:
+  message: "Pi Web 不讀取 {cli} 的 mcp add。請改為貼上伺服器自己的命令列、網址或 JSON 設定。"
+  placeholders:
+    cli: {type: String}
+mcpImportNoteCliUsage:
+  message: "這條 {cli} mcp add 命令不完整：它需要一個名稱，以及一個網址或命令。"
+  placeholders:
+    cli: {type: String}
+mcpImportNoteCliUnknownOption:
+  message: "{cli} 沒有選項 {option}。"
+  placeholders:
+    cli: {type: String}
+    option: {type: String}
+mcpImportNoteCliOptionNeedsValue:
+  message: "{cli} 的選項 {option} 需要一個值。"
+  placeholders:
+    cli: {type: String}
+    option: {type: String}
+mcpImportNoteCliOptionWrongTransport:
+  message: "{cli} 的選項 {option} 不適用於 {transport} 伺服器。"
+  placeholders:
+    cli: {type: String}
+    option: {type: String}
+    transport: {type: String}
+mcpImportNoteCliInvalidPair:
+  message: "{cli} 的選項 {option} 無法讀取 {value}。"
+  placeholders:
+    cli: {type: String}
+    option: {type: String}
+    value: {type: String}
+mcpImportNoteCliNotAServer:
+  message: "{cli} {command} 用於管理 {cli} 本身，它不是伺服器。請貼上啟動伺服器的命令，或 {cli} mcp add …"
+  placeholders:
+    cli: {type: String}
+    command: {type: String}
+mcpImportNotePiHelp: "pi mcp add --help 只會印出說明，不會新增任何內容。"
+mcpImportNoteFieldRequired:
+  message: "請填寫 {field}。"
+  placeholders:
+    field: {type: String}
+mcpImportNoteFieldInvalidOption:
+  message: "請為 {field} 選擇一個提供的值。"
+  placeholders:
+    field: {type: String}
+mcpImportNoteFieldReferenceInvalidName:
+  message: "{field}：變數名稱只能包含字母、數字和 _，且不能以數字開頭。"
+  placeholders:
+    field: {type: String}
+mcpImportNoteFieldReferenceInvalidTarget:
+  message: "{field} 不能取自變數：pi 只在 env 值、標頭和 OAuth 用戶端密鑰中讀取變數。"
+  placeholders:
+    field: {type: String}
+mcpImportNoteFieldReferenceInvalidMissing:
+  message: "{field}：請輸入要讀取的變數名稱。"
+  placeholders:
+    field: {type: String}
+mcpImportNoteSseTransport: "它使用舊版 SSE 傳輸方式，pi 不支援。"
+mcpImportNoteSseTransportSuggested:
+  message: "它使用舊版 SSE 傳輸方式，pi 不支援。請改用它的 Streamable HTTP 網址：{suggestedUrl}"
+  placeholders:
+    suggestedUrl: {type: String}
+mcpImportNoteWebsocketTransport: "它透過 WebSocket 連線，pi 不支援。"
+mcpImportNoteUnsupportedTransport:
+  message: "它的傳輸方式 {type} 不是 pi 支援的方式（stdio 或 Streamable HTTP）。"
+  placeholders:
+    type: {type: String}
+mcpImportNoteAmbiguousCommandAndUrl: "它同時有命令和網址，無法確定該用哪一個。"
+mcpImportNoteNoCommandOrUrl: "它既沒有可啟動的命令，也沒有可連線的網址。"
+mcpImportNoteZedExtensionServer: "它來自 Zed 擴充功能，只有 Zed 才能啟動它。"
+mcpImportNoteRegistryPackagesUnsupported: "它只以待安裝的套件形式發布，而 pi 需要命令或網址。請改為貼上它的安裝命令。"
+mcpImportNoteInvalidConfig:
+  message: "pi 會拒絕它：{problem}"
+  placeholders:
+    problem: {type: String}
+mcpImportNoteDroppedKey:
+  message: "{key} 在 pi 中沒有對應項目，已省略。"
+  placeholders:
+    key: {type: String}
+mcpImportNoteVariableUnsupportedHere:
+  message: "{field} 讀取了變數 {name}，pi 不會在那裡填入它，因此需要在下方填寫其值。"
+  placeholders:
+    field: {type: String}
+    name: {type: String}
+mcpImportNoteVariableFallbackDropped:
+  message: "{field}：pi 不支援變數的預設值，因此省略了 {name} 的備用值 {fallback}。"
+  placeholders:
+    field: {type: String}
+    fallback: {type: String}
+    name: {type: String}
+mcpImportNoteBareDollarLiteral:
+  message: "{field} 中的 $'{'name'}' 是一般文字：此用戶端不把它當作變數，pi 也不會。"
+  placeholders:
+    field: {type: String}
+mcpImportNoteHeaderEnvReference:
+  message: "標頭 {header} 會把執行 Pi Web 的電腦上 {names} 的值傳送給此伺服器。"
+  placeholders:
+    header: {type: String}
+    names: {type: String}
+mcpImportNoteClientSecretEnvReference:
+  message: "OAuth 用戶端密鑰取自執行 Pi Web 的電腦上的 {names}，並會傳送給授權伺服器。"
+  placeholders:
+    names: {type: String}
+mcpImportNoteShellCommandValue:
+  message: "{field} 每次連線都會在執行 Pi Web 的電腦上執行 shell 命令。"
+  placeholders:
+    field: {type: String}
+mcpImportNoteShellVariable:
+  message: "{field}：$'{'name'}' 本應由你的 shell 填入。pi 會從執行 Pi Web 的電腦的環境中讀取它，否則需要在下方填寫其值。"
+  placeholders:
+    field: {type: String}
+mcpImportNoteUnsupportedVariable:
+  message: "{field} 用到了 {variable}，pi 無法填入，因此需要在下方填寫其值。"
+  placeholders:
+    field: {type: String}
+    variable: {type: String}
+mcpImportNoteInputUndefined:
+  message: "設定要求填寫輸入項目 {id}，但沒有定義它，因此需要在下方填寫其值。"
+  placeholders:
+    id: {type: String}
+mcpImportNoteInputCommandUnsupported:
+  message: "輸入項目 {id} 會執行 VS Code 命令，Pi Web 無法執行，因此需要在下方填寫其值。"
+  placeholders:
+    id: {type: String}
+mcpImportNoteTimeoutClamped:
+  message: "{from} 秒的逾時時間已縮短為 {to} 秒。"
+  placeholders:
+    from: {type: String}
+    to: {type: String}
+mcpImportNoteTimeoutDropped:
+  message: "逾時時間 {value} 不是秒數，已省略。"
+  placeholders:
+    value: {type: String}
+mcpImportNoteTimeoutUnitGuessedMilliseconds:
+  message: "逾時時間 {value} 被當作毫秒讀取，請核對。"
+  placeholders:
+    value: {type: String}
+mcpImportNoteTimeoutUnitGuessedSeconds:
+  message: "逾時時間 {value} 被當作秒讀取，請核對。"
+  placeholders:
+    value: {type: String}
+mcpImportNoteEnvNullDropped:
+  message: "{name} 被設為 null 以取消設定，pi 做不到這一點，因此已省略。"
+  placeholders:
+    name: {type: String}
+mcpImportNoteOauthOptionDropped:
+  message: "OAuth 選項 {key} 在 pi 中沒有對應項目，已省略。"
+  placeholders:
+    key: {type: String}
+mcpImportNoteOauthDisableUnsupported: "設定關閉了 OAuth，pi 無法這樣做：只要伺服器要求，pi 就會透過 OAuth 登入。"
+mcpImportNoteCallbackUrlDropped:
+  message: "OAuth 回呼位址 {value} 不是 pi 能監聽的回送位址，因此已省略。"
+  placeholders:
+    value: {type: String}
+mcpImportNoteCallbackPortDropped:
+  message: "OAuth 回呼連接埠 {value} 不是連接埠號碼，因此已省略。"
+  placeholders:
+    value: {type: String}
+mcpImportNoteInvalidExposureDropped:
+  message: "exposure {value} 不是 pi 認得的值，因此已省略。"
+  placeholders:
+    value: {type: String}
+mcpImportNoteToolFilterImportedInclude:
+  message: "只提供這些工具，其餘的隱藏：{tools}。"
+  placeholders:
+    tools: {type: String}
+mcpImportNoteToolFilterImportedExclude:
+  message: "這些工具被隱藏：{tools}。"
+  placeholders:
+    tools: {type: String}
+mcpImportNoteTransportGuessed: "設定沒有指明傳輸方式，Pi Web 根據現有的鍵推斷出了它。"
+mcpImportNoteInsecureHttp:
+  message: "{host} 透過未加密的 http 存取，因此傳送的所有內容（包括權杖）都以明文傳輸。"
+  placeholders:
+    host: {type: String}
+mcpImportNoteLiteralSecret:
+  message: "{field} 以明文保存了一項機密，因此此伺服器只能儲存在全域 mcp.json 中。"
+  placeholders:
+    field: {type: String}
+mcpImportNoteCliOptionIgnored:
+  message: "{cli} 的選項 {option} 在 pi 中沒有對應項目，已忽略。"
+  placeholders:
+    cli: {type: String}
+    option: {type: String}
+mcpImportNoteCliOptionAsArg:
+  message: "{option} 位於伺服器命令之後，因此會像 {cli} 那樣作為引數傳給伺服器。"
+  placeholders:
+    option: {type: String}
+    cli: {type: String}
+mcpImportNoteCliExtraArguments:
+  message: "{cli} 只憑網址新增 HTTP 伺服器，因此省略了多餘的引數 {arguments}。"
+  placeholders:
+    cli: {type: String}
+    arguments: {type: String}
+mcpImportNoteMcpRemoteBridge:
+  message: "這會執行 mcp-remote 來存取 {url}。pi 可以直接連線到該網址：貼上該網址即可不經橋接新增它。"
+  placeholders:
+    url: {type: String}
+mcpImportNoteLooksLikePiConfig: "這看起來像 pi 自己的 mcp.json。如果是從那裡複製的，請開啟「啟用 pi mcp 語法，支援 $NAME 和 !command」。"
+mcpImportNoteWorkspaceFolderRelative:
+  message: "{field}：{from} 變成了工作階段所在的資料夾（.），pi 就在那裡啟動伺服器。"
+  placeholders:
+    field: {type: String}
+    from: {type: String}
+mcpImportNoteHomeVariableTranslated:
+  message: "{field}：{from} 變成了 {to}，pi 會從環境中讀取它。"
+  placeholders:
+    field: {type: String}
+    from: {type: String}
+    to: {type: String}
+mcpImportNoteNameTaken:
+  message: "此檔案已有名為 {name} 的伺服器。請換一個名稱，例如 {suggestedName}。"
+  placeholders:
+    name: {type: String}
+    suggestedName: {type: String}
+mcpImportNoteEscapedValue:
+  message: "{field}：$ 和開頭的 ! 已跳脫，因此 pi 會按原樣讀取該值，不執行任何內容。"
+  placeholders:
+    field: {type: String}
+mcpImportNoteVariableTranslated:
+  message: "{field}：{from} 變成了 {to}，這是 pi 讀取該變數的寫法。"
+  placeholders:
+    field: {type: String}
+    from: {type: String}
+    to: {type: String}
+mcpImportNoteHomeTranslated:
+  message: "{field}：{from} 變成了 ~，即主資料夾。"
+  placeholders:
+    field: {type: String}
+    from: {type: String}
+mcpImportNoteTimeoutConverted:
+  message: "{from} 毫秒的逾時時間換算為 {to} 秒。"
+  placeholders:
+    from: {type: String}
+    to: {type: String}
+mcpImportNoteEnvValueStringified:
+  message: "{name} 不是文字，已轉換為文字。"
+  placeholders:
+    name: {type: String}
+mcpImportNoteEmptyAuthorizationDropped: "省略了空的 Authorization 標頭，因此伺服器要求時 pi 會透過 OAuth 登入。"
+mcpImportNoteImportedDisabled: "設定中它處於關閉狀態，因此新增後也是關閉的。"
+mcpImportNoteNameDerived:
+  message: "依它的網址或命令命名為 {name}。"
+  placeholders:
+    name: {type: String}
+mcpImportNoteNameSanitized:
+  message: "{original} 變成了 {name}：pi 伺服器名稱只能使用字母、數字、_ 和 -。"
+  placeholders:
+    original: {type: String}
+    name: {type: String}
+mcpImportNoteNameDeduplicated:
+  message: "{original} 已被使用，因此命名為 {name}。"
+  placeholders:
+    original: {type: String}
+    name: {type: String}
+mcpImportNoteCommandSplit:
+  message: "{command} 已拆分為命令及其引數。"
+  placeholders:
+    command: {type: String}
+mcpImportNoteTransportAssumedHttp: "沒有指明傳輸方式，因此按 Streamable HTTP 伺服器讀取。"
+mcpImportNoteSchemeAssumed:
+  message: "按 {url} 讀取。"
+  placeholders:
+    url: {type: String}
+mcpImportNoteClientSecretPrompt: "需要在下方填寫 OAuth 用戶端密鑰。"
+mcpImportNoteUserinfoMovedToHeader: "網址中的使用者名稱和密碼已移入 Authorization 標頭：pi 不會在網址中傳送它們。"
+mcpImportProblemName:
+  message: "{name} 不是 pi 接受的伺服器名稱（字母、數字、_ 和 -）。"
+  placeholders:
+    name: {type: String}
+mcpImportProblemNotAnObject: "它不是物件。"
+mcpImportProblemExposure:
+  message: "exposure {value} 不是 pi 認得的值。"
+  placeholders:
+    value: {type: String}
+mcpImportProblemToolExposure: "toolExposure 必須把工具名稱對應到 exposure 值。"
+mcpImportProblemToolExposureTool:
+  message: "{tool} 的 toolExposure 不是 pi 認得的 exposure 值。"
+  placeholders:
+    tool: {type: String}
+mcpImportProblemEnabled: "enabled 必須是 true 或 false。"
+mcpImportProblemDescription: "description 必須是文字。"
+mcpImportProblemTimeout:
+  message: "逾時時間 {value} 不是正的秒數。"
+  placeholders:
+    value: {type: String}
+mcpImportProblemSse: "不支援舊版 SSE 傳輸方式。"
+mcpImportProblemUrl:
+  message: "{url} 不是 http 或 https 網址。"
+  placeholders:
+    url: {type: String}
+mcpImportProblemHeaders: "headers 必須把名稱對應到文字。"
+mcpImportProblemAuth: "auth.provider 必須是一個 pi 提供者的名稱。"
+mcpImportProblemAuthUrl: "auth 會傳送提供者的權杖，所以 URL 必須是 https（或 localhost 上的 http）。"
+mcpImportProblemOauth: "oauth 必須是物件。"
+mcpImportProblemOauthClientId: "oauth.clientId 必須是文字。"
+mcpImportProblemOauthClientSecret: "oauth.clientSecret 必須是文字。"
+mcpImportProblemCallbackPort:
+  message: "OAuth 回呼連接埠 {value} 不是連接埠號碼。"
+  placeholders:
+    value: {type: String}
+mcpImportProblemCallbackUrl:
+  message: "OAuth 回呼位址 {value} 不是回送 http 位址。"
+  placeholders:
+    value: {type: String}
+mcpImportProblemCallbackPortMismatch:
+  message: "OAuth 回呼位址使用的連接埠是 {value}，與回呼連接埠不一致。"
+  placeholders:
+    value: {type: String}
+mcpImportProblemOauthScope: "oauth.scope 必須是文字。"
+mcpImportProblemOauthClientName: "oauth.clientName 必須是非空文字。"
+mcpImportProblemOauthClientRegistration:
+  message: "oauth.clientRegistration 的值 {value} 必須是 \"auto\"、\"dcr\" 或 \"cimd\"。"
+  placeholders:
+    value: {type: String}
+mcpImportProblemOauthClientRegistrationClient: "oauth.clientRegistration 為 \"cimd\" 時不能同時設定 oauth.clientId 或 oauth.clientName。"
+mcpImportProblemOauthClientRegistrationCallback: "oauth.clientRegistration 為 \"cimd\" 時，oauth.callbackUrl 必須在 localhost 或 127.0.0.1 上，且路徑為 /callback。"
+mcpImportProblemAuthServerMetadataUrl:
+  message: "oauth.authServerMetadataUrl {value} 必須是 https 位址（或 localhost 上的 http）。"
+  placeholders:
+    value: {type: String}
+mcpImportProblemArgs: "args 必須是文字清單。"
+mcpImportProblemArgsIndex:
+  message: "args[{index}] 不是文字。"
+  placeholders:
+    index: {type: int}
+mcpImportProblemEnv: "env 必須把名稱對應到文字。"
+mcpImportProblemCwd: "cwd 必須是文字。"
+mcpImportProblemNoCommandOrUrl: "它需要命令（stdio）或網址（Streamable HTTP）。"
+mcpImportFieldReasonEmpty: "貼上的內容在這裡留空了。"
+mcpImportFieldReasonInput: "設定要求在安裝時填寫此項。"
+mcpImportFieldReasonVariable: "貼上的內容在這裡讀取了一個 pi 不會填入的變數。"
+mcpImportFieldReasonHome: "貼上的內容在這裡以 pi 無法填入的方式讀取主資料夾。"
+mcpImportFieldReasonWorkspaceBasename: "貼上的內容在這裡用到了工作區資料夾的名稱，pi 不知道它。"
+mcpImportFieldReasonUnsupportedVariable: "貼上的內容在這裡用到了 pi 無法填入的變數。"
+mcpImportFieldReasonClientSecret: "此命令要求提供 OAuth 用戶端密鑰。"
+mcpImportFieldReasonRegistryHeader: "登錄檔項目要求提供此標頭。"
+mcpImportFieldReasonRegistryVariable: "登錄檔項目要求提供網址的這一部分。"
+i18nCreatingSession: "正在建立新工作階段…"
+i18nCreating: "建立中…"
+i18nSubscription: "訂閱"
+i18nSubscriptions: "訂閱方案"
+i18nCustomEndpoint: "自訂端點格式"
+i18nNoChanges: "沒有更改"
+i18nBranches: "分支"
+i18nNoActiveSession: "沒有作用中的工作階段"
+i18nNoBranches: "此工作階段沒有分支"
+i18nBranchesLockedWhileRunning: "工作階段執行中，暫時無法切換分支"
+i18nSource: "原始碼"
+i18nPreview: "預覽"
+i18nDiff: "Diff"
+i18nDownloadFile: "下載檔案"
+i18nLiveSync: "即時同步已啟用"
+i18nNotWatching: "未監看"
+i18nFileViewMode: "檔案檢視模式"
+i18nCompareHead: "比較工作目錄與 HEAD"
+i18nMentionSelectedLines: "引用選取的行"
+i18nDisableWrap: "停用自動換行"
+i18nEnableWrap: "啟用自動換行"
+i18nHtmlPreview: "HTML 預覽"
+i18nPreviewFile:
+  message: "預覽 {file}"
+  placeholders:
+    file: {type: String}
+i18nInvalidMermaid: "Mermaid 圖表無效"
+i18nRenderingMermaid: "正在繪製 Mermaid 圖表"
+i18nPreviewAfterStreaming: "串流輸出完成後可預覽"
+i18nShowMermaidSource: "顯示 Mermaid 原始碼"
+i18nPreviewMermaid: "預覽 Mermaid 圖表"
+i18nOpenMermaidViewer: "開啟圖表檢視器"
+i18nMermaidViewer: "Mermaid 圖表檢視器"
+i18nMermaidDiagram: "Mermaid 圖表"
+i18nInvalidSvg: "SVG 圖片無效"
+i18nShowSvgSource: "顯示 SVG 原始碼"
+i18nPreviewSvg: "預覽 SVG 圖片"
+i18nOpenSvgViewer: "開啟圖片檢視器"
+i18nSvgViewer: "SVG 圖片檢視器"
+i18nSvgImage: "SVG 圖片"
+i18nZoomOut: "縮小"
+i18nZoomIn: "放大"
+i18nFitToWidth: "符合寬度"
+modelsDiscoveryFetching: "正在匯入模型…"
+modelsDiscoveryFetch: "匯入模型…"
+modelsDiscoveryFilterPlaceholder:
+  message: "篩選 {count} 個模型…"
+  placeholders:
+    count: {type: int}
+modelsDiscoveryFilter: "篩選上游模型"
+modelsDiscoverySelectShown: "選取目前顯示的項目"
+modelsDiscoveryNoMatches: "找不到相符的模型。"
+modelsConfigUnreadable:
+  message: "無法讀取 models.json，為避免覆寫已停用儲存。請修正該檔案後重新開啟此面板。{error}"
+  placeholders:
+    error: {type: String}
+modelsProviderNameTaken:
+  message: "已存在名為「{name}」的 Provider，請換一個名稱。"
+  placeholders:
+    name: {type: String}
+modelsProviderIncomplete:
+  message: "{provider} 需要 Base URL 或至少一個模型。請補齊，或刪除該 Provider。"
+  placeholders:
+    provider: {type: String}
+modelsProviderNeedsBaseUrl:
+  message: "{provider} 需要填寫 Base URL。"
+  placeholders:
+    provider: {type: String}
+modelsApiKeyPlaceholder: "環境變數名稱、!shell 命令或金鑰"
+modelsApiKeyEnable:
+  message: "輸入 {provider} 的 API Key，即可啟用 {count} 個模型。"
+  placeholders:
+    provider: {type: String}
+    count: {type: int}
+modelsApiKeyEnableOne:
+  message: "輸入 {provider} 的 API Key，即可啟用 1 個模型。"
+  placeholders:
+    provider: {type: String}
+modelsReplaceApiKey: "輸入新的 API Key 以替換…"
+modelsConnectionLost: "連線已中斷"
+modelsVerifying: "正在驗證…"
+modelsServerError:
+  message: "伺服器錯誤 {status}"
+  placeholders:
+    status: {type: String}
+modelsDeviceCodeExpires:
+  message: "將在 {minutes} 分鐘後到期。"
+  placeholders:
+    minutes: {type: int}
+modelsModelCount:
+  message: "{count} 個模型"
+  placeholders:
+    count: {type: int}
+modelsModelCountOne: "1 個模型"
+modelsOauthConnect:
+  message: "連接你的 {provider} 帳號。"
+  placeholders:
+    provider: {type: String}
+modelsOauthPasteRedirect: "在瀏覽器中完成登入，然後從網址列複製跳轉後的網址，貼到下方。"
+modelsOauthNoBrowser: "如果瀏覽器視窗沒有開啟，"
+modelsOauthOpenLoginPage: "點此開啟登入頁面"
+modelsOauthOpenLoginPageEnd: "。"
+modelsOauthValuePlaceholder: "輸入內容…"
+modelsOauthDeviceCode: "開啟驗證頁面，輸入下方的代碼："
+modelsAddHeader: "新增 Header"
+modelsDisplayNamePlaceholder: "顯示名稱"
+modelsSortByName: "依顯示名稱排序模型（A–Z）"
+modelsDiscoveryAdded: "已新增"
+modelsDiscoveryShowing:
+  message: "顯示前 {shown} 個，共 {total} 個"
+  placeholders:
+    shown: {type: int}
+    total: {type: int}
+modelsDiscoveryFetched:
+  message: "已取得 {count} 個模型"
+  placeholders:
+    count: {type: int}
+modelsDiscoveryAddSelected: "新增所選模型"
+modelsDiscoveryAddSelectedCount:
+  message: "新增所選模型（{count}）"
+  placeholders:
+    count: {type: int}
+modelsCatalogSource: "來源：models.dev ↗"
+modelsCatalogFilling: "正在填入模型詳細資料…"
+modelsCatalogFill: "填入模型詳細資料"
+modelsCatalogFilled:
+  message: "已填入 {count} 個欄位"
+  placeholders:
+    count: {type: int}
+modelsCatalogNoEmptyFields: "沒有需要填入的空欄位"
+modelsCatalogNoExactMatch: "models.dev 中沒有完全相符的項目"
+modelsCatalogPriceProvider:
+  message: "價格與 Provider {provider} 相符"
+  placeholders:
+    provider: {type: String}
+modelsCatalogPriceBaseUrl:
+  message: "價格依 Base URL 與 {provider} 相符"
+  placeholders:
+    provider: {type: String}
+modelsCatalogPriceConsensus:
+  message: "共有 {support}/{total} 筆紀錄採用此價格"
+  placeholders:
+    support: {type: String}
+    total: {type: int}
+modelsCatalogPriceUnreliable: "找不到可靠的價格"
+modelsCatalogUndo: "復原"
+modelsCapabilities: "能力"
+modelsReasoning: "推理 / 思考"
+modelsImageInput: "圖片輸入"
+modelsModelSpecs: "模型規格"
+modelsContextWindow: "上下文視窗（Token）"
+modelsContextForModel:
+  message: "{model} 的上下文視窗"
+  placeholders:
+    model: {type: String}
+modelsContextInvalid:
+  message: "{model} 的上下文視窗：請輸入正整數 Token 數量。"
+  placeholders:
+    model: {type: String}
+modelsImageMaxBytesInvalid:
+  message: "{model} 的圖片大小上限：請輸入正整數位元組數。"
+  placeholders:
+    model: {type: String}
+modelsContextOverrideHelp: "上下文視窗（Token），留空使用預設值。"
+modelsApplyHelp: "已開啟的工作階段：重選該模型後生效。"
+modelsMaxOutputTokens: "最大輸出 Token 數"
+modelsCostPerMillion: "每百萬 Token 費用"
+modelsCostInput: "輸入"
+modelsCostOutput: "輸出"
+modelsCostCacheRead: "快取讀取"
+modelsCostCacheWrite: "快取寫入"
+modelsNotProvided: "未提供"
+modelsEditCosts: "編輯價格"
+modelsFinishEditingCosts: "完成"
+modelsCostAllRequired: "請輸入有效的非負價格；空白欄位將儲存為 0。"
+modelsAdvancedSettings: "進階設定"
+modelsProviderDefaults: "沿用 Provider 預設設定"
+modelsHeadersSummary:
+  message: "Headers：{count}"
+  placeholders:
+    count: {type: int}
+modelsCompatSummary:
+  message: "相容性：{count}"
+  placeholders:
+    count: {type: int}
+modelsThinkingSummary:
+  message: "思考等級：{count}"
+  placeholders:
+    count: {type: int}
+modelsApiOverride: "API 覆寫"
+modelsBaseUrlOverride: "Base URL 覆寫"
+modelsHeaders: "Headers"
+modelsHeadersHelp: "覆寫 Provider 的同名 Header。"
+modelsImageMaxBytes: "圖片大小上限（位元組）"
+modelsImageMaxBytesHelp:
+  message: "單張圖片 base64 後的上限，留空使用預設 {size}。"
+  placeholders:
+    size: {type: String}
+modelsImageMaxBytesSummary:
+  message: "圖片 ≤ {size}"
+  placeholders:
+    size: {type: String}
+modelsCompatibility: "相容性"
+modelsDeepSeekThinkingCompat: "DeepSeek 思考相容性"
+modelsDeveloperRole: "使用 developer role 傳遞系統提示詞"
+modelsAdaptiveThinking: "Claude 自適應思考（effort 等級）"
+modelsThinkingLevelMap: "思考層級對應"
+modelsClearAll: "全部清除"
+modelsEnabledSection: "可用模型"
+modelsEnabledCount:
+  message: "已啟用 {enabled}/{total}"
+  placeholders:
+    enabled: {type: int}
+    total: {type: int}
+modelsEnableAll: "全部開啟"
+modelsDisableAll: "全部關閉"
+modelsEnableShown: "開啟篩選結果"
+modelsDisableShown: "關閉篩選結果"
+modelsEnabledFilter: "篩選可用模型"
+modelsEnabledFilterPlaceholder:
+  message: "篩選 {count} 個模型…"
+  placeholders:
+    count: {type: int}
+modelsEnabledNoMatches: "沒有符合的模型。"
+modelsEnabledToggle:
+  message: "在模型選擇器中顯示 {model}"
+  placeholders:
+    model: {type: String}
+modelsEnabledProviderToggle:
+  message: "啟用 {provider} 的全部模型"
+  placeholders:
+    provider: {type: String}
+modelsEnabledPinHint: "由 enabledModels 固定的思考等級，需在 settings.json 中修改。"
+modelsEnabledLastModel: "至少需要保留一個啟用的模型。"
+modelsEnabledProjectScope: "目前專案的 .pi/settings.json 設定了 enabledModels 並覆寫全域設定，因此這些開關為唯讀。請直接修改該檔案。"
+modelsEnabledUnavailable: "登入該 provider 後即可選擇模型。"
+modelsRefreshCatalog: "重新整理模型目錄"
+modelsRefreshingCatalog: "重新整理中…"
+modelsRefreshCatalogHint: "立即取得該 provider 目前發布的模型列表。pi 內建的列表固定在 pi-web 附帶的 pi 版本上，新發布的模型需要重新整理後才會出現。"
+modelsCatalogUpdated: "已從服務商更新模型列表。"
+modelsCatalogUnchanged: "模型列表已是最新。"
+modelsCatalogUnreachable: "無法取得模型目錄。請檢查網路連線與該 provider 的憑證後再試一次。"
+modelsCatalogOffline: "已設定 PI_OFFLINE，pi-web 不會連網取得模型目錄。"
+modelsEnabledCustomEmpty: "這個 provider 目前沒有可用模型。請先儲存修改，並確認 API key 有效。"
+modelsEnabledStale:
+  message: "{count} 筆失配"
+  placeholders:
+    count: {type: int}
+modelsEnabledStaleHint: "模型可用的前提是它所屬的 provider 有可用憑證。憑證缺失、模型被改名或刪除、設定是給別的機器寫的，都會讓條目比對不到任何模型。"
+modelsEnabledPrune: "清理無效條目"
+modelsEnabledPruneHint: "刪除比對不到任何可用模型的設定條目，包括沒有可用憑證的 provider 的條目：重新登入後不會恢復。其餘保持不變。"
+modelsEnabledClear: "啟用全部模型"
+modelsEnabledClearHint: "清除所有 provider 的模型篩選。"
+i18nTestingModel: "正在測試模型連線..."
+i18nConnected: "已連線"
+i18nFailed: "失敗"
+i18nTest: "測試"
+i18nTestConnection: "測試模型連線"
+i18nProvider: "Provider"
+i18nModel: "模型"
+i18nProviderName: "Provider 名稱"
+i18nRename: "重新命名"
+i18nDefault: "預設"
+i18nDisabled: "已停用"
+i18nNoResources: "沒有資源"
+i18nUnknown: "未知"
+i18nInstalledVersion:
+  message: "已安裝 {version}"
+  placeholders:
+    version: {type: String}
+i18nConfiguredVersion:
+  message: "已設定 {version}"
+  placeholders:
+    version: {type: String}
+i18nExtensions: "擴充功能"
+i18nPrompts: "提示詞"
+i18nThemes: "主題"
+i18nResourceCount:
+  message: "{count} 個{label}"
+  placeholders:
+    count: {type: int}
+    label: {type: String}
+i18nExtensionShort: "擴充功能"
+i18nSkillShort: "技能"
+i18nPromptShort: "提示詞"
+i18nThemeShort: "主題"
+i18nCustom: "自訂"
+i18nClearAll: "清除全部"
+i18nConnectedSuccessfully: "連線成功。"
+i18nNotConnected: "未連線"
+i18nConfigured: "已設定"
+i18nNotConfigured: "未設定"
+i18nOpeningBrowser: "正在開啟瀏覽器…"
+i18nSubmit: "送出"
+i18nLogin: "登入"
+i18nRelogin: "重新登入"
+i18nDisconnect: "中斷連線"
+i18nNetworkError: "網路錯誤"
+i18nContinuing: "正在繼續…"
+i18nSkills: "技能"
+i18nPlugins: "外掛"
+i18nAddSkill: "新增技能"
+i18nAddPlugin: "新增外掛"
+i18nSelectSkill: "選擇技能"
+i18nSelectPackage: "選擇套件"
+i18nUpdateAvailable: "有可用更新"
+i18nUpToDate: "已是最新"
+i18nAutomaticChecksUnavailable: "無法自動檢查"
+i18nCheckFailed: "檢查失敗"
+i18nInstalled: "已安裝"
+i18nStatus: "狀態"
+i18nVersion: "版本"
+i18nDescription: "描述"
+i18nPackage: "套件"
+i18nResources: "資源"
+i18nInstalledPath: "安裝路徑"
+i18nCwd: "CWD"
+i18nResolvedResources: "已解析資源"
+i18nReloadSession: "重新載入工作階段"
+i18nReloading: "重新載入中..."
+i18nPackageRemoved: "套件已移除。"
+i18nPackageInstalled: "套件已安裝。"
+i18nPackageUpdated: "套件已更新。"
+i18nPackagesUpdated: "所有外掛已更新。"
+i18nUpdateAllPlugins: "全部更新"
+i18nUpdateAllPluginsHint: "更新所有已設定的外掛"
+i18nPackageDisabled: "套件已停用。"
+i18nPackageEnabled: "套件已啟用。"
+i18nSessionReloaded: "工作階段已重新載入。"
+i18nThinking: "思考"
+i18nLargeMessageReveal:
+  message: "訊息內容過大（{size}）。點選即可用純文字查看；為保持頁面流暢，已停用 Markdown 轉譯。"
+  placeholders:
+    size: {type: String}
+i18nLoadingThinking: "正在載入思考內容..."
+i18nCopyMessage: "複製訊息"
+i18nEditFromHere: "從此處編輯"
+i18nEditFromHereTitle: "從此處編輯，並在這個工作階段中建立分支"
+i18nNewSession: "新增工作階段"
+i18nNewSessionTitle: "新增工作階段，從此處建立獨立副本"
+i18nEstimatedTokens: "串流輸出期間的估算 Token 數"
+i18nNoOutput: "（無輸出）"
+i18nNoSummary: "（無摘要）"
+i18nConversationCompacted: "對話已壓縮"
+i18nCompactedFromTokens:
+  message: "壓縮前 {tokens} Token"
+  placeholders:
+    tokens: {type: int}
+i18nCompactionDescription: "此處之前的對話紀錄已壓縮為以下摘要："
+i18nFileContext:
+  message: "檔案上下文：{details}"
+  placeholders:
+    details: {type: String}
+i18nReadFiles: "讀取的檔案"
+i18nModifiedFiles: "修改的檔案"
+i18nNoMessage: "（無訊息）"
+i18nCollapse: "收起"
+i18nExpand: "展開"
+i18nHideDetails: "隱藏詳細資料"
+i18nShowDetails: "顯示詳細資料"
+i18nThinkingUnavailable: "思考內容不可用"
+i18nBefore: "變更前"
+i18nAfter: "變更後"
+diffUnchangedLine: "1 行未變更"
+diffUnchangedLines:
+  message: "{count} 行未變更"
+  placeholders:
+    count: {type: int}
+i18nSessionComplete: "工作階段已完成"
+i18nTaskFinished: "任務已完成。"
+i18nAttentionNeeded: "Pi 需要你處理"
+i18nExtensionInputNeeded: "擴充功能正在等待你的輸入。"

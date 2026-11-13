@@ -1,0 +1,11 @@
+# Build output and staged runtime payloads are reproducible via scripts/build.sh.
+/dist/
+/resources/rpc/
+/resources/bin/
+/.nsgo/
+
+# Local runtime state and editor scratch files.
+/.pi/
+*.tmp
+*.log
+.DS_Store
