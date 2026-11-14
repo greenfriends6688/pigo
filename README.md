@@ -151,8 +151,6 @@ pigo 站着三个上游的肩膀：
   `locales/*.yaml`。
 - **[pi](https://github.com/earendil-works/pi)** — agent 本体。pigo 不实现 agent，
   只把它的 RPC 模式装进一个窗口，RPC bundle 由 `scripts/bundle-rpc.sh` 从已安装的 pi 取。
-- **[pi-gpui](https://github.com/bytesbay/pi-gpui)** — Rust/GPUI 的同门实现。子进程的
-  优雅关闭 + watchdog、把 stderr 尾巴显示给用户、按 pi 版本做能力判断，这几处借鉴自它。
 
 ## License
 
