@@ -12,6 +12,55 @@ import (
 	"pigo/internal/models"
 )
 
+// liveProviders is models.json's providers plus the ones pi itself offers and
+// has a login for, such as OpenCode Go. The extra rows are read-only here;
+// pi supplies their models.
+func (s *appState) liveProviders() []models.Provider {
+	out := append([]models.Provider(nil), s.providers.Get()...)
+	index := map[string]int{}
+	for i := range out {
+		index[out[i].ID] = i
+	}
+	for _, m := range s.models.Get() {
+		if m.Provider == "" {
+			continue
+		}
+		i, ok := index[m.Provider]
+		if !ok {
+			name := m.Provider
+			if bp, ok := models.Builtin(m.Provider); ok {
+				name = bp.Name
+			}
+			out = append(out, models.Provider{ID: m.Provider, Name: name, HasOAuth: true})
+			i = len(out) - 1
+			index[m.Provider] = i
+		}
+		found := false
+		for _, x := range out[i].Models {
+			if x.ID == m.ID {
+				found = true
+				break
+			}
+		}
+		if !found {
+			out[i].Models = append(out[i].Models, models.Model{ID: m.ID, Name: m.Name, Reasoning: m.Reasoning,
+				ContextWindow: m.ContextWindow, ImageInput: m.ImageInput})
+		}
+	}
+	return out
+}
+
+// providerInModels reports whether models.json lists the provider, so the
+// page can leave pi's own providers read-only.
+func (s *appState) providerInModels(id string) bool {
+	for _, p := range s.providers.Get() {
+		if p.ID == id {
+			return true
+		}
+	}
+	return false
+}
+
 // modelsMasterDetail is the models page's provider browser: the providers on
 // the left with their add button, the chosen one's key and models on the
 // right, as PI NEXT's model page is laid out. A flat list of provider rows
@@ -51,7 +100,7 @@ func (s *appState) providerListPane() core.Node {
 		Children: []core.Node{
 			core.View{Style: core.Style{FlexGrow: 1, FlexShrink: 1, MinHeight: core.Pt(0)}, Children: []core.Node{
 				core.Dynamic(func(*core.Scope) core.Node {
-					providers := s.providers.Get()
+					providers := s.liveProviders()
 					selected := s.providerSel.Get()
 					if len(providers) == 0 {
 						return core.Text{Content: "models.json 里还没有提供商", TestID: "providers-empty", MaxLines: 3,
@@ -62,7 +111,9 @@ func (s *appState) providerListPane() core.Node {
 						provider := p
 						on := provider.ID == selected
 						subtitle := fmt.Sprintf("%d 个模型", providerModelCount(provider.ID, len(provider.Models)))
-						if provider.HasOAuth || hasBuiltin(provider.ID) {
+						if !s.providerInModels(provider.ID) {
+							subtitle += " · pi 登录"
+						} else if provider.HasOAuth || hasBuiltin(provider.ID) {
 							subtitle += " · pi 内置"
 						}
 						textStyle := core.Style{FontSize: fontLabel, Color: s.colors.Text()}
@@ -130,7 +181,7 @@ func (s *appState) providerDetailPane() core.Node {
 	return core.Dynamic(func(*core.Scope) core.Node {
 		// Tracked reads: the pane must follow a provider that arrives after
 		// the first render, as the one just added from the catalog does.
-		provider := pickProvider(s.providers.Get(), s.providerSel.Get())
+		provider := pickProvider(s.liveProviders(), s.providerSel.Get())
 		if provider == nil {
 			return core.View{Style: core.Style{FlexGrow: 1, AlignItems: core.AlignCenter, JustifyContent: core.JustifyCenter,
 				Padding: core.All(20), Gap: 8}, Children: []core.Node{
@@ -148,13 +199,22 @@ func (s *appState) providerDetailPane() core.Node {
 				core.View{Style: core.Style{FlexGrow: 1, FlexShrink: 1, MinWidth: core.Pt(0)}, Children: []core.Node{
 					core.Text{Content: p.Name, MaxLines: 1,
 						Style: core.Style{FontSize: fontTitle, FontWeight: core.FontWeightSemibold, Color: s.colors.Text()}},
-					core.Text{Content: providerSubtitle(p), MaxLines: 2,
+					core.Text{Content: func() string {
+						if !s.providerInModels(p.ID) {
+							return "由 pi 的登录提供 · " + fmt.Sprintf("%d 个模型", len(p.Models))
+						}
+						return providerSubtitle(p)
+					}(), MaxLines: 2,
 						Style: core.Style{FontSize: fontMeta, FontFamily: core.FontMonospace, Color: s.colors.Muted()}},
 				}},
-				ui.Button{Text: "编辑", Variant: ui.ButtonSecondary, Size: ui.SizeSmall, TestID: "provider-edit-" + p.ID,
-					OnPress: func() { s.beginProvider(&p) }},
-				ui.Button{Text: "删除", Variant: ui.ButtonGhost, Size: ui.SizeSmall, TestID: "provider-delete-" + p.ID,
-					OnPress: func() { s.removeProvider(p.ID) }},
+				core.Show{When: func() bool { return s.providerInModels(p.ID) }, Then: func(*core.Scope) core.Node {
+					return core.Group{
+						ui.Button{Text: "编辑", Variant: ui.ButtonSecondary, Size: ui.SizeSmall, TestID: "provider-edit-" + p.ID,
+							OnPress: func() { s.beginProvider(&p) }},
+						ui.Button{Text: "删除", Variant: ui.ButtonGhost, Size: ui.SizeSmall, TestID: "provider-delete-" + p.ID,
+							OnPress: func() { s.removeProvider(p.ID) }},
+					}
+				}},
 			}},
 			s.providerKeyRow(p),
 			s.providerModelsSection(p),
@@ -180,6 +240,10 @@ func providerSubtitle(p models.Provider) string {
 // providerKeyRow is the API key: its state, a replacement field and the two
 // actions. The stored key is never shown, only whether one is set.
 func (s *appState) providerKeyRow(p models.Provider) core.Node {
+	if !s.providerInModels(p.ID) {
+		return core.Text{Content: "pi 已登录；模型与登录状态由 pi 管理，这里只列出它们。", TestID: "provider-pi-note",
+			MaxLines: 3, Style: core.Style{FontSize: fontMeta, Color: s.colors.Muted()}}
+	}
 	configured := strings.TrimSpace(p.APIKey) != "" || p.HasOAuth
 	state := "未配置"
 	color := s.colors.Faint()
@@ -250,31 +314,37 @@ func providerModelList(p models.Provider) []modelItem {
 func (s *appState) providerModelsSection(p models.Provider) core.Node {
 	return core.View{Style: core.Style{FlexGrow: 1, FlexShrink: 1, MinWidth: core.Pt(0), MinHeight: core.Pt(0), Gap: 4},
 		Children: []core.Node{
-			core.View{Style: core.Style{Direction: core.Row, AlignItems: core.AlignCenter, Gap: 6}, Children: []core.Node{
-				core.Text{Content: "可用模型", MaxLines: 1,
-					Style: core.Style{FontSize: fontMeta, FontWeight: core.FontWeightSemibold, LetterSpacing: 0.3, Color: s.colors.Muted()}},
-				core.Text{ContentFunc: func() string {
-					patterns := s.enabledPatterns.Get()
-					list := providerModelList(p)
-					ids := make([]string, 0, len(list))
-					for _, m := range list {
-						ids = append(ids, m.ID)
-					}
-					cover := len(ids)
-					if len(patterns) > 0 {
-						cover = models.ProviderCovered(patterns, p.ID, ids)
-					}
-					return fmt.Sprintf("%d / %d", cover, len(list))
-				}, MaxLines: 1, Style: core.Style{FontSize: fontMeta, Color: s.colors.Faint()}},
-				core.View{Style: core.Style{FlexGrow: 1}},
-				ui.Button{Text: "刷新模型目录", Variant: ui.ButtonGhost, Size: ui.SizeSmall, TestID: "models-refresh",
-					OnPress: s.refreshModelCatalog},
-				ui.Button{Text: "全部开启", Variant: ui.ButtonGhost, Size: ui.SizeSmall, TestID: "provider-models-on",
-					OnPress: func() { s.setProviderEnabled(p.ID, providerModelIDs(p), true, s.availableModelRefs()) }},
-				ui.Button{Text: "全部关闭", Variant: ui.ButtonGhost, Size: ui.SizeSmall, TestID: "provider-models-off",
-					OnPress: func() { s.setProviderEnabled(p.ID, providerModelIDs(p), false, s.availableModelRefs()) }},
-				ui.Button{Text: "添加模型", Variant: ui.ButtonSecondary, Size: ui.SizeSmall, TestID: "model-add",
-					OnPress: func() { s.openModels(p.ID); s.beginModel(nil) }},
+			core.View{Style: core.Style{Gap: 4, FlexShrink: 0}, Children: []core.Node{
+				core.View{Style: core.Style{Direction: core.Row, AlignItems: core.AlignCenter, Gap: 6}, Children: []core.Node{
+					core.Text{Content: "可用模型", MaxLines: 1,
+						Style: core.Style{FontSize: fontMeta, FontWeight: core.FontWeightSemibold, LetterSpacing: 0.3, Color: s.colors.Muted()}},
+					core.Text{ContentFunc: func() string {
+						patterns := s.enabledPatterns.Get()
+						list := providerModelList(p)
+						ids := make([]string, 0, len(list))
+						for _, m := range list {
+							ids = append(ids, m.ID)
+						}
+						cover := len(ids)
+						if len(patterns) > 0 {
+							cover = models.ProviderCovered(patterns, p.ID, ids)
+						}
+						return fmt.Sprintf("%d / %d", cover, len(list))
+					}, MaxLines: 1, Style: core.Style{FontSize: fontMeta, Color: s.colors.Faint()}},
+					core.View{Style: core.Style{FlexGrow: 1}},
+					ui.IconButton{Icon: lucide.RefreshCw, Label: "刷新模型目录", TestID: "models-refresh", Size: 24,
+						OnPress: s.refreshModelCatalog},
+				}},
+				core.View{Style: core.Style{Direction: core.Row, AlignItems: core.AlignCenter, Gap: 4, Wrap: core.Wrap}, Children: []core.Node{
+					ui.Button{Text: "全部开启", Variant: ui.ButtonGhost, Size: ui.SizeSmall, TestID: "provider-models-on",
+						OnPress: func() { s.setProviderEnabled(p.ID, providerModelIDs(p), true, s.availableModelRefs()) }},
+					ui.Button{Text: "全部关闭", Variant: ui.ButtonGhost, Size: ui.SizeSmall, TestID: "provider-models-off",
+						OnPress: func() { s.setProviderEnabled(p.ID, providerModelIDs(p), false, s.availableModelRefs()) }},
+					core.Show{When: func() bool { return s.providerInModels(p.ID) }, Then: func(*core.Scope) core.Node {
+						return ui.Button{Text: "添加模型", Variant: ui.ButtonSecondary, Size: ui.SizeSmall, TestID: "model-add",
+							OnPress: func() { s.openModels(p.ID); s.beginModel(nil) }}
+					}},
+				}},
 			}},
 			core.View{Style: core.Style{FlexGrow: 1, FlexShrink: 1, MinWidth: core.Pt(0), MinHeight: core.Pt(0)}, Children: []core.Node{
 				core.Dynamic(func(*core.Scope) core.Node {
@@ -303,12 +373,14 @@ func (s *appState) providerModelsSection(p models.Provider) core.Node {
 									core.Text{Content: strings.Join(meta, " · "), MaxLines: 1,
 										Style: core.Style{FontSize: fontMeta, FontFamily: core.FontMonospace, Color: s.colors.Faint()}},
 								}},
-								ui.Button{Text: "编辑", Variant: ui.ButtonGhost, Size: ui.SizeSmall,
-									TestID: "model-edit-" + model.ID,
-									OnPress: func() {
-										s.openModels(provider)
-										s.beginModel(editableModel(p, model.ID))
-									}},
+								core.Show{When: func() bool { return s.providerInModels(provider) }, Then: func(*core.Scope) core.Node {
+									return ui.Button{Text: "编辑", Variant: ui.ButtonGhost, Size: ui.SizeSmall,
+										TestID: "model-edit-" + model.ID,
+										OnPress: func() {
+											s.openModels(provider)
+											s.beginModel(editableModel(p, model.ID))
+										}}
+								}},
 								ui.Switch{Checked: func() bool { return models.EnabledFor(patterns, provider, model.ID) },
 									TestID: "enabled-model-" + provider + "-" + model.ID,
 									OnChange: func(on bool) {

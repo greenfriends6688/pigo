@@ -209,7 +209,7 @@ func (s *appState) branchChip() core.Node {
 // "main · 3 处改动" or "工作区干净".
 func branchOf(git string) string {
 	git = strings.TrimSpace(git)
-	if git == "" || git == "工作区干净" {
+	if git == "" || git == "工作区干净" || git == "不是 Git 仓库" || git == "未找到 Git 仓库" {
 		return ""
 	}
 	if i := strings.Index(git, " · "); i > 0 {

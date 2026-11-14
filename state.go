@@ -22,6 +22,8 @@ import (
 	"github.com/oneo-me/nsgo/ui/commitgraph"
 	"github.com/oneo-me/nsgo/ui/filepicker"
 
+	agio "pigo/agio"
+	"pigo/agio/chatview"
 	"pigo/internal/agent"
 	"pigo/internal/config"
 	"pigo/internal/files"
@@ -86,6 +88,8 @@ type mcpItem struct {
 type modelItem struct {
 	ID, Name, Provider string
 	Reasoning          bool
+	ContextWindow      int
+	ImageInput         bool
 }
 
 // imageAttachment is a picture pasted or dropped into the composer, sent to
@@ -218,10 +222,12 @@ type appState struct {
 	autoLoading   bool
 	turnHeights   map[string]core.Points
 	query         *core.Signal[string]
+	searchOpen    *core.Signal[bool]
 	dock          *core.Signal[string]
 	// dockOpenKinds are the tool tabs the right panel has open, in the
 	// order dockKinds renders them; file tabs follow them from fileTabs.
 	dockOpenKinds   *core.Signal[[]string]
+	dockTabScroll   *core.Ref
 	category        *core.Signal[string]
 	settingsOpen    *core.Signal[bool]
 	nodeStatus      *core.Signal[string]
@@ -267,6 +273,16 @@ type appState struct {
 	showHidden       *core.Signal[bool]
 	treeFont         *core.Signal[int]
 	appearance       *core.Signal[string]
+	lightScheme      *core.Signal[string]
+	quotas           []agio.Quota
+	quotaBusy        bool
+	darkScheme       *core.Signal[string]
+	grainOn          *core.Signal[bool]
+	grainAmount      *core.Signal[int]
+	keepAwake        *core.Signal[bool]
+	keepDisplayAwake *core.Signal[bool]
+	language         *core.Signal[string]
+	awake            *awake
 	// The dock terminal's look, independent of the window's theme.
 	termFont      *core.Signal[int]
 	termTheme     *core.Signal[string]
@@ -296,11 +312,12 @@ type appState struct {
 	// own writes ("session", the default) or the whole working tree
 	// ("workspace"). Every session in a project shared the same git status,
 	// which is what made all of them look like the same diff.
-	reviewScope   *core.Signal[string]
-	reviewSel     *ui.Selection
-	reviewDiff    *core.Signal[string]
-	reviewMessage *core.Signal[string]
-	reviewBusy    *core.Signal[bool]
+	reviewScope    *core.Signal[string]
+	reviewAdvanced *core.Signal[bool]
+	reviewSel      *ui.Selection
+	reviewDiff     *core.Signal[string]
+	reviewMessage  *core.Signal[string]
+	reviewBusy     *core.Signal[bool]
 	// reviewStats are the +N −M counts of the changed files, prefetched off
 	// the UI thread and keyed by path relative to reviewStatsRoot. The root
 	// is kept so switching projects throws the old counts away, and
@@ -475,6 +492,15 @@ type appState struct {
 	dirs         *dirCache
 	extDone      map[string]bool // extension UI request ids already answered
 
+	// The design components from nsgo-agio read this window through the
+	// bridge; the engine below stays native's.
+	chatModel *chatview.Model
+	bridge    *agioBridge
+
+	// connectingKey is the session key of the connect in flight, so two
+	// presses on the same row do not probe the same child twice.
+	connectingKey string
+
 	termMu   sync.Mutex
 	termTabs map[string]*term.Tab
 	// termStarting holds a shell that is still proving it runs, so a second
@@ -646,6 +672,7 @@ func newState(cx *core.Scope) *appState {
 	s.followUpItems = core.NewSignalFunc(cx, []string{}, nil)
 	s.queuePanel = core.NewSignal(cx, false)
 	s.query = core.NewSignal(cx, "")
+	s.searchOpen = core.NewSignal(cx, false)
 	dockKindsOpen := []string{}
 	if prefs.DockTabs != nil {
 		dockKindsOpen = append(dockKindsOpen, prefs.DockTabs...)
@@ -707,7 +734,8 @@ func newState(cx *core.Scope) *appState {
 	s.sendOnEnter = core.NewSignal(cx, sendOnEnter)
 	s.gitStatus = core.NewSignalFunc(cx, files.GitStatus{}, nil)
 	s.reviewMode = core.NewSignal(cx, "changes")
-	s.reviewScope = core.NewSignal(cx, "session")
+	s.reviewScope = core.NewSignal(cx, "workspace")
+	s.reviewAdvanced = core.NewSignal(cx, false)
 	s.reviewDiff = core.NewSignal(cx, "")
 	s.reviewMessage = core.NewSignal(cx, "")
 	s.reviewBusy = core.NewSignal(cx, false)
@@ -724,6 +752,18 @@ func newState(cx *core.Scope) *appState {
 		appearance = "system"
 	}
 	s.appearance = core.NewSignal(cx, appearance)
+	s.lightScheme = core.NewSignal(cx, prefs.LightScheme)
+	s.darkScheme = core.NewSignal(cx, prefs.DarkScheme)
+	s.grainOn = core.NewSignal(cx, prefs.Grain)
+	s.grainAmount = core.NewSignal(cx, prefs.GrainAmount)
+	s.keepAwake = core.NewSignal(cx, prefs.KeepAwake)
+	s.keepDisplayAwake = core.NewSignal(cx, prefs.KeepDisplayAwake)
+	s.language = core.NewSignal(cx, prefs.Language)
+	s.awake = &awake{}
+	if prefs.Language != "" {
+		cx.SetLocale(prefs.Language)
+	}
+	s.applyTheme()
 	// An out-of-range size or an unknown theme (an older prefs file, a hand
 	// edit) reads as the default rather than a broken terminal.
 	termFont := prefs.TermFont
@@ -889,6 +929,9 @@ func newState(cx *core.Scope) *appState {
 		s.autoRetrying = false
 		_ = s.pool.Close()
 		_ = s.terms.CloseAll()
+		if s.awake != nil {
+			s.awake.stop()
+		}
 		_ = s.store.SaveCache()
 	})
 
@@ -1416,14 +1459,27 @@ func (s *appState) connectWith(sessionPath, keySuffix, tools string, noTools ...
 	// away and back) must not re-spawn, re-read or repaint the transcript.
 	s.mu.Lock()
 	sameOpen := s.handle != nil && s.connKey == key
-	s.mu.Unlock()
 	if sameOpen && s.connected.GetUntracked() {
+		s.mu.Unlock()
 		s.cx.Post(func() {
 			s.selected.Set(sessionPath)
 			s.followCwd(cwd)
 			s.transcriptLoading.Set(false)
 		})
 		return
+	}
+	if s.connectingKey == key {
+		s.mu.Unlock()
+		return
+	}
+	s.connectingKey = key
+	s.mu.Unlock()
+	clearConnecting := func() {
+		s.mu.Lock()
+		if s.connectingKey == key {
+			s.connectingKey = ""
+		}
+		s.mu.Unlock()
 	}
 	if keySuffix != "" {
 		s.cx.Post(func() { s.status.Set("正在启动侧聊…") })
@@ -1445,6 +1501,7 @@ func (s *appState) connectWith(sessionPath, keySuffix, tools string, noTools ...
 					s.lastDisconnect = hint
 					s.status.Set("等待文件夹授权")
 				})
+				clearConnecting()
 				return
 			}
 		}
@@ -1511,6 +1568,7 @@ func (s *appState) connectWith(sessionPath, keySuffix, tools string, noTools ...
 				s.lastDisconnect = err.Error()
 				s.status.Set("启动失败：" + err.Error())
 			})
+			clearConnecting()
 			return
 		}
 		ready.Store(h)
@@ -1527,6 +1585,7 @@ func (s *appState) connectWith(sessionPath, keySuffix, tools string, noTools ...
 		if old != nil && oldKey != "" && oldKey != key {
 			s.pool.Release(oldKey)
 		}
+		clearConnecting()
 		s.cx.Post(func() {
 			// Two connects race at launch (the blank session and whichever
 			// row the user pressed); only the one the window still follows
@@ -1566,14 +1625,19 @@ func (s *appState) connectWith(sessionPath, keySuffix, tools string, noTools ...
 			if s.rightOpen.GetUntracked() && s.dock.GetUntracked() == "subagents" {
 				s.loadSubagents()
 			}
-			s.cx.Post(func() {
-				if openPath == sessionPath {
-					s.selected.Set(path)
-				} else {
-					// The repaired copy stands for the row the user opened.
-					s.selected.Set(sessionPath)
-				}
-			})
+			// A blank session (sessionPath == "") stays on New task until its
+			// first prompt: switching to the new file here is the flash from
+			// the hero to an empty conversation.
+			if sessionPath != "" {
+				s.cx.Post(func() {
+					if openPath == sessionPath {
+						s.selected.Set(path)
+					} else {
+						// The repaired copy stands for the row the user opened.
+						s.selected.Set(sessionPath)
+					}
+				})
+			}
 		}
 		s.applyStateInfo(resp.Data)
 		// The transcript first: it is what the click was for, and the settings
@@ -2078,7 +2142,7 @@ func (s *appState) openDock(tab string) {
 	// A tool tab stays in the strip once opened; a file tab is in fileTabs
 	// already, so the strip derives it.
 	switch tab {
-	case "files", "review", "terminal", "subagents":
+	case "files", "review", "git", "terminal", "subagents":
 		open := s.dockOpenKinds.GetUntracked()
 		if !slices.Contains(open, tab) {
 			s.dockOpenKinds.Set(append(append([]string(nil), open...), tab))
@@ -2095,6 +2159,8 @@ func (s *appState) openDock(tab string) {
 	case "review":
 		s.loadGit()
 		s.loadGitState(s.projectRoot())
+	case "git":
+		s.loadGit()
 	case "terminal":
 		s.ensureTerminal()
 		s.cx.AfterFunc(80*time.Millisecond, func() {
@@ -2233,6 +2299,12 @@ func (s *appState) refreshNow() {
 		})
 	}
 	s.wasRunning = snap.Running
+	if s.awake != nil {
+		s.awake.update(s.keepAwake.GetUntracked(), s.keepDisplayAwake.GetUntracked(), snap.Running)
+	}
+	if s.bridge != nil {
+		s.bridge.publish()
+	}
 }
 
 // tickRun advances the run-seconds signal once a second while a run lives.
@@ -2669,22 +2741,38 @@ func (s *appState) send(text string) {
 	// question the transcript shows but pi never received was worse than
 	// a visible "not connected" hint.
 	if s.current() == nil || !s.connected.GetUntracked() {
-		// A drop is usually over in a second: say so and restart, keeping the
-		// draft where the user left it, instead of a dead end.
+		// Hold the prompt instead of losing it: starting a new session or
+		// reconnecting is usually over in a second, and the bridge sends
+		// what was typed as soon as the child answers.
 		if s.autoRetrying {
-			s.notify(ui.ToastInfo, "正在重连", "连上后按发送即可")
-			return
-		}
-		if s.selected.GetUntracked() != "" {
-			s.notify(ui.ToastWarning, "连接已断开", "正在重连，连上后按发送即可")
+			s.notify(ui.ToastInfo, "正在重连", "连上后自动发送")
+		} else if s.selected.GetUntracked() != "" {
+			s.notify(ui.ToastWarning, "连接已断开", "正在重连，连上后自动发送")
 			s.reconnect()
-			return
+		} else {
+			s.notify(ui.ToastInfo, "正在连接", "连上后自动发送")
+			if !s.connecting {
+				s.newSession()
+			}
 		}
-		s.notify(ui.ToastWarning, "未连接", "先连接会话或点「重连」再发送")
+		s.rememberPrompt(text)
+		if s.bridge != nil {
+			s.bridge.queue(text, s.attachments.GetUntracked())
+		}
+		s.attachments.Set(nil)
+		s.draft.Set("")
 		return
 	}
 	if !s.ensureTrust() {
 		return
+	}
+	// The first prompt of a new session is what leaves New task: until now
+	// the file existed but the window kept the hero page.
+	if s.selected.GetUntracked() == "" {
+		if path := s.currentSessionPath(); path != "" && !strings.HasPrefix(path, "new:") {
+			s.selected.Set(path)
+			s.sessionSel.Set(path)
+		}
 	}
 	if command, ok := bashCommandOf(text); ok {
 		s.bashCommand.Set(command)

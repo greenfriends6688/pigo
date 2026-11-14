@@ -142,26 +142,6 @@ func (s *appState) capsulePills(cx *core.Scope) []core.Node {
 	colors := ui.ColorsOf(cx)
 	var pills []core.Node
 
-	// Git: branch plus dirty count, straight from the file dock's status.
-	if git := strings.TrimSpace(s.gitText.Get()); git != "" && git != "工作区干净" {
-		parts := strings.SplitN(git, " · ", 2)
-		label := parts[0]
-		detail := ""
-		if len(parts) > 1 {
-			detail = parts[1]
-		}
-		pills = append(pills, core.View{Role: core.RoleButton, Label: "查看 Git 状态", TestID: "capsule-git",
-			OnPress: func(core.PressEvent) { s.openDock("review") },
-			Style:   capsuleStyle(colors),
-			Children: []core.Node{
-				ui.Icon(lucide.GitBranch, 11, colors.Muted),
-				core.Text{Content: label, MaxLines: 1, Style: capsuleText(colors)},
-				core.Show{When: func() bool { return detail != "" && detail != "干净" }, Then: func(*core.Scope) core.Node {
-					return core.Text{Content: detail, MaxLines: 1, Style: capsuleText(colors)}
-				}},
-			}})
-	}
-
 	// Running: the wall-clock seconds the current run has spent.
 	if !s.runStart.IsZero() {
 		pills = append(pills, core.View{TestID: "capsule-running", Style: capsuleStyle(colors),
@@ -188,15 +168,9 @@ func (s *appState) capsulePills(cx *core.Scope) []core.Node {
 	// the automatic restart is in flight the pill says so instead of throwing
 	// the same red 未连接 at a child that is already on its way back.
 	if !s.connected.Get() {
-		if s.connecting {
-			// A spawn is in flight: the window is starting pi, not sitting
-			// dead, and showing 未连接 here is what made a normal start-up look
-			// like a broken link.
-			pills = append(pills, core.View{TestID: "capsule-connecting", Style: capsuleStyle(colors),
-				Children: []core.Node{
-					ui.Icon(lucide.LoaderCircle, 11, colors.Accent),
-					core.Text{Content: "连接中", MaxLines: 1, Style: capsuleText(colors)},
-				}})
+		if s.connecting || s.reconnecting.Get() {
+			// A spawn or an automatic restart is in flight; a normal start-up
+			// must not flash 连接中/未连接 at the user.
 		} else if !s.nodeReady.Get() {
 			// No runtime yet: the first launch is downloading Node, which looks
 			// exactly like a dropped link. Say what it is doing and keep the
@@ -207,12 +181,6 @@ func (s *appState) capsulePills(cx *core.Scope) []core.Node {
 					core.Text{ContentFunc: s.nodeStatus.Get, MaxLines: 1, Style: capsuleText(colors)},
 					ui.Button{Text: "重试", Variant: ui.ButtonSecondary, Size: ui.SizeSmall, TestID: "capsule-node-retry",
 						OnPress: s.reconnect},
-				}})
-		} else if s.reconnecting.Get() {
-			pills = append(pills, core.View{TestID: "capsule-reconnecting", Style: capsuleStyle(colors),
-				Children: []core.Node{
-					ui.Icon(lucide.LoaderCircle, 11, colors.Warn),
-					core.Text{Content: "重连中", MaxLines: 1, Style: capsuleText(colors)},
 				}})
 		} else {
 			pills = append(pills, core.View{TestID: "capsule-offline", Style: capsuleStyle(colors),

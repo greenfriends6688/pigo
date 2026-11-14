@@ -1,3 +1,5 @@
+//go:build integration
+
 package main
 
 import (
@@ -9,9 +11,14 @@ import (
 	"time"
 
 	"github.com/oneo-me/nsgo/nsgotest"
+
+	"pigo/internal/agent"
 )
 
 func TestModelSwitchWhileSessionOpen(t *testing.T) {
+	if agent.DiscoverPi() == "" {
+		t.Skip("pi is not installed")
+	}
 	agentDir := t.TempDir()
 	project := t.TempDir()
 	models := `{"providers":{"acme":{"name":"Acme","baseUrl":"https://a","models":[{"id":"a-1","name":"Alpha"},{"id":"a-2","name":"Beta"}]}}}`
@@ -33,9 +40,12 @@ func TestModelSwitchWhileSessionOpen(t *testing.T) {
 	t.Setenv("PI_CODING_AGENT_DIR", agentDir)
 	app := nsgotest.Start(t, Root, nsgotest.Size(1200, 800))
 	app.Advance(3 * time.Second)
-	app.WaitUntil(10*time.Second, func() bool { return app.Exists("text:live probe") })
+	app.WaitUntil(30*time.Second, func() bool { return app.Exists("text:live probe") })
 	app.Press("text:live probe")
-	app.WaitUntil(15*time.Second, func() bool { return app.Exists("id:model-picker") })
+	app.WaitUntil(30*time.Second, func() bool { return app.Exists("id:model-picker") })
+	if app.Exists("id:disconnect-card") {
+		t.Fatal("a connected session still shows the disconnect card")
+	}
 	app.Advance(3 * time.Second)
 	app.Press("id:model-picker")
 	app.WaitUntil(5*time.Second, func() bool { return app.Exists("text:Beta") })

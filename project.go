@@ -20,6 +20,14 @@ type nativePrefs struct {
 	ShowHidden bool   `json:"showHidden"`
 	TreeFont   int    `json:"treeFont"`
 	Appearance string `json:"appearance"`
+	// Agio's color schemes for each appearance, and the window's grain.
+	LightScheme      string `json:"lightScheme"`
+	DarkScheme       string `json:"darkScheme"`
+	Grain            bool   `json:"grain"`
+	GrainAmount      int    `json:"grainAmount"`
+	KeepAwake        bool   `json:"keepAwake"`
+	KeepDisplayAwake bool   `json:"keepDisplayAwake"`
+	Language         string `json:"language"`
 	// CollapseSteps keeps a finished turn folded; false (the default)
 	// shows its thinking and tool work at once.
 	CollapseSteps bool `json:"collapseSteps"`
@@ -139,6 +147,13 @@ func (s *appState) savePrefsAsync(project string, hidden bool) {
 	saved.ShowHidden = hidden
 	saved.TreeFont = s.treeFont.GetUntracked()
 	saved.Appearance = s.appearance.GetUntracked()
+	saved.LightScheme = s.lightScheme.GetUntracked()
+	saved.DarkScheme = s.darkScheme.GetUntracked()
+	saved.Grain = s.grainOn.GetUntracked()
+	saved.GrainAmount = s.grainAmount.GetUntracked()
+	saved.KeepAwake = s.keepAwake.GetUntracked()
+	saved.KeepDisplayAwake = s.keepDisplayAwake.GetUntracked()
+	saved.Language = s.language.GetUntracked()
 	saved.CollapseSteps = !s.expandThinking.GetUntracked()
 	saved.HideThinking = s.hideThinking.GetUntracked()
 	saved.TermFont = clampTermFont(s.termFont.GetUntracked())

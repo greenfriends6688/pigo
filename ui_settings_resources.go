@@ -220,7 +220,7 @@ func (s *appState) skillsListView() core.Node { return s.skillsListNodes() }
 
 func (s *appState) agentsSettingsCategory() ui.SettingsCategory {
 	return ui.SettingsCategory{
-		ID: "agents", Title: "Agents", Section: "偏好", Icon: lucide.Bot, Description: "子代理配置（markdown + frontmatter）",
+		ID: "agents", Title: "子代理", Section: "偏好", Icon: lucide.Bot, Description: "子代理配置（markdown + frontmatter）",
 		Groups: []ui.SettingsGroup{{
 			ID: "agents-builtin", Title: "内置子代理",
 			Items: []ui.SettingsItem{

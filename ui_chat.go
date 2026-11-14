@@ -162,13 +162,12 @@ func (s *appState) minimap() core.Node {
 			share := weights[i]
 			at := (before + share/2) / total
 			before += share
-			bar := s.colors.Muted()
-			height := core.Points(3)
-			width := core.Points(3)
+			bar := ui.Alpha(s.colors.Muted(), 0.55)
+			height := core.Points(2)
+			width := core.Points(6)
 			if index == active {
 				bar = s.colors.Accent()
-				height = 9
-				width = 4
+				width = 26
 			}
 			// The slot keeps its weighted flex and its press; the bar inside
 			// is both the press target and the hover target of a card that
@@ -176,24 +175,27 @@ func (s *appState) minimap() core.Node {
 			nodes = append(nodes, core.View{
 				Role: core.RoleButton, Label: "跳到提问", TestID: fmt.Sprintf("minimap-bar-%d", index),
 				OnPress: func(core.PressEvent) { s.jumpToFraction(at) },
-				Style:   core.Style{FlexGrow: share, FlexBasis: core.Pt(0), MinHeight: core.Pt(6), Width: core.Pt(12), AlignItems: core.AlignCenter, JustifyContent: core.JustifyCenter},
+				Style:   core.Style{Height: core.Pt(10), FlexShrink: 0, Width: core.Pt(30), AlignItems: core.AlignStart, JustifyContent: core.JustifyCenter},
 				Children: []core.Node{ui.HoverCard{
-					// Uncontrolled: the pointer resting on the bar opens it and
-					// the card itself keeps it open while the pointer is on it.
-					OpenDelay: 300 * time.Millisecond,
-					Placement: core.PlaceLeft,
+					// Uncontrolled: the bar opens it at once and the card
+					// itself keeps it open while the pointer is on it.
+					OpenDelay: 0,
+					Placement: core.PlaceRight,
 					Align:     core.AlignCenter,
 					TestID:    fmt.Sprintf("minimap-hover-%d", index),
 					Style:     core.Style{Width: core.Pt(280), Gap: 5},
-					Trigger:   core.View{Style: core.Style{Width: core.Pt(width), Height: core.Pt(height), CornerRadius: 2, Background: bar}},
+					Trigger: core.View{Style: core.Style{Width: core.Pt(width), Height: core.Pt(height), CornerRadius: 2,
+						Background: bar, Hover: &core.Style{Width: core.Pt(26), Background: s.colors.Text()}}},
 					// Built only while the card shows: a rail of twenty bars
 					// does not lay out twenty previews on every scroll.
 					Children: []core.Node{core.Dynamic(func(*core.Scope) core.Node { return s.minimapHoverCard(turn) })},
 				}},
 			})
 		}
-		return core.View{Style: core.Style{Position: core.Absolute, Right: core.Pt(3), Top: core.Pt(64), Bottom: core.Pt(132),
-			Width: core.Pt(12), Direction: core.Column, Gap: 1, AlignItems: core.AlignCenter, JustifyContent: core.JustifyCenter},
+		return core.Scroll{TestID: "minimap", HideIndicator: true,
+			Style: core.Style{Position: core.Absolute, Left: core.Pt(10), Top: core.Pct(50), MaxHeight: core.Pct(70),
+				Transform: core.Transform{TranslateYPercent: -50}, Width: core.Pt(30),
+				Direction: core.Column, Gap: 1, AlignItems: core.AlignStart, JustifyContent: core.JustifyCenter},
 			Children: nodes}
 	})
 }
@@ -297,9 +299,43 @@ func (s *appState) turnNode(cx *core.Scope, at func() turnRow) core.Node {
 			}
 			return "正在处理…"
 		},
-		Prompt: func(*core.Scope) core.Node {
-			return core.Text{Content: at().Prompt, Selectable: core.SelectableOn,
+		Prompt: func(cx *core.Scope) core.Node {
+			t := at()
+			text := core.Text{Content: t.Prompt, Selectable: core.SelectableOn,
 				Style: core.Style{FontSize: fontLabel, LineHeight: 19}}
+			if t.StartedAt.IsZero() && t.EntryID == "" {
+				return text
+			}
+			group := "prompt-actions-" + t.ID
+			var actions []core.Node
+			actions = append(actions, ui.Button{Text: "复制", Variant: ui.ButtonGhost, Size: ui.SizeSmall,
+				Icon: lucide.Copy, TestID: "prompt-copy-" + t.ID, OnPress: func() {
+					s.cx.SetClipboard(t.Prompt)
+					s.notify(ui.ToastSuccess, "已复制", "")
+				}})
+			if t.EntryID != "" || !strings.HasPrefix(t.ID, "history-") {
+				actions = append(actions,
+					ui.Button{Text: "从此处编辑", Variant: ui.ButtonGhost, Size: ui.SizeSmall,
+						Icon: lucide.CornerUpLeft, TestID: "prompt-edit-" + t.ID, OnPress: func() { s.editFromTurn(t) }},
+					ui.Button{Text: "新会话", Variant: ui.ButtonGhost, Size: ui.SizeSmall,
+						Icon: lucide.GitBranch, TestID: "prompt-new-" + t.ID, OnPress: func() {
+							s.forkFromTurn(t)
+							s.draft.Set("")
+						}})
+			}
+			var clock []core.Node
+			if !t.StartedAt.IsZero() {
+				clock = append(clock, core.Text{Content: t.StartedAt.Format("15:04"), MaxLines: 1,
+					Style: core.Style{FontSize: fontMeta, Color: s.colors.Faint()}})
+			}
+			actionRow := core.View{Style: core.Style{Direction: core.Row, AlignItems: core.AlignCenter, Gap: 4,
+				JustifyContent: core.JustifyEnd, MinHeight: core.Pt(20),
+				Visibility: core.VisibilityHidden,
+				GroupStyle: &core.GroupStyle{Name: group, Hover: &core.Style{Visibility: core.VisibilityVisible}}},
+				Children: actions}
+			meta := core.View{Style: core.Style{Direction: core.Row, AlignItems: core.AlignCenter, Gap: 6,
+				JustifyContent: core.JustifyEnd}, Children: append([]core.Node{actionRow}, clock...)}
+			return core.View{Style: core.Style{Gap: 2, Group: group}, Children: []core.Node{text, meta}}
 		},
 		Steps: steps,
 		DefaultOpen: func() bool {
@@ -621,6 +657,24 @@ func (s *appState) turnErrorCard(t turnRow) core.Node {
 // replays whose get_messages carried no entry id cannot fork directly —
 // passing the synthetic "history-N" id used to fail silently — so those
 // open the branch picker, which always has real ids.
+// editFromTurn puts the prompt back in the composer and branches the
+// conversation at that message, so the edit starts from the same context.
+func (s *appState) editFromTurn(t turnRow) {
+	if strings.TrimSpace(t.Prompt) == "" {
+		return
+	}
+	s.draft.Set(t.Prompt)
+	id := t.EntryID
+	if id == "" && !strings.HasPrefix(t.ID, "history-") {
+		id = t.ID
+	}
+	if id != "" && !strings.HasPrefix(id, "history-") {
+		s.forkAt(id, true)
+	} else {
+		s.openBranches()
+	}
+}
+
 func (s *appState) forkFromTurn(t turnRow) {
 	id := t.EntryID
 	if id == "" && !strings.HasPrefix(t.ID, "history-") {
@@ -631,7 +685,7 @@ func (s *appState) forkFromTurn(t turnRow) {
 		s.openBranches()
 		return
 	}
-	s.forkAt(id)
+	s.forkAt(id, false)
 }
 
 // emptyConversation shows over the transcript while there is nothing to read.
@@ -969,8 +1023,8 @@ func (s *appState) contextMeter() core.Node {
 	return ui.HoverCard{
 		// Uncontrolled like the rail's cards: the pointer opens it after a
 		// short rest and the card keeps it open while it is read.
-		OpenDelay:  300 * time.Millisecond,
-		CloseDelay: 200 * time.Millisecond,
+		OpenDelay:  0,
+		CloseDelay: 120 * time.Millisecond,
 		Placement:  core.PlaceTop,
 		Align:      core.AlignEnd,
 		TestID:     "context-hover",

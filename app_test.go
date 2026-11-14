@@ -272,8 +272,9 @@ func TestGitTabShowsHistory(t *testing.T) {
 	app := isolatedApp(t)
 	openFiles(t, app)
 	app.WaitUntil(10*time.Second, func() bool { return app.Exists("id:dock-tab-review") })
-	app.Press("id:dock-tab-review")
-	app.Press("id:review-tab-history")
+	app.Press("id:dock-add")
+	app.WaitUntil(5*time.Second, func() bool { return app.Exists("id:dock-add-git") })
+	app.Press("id:dock-add-git")
 	app.WaitUntil(15*time.Second, func() bool {
 		return app.Exists("id:git-graph") &&
 			strings.Contains(strings.Join(app.Texts(), "\n"), "native git test")
@@ -688,8 +689,8 @@ func TestReviewStagesAndCommits(t *testing.T) {
 	openFiles(t, app)
 	app.WaitUntil(5*time.Second, func() bool { return app.Exists("id:dock-tab-review") })
 	app.Press("id:dock-tab-review")
-	// The changes list starts scoped to the conversation; staging and
-	// committing are the working tree's, so the test opens that scope.
+	// Staging and committing are the advanced half of the panel.
+	app.Press("id:review-advanced")
 	app.Press("id:review-scope-workspace")
 	app.WaitUntil(10*time.Second, func() bool {
 		return strings.Contains(strings.Join(app.Texts(), "\n"), "未暂存 · 1")
@@ -1322,8 +1323,8 @@ func TestReviewOpenFileShowsTheFile(t *testing.T) {
 	app.WaitUntil(5*time.Second, func() bool { return app.Exists("id:dock-tab-review") })
 	app.Press("id:dock-tab-review")
 	app.WaitUntil(5*time.Second, func() bool { return app.Exists("id:review-list") })
-	// 变更 starts on this conversation's own files; the working tree is one
-	// press away, and that is what a git-status test is about.
+	// The simple view is the working tree; scope switching is advanced.
+	app.Press("id:review-advanced")
 	app.Press("id:review-scope-workspace")
 	app.Press("role:button a.txt")
 	app.WaitUntil(5*time.Second, func() bool { return app.Exists("id:review-diff-pane") })

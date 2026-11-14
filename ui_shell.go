@@ -112,10 +112,13 @@ func (s *appState) render() core.Node {
 // own toggle is off, so this bar and the header's one button are all of it.
 func (s *appState) dockHeader() core.Node {
 	return core.View{Style: core.Style{Direction: core.Row, AlignItems: core.AlignCenter, Gap: 4, FlexGrow: 1}, Children: []core.Node{
-		core.View{Style: core.Style{FlexGrow: 1, FlexShrink: 1, MinWidth: core.Pt(0), Overflow: core.Hidden}, Children: []core.Node{
-			core.Dynamic(func(cx *core.Scope) core.Node { return s.dockTabStrip(cx) }),
-		}},
 		s.dockAddButton(),
+		core.View{Style: core.Style{FlexGrow: 1, FlexShrink: 1, MinWidth: core.Pt(0), Height: core.Pct(100), Position: core.Relative, Overflow: core.Hidden}, Children: []core.Node{
+			core.Dynamic(func(cx *core.Scope) core.Node { return s.dockTabStrip(cx) }),
+			ui.Scrollbar{Scroll: func() *core.Ref { return s.dockTabScroll }, Horizontal: true,
+				Mode: func() base.ScrollbarMode { return base.ScrollbarAlways }, Label: "滚动页签", TestID: "dock-tabs-scrollbar",
+				Style: core.Style{Height: core.Pt(6)}},
+		}},
 		ui.IconButton{Icon: lucide.RefreshCw, Label: "刷新", TestID: "dock-refresh", OnPress: s.refreshDock},
 		ui.IconButton{
 			IconFunc: func() *core.SVG {
@@ -143,6 +146,8 @@ func dockKindLabel(kind string) string {
 	switch kind {
 	case "review":
 		return "审查"
+	case "git":
+		return "Git"
 	case "terminal":
 		return "终端"
 	case "subagents":
@@ -156,7 +161,7 @@ func dockKindLabel(kind string) string {
 func (s *appState) dockTabKeys() []string {
 	open := s.dockOpenKinds.GetUntracked()
 	out := make([]string, 0, len(open)+len(s.fileTabs.GetUntracked()))
-	for _, kind := range []string{"files", "review", "terminal", "subagents"} {
+	for _, kind := range []string{"files", "review", "git", "terminal", "subagents"} {
 		if slices.Contains(open, kind) {
 			out = append(out, kind)
 		}
@@ -192,11 +197,16 @@ func (s *appState) dockTabStrip(cx *core.Scope) core.Node {
 			icon = lucide.MessageSquare
 			if tab := s.sideTab(path); tab != nil {
 				label = tab.Title
+				if tab.Subagent {
+					icon = lucide.Bot
+				}
 			}
 		} else {
 			switch k {
 			case "review":
 				icon = lucide.Diff
+			case "git":
+				icon = lucide.GitBranch
 			case "terminal":
 				icon = lucide.Terminal
 			case "subagents":
@@ -252,7 +262,7 @@ func (s *appState) dockTabStrip(cx *core.Scope) core.Node {
 							OnSelect: s.closeAllDockTabs},
 					},
 				},
-				ui.IconButton{Icon: lucide.X, Label: "关闭 " + label, Size: 22, IconSize: 11,
+				ui.IconButton{Icon: lucide.X, Label: "关闭 " + label, Size: 26, IconSize: 13,
 					TestID: "dock-tab-close-" + tabID(k), OnPress: func() { s.closeDockTabKey(k) }},
 			}})
 	}
@@ -260,7 +270,7 @@ func (s *appState) dockTabStrip(cx *core.Scope) core.Node {
 		return core.Text{Content: "没有打开的页签", MaxLines: 1,
 			Style: core.Style{FontSize: fontMeta, Color: s.colors.Faint()}}
 	}
-	return core.Scroll{Horizontal: true, HideIndicator: true,
+	return core.Scroll{Ref: s.dockTabScroll, Horizontal: true, HideIndicator: true, TestID: "dock-tabs-scroll",
 		Style: core.Style{FlexGrow: 1, FlexShrink: 1, MinWidth: core.Pt(0)},
 		Children: []core.Node{core.View{Style: core.Style{Direction: core.Row, AlignItems: core.AlignCenter, Gap: 2},
 			Children: rows}}}
@@ -287,6 +297,7 @@ func (s *appState) dockAddButton() core.Node {
 		Children: []core.Node{
 			ui.MenuItem{Text: "文件", Icon: lucide.Folder, TestID: "dock-add-files", OnSelect: func() { s.openDock("files") }},
 			ui.MenuItem{Text: "审查", Icon: lucide.Diff, TestID: "dock-add-review", OnSelect: func() { s.openDock("review") }},
+			ui.MenuItem{Text: "Git 历史", Icon: lucide.GitBranch, TestID: "dock-add-git", OnSelect: func() { s.openDock("git") }},
 			ui.MenuItem{Text: "终端", Icon: lucide.Terminal, TestID: "dock-add-terminal", OnSelect: func() { s.openDock("terminal") }},
 			ui.MenuItem{Text: "子代理", Icon: lucide.Bot, TestID: "dock-add-subagents", OnSelect: func() { s.openDock("subagents") }},
 			ui.MenuItem{Text: "新建侧聊", Icon: lucide.MessageSquarePlus, TestID: "dock-add-side", OnSelect: func() { s.startSideChat() }},
@@ -415,6 +426,8 @@ func (s *appState) dockPanel() core.Node {
 			return s.terminalView()
 		case key == "review":
 			return s.reviewView()
+		case key == "git":
+			return s.gitView()
 		case key == "subagents":
 			return s.subagentsPanel()
 		case key == "files":
@@ -443,6 +456,7 @@ func (s *appState) dockEmptyState() core.Node {
 			Children: []core.Node{
 				s.dockEmptyCard("dock-empty-files", "文件", lucide.Folder, open("files")),
 				s.dockEmptyCard("dock-empty-review", "审查", lucide.Diff, open("review")),
+				s.dockEmptyCard("dock-empty-git", "Git 历史", lucide.GitBranch, open("git")),
 				s.dockEmptyCard("dock-empty-terminal", "终端", lucide.Terminal, open("terminal")),
 				s.dockEmptyCard("dock-empty-subagents", "子代理", lucide.Bot, open("subagents")),
 				s.dockEmptyCard("dock-empty-sidechat", "新建侧聊", lucide.MessageSquarePlus, func(core.PressEvent) { s.startSideChat() }),
@@ -485,11 +499,8 @@ func (s *appState) headerTitle() string {
 	}
 	for _, r := range s.searchRows.Get() {
 		if r.ID == sel {
-			return r.Title + " · " + r.Project
+			return r.Title
 		}
-	}
-	if root := s.projectRoot(); root != "" {
-		return "会话 · " + projectName(root)
 	}
 	return "会话"
 }
@@ -508,11 +519,36 @@ func (s *appState) sidebar() core.Node {
 		Children: []core.Node{
 			core.View{Style: core.Style{Direction: core.Row, AlignItems: core.AlignCenter, Gap: 4}, Children: []core.Node{
 				core.View{Style: core.Style{FlexGrow: 1, FlexShrink: 1, MinWidth: core.Pt(0)}, Children: []core.Node{
-					ui.Input{
-						Value: s.query.Get, OnChange: s.applySearch,
-						Placeholder: "搜索会话", TestID: "session-search",
-						Style: core.Style{Width: core.Pct(100)},
-					},
+					core.Dynamic(func(cx *core.Scope) core.Node {
+						if s.searchOpen.Get() {
+							return core.View{Style: core.Style{Direction: core.Row, AlignItems: core.AlignCenter, Gap: 4}, Children: []core.Node{
+								core.View{Style: core.Style{FlexGrow: 1, FlexShrink: 1, MinWidth: core.Pt(0)}, Children: []core.Node{
+									ui.Input{Value: s.query.Get, OnChange: s.applySearch, Placeholder: "搜索会话", TestID: "session-search",
+										AutoFocus: true, Style: core.Style{Width: core.Pct(100)}},
+								}},
+								ui.IconButton{Icon: lucide.X, Label: "关闭搜索", TestID: "session-search-close", Size: 24,
+									OnPress: func() {
+										s.query.Set("")
+										s.applySearch("")
+										s.searchOpen.Set(false)
+									}},
+							}}
+						}
+						return ui.Tabs[string]{
+							Variant:  ui.TabsSegmented,
+							Options:  sidebarViews,
+							Value:    s.sidebarView.Get,
+							OnChange: s.setSidebarView,
+							Equal:    true,
+							Size:     ui.SizeSmall,
+							Label:    "会话视图",
+							TestID:   "sidebar-view-tabs",
+						}
+					}),
+				}},
+				core.Show{When: func() bool { return !s.searchOpen.Get() }, Then: func(*core.Scope) core.Node {
+					return ui.IconButton{Icon: lucide.Search, Label: "搜索会话", TestID: "session-search-toggle",
+						Size: 24, OnPress: func() { s.searchOpen.Set(true) }}
 				}},
 				ui.IconButton{Icon: lucide.FolderOpen, Label: "打开项目", TestID: "nav-open-project", Size: 24,
 					OnPress: s.openProjectPicker},
@@ -523,16 +559,6 @@ func (s *appState) sidebar() core.Node {
 				ui.IconButton{Icon: lucide.Archive, Label: "归档会话", TestID: "session-archived-toggle", Size: 24,
 					Selected: s.archiveView.Get, OnPress: s.toggleArchiveView},
 			}},
-			ui.Tabs[string]{
-				Variant:  ui.TabsSegmented,
-				Options:  sidebarViews,
-				Value:    s.sidebarView.Get,
-				OnChange: s.setSidebarView,
-				Equal:    true,
-				Size:     ui.SizeSmall,
-				Label:    "会话视图",
-				TestID:   "sidebar-view-tabs",
-			},
 			core.View{Style: core.Style{FlexGrow: 1, FlexShrink: 1, MinHeight: core.Pt(0)},
 				OnLayout: func(b core.Bounds) { s.sideListH.Set(b.Size.Height) },
 				Children: []core.Node{core.Dynamic(func(*core.Scope) core.Node {
@@ -658,9 +684,10 @@ func (s *appState) sessionListRow(cx *core.Scope, row core.ListRow) core.Node {
 			},
 			Children: []core.Node{
 				ui.Icon(chevron, 12, s.colors.Muted),
+				ui.Icon(lucide.Folder, 13, s.colors.Muted),
 				core.View{Style: core.Style{FlexGrow: 1, FlexShrink: 1, MinWidth: core.Pt(0)}, Children: []core.Node{
 					core.Text{Content: it.GroupLabel, MaxLines: 1,
-						Style: core.Style{FontSize: fontMeta, FontWeight: core.FontWeightSemibold, LetterSpacing: 0.3, Color: s.colors.Muted()}},
+						Style: core.Style{FontSize: 13.5, FontWeight: core.FontWeightSemibold, Color: s.colors.Text()}},
 				}},
 				core.Text{Content: fmt.Sprint(it.Count), MaxLines: 1,
 					Style: core.Style{FontSize: fontMeta, Color: s.colors.Faint()}},
@@ -692,10 +719,8 @@ func (s *appState) sessionListRow(cx *core.Scope, row core.ListRow) core.Node {
 		titleStyle.Color = s.colors.Accent()
 	}
 	title := r.Title
-	leading := core.Node(ui.Icon(lucide.MessageSquare, 13, s.colors.Muted))
 	if r.Pinned {
 		title = "★ " + title
-		leading = ui.Icon(lucide.Pin, 13, s.colors.Muted)
 	}
 	age := r.Age
 	if age == "" {
@@ -724,29 +749,7 @@ func (s *appState) sessionListRow(cx *core.Scope, row core.ListRow) core.Node {
 		// window, with the transcript showing through it. base.Tooltip keeps
 		// the platform's "never takes the pointer" behaviour but owns its
 		// popup, so it stays a small opaque chip beside the row.
-		Tooltip: base.Tooltip{
-			Delay:     400 * time.Millisecond,
-			Placement: core.PlaceTop,
-			Align:     core.AlignStart,
-			TestID:    "session-tooltip-" + strconv.Itoa(it.Ordinal),
-			PopupStyle: sessionTooltipPopupStyle(),
-			PopupStyleFunc: func() core.Style {
-				return core.Style{Background: s.colors.Field(), BorderColor: s.colors.Border()}
-			},
-			Children: []core.Node{
-				core.View{
-					TestID: "session-tooltip-" + strconv.Itoa(it.Ordinal),
-					Style:  core.Style{Direction: core.Column, Gap: 2},
-					Children: []core.Node{
-						core.Text{Content: sessionPreviewText(r), MaxLines: 2,
-							Style: core.Style{FontSize: fontLabel, Color: s.colors.Text()}},
-						core.Text{Content: sessionTooltipMeta(r), MaxLines: 1,
-							Style: core.Style{FontSize: fontMeta, Color: s.colors.Muted()}},
-					},
-				},
-			},
-		},
-		TestID: "session-" + strconv.Itoa(it.Ordinal),
+		TestID:  "session-" + strconv.Itoa(it.Ordinal),
 		OnPress: func(core.PressEvent) { s.openSession(r.ID) },
 		// Group admits the hover actions at the row's end; the background
 		// follows the same state.
@@ -756,7 +759,6 @@ func (s *appState) sessionListRow(cx *core.Scope, row core.ListRow) core.Node {
 				Hover: &core.Style{Background: ui.Alpha(s.colors.Text(), 0.05)}, Pressed: &core.Style{Background: ui.Alpha(s.colors.Text(), 0.09)}}
 		},
 		Children: []core.Node{
-			leading,
 			core.View{Style: core.Style{FlexGrow: 1, FlexShrink: 1, MinWidth: core.Pt(0)}, Children: []core.Node{
 				// One line for every row, the open one too: a session that
 				// wraps to two lines moved its neighbours and needed a
@@ -961,6 +963,8 @@ func (s *appState) openSession(id string) {
 		}
 	}
 	if id != prev {
+		s.ctxUsed.Set(0)
+		s.ctxWindow.Set(0)
 		// Keep each session's half-typed message with that session, and
 		// clear the run-scoped pieces a previous session left behind.
 		if prev != "" {

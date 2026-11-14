@@ -51,7 +51,7 @@ func TestSessionReviewFilesOnlyListsThisSessionsWrites(t *testing.T) {
 // TestReviewChangesStartScopedToTheConversation covers the default scope and
 // the switch beside it: an empty session says so instead of pretending the
 // working tree is its work, and 工作区 still answers for git status.
-func TestReviewChangesStartScopedToTheConversation(t *testing.T) {
+func TestReviewStartsOnTheWorkingTree(t *testing.T) {
 	dir := t.TempDir()
 	t.Chdir(dir)
 	app := isolatedApp(t)
@@ -59,16 +59,19 @@ func TestReviewChangesStartScopedToTheConversation(t *testing.T) {
 	app.WaitUntil(5*time.Second, func() bool { return app.Exists("id:dock-tab-review") })
 	app.Press("id:dock-tab-review")
 	app.WaitUntil(5*time.Second, func() bool { return app.Exists("id:review-list") })
-	joined := strings.Join(app.Texts(), "\n")
-	if !strings.Contains(joined, "本次会话没有改动文件") {
-		t.Fatalf("the changes tab did not start on the conversation's scope: %.400s", joined)
-	}
-	if !app.Exists("id:review-scope-session") || !app.Exists("id:review-scope-workspace") {
-		t.Fatal("the review header has no scope switch")
-	}
-	app.Press("id:review-scope-workspace")
 	app.WaitUntil(5*time.Second, func() bool {
-		return strings.Contains(strings.Join(app.Texts(), "\n"), "工作区干净")
+		return strings.Contains(strings.Join(app.Texts(), "\n"), "不是 Git 仓库")
+	})
+	if app.Exists("id:review-scope-workspace") {
+		t.Fatal("the simple review still carries the scope switch")
+	}
+	app.Press("id:review-advanced")
+	app.WaitUntil(5*time.Second, func() bool {
+		return app.Exists("id:review-scope-session") && app.Exists("id:review-scope-workspace")
+	})
+	app.Press("id:review-scope-session")
+	app.WaitUntil(5*time.Second, func() bool {
+		return strings.Contains(strings.Join(app.Texts(), "\n"), "本次会话没有改动文件")
 	})
 }
 

@@ -10,5 +10,7 @@ import (
 // window. There is no HTTP server, no SSE stream and no listening port:
 // one session is one `pi --mode rpc` child process speaking JSONL.
 func Root(cx *core.Scope) core.Node {
-	return newState(cx).render()
+	s := newState(cx)
+	s.attachChat(cx)
+	return s.workbench(cx)
 }

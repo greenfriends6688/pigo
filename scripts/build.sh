@@ -11,6 +11,10 @@ cd "$ROOT"
 
 export PATH="/opt/homebrew/bin:/usr/local/go/bin:$PATH"
 TARGET=${TARGET:-macos_arm64}
+# The release workflow builds from nsgo.yaml's whole target list; a local
+# build stays one machine's target unless TARGET says otherwise.
+ALL=0
+[ "$TARGET" = "all" ] && ALL=1
 
 echo "==> check"
 go tool nsgo check
@@ -18,7 +22,11 @@ echo "==> test"
 go tool nsgo test
 
 echo "==> stage RPC bundle"
-sh scripts/bundle-rpc.sh
+if [ "${BUNDLE_RPC:-1}" = "1" ]; then
+  sh scripts/bundle-rpc.sh
+else
+  echo "skip (BUNDLE_RPC=0)"
+fi
 
 # The package never carries a node binary (PLAN §11 B′). nodeinstall.Ensure
 # picks a system Node >= 22 at launch and downloads the official tarball when
@@ -33,6 +41,11 @@ if [ -e resources/bin/node ]; then
   exit 1
 fi
 
-echo "==> build ($TARGET)"
-go tool nsgo build -target "$TARGET"
+if [ "$ALL" = "1" ]; then
+  echo "==> build (all nsgo.yaml targets)"
+  go tool nsgo build
+else
+  echo "==> build ($TARGET)"
+  go tool nsgo build -target "$TARGET"
+fi
 echo "==> output in $ROOT/dist"

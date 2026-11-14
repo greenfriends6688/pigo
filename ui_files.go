@@ -600,10 +600,6 @@ func (s *appState) filesView() core.Node {
 			Children: []core.Node{
 				s.filesHeader(),
 				s.fileTreePane(),
-				// Self-contained dialogs rather than nodes in the shell: the
-				// file tree owns them, so the shell stays untouched.
-				s.fileOpDialog(),
-				s.unsavedDialog(),
 			},
 		}
 	})
@@ -1269,7 +1265,7 @@ func (s *appState) loadGitState(root string) {
 				marks[filepath.Join(root, path)] = code[:1]
 			}
 		}
-		text := "工作区干净"
+		text := "不是 Git 仓库"
 		if status.Branch != "" {
 			text = status.Branch
 			if status.IsWorktree {

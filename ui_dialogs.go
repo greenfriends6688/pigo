@@ -827,7 +827,7 @@ func (s *appState) branchDialog() core.Node {
 					FontSize: 12, FontFamily: core.FontMonospace, FlexShrink: 1, MinWidth: core.Pt(0), Color: s.colors.Text()}})
 				rows = append(rows, core.View{Role: core.RoleButton, Label: entry.Label,
 					TestID:  "branch-" + fmt.Sprint(i),
-					OnPress: func(core.PressEvent) { s.branchOpen.Set(false); s.forkAt(entry.ID) },
+					OnPress: func(core.PressEvent) { s.branchOpen.Set(false); s.forkAt(entry.ID, false) },
 					Style: core.Style{Direction: core.Row, AlignItems: core.AlignCenter, Gap: 6,
 						Padding: core.Symmetric(4, 8), CornerRadius: 5},
 					StyleFunc: func() core.Style {

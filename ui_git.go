@@ -21,6 +21,8 @@ func (s *appState) gitView() core.Node {
 				ui.IconButton{Icon: lucide.GitBranch, Label: "工作树", Size: 24, TestID: "git-worktrees", OnPress: s.openWorktreeDialog},
 				core.Text{ContentFunc: s.gitHeadLabel, TestID: "git-head", MaxLines: 1,
 					Style: core.Style{FontSize: 11, FontFamily: core.FontMonospace, Color: s.colors.Muted()}},
+				ui.Button{Text: "刷新", Variant: ui.ButtonGhost, Size: ui.SizeSmall, TestID: "git-refresh",
+					OnPress: s.loadGit},
 				core.View{Style: core.Style{FlexGrow: 1}},
 				core.Text{ContentFunc: s.gitCountLabel, MaxLines: 1,
 					Style: core.Style{FontSize: 11, Color: s.colors.Muted()}},

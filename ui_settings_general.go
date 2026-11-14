@@ -15,15 +15,21 @@ import (
 // the system for all of them or has no API yet, and a row that only says what
 // the system already did is a switch the user cannot flip.
 func (s *appState) generalSettingsCategory() ui.SettingsCategory {
-	return ui.SettingsCategory{
+	cat := ui.SettingsCategory{
 		ID: "general", Title: "通用", Section: "偏好", Icon: lucide.Settings,
 		Description: "显示方式、输入、文件与工具的默认值",
 		Groups: []ui.SettingsGroup{
 			{
 				ID: "general-appearance", Title: "外观",
 				Items: []ui.SettingsItem{
-					{ID: "theme", Title: "主题", Description: "选择浅色或深色主题，也可以跟随系统设置。",
-						Control: s.themeCards()},
+					{ID: "appearance", Title: "外观", Description: "浅色、深色或跟随系统；配色在下方选择。",
+						Control: core.Dynamic(func(*core.Scope) core.Node {
+							return ui.Select[string]{
+								Options: []ui.Option[string]{{Value: "system", Label: "跟随系统"}, {Value: "light", Label: "浅色"}, {Value: "dark", Label: "深色"}},
+								Value:   s.appearance.Get, Label: "外观", TestID: "appearance",
+								OnChange: s.setAppearance, Style: core.Style{Width: core.Pt(140)},
+							}
+						})},
 					{ID: "chat-width", Title: "会话阅读宽度", Description: "设置消息内容和输入框的最大宽度。",
 						Control: core.Dynamic(func(*core.Scope) core.Node {
 							return ui.Select[int]{
@@ -145,6 +151,17 @@ func (s *appState) generalSettingsCategory() ui.SettingsCategory {
 			},
 		},
 	}
+	// 配色 sits right under the appearance row; it is the point of that row.
+	app := s.agioAppearanceGroups()
+	sys := s.agioSystemGroups()
+	at := 1
+	groups := make([]ui.SettingsGroup, 0, len(cat.Groups)+len(app)+len(sys))
+	groups = append(groups, cat.Groups[:at]...)
+	groups = append(groups, app...)
+	groups = append(groups, cat.Groups[at:]...)
+	groups = append(groups, sys...)
+	cat.Groups = groups
+	return cat
 }
 
 // themeCards is PI NEXT's three theme cards: 浅色, 深色 and 跟随系统, each a

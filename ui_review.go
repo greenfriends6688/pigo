@@ -223,23 +223,26 @@ func (s *appState) reviewHeader() core.Node {
 		Style: core.Style{Direction: core.Row, AlignItems: core.AlignCenter, Gap: 6,
 			Padding: core.Edges{Top: 6, Right: 8, Bottom: 4, Left: 8}},
 		Children: []core.Node{
-			ui.Tabs[string]{
-				Variant: ui.TabsSegmented, Size: ui.SizeSmall,
-				Options: []ui.Option[string]{
-					{Value: "changes", Label: "变更", TestID: "review-tab-changes"},
-					{Value: "history", Label: "历史", TestID: "review-tab-history"},
-				},
-				Value: s.reviewMode.Get,
-				OnChange: func(v string) {
-					s.reviewMode.Set(v)
-					if v == "history" {
-						s.loadGit()
-					}
-				},
-				Label:  "审阅视图",
-				TestID: "review-view",
-			},
-			core.Show{When: func() bool { return s.reviewMode.Get() == "changes" }, Then: func(*core.Scope) core.Node {
+			core.Dynamic(func(*core.Scope) core.Node {
+				options := []ui.Option[string]{{Value: "changes", Label: "变更", TestID: "review-tab-changes"}}
+				if s.reviewAdvanced.Get() {
+					options = append(options, ui.Option[string]{Value: "history", Label: "历史", TestID: "review-tab-history"})
+				}
+				return ui.Tabs[string]{
+					Variant: ui.TabsSegmented, Size: ui.SizeSmall,
+					Options: options,
+					Value:   s.reviewMode.Get,
+					OnChange: func(v string) {
+						s.reviewMode.Set(v)
+						if v == "history" {
+							s.loadGit()
+						}
+					},
+					Label:  "审阅视图",
+					TestID: "review-view",
+				}
+			}),
+			core.Show{When: func() bool { return s.reviewAdvanced.Get() }, Then: func(*core.Scope) core.Node {
 				return ui.Tabs[string]{
 					Variant: ui.TabsSegmented, Size: ui.SizeSmall,
 					Options: reviewScopeOptions,
@@ -263,6 +266,15 @@ func (s *appState) reviewHeader() core.Node {
 				return ui.IconButton{Icon: lucide.RefreshCw, Label: "刷新变更", TestID: "review-refresh", Size: 24,
 					OnPress: func() { s.loadReviewStatus() }}
 			}},
+			ui.IconButton{Icon: lucide.SlidersHorizontal, Label: "高级审阅", TestID: "review-advanced", Size: 24,
+				Selected: s.reviewAdvanced.Get, OnPress: func() {
+					on := !s.reviewAdvanced.GetUntracked()
+					s.reviewAdvanced.Set(on)
+					if !on {
+						s.reviewScope.Set("workspace")
+						s.reviewMode.Set("changes")
+					}
+				}},
 			ui.IconButton{Icon: lucide.GitBranch, Label: "工作树", TestID: "git-worktrees", Size: 24,
 				OnPress: s.openWorktreeDialog},
 		},
@@ -630,7 +642,13 @@ func (s *appState) reviewChanges() core.Node {
 			Style: core.Style{FlexGrow: 1, FlexShrink: 1, MinWidth: core.Pt(0), MinHeight: core.Pt(0)},
 			Panels: []base.ResizablePanel{
 				{Size: func() core.Points { return core.Points(220) }, MinSize: 120, MaxSize: 460,
-					Children: []core.Node{s.reviewList(rows), s.reviewCommitBox(rows)}},
+					Children: func() []core.Node {
+						list := []core.Node{s.reviewList(rows)}
+						if s.reviewAdvanced.Get() {
+							list = append(list, s.reviewCommitBox(rows))
+						}
+						return list
+					}()},
 				{MinSize: 120, Children: []core.Node{
 					core.View{Style: core.Style{FlexGrow: 1, MinWidth: core.Pt(0), MinHeight: core.Pt(0)}, Children: []core.Node{s.reviewDiffPane()}},
 				}},
@@ -669,8 +687,8 @@ func (s *appState) reviewList(rows []reviewItem) core.Node {
 		EstimatedSize: 34,
 		Gap:           1,
 		Label:         "变更文件",
-		Empty: s.reviewEmptyState(),
-		TestID: "review-list",
+		Empty:         s.reviewEmptyState(),
+		TestID:        "review-list",
 	}
 }
 
@@ -681,9 +699,14 @@ func (s *appState) reviewEmptyState() core.Node {
 		colors := ui.ColorsOf(cx)
 		text := "工作区干净，没有待审阅的改动"
 		tail := ""
-		if s.reviewScope.Get() == "session" {
+		switch {
+		case s.reviewScope.Get() == "session":
 			text = "本次会话没有改动文件"
-			tail = "AI 写到文件后会自动出现在这里"
+			tail = "AI 写到文件后会自动出现在这里；高级审阅可切到工作区"
+		case s.gitLoading.Get():
+			text, tail = "正在读取 Git…", "大型仓库可能需要几秒"
+		case s.gitStatus.Get().Branch == "":
+			text, tail = "当前目录不是 Git 仓库", "在项目根目录运行 git init 后这里会显示变更"
 		}
 		return core.View{TestID: "review-empty", Style: core.Style{Padding: core.All(14), Gap: 4},
 			Children: []core.Node{
@@ -949,8 +972,27 @@ func (s *appState) commitReview() {
 // list, so going back is one tab press.
 func (s *appState) openSubagent(id string) {
 	s.subOpen.Set(false)
-	s.openSession(id)
-	s.readOnly.Set(true)
+	if tab := s.sideTab(id); tab != nil {
+		s.openDock(sideTabKey(id))
+		s.rightOpen.Set(true)
+		return
+	}
+	info, _ := s.store.Info(id)
+	title := info.Name
+	if title == "" {
+		title = info.FirstMessage
+	}
+	if title == "" {
+		title = baseName(id)
+	}
+	tab := &sideTab{ID: id, Title: "子代理 · " + truncateRunes(title, 24), Parent: info.ParentSession,
+		Store: reducer.New(), Subagent: true}
+	s.sideTabs.Set(append(append([]*sideTab(nil), s.sideTabs.GetUntracked()...), tab))
+	s.dockOpenKinds.Set(append(append([]string(nil), s.dockOpenKinds.GetUntracked()...), sideTabKey(id)))
+	s.openDock(sideTabKey(id))
+	s.rightOpen.Set(true)
+	s.bumpSide()
+	go s.loadSubagentTab(tab)
 }
 
 // subagentsPanel is the dock's Subagents tab: the child sessions of the
@@ -982,20 +1024,23 @@ func (s *appState) subagentsPanel() core.Node {
 			if row.Age != "" {
 				meta += " · " + row.Age
 			}
-			nodes = append(nodes, core.View{Role: core.RoleButton, Label: row.Title, TestID: "subagent-item",
+			nodes = append(nodes, core.View{Role: core.RoleButton, Label: row.Title, TestID: "subagent-item-" + row.ID,
 				OnPress: func(core.PressEvent) { s.openSubagent(row.ID) },
-				Style:   core.Style{Gap: 2, Padding: core.Symmetric(6, 8), CornerRadius: radiusControl},
+				Style:   core.Style{Direction: core.Row, AlignItems: core.AlignCenter, Gap: 7, Padding: core.Symmetric(6, 8), CornerRadius: radiusControl},
 				StyleFunc: func() core.Style {
 					return core.Style{Hover: &core.Style{Background: ui.Alpha(colors.Text(), 0.05)},
 						Pressed: &core.Style{Background: ui.Alpha(colors.Text(), 0.09)}}
 				},
 				Children: []core.Node{
-					core.Text{Content: row.Title, MaxLines: 1, Style: core.Style{FontSize: fontLabel, Color: colors.Text()}},
-					core.Text{Content: meta, MaxLines: 1, Style: core.Style{FontSize: fontMeta, Color: colors.Muted()}},
+					ui.Icon(lucide.GitBranch, 12, colors.Muted),
+					core.View{Style: core.Style{FlexGrow: 1, FlexShrink: 1, MinWidth: core.Pt(0), Gap: 1}, Children: []core.Node{
+						core.Text{Content: row.Title, MaxLines: 1, Style: core.Style{FontSize: fontLabel, Color: colors.Text()}},
+						core.Text{Content: meta, MaxLines: 1, Style: core.Style{FontSize: fontMeta, Color: colors.Muted()}},
+					}},
 				}})
 		}
 		return core.View{Style: core.Style{FlexGrow: 1, MinWidth: core.Pt(0), MinHeight: core.Pt(0)}, Children: []core.Node{header,
-			core.Scroll{Style: core.Style{FlexGrow: 1, MinWidth: core.Pt(0), MinHeight: core.Pt(0), Padding: core.All(6)},
+			core.Scroll{TestID: "subagents-scroll", Style: core.Style{FlexGrow: 1, MinWidth: core.Pt(0), MinHeight: core.Pt(0), Padding: core.All(6)},
 				Children: []core.Node{core.View{Style: core.Style{Gap: 2}, Children: nodes}}}}}
 	})
 }

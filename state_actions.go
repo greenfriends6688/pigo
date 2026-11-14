@@ -53,9 +53,15 @@ func (s *appState) newSession() {
 	h := s.current()
 	s.selected.Set("")
 	s.redux.Reset()
+	s.ctxUsed.Set(0)
+	s.ctxWindow.Set(0)
 	s.refresh()
 	if h == nil || !s.connected.GetUntracked() {
-		s.connect("")
+		// A connect already in flight owns the child; a second one would
+		// spawn another process for the same new session.
+		if !s.connecting {
+			s.connect("")
+		}
 		return
 	}
 	go func() {
@@ -122,7 +128,11 @@ func (s *appState) adoptSession(h *agent.SessionHandle, label string) {
 			s.cx.Post(s.publishSessions)
 		}()
 		s.cx.Post(func() {
-			if path != "" {
+			s.ctxUsed.Set(0)
+			s.ctxWindow.Set(0)
+			// A new session is still New task: the first prompt switches to
+			// its conversation. Fork and clone show their branch at once.
+			if path != "" && label != "新会话" {
 				s.selected.Set(path)
 			}
 			s.publishSessions()
@@ -182,10 +192,10 @@ func (s *appState) forkSession() {
 
 // forkFromPrompt branches a new session at one user message, keeping that
 // prompt and its earlier turns.
-func (s *appState) forkFromPrompt(entryID string) { s.forkAt(entryID) }
+func (s *appState) forkFromPrompt(entryID string) { s.forkAt(entryID, false) }
 
 // forkAt continues the conversation from one entry as a new branch.
-func (s *appState) forkAt(entryID string) {
+func (s *appState) forkAt(entryID string, before bool) {
 	h := s.current()
 	if h == nil || entryID == "" {
 		s.status.Set("未连接：先打开一个会话")
@@ -194,7 +204,11 @@ func (s *appState) forkAt(entryID string) {
 	go func() {
 		ctx, cancel := context.WithTimeout(context.Background(), 20*time.Second)
 		defer cancel()
-		resp, err := h.Client.Call(ctx, agent.Command{"type": agent.CmdFork, "entryId": entryID, "position": "at"})
+		command := agent.Command{"type": agent.CmdFork, "entryId": entryID}
+		if !before {
+			command["position"] = "at"
+		}
+		resp, err := h.Client.Call(ctx, command)
 		if err != nil || resp == nil || !resp.Success {
 			msg := responseError(err, resp)
 			s.cx.Post(func() { s.notify(ui.ToastError, "分支失败", msg) })
@@ -238,6 +252,18 @@ func (s *appState) cloneSession() {
 		}
 		s.adoptSession(h, "克隆")
 	}()
+}
+
+// renameTo renames the selected conversation without opening the dialog.
+func (s *appState) renameTo(name string) {
+	name = strings.TrimSpace(name)
+	if name == "" {
+		return
+	}
+	s.renameGroup.Set("")
+	s.renameName.Set(name)
+	s.renameTarget.Set(s.selected.GetUntracked())
+	s.commitRename()
 }
 
 // beginRename opens the rename dialog prefilled with the row's title.
@@ -643,6 +669,8 @@ func (s *appState) fetchCatalog(h *agent.SessionHandle) {
 			Models []struct {
 				ID, Name, Provider string
 				Reasoning          bool
+				ContextWindow      int
+				Input              []string
 			} `json:"models"`
 		}
 		if json.Unmarshal(resp.Data, &data) == nil {
@@ -652,7 +680,14 @@ func (s *appState) fetchCatalog(h *agent.SessionHandle) {
 				if name == "" {
 					name = m.ID
 				}
-				models = append(models, modelItem{ID: m.ID, Name: name, Provider: m.Provider, Reasoning: m.Reasoning})
+				images := false
+				for _, in := range m.Input {
+					if in == "image" {
+						images = true
+					}
+				}
+				models = append(models, modelItem{ID: m.ID, Name: name, Provider: m.Provider, Reasoning: m.Reasoning,
+					ContextWindow: m.ContextWindow, ImageInput: images})
 			}
 			s.cx.Post(func() { s.models.Set(models) })
 		}
@@ -1031,5 +1066,3 @@ func (s *appState) startSideChat() {
 		})
 	}()
 }
-
-

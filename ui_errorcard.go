@@ -52,7 +52,10 @@ func (s *appState) disconnectCard() core.Node {
 		}
 		// The automatic restart is already working on it: the card is for a
 		// link that stayed down, not for the second it takes to come back.
-		if s.reconnecting.Get() {
+		if s.reconnecting.Get() || s.connecting {
+			return nil
+		}
+		if s.transcriptLoading.Get() {
 			return nil
 		}
 		// A window that never connected has nothing to reattach; the empty

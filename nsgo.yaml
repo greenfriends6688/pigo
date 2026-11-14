@@ -1,11 +1,11 @@
 name: pigo
 id: dev.pigo
-version: 0.2.0
+version: 0.3.0
 dev:
   target: native
 build:
   output: dist
-  targets: [macos_arm64]
+  targets: [macos_arm64, macos_x64, windows_arm64, windows_x64, linux_arm64, linux_x64]
 # The app's catalogs: a YAML file per language in locales/, en's with every
 # message. Its languages are the ones the app shows.
 i18n:

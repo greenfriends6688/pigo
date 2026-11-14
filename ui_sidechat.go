@@ -1,6 +1,7 @@
 package main
 
 import (
+	"bufio"
 	"context"
 	"encoding/json"
 	"fmt"
@@ -27,6 +28,8 @@ type sideTab struct {
 	ID     string // session file, the tab key's payload
 	Title  string
 	Parent string // the parent session the side chat was forked from
+	// Subagent marks a saved child session shown read-only in the dock.
+	Subagent bool
 
 	// handle is written by the connect goroutine and read by the panel, so
 	// it stays an atomic pointer; every other field is UI-thread only.
@@ -250,11 +253,17 @@ func (s *appState) sidePanel(path string) core.Node {
 
 func (s *appState) sideBody(cx *core.Scope, tab *sideTab) core.Node {
 	colors := ui.ColorsOf(cx)
-	cx.OnKey("mod+enter", func() { s.sendSide(cx, tab) })
+	icon := lucide.MessageSquare
 	status := "只读工具 · 不通知"
+	if tab.Subagent {
+		icon = lucide.Bot
+		status = "只读 · 子代理"
+	} else {
+		cx.OnKey("mod+enter", func() { s.sendSide(cx, tab) })
+	}
 	switch {
 	case tab.Err != "":
-		status = "已断开"
+		status = "读取失败"
 	case tab.Running:
 		status = "运行中"
 	case tab.Busy:
@@ -266,7 +275,7 @@ func (s *appState) sideBody(cx *core.Scope, tab *sideTab) core.Node {
 		Children: []core.Node{
 			core.View{Style: core.Style{Direction: core.Row, AlignItems: core.AlignCenter, Gap: 6, FlexShrink: 0,
 				Padding: core.Edges{Top: 8, Right: 10, Bottom: 6, Left: 12}}, Children: []core.Node{
-				ui.Icon(lucide.MessageSquare, 13, colors.Accent),
+				ui.Icon(icon, 13, colors.Accent),
 				core.Text{Content: tab.Title, MaxLines: 1, TestID: "side-title",
 					Style: core.Style{FlexGrow: 1, MinWidth: core.Pt(0), FontSize: fontLabel, FontWeight: core.FontWeightSemibold, Color: colors.Text()}},
 				core.Text{Content: status, MaxLines: 1, TestID: "side-status",
@@ -287,7 +296,9 @@ func (s *appState) sideBody(cx *core.Scope, tab *sideTab) core.Node {
 			}},
 			core.Scroll{TestID: "side-transcript", Style: core.Style{FlexGrow: 1, FlexShrink: 1, MinWidth: core.Pt(0), MinHeight: core.Pt(0),
 				Padding: core.Symmetric(12, 12)}, Children: []core.Node{s.sideTranscript(tab)}},
-			s.sideComposer(cx, tab),
+			core.Show{When: func() bool { return !tab.Subagent }, Then: func(cx *core.Scope) core.Node {
+				return s.sideComposer(cx, tab)
+			}},
 		},
 	}
 }
@@ -495,4 +506,44 @@ func (s *appState) closeSideTab(path string) {
 		}
 	}
 	s.bumpSide()
+}
+
+// loadSubagentTab reads a saved child session into the dock tab. A subagent
+// keeps no live process here: its transcript is read-only, like PI NEXT's
+// subagent rows.
+func (s *appState) loadSubagentTab(tab *sideTab) {
+	msgs, err := readSessionMessages(tab.ID)
+	s.cx.Post(func() {
+		if err != nil {
+			tab.Err = "读取子代理失败：" + err.Error()
+			s.bumpSide()
+			return
+		}
+		tab.Store.SetState(messagesFromRPC(msgs))
+		tab.Err = ""
+		s.rebuildSide(tab)
+	})
+}
+
+// readSessionMessages returns the message records of a session file, the
+// shape reducer's messagesFromRPC takes.
+func readSessionMessages(path string) ([]json.RawMessage, error) {
+	f, err := os.Open(path)
+	if err != nil {
+		return nil, err
+	}
+	defer f.Close()
+	var out []json.RawMessage
+	sc := bufio.NewScanner(f)
+	sc.Buffer(make([]byte, 64*1024), 16<<20)
+	for sc.Scan() {
+		var entry struct {
+			Type    string          `json:"type"`
+			Message json.RawMessage `json:"message"`
+		}
+		if json.Unmarshal(sc.Bytes(), &entry) == nil && entry.Type == "message" && len(entry.Message) > 0 {
+			out = append(out, append(json.RawMessage(nil), entry.Message...))
+		}
+	}
+	return out, sc.Err()
 }

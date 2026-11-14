@@ -12,6 +12,10 @@ Go + [NSGo](https://github.com/oneo-me/nsgo) 写成，单进程壳子 + 一个 `
 
 ---
 
+## 界面组件
+
+窗口壳（inset 悬浮卡片、渐变窗框、玻璃 composer）、左侧栏骨架、设置对话框、模型切换、思考强度、上下文环和配色/颗粒，来自 [nsgo-agio](https://github.com/oneo-me/nsgo-agio) 的设计组件，复制在 `agio/`。它们只通过 `agio_bridge.go` 实现的 `agio.Backend` 读取窗口状态；pi 引擎、会话库、文件/Git/终端和全部设置页仍然是 pigo 自己的，功能没有被替换掉。
+
 ## 功能
 
 **会话**
